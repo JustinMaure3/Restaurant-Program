@@ -1,9 +1,23 @@
+import javafx.application.Application;
+import javafx.stage.Stage;
 
-public class Main {
+public class Main extends Application {
 
+	public static Stage mainStage;
+	
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		Application.launch(args);
 
+	}
+
+	@Override
+	public void start(Stage primaryStage) throws Exception {
+		//Mainstage is set up
+				mainStage = primaryStage;
+				mainStage.setResizable(false);
+				mainStage.setScene(new HomeScene());
+				mainStage.show();
+		
 	}
 
 }
