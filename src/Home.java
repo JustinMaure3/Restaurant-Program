@@ -1,4 +1,5 @@
+import javafx.scene.layout.BorderPane;
 
-public class Home {
+public class Home extends BorderPane {
 
 }
