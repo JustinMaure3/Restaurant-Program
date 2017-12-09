@@ -9,10 +9,4 @@ public class HomeTab extends Tab {
 		this.setText("Home");
 	}
 	
-//	Main.mainStage.setScene(new HomeScene());
-//	
-//	public void start(Stage homeStage) throws Exception {
-//		homeStage.setScene(new HomeScene());
-//	}
-	
 }
