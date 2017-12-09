@@ -1,4 +1,5 @@
 import javafx.application.Application;
+
 import javafx.stage.Stage;
 
 public class Main extends Application {
@@ -13,10 +14,10 @@ public class Main extends Application {
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 		//Mainstage is set up
-				mainStage = primaryStage;
-				mainStage.setResizable(false);
-				mainStage.setScene(new HomeScene());
-				mainStage.show();
+		mainStage = primaryStage;
+		mainStage.setResizable(false);
+		mainStage.setScene(new HomeScene());
+		mainStage.show();
 		
 	}
 
