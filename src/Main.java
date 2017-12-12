@@ -7,9 +7,12 @@ import javafx.scene.control.TabPane;
 import javafx.scene.control.TabPane.TabClosingPolicy;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
+import tabs.AddItemTab;
 import tabs.HomeTab;
 import tabs.MenuTab;
+import tabs.RemoveItemTab;
 import tabs.StatisticsTab;
+import tabs.UpdateItemTab;
 
 public class Main extends Application {
 
@@ -39,8 +42,11 @@ public class Main extends Application {
 		tpane.setTabClosingPolicy(TabClosingPolicy.UNAVAILABLE);
 		HomeTab htab = new HomeTab();
 		MenuTab mtab = new MenuTab();
+		AddItemTab addTab = new AddItemTab();
+		RemoveItemTab removeTab = new RemoveItemTab();
+		UpdateItemTab updateTab = new UpdateItemTab();
 		StatisticsTab stab = new StatisticsTab();
-		tpane.getTabs().addAll(htab, mtab, stab);
+		tpane.getTabs().addAll(htab, mtab, addTab, removeTab, updateTab, stab);
 		
 		//Setting up the main page
 		BorderPane bpane = new BorderPane();
