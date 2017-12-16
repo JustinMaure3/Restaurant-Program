@@ -31,7 +31,9 @@ public class FoodTable implements FoodDrinkDAO {
 								   data.getString(Const.FOOD_DRINK_COLUMN_NAME),
 								   data.getInt(Const.FOOD_DRINK_COLUMN_RATING),
 								   data.getString(Const.FOOD_DRINK_COLUMN_DESCRIPTION),
-								   data.getString(Const.FOOD_DRINK_COLUMN_PICTURE)));
+								   data.getString(Const.FOOD_DRINK_COLUMN_PICTURE),
+								   data.getDouble(Const.FOOD_DRINK_COLUMN_PRICE),
+								   data.getDouble(Const.FOOD_DRINK_COLUMN_AMOUNT_SOLD)));
 			}
 		}catch(SQLException e) {
 			e.printStackTrace();

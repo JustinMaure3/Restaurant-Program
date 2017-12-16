@@ -14,6 +14,7 @@ public class Const {
 	public static final String FOOD_DRINK_COLUMN_PICTURE = "picture";
 	public static final String FOOD_DRINK_COLUMN_RATING = "rating";
 	public static final String FOOD_DRINK_COLUMN_PRICE = "price";
+	public static final String FOOD_DRINK_COLUMN_AMOUNT_SOLD = "amountSold";
 	
 	
 }
