@@ -7,6 +7,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.Tab;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontPosture;
 import javafx.scene.text.Text;
@@ -29,6 +30,8 @@ public class HomeTab extends Tab {
 		
 		//HBox containing the title of the restaurant
 		HBox title = new HBox();
+		VBox descriptions = new VBox();
+		VBox pictures = new VBox();
 		
 		//Font specifically for the title
 		Font titleFont = Font.font("Times New Roman", FontPosture.REGULAR, 30);
@@ -41,22 +44,6 @@ public class HomeTab extends Tab {
 		
 		
 		this.setContent(title);
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
 		
 		
 		
