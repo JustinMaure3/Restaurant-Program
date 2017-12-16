@@ -11,6 +11,7 @@ public enum MonthlyStats {
 	JULY,
 	AUGUST,
 	SEPTEMBER,
+	OCTOBER,
 	NOVEMBER,
 	DECEMBER
 	
