@@ -1,3 +1,4 @@
+package PlaceHolder;
 
 public class FoodDrink {
 	//The basic requirements to be a "Food/Drink"
@@ -5,6 +6,18 @@ public class FoodDrink {
 	private int rating;
 	private String description;
 	private String picture;
+	private double price;
+	
+	public FoodDrink() {
+		
+	}
+	
+	public FoodDrink(String name, int rating, String description, String picture) {
+		this.name = name;
+		this.rating = rating;
+		this.description = description;
+		this.picture = picture;
+	}
 	
 	//Getters and setters
 	public String getName() {
@@ -30,6 +43,14 @@ public class FoodDrink {
 	}
 	public void setPicture(String picture) {
 		this.picture = picture;
+	}
+
+	public double getPrice() {
+		return price;
+	}
+
+	public void setPrice(double price) {
+		this.price = price;
 	}
 	
 }
