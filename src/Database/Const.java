@@ -10,6 +10,7 @@ public class Const {
 	public static final String TABLE_FOOD_DRINK = "foodDrink";
 	public static final String FOOD_DRINK_COLUMN_ID = "id";
 	public static final String FOOD_DRINK_COLUMN_NAME = "name";
+	public static final String FOOD_DRINK_COLUMN_DESCRIPTION = "description";
 	public static final String FOOD_DRINK_COLUMN_PICTURE = "picture";
 	public static final String FOOD_DRINK_COLUMN_RATING = "rating";
 	public static final String FOOD_DRINK_COLUMN_PRICE = "price";
