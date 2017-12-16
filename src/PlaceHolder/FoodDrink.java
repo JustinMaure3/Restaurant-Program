@@ -8,25 +8,30 @@ public class FoodDrink {
 	private String description;
 	private String picture;
 	private double price;
+	private double amountSold;
 	
 	//Empty constructor 
 	public FoodDrink() {
 		
 	}
 	//Food and drink constructor with ID
-	public FoodDrink(int ID, String name, int rating, String description, String picture) {
+	public FoodDrink(int ID, String name, int rating, String description, String picture, Double price, Double amountSold) {
 		this.ID = ID;
 		this.name = name;
 		this.rating = rating;
 		this.description = description;
 		this.picture = picture;
+		this.price = price;
+		this.amountSold = amountSold;
 	}
 	//Food and drink constructor without id
-	public FoodDrink(String name, int rating, String description, String picture) {
+	public FoodDrink(String name, int rating, String description, String picture, Double price, Double amountSold) {
 		this.name = name;
 		this.rating = rating;
 		this.description = description;
 		this.picture = picture;
+		this.price = price;
+		this.amountSold = amountSold;
 	}
 	
 	//Getters and setters
@@ -69,6 +74,12 @@ public class FoodDrink {
 
 	public void setID(int iD) {
 		ID = iD;
+	}
+	public double getAmountSold() {
+		return amountSold;
+	}
+	public void setAmountSold(double amountSold) {
+		this.amountSold = amountSold;
 	}
 	
 }
