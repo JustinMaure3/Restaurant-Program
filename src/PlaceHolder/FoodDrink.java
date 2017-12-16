@@ -2,16 +2,26 @@ package PlaceHolder;
 
 public class FoodDrink {
 	//The basic requirements to be a "Food/Drink"
+	private int ID;
 	private String name;
 	private int rating;
 	private String description;
 	private String picture;
 	private double price;
 	
+	//Empty constructor 
 	public FoodDrink() {
 		
 	}
-	
+	//Food and drink constructor with ID
+	public FoodDrink(int ID, String name, int rating, String description, String picture) {
+		this.ID = ID;
+		this.name = name;
+		this.rating = rating;
+		this.description = description;
+		this.picture = picture;
+	}
+	//Food and drink constructor without id
 	public FoodDrink(String name, int rating, String description, String picture) {
 		this.name = name;
 		this.rating = rating;
@@ -51,6 +61,14 @@ public class FoodDrink {
 
 	public void setPrice(double price) {
 		this.price = price;
+	}
+
+	public int getID() {
+		return ID;
+	}
+
+	public void setID(int iD) {
+		ID = iD;
 	}
 	
 }
