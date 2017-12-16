@@ -1,5 +1,6 @@
 package tabs;
 
+import javafx.collections.FXCollections;
 import javafx.geometry.Insets;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Tab;
@@ -15,12 +16,15 @@ public class StatisticsTab extends Tab{
 		GridPane pane = new GridPane();
 		
 		//Text for the ComboBox named monthBox "Monthly Stats"
-		Text monthBox = new Text("Monthly Stats");
-		pane.add(monthBox, 0, 0);
+		Text monthBoxText = new Text("Monthly Stats: ");
+		pane.add(monthBoxText, 0, 0);
 		
 		//ComboBox for the MonthlyStats
 		ComboBox<ENUMS.MonthlyStats> monthComboBox = new ComboBox<>();
 		
+		//Set the months to the monthComboBox
+		monthComboBox.setItems(FXCollections.observableArrayList(ENUMS.MonthlyStats.values()));
+		pane.add(monthComboBox, 1, 0);
 		
 		pane.setPadding(new Insets(10,10,10,10));
 		pane.setVgap(10);
