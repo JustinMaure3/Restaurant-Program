@@ -2,6 +2,7 @@ package tabs;
 
 import javafx.collections.FXCollections;
 import javafx.geometry.Insets;
+import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Tab;
 import javafx.scene.layout.GridPane;
@@ -25,6 +26,9 @@ public class StatisticsTab extends Tab{
 		//Set the months to the monthComboBox
 		monthComboBox.setItems(FXCollections.observableArrayList(ENUMS.MonthlyStats.values()));
 		pane.add(monthComboBox, 1, 0);
+		
+		Button goBtn = new Button("GO");
+		pane.add(goBtn, 0, 1);
 		
 		pane.setPadding(new Insets(10,10,10,10));
 		pane.setVgap(10);
