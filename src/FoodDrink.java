@@ -1,10 +1,20 @@
+import java.awt.image.BufferedImage;
 
-public class FoodDrink {
+public class FoodDrink{
+	
 	//The basic requirements to be a "Food/Drink"
 	private String name;
-	private int rating;
 	private String description;
 	private String picture;
+	private int price;
+	
+	public FoodDrink(String name, int price, String description, String picture){
+		this.name = name;
+		this.description = description;
+		this.picture = picture;
+		this.price = price;
+	}	
+	
 	
 	//Getters and setters
 	public String getName() {
@@ -13,11 +23,11 @@ public class FoodDrink {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public int getRating() {
-		return rating;
+	public int getPrice() {
+		return price;
 	}
-	public void setRating(int rating) {
-		this.rating = rating;
+	public void setPrice(int price) {
+		this.price = price;
 	}
 	public String getDescription() {
 		return description;
