@@ -6,18 +6,6 @@
 		</accessrules>
 	</classpathentry>
 	<classpathentry kind="src" path="src"/>
-<<<<<<< HEAD
 	<classpathentry kind="lib" path="E:/Semester3/Java/mysql-connector-java-5.1.39/mysql-connector-java-5.1.43-bin.jar"/>
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-	<classpathentry kind="lib" path="C:/Users/maxfo/Desktop/Java Project Workspace/mysql-connector-java-5.1.39/mysql-connector-java-5.1.43-bin.jar"/>
-=======
-	<classpathentry kind="lib" path="E:/Semester3/Java/mysql-connector-java-5.1.39/mysql-connector-java-5.1.43-bin.jar"/>
->>>>>>> 8c0d43deb718e6abc47c307fdf322a674229a12a
-=======
-	<classpathentry kind="lib" path="C:/Users/Tomas/Desktop/desktopWorkspace/mysql-connector-java-5.1.39/mysql-connector-java-5.1.43-bin.jar"/>
->>>>>>> staging
->>>>>>> 7e2714924233e8702705dd161cc4b91205563ac7
 	<classpathentry kind="output" path="bin"/>
 </classpath>
