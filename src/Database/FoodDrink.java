@@ -1,7 +1,6 @@
-import java.awt.image.BufferedImage;
+package Database;
 
-public class FoodDrink{
-	
+public class FoodDrink {
 	//The basic requirements to be a "Food/Drink"
 	private String name;
 	private String description;
@@ -13,8 +12,7 @@ public class FoodDrink{
 		this.description = description;
 		this.picture = picture;
 		this.price = price;
-	}	
-	
+	}
 	
 	//Getters and setters
 	public String getName() {
@@ -22,12 +20,6 @@ public class FoodDrink{
 	}
 	public void setName(String name) {
 		this.name = name;
-	}
-	public int getPrice() {
-		return price;
-	}
-	public void setPrice(int price) {
-		this.price = price;
 	}
 	public String getDescription() {
 		return description;
@@ -41,5 +33,12 @@ public class FoodDrink{
 	public void setPicture(String picture) {
 		this.picture = picture;
 	}
+	public int getPrice() {
+		return price;
+	}
+	public void setPrice(int price) {
+		this.price = price;
+	}
 	
+
 }

@@ -1,8 +1,9 @@
 package Database;
 
+import java.sql.Connection;
 import java.sql.SQLException;
 
-import com.mysql.jdbc.Connection;
+
 
 public class Database {
 
