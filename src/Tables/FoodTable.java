@@ -75,14 +75,34 @@ public class FoodTable implements FoodDrinkDAO {
 	//Creating a method to delete an instance of foodDrink class from the database table
 	@Override
 	public void deleteFoodDrink(FoodDrink foodDrink) {
-		
+		String query = "DELETE FROM " + Const.TABLE_FOOD_DRINK + " WHERE " +
+				   Const.FOOD_DRINK_COLUMN_ID + " = " + foodDrink.getID();
+		try {
+			db.getConnection().createStatement().execute(query);
+		} catch(SQLException e) {
+			e.printStackTrace();
+		}
 		
 	}
 
 	//Creating a method to add an instance of foodDrink class to the database table
 	@Override
 	public void createFoodDrink(FoodDrink foodDrink) {
-		
+		String query = "INSERT INTO " + Const.TABLE_FOOD_DRINK + 
+				   "(" + Const.FOOD_DRINK_COLUMN_NAME + "," +
+				   Const.FOOD_DRINK_COLUMN_RATING + "," +
+				   Const.FOOD_DRINK_COLUMN_DESCRIPTION + "," +
+				   Const.FOOD_DRINK_COLUMN_PICTURE + "," +
+				   Const.FOOD_DRINK_COLUMN_PRICE + "," +
+				   Const.FOOD_DRINK_COLUMN_AMOUNT_SOLD + ") values ('"+
+				   foodDrink.getName() + "','" + foodDrink.getRating() + "','" +
+				   foodDrink.getDescription() + "','" + foodDrink.getPicture() + "','" +
+				   foodDrink.getPrice() + "','" + foodDrink.getAmountSold() + "')";
+		try {
+			db.getConnection().createStatement().execute(query);
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}
 		
 	}
 	
