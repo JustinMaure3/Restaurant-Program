@@ -64,6 +64,29 @@ public class FoodTable implements FoodDrinkDAO {
 		return foodItem;
 	}
 	
+	
+	//Creating a method to grab the top fooditem
+		@Override
+		public FoodDrink getTopFoodDrink(int foodSales) {
+			String query = "SELECT FROM " + Const.TABLE_FOOD_DRINK + " WHERE " + 
+					   Const.FOOD_DRINK_COLUMN_AMOUNT_SOLD + " > " + foodSales;
+			FoodDrink foodItem = new FoodDrink();
+			try {
+				Statement getItem = db.getConnection().createStatement();
+				ResultSet data = getItem.executeQuery(query);
+				data.next();
+				foodItem = new FoodDrink(data.getInt(Const.FOOD_DRINK_COLUMN_ID),
+						   data.getString(Const.FOOD_DRINK_COLUMN_NAME),
+						   data.getInt(Const.FOOD_DRINK_COLUMN_RATING),
+						   data.getString(Const.FOOD_DRINK_COLUMN_DESCRIPTION),
+						   data.getString(Const.FOOD_DRINK_COLUMN_PICTURE),
+						   data.getDouble(Const.FOOD_DRINK_COLUMN_PRICE),
+						   data.getDouble(Const.FOOD_DRINK_COLUMN_AMOUNT_SOLD));
+			}catch(SQLException e) {
+				e.printStackTrace();
+			}
+			return foodItem;
+		}
 
 	//Creating method to update an instance of foodDrink class in the database table
 	@Override
@@ -105,6 +128,8 @@ public class FoodTable implements FoodDrinkDAO {
 		}
 		
 	}
+	
+	
 	
 	
 }
