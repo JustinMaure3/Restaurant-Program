@@ -17,21 +17,19 @@ public class HomeTab extends Tab {
 	public HomeTab() {
 		this.setText("Home");
 		
-		//Restaurant name and the name of the popular food
+		//Restaurant name and the popular foodname and employee of the month 
 		Text restName = new Text("Dinner Diner");
 		Text popName = new Text();
+		Text empName = new Text();
 		
-		//Buttons that will let you go through the foods
-		Button next = new Button("Next");
-		Button prev = new Button("Prev");
-		
-		//description of the Restaurant
-		Text desc = new Text();
+		//Tip for the restaurant
+		Text tipText = new Text();
 		
 		//HBox containing the title of the restaurant
+		VBox main = new VBox();
 		HBox title = new HBox();
-		VBox descriptions = new VBox();
-		VBox pictures = new VBox();
+		HBox empFood = new HBox();
+		HBox tip = new HBox();
 		
 		//Font specifically for the title
 		Font titleFont = Font.font("Times New Roman", FontPosture.REGULAR, 30);
