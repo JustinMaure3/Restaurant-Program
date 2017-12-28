@@ -1,5 +1,7 @@
 package tabs;
 
+import java.util.Random;
+
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -22,8 +24,27 @@ public class HomeTab extends Tab {
 		Text popName = new Text("TOP FOOD TEST");//Here would grab the most popular food item name
 		Text empName = new Text("TOP EMPLOYEE TEST");
 		
+		Random r = new Random();
+		
+		int randomTip = r.nextInt(2);
+		
+
 		//Tip for the restaurant
 		Text tipText = new Text("RANDOM TIP I WILL BE GENERATING VERY SHORTLY");
+		
+		switch(randomTip){
+		case 0:
+			tipText = new Text("TESTING 1");
+			break;
+			
+		case 1:
+			tipText = new Text("TESTING 2");
+			break;
+			
+			default:
+				tipText = new Text("DEFAULT TEST");
+				break;
+		}
 		
 		//HBox containing the title of the restaurant
 		VBox main = new VBox();
@@ -49,6 +70,8 @@ public class HomeTab extends Tab {
 		empFood.getChildren().addAll(Vemp, Vfood);
 		empFood.setAlignment(Pos.CENTER);
 		
+		
+		tip.getChildren().add(tipText);
 		
 		//Everything will be added to the main and it will go from top to bottom
 		main.getChildren().addAll(title,empFood,tip);
