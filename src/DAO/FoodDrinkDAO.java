@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import PlaceHolder.FoodDrink;
 
 public interface FoodDrinkDAO {
-	//Everything we want to do with the database
+	//Everything we want to do with the able
 	//Get all
 	public ArrayList<FoodDrink> getAllFoodDrink();
 	//Get 1

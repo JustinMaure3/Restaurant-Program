@@ -3,8 +3,10 @@ package tabs;
 import javafx.scene.control.Tab;
 
 public class MenuTab extends Tab {
+	
+	private static MenuTab tab;
 
-	public MenuTab() { 
+	private MenuTab() { 
 
  		this.setText("Menu"); 
 
@@ -50,4 +52,10 @@ public class MenuTab extends Tab {
 
  
  } 
+	public static MenuTab getInstance() {
+		if(tab == null) {
+			tab = new MenuTab();
+		}
+		return tab;
+	}
 }

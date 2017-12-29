@@ -20,9 +20,9 @@ import javafx.scene.text.Text;
 
 public class StatisticsTab extends Tab{
 
+	private static StatisticsTab tab;
 
-
-	public StatisticsTab() {
+	private StatisticsTab() {
 
 		this.setText("Statistics");
 
@@ -70,6 +70,12 @@ public class StatisticsTab extends Tab{
 
 		this.setContent(pane);
 
+	}
+	public static StatisticsTab getInstance() {
+		if(tab == null) {
+			tab = new StatisticsTab();
+		}
+		return tab;
 	}
 
 }
