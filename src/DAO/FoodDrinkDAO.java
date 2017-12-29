@@ -16,5 +16,6 @@ public interface FoodDrinkDAO {
 	public void deleteFoodDrink(FoodDrink foodDrink);
 	//Create
 	public void createFoodDrink(FoodDrink foodDrink);
+	FoodDrink getTopFoodDrink(int foodSales);
 	
 }
