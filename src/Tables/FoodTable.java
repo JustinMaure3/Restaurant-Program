@@ -133,13 +133,6 @@ public class FoodTable implements FoodDrinkDAO {
 		}
 		
 	}
-
-	//Create a method to get the most popular food and drink (highest amount sold)
-	@Override
-	public FoodDrink getTopFoodDrink(int foodSales) {
-		// TODO Auto-generated method stub
-		return null;
-	}
 	
 	
 	
