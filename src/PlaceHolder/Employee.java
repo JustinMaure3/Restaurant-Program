@@ -3,33 +3,11 @@ package PlaceHolder;
 public class Employee {
 //The basic requirements to be a employee
 	//ID,NAME,WAGE,UNIFORM
-	private int ID;
-	private String name;
-	private double wage;
-	private String uniform;
-	private String position;
-	
-	//Empty constructor for empolyee
-	public Employee() {
-		
-	}
-	
-	//Employee constructor with ID
-	public Employee(int ID, String name, double wage, String uniform, String position) {
-		this.ID = ID;
-		this.name = name;
-		this.wage = wage;
-		this.uniform = uniform;
-		this.position = position;
-	}
-	
-	//Employee constructor without ID
-	public Employee(String name, double wage, String uniform, String position) {
-		this.name = name;
-		this.wage = wage;
-		this.uniform = uniform;
-		this.position = position;
-	}
+	protected int ID;
+	protected String name;
+	protected double wage;
+	protected String uniform;
+	protected String position;
 	
 	//Getters and setters for employee
 	public int getID() {
