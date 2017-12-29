@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import PlaceHolder.FoodDrink;
 import Tables.FoodTable;
 import javafx.collections.FXCollections;
+import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.control.Tab;
 import javafx.scene.layout.BorderPane;
@@ -30,8 +31,14 @@ public class RemoveItemTab extends Tab {
 		pane.setCenter(list);
 		
 		
-		
-		
+		//Create the remove button
+		Button remove = new Button("Remove");
+		remove.setOnAction(e->{
+			FoodDrink foodItem = list.getSelectionModel().getSelectedItem();
+			fTable.deleteFoodDrink(foodItem);
+			list.setItems(FXCollections.observableArrayList(fTable.getAllFoodDrink()));
+		});
+		pane.setBottom(remove);
 		
 	}
 	public static RemoveItemTab getInstance() {
