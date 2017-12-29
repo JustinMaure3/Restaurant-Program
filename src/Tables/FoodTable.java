@@ -14,6 +14,11 @@ public class FoodTable implements FoodDrinkDAO {
 
 	//Creating an instance of the database
 	Database db = Database.getInstance();
+	
+	//Add a construct
+	public FoodTable() {
+		
+	}
 
 	//Creating a method to get all instances of foodDrink class within the table
 	@Override
