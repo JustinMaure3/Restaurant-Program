@@ -9,7 +9,7 @@ public class Employee {
 	private String uniform;
 	private String position;
 	
-	//Empty constructor for emplyee
+	//Empty constructor for empolyee
 	public Employee() {
 		
 	}
