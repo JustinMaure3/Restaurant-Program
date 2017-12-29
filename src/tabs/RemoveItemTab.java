@@ -40,6 +40,8 @@ public class RemoveItemTab extends Tab {
 		});
 		pane.setBottom(remove);
 		
+		
+		this.setContent(pane);
 	}
 	public static RemoveItemTab getInstance() {
 		if(tab == null) {
