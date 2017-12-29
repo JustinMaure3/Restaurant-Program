@@ -14,6 +14,11 @@ public class FoodTable implements FoodDrinkDAO {
 
 	//Creating an instance of the database
 	Database db = Database.getInstance();
+	
+	//Add a construct
+	public FoodTable() {
+		
+	}
 
 	//Creating a method to get all instances of foodDrink class within the table
 	@Override
@@ -104,6 +109,13 @@ public class FoodTable implements FoodDrinkDAO {
 			e.printStackTrace();
 		}
 		
+	}
+
+	//Create a method to get the most popular food and drink (highest amount sold)
+	@Override
+	public FoodDrink getTopFoodDrink(int foodSales) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 	
 	
