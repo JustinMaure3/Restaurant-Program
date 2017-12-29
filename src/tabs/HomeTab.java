@@ -15,8 +15,10 @@ import javafx.scene.text.FontPosture;
 import javafx.scene.text.Text;
 
 public class HomeTab extends Tab {
+	
+	private static HomeTab tab;
 
-	public HomeTab() {
+	private HomeTab() {
 		this.setText("Home");
 		
 		//Restaurant name and the popular foodname and employee of the month 
@@ -81,6 +83,13 @@ public class HomeTab extends Tab {
 		
 		
 		
+	}
+	
+	public static HomeTab getInstance() {
+		if(tab == null) {
+			tab = new HomeTab();
+		}
+		return tab;
 	}
 	
 }

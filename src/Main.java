@@ -40,12 +40,12 @@ public class Main extends Application {
 		//Create Tab Pane
 		TabPane tpane = new TabPane();
 		tpane.setTabClosingPolicy(TabClosingPolicy.UNAVAILABLE);
-		HomeTab htab = new HomeTab();
-		MenuTab mtab = new MenuTab();
-		AddItemTab addTab = new AddItemTab();
-		RemoveItemTab removeTab = new RemoveItemTab();
-		UpdateItemTab updateTab = new UpdateItemTab();
-		StatisticsTab stab = new StatisticsTab();
+		HomeTab htab = HomeTab.getInstance();
+		MenuTab mtab = MenuTab.getInstance();
+		AddItemTab addTab = AddItemTab.getInstance();
+		RemoveItemTab removeTab = RemoveItemTab.getInstance();
+		UpdateItemTab updateTab = UpdateItemTab.getInstance();
+		StatisticsTab stab = StatisticsTab.getInstance();
 		tpane.getTabs().addAll(htab, mtab, addTab, removeTab, updateTab, stab);
 		
 		//Setting up the main page

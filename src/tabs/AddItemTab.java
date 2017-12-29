@@ -11,7 +11,10 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.text.Text;
 
 public class AddItemTab extends Tab{
-	public AddItemTab() {
+	
+	private static AddItemTab tab;
+	
+	private AddItemTab() {
 		this.setText("Add Item");
 		//create the layout view
 		GridPane pane = new GridPane();
@@ -75,6 +78,13 @@ public class AddItemTab extends Tab{
 		
 		
 		this.setContent(pane);
+	}
+	
+	public static AddItemTab getInstance() {
+		if(tab == null) {
+			tab = new AddItemTab();
+		}
+		return tab;
 	}
 
 }
