@@ -12,8 +12,10 @@ import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 
 public class MenuTab extends Tab {
+	
+	private static MenuTab tab;
 
-	public MenuTab() {
+	private MenuTab() {
 		this.setText("Menu");
 		
 		//Create the panes necessary for this tab
@@ -57,6 +59,12 @@ public class MenuTab extends Tab {
 		
 		//Set the pane to the scene
 		this.setContent(pane);
-		
+	
+	public static MenuTab getInstance() {
+		if(tab == null) {
+			tab = new MenuTab();
+		}
+		return tab;
+
 	}
 }
