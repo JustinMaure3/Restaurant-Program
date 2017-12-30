@@ -1,0 +1,52 @@
+.root{
+
+    -fx-background-color: #f5c600;
+
+    -fx-font-family: helvetica;
+
+}
+.button {
+
+    -fx-background-color: #9b4923;
+
+    -fx-background-radius: 5;
+
+    -fx-border-color:#000000;
+
+    -fx-border-radius: 5;
+
+    -fx-text-fill: #ffffff;
+
+}
+
+
+
+.button:hover {
+
+    -fx-background-color: #c21703;
+
+}
+
+
+
+.tab {
+
+    -fx-background-color: #007291;
+
+}
+
+
+
+.tab:hover {
+
+    -fx-background-color: #00BCEF;
+
+}
+
+
+
+.tab:active {
+
+    -fx-background-color: #f5c600;
+
+}
