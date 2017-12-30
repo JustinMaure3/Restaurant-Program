@@ -2,11 +2,36 @@ package PlaceHolder;
 
 public class StoreLocations {
 	//Location, Sanatation score, RegionalManager, customerReview
+	private int ID;
 	private String location;
 	private int santScore;
 	private String regionalMan;
 	private int custReview;
 	
+	
+	//Empty construct for store locations
+		public StoreLocations() {
+			
+		}
+		
+		//Store locations constructor constructor with ID
+		public StoreLocations(int ID, String location, int santScore, String regionalMan, int custReview) {
+			this.ID = ID;
+			this.location = location;
+			this.santScore = santScore;
+			this.regionalMan = regionalMan;
+			this.custReview = custReview;
+		}
+		
+		//Store locations constructor without ID
+		public StoreLocations( String location, int santScore, String regionalMan, int custReview) {
+			this.location = location;
+			this.santScore = santScore;
+			this.regionalMan = regionalMan;
+			this.custReview = custReview;
+		}
+		
+		
 	public String getLocation() {
 		return location;
 	}
