@@ -37,8 +37,9 @@ public class Main extends Application {
 		fileMenu.getItems().add(exit);
 		
 		//Adding menu items to themes menu
-		MenuItem seventies = new MenuItem("Seventies");
-		themes.getItems().add(seventies);
+		MenuItem seventies = new MenuItem("70's");
+		MenuItem nineties = new MenuItem("90's");
+		themes.getItems().addAll(seventies, nineties);
 		
 
 														
@@ -67,7 +68,15 @@ public class Main extends Application {
 		seventies.setOnAction(e->{
 			scene.getStylesheets().add("Themes/seventiesTheme.css");
 		});
+		
+		//Set the 90's theme when clicked on in the menu menu
+		nineties.setOnAction(e->{
+			scene.getStylesheets().add("Themes/ninetiesTheme.css");
+		});
 
+		//Default theme for the application
+		scene.getStylesheets().add("Themes/defaultTheme.css");
+		
 		//Mainstage is set up
 		mainStage = primaryStage;
 		mainStage.setResizable(false);
