@@ -24,10 +24,10 @@ public class RemoveItemTab extends Tab {
 		//Create a food table
 		FoodTable fTable = new FoodTable();
 		//Create the array that'll give us all foodDrink in our database
-		ArrayList<FoodDrink> foodDrinkItems = fTable.getAllFoodDrink();
+//		ArrayList<FoodDrink> foodDrinkItems = fTable.getAllFoodDrink();
 		
 		//set the list with all the items in the arraylist
-		list.setItems(FXCollections.observableArrayList(foodDrinkItems));
+//		list.setItems(FXCollections.observableArrayList(foodDrinkItems));
 		pane.setCenter(list);
 		
 		
