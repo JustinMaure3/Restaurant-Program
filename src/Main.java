@@ -29,13 +29,20 @@ public class Main extends Application {
 		MenuBar menu = new MenuBar();
 		Menu fileMenu = new Menu("File");
 		Menu creditsMenu = new Menu("Credits");
+		Menu themes = new Menu("Themes");
 														
 		//Adding menu items to file menu
 		MenuItem exit = new MenuItem("Exit");
 		fileMenu.getItems().add(exit);
+		
+		//Adding menu items to themes menu
+		MenuItem seventies = new MenuItem("Seventies");
+		themes.getItems().add(seventies);
+		
+
 														
 		//Adding menus into the menuBar
-		menu.getMenus().addAll(fileMenu, creditsMenu);
+		menu.getMenus().addAll(fileMenu, creditsMenu, themes);
 								
 		//Create Tab Pane
 		TabPane tpane = new TabPane();
@@ -53,7 +60,12 @@ public class Main extends Application {
 		bpane.setTop(menu);
 		bpane.setCenter(tpane);
 		Scene scene = new Scene(bpane, 1024, 768);
-		scene.getStylesheets().add("seventiesTheme.css");
+		
+		//Set theme when clicked on in the theme menu
+		seventies.setOnAction(e->{
+			scene.getStylesheets().add("seventiesTheme.css");
+		});
+
 		
 		
 		//Mainstage is set up
