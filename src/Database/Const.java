@@ -26,13 +26,13 @@ public class Const {
 		public static final String CREWMEMBER_COLUMN_CREWMEMBERPUNCHIN = "crewmemberpunchin";
 		public static final String CREWMEMBER_COLUMN_CREWMEMBERGOLDSTAR = "crewmembergoldstar";
 		
-//		//Creating constants for the employee table
-//				public static final String TABLE_EMPLOYEE = "employees";
-//				public static final String EMPLOYEE_COLUMN_ID = "id";
-//				public static final String EMPLOYEE_COLUMN_NAME = "name";
-//				public static final String EMPLOYEE_COLUMN_WAGE = "wage";
-//				public static final String EMPLOYEE_COLUMN_UNIFORM = "uniform";
-//				public static final String EMPLOYEE_COLUMN_POSITION = "position";
-//				public static final String EMPLOYEE_COLUMN_CREWMEMBERPUNCHIN = "crewmemberpunchin";
-//				public static final String EMPLOYEE_COLUMN_CREWMEMBERGOLDSTAR = "crewmembergoldstar";
+		//Creating constants for the employee table
+				public static final String TABLE_MANAGER = "employees";
+				public static final String MANAGER_COLUMN_ID = "id";
+				public static final String MANAGER_COLUMN_NAME = "name";
+				public static final String MANAGER_COLUMN_WAGE = "wage";
+				public static final String MANAGER_COLUMN_UNIFORM = "uniform";
+				public static final String MANAGER_COLUMN_POSITION = "position";
+				public static final String MANAGER_COLUMN_MANAGERID= "managerID";
+				public static final String MANAGER_COLUMN_MANAGERSAFECODE = "managersafecode";
 }
