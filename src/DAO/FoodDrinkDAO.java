@@ -8,7 +8,10 @@ public interface FoodDrinkDAO {
 	//Everything we want to do with the database
 	
 	//Get all
-	public ArrayList<FoodDrink> getAllFoodDrink();
+	public ArrayList<FoodDrink> getAllFoodDrink() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
 	//Get 1
 	public FoodDrink getFoodDrink(int itemID);
