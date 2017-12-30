@@ -2,9 +2,15 @@ package PlaceHolder;
 
 public class CrewMember extends Employee {
 	//Adding private ints for managerID and their safe code
-		private int crewMemberPunchIn;
-		private int crewMemberGoldStar;
+		protected int crewMemberPunchIn;
+		protected int crewMemberGoldStar;
 		
+		
+		public CrewMember(){
+			
+		}
+		
+
 		//Manager constructor with ID
 		public CrewMember(int ID, String name, double wage, String uniform, String position, int crewMemberPunchIn, int crewMemberGoldStar) {
 			this.ID = ID;
@@ -24,4 +30,27 @@ public class CrewMember extends Employee {
 			this.crewMemberPunchIn = crewMemberPunchIn;
 			this.crewMemberGoldStar = crewMemberGoldStar;
 		}
+		
+		
+
+		
+		public int getCrewMemberPunchIn() {
+			return crewMemberPunchIn;
+		}
+
+
+		public void setCrewMemberPunchIn(int crewMemberPunchIn) {
+			this.crewMemberPunchIn = crewMemberPunchIn;
+		}
+
+
+		public int getCrewMemberGoldStar() {
+			return crewMemberGoldStar;
+		}
+
+
+		public void setCrewMemberGoldStar(int crewMemberGoldStar) {
+			this.crewMemberGoldStar = crewMemberGoldStar;
+		}
+
 }
