@@ -65,12 +65,9 @@ public class Main extends Application {
 		
 		//Set theme when clicked on in the theme menu
 		seventies.setOnAction(e->{
-			scene.getStylesheets().add("seventiesTheme.css");
+			scene.getStylesheets().add("Themes/seventiesTheme.css");
 		});
-		
-		
-		//Adding theme
-		scene.getStylesheets().add("Themes/seventiesTheme.css"); 
+
 		//Mainstage is set up
 		mainStage = primaryStage;
 		mainStage.setResizable(false);
