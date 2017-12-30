@@ -4,7 +4,7 @@ package tabs;
 
 import Tables.FoodTable;
 import javafx.collections.FXCollections;
-
+import javafx.collections.ObservableList;
 import javafx.geometry.Insets;
 import javafx.scene.chart.PieChart;
 import javafx.scene.control.Button;
@@ -52,29 +52,26 @@ public class StatisticsTab extends Tab{
 		return tab;
 	}
 	
-	
-	public static PieChart generateChart() {
-		FoodTable table = new FoodTable();
-		
+	//Pie chart for the month of January
+	public static PieChart januaryPieChart() {	
 		int january;
-		int februray;
-		int march;
-		int april;
-		int may;
-		int june;
-		int july;
-		int august;
-		int september;
-		int october;
-		int november;
-		int december;
-		
-		
-		
+
 		PieChart pieChart = new PieChart();
-		pieChart.setTitle("Monthl Earnings");
+		pieChart.setTitle("January Earnings");
 		pieChart.setLabelsVisible(true);
-		return null;
+		return pieChart;
+	}
+	
+	
+	//Pie chart for the month of February
+	public static PieChart februaryPieChart() {
+		int february;
+				
+		PieChart pieChart = new PieChart();
+		pieChart.setTitle("January Earnings");
+		pieChart.setLabelsVisible(true);
+		return pieChart;
+		
 	}
 	
 	
