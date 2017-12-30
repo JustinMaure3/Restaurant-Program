@@ -21,7 +21,7 @@ public class AddItemTab extends Tab{
 		GridPane pane = new GridPane();
 		
 		//Create insert name row
-		Text nameText = new Text("Name:");
+		Text nameText = new Text("Name of Food:");
 		TextField name = new TextField();
 		pane.add(nameText, 0, 0);
 		pane.add(name, 1, 0);
@@ -76,6 +76,46 @@ public class AddItemTab extends Tab{
 			fTable.createFoodDrink(food);
 		});
 		pane.add(submitButton, 1, 6);
+		
+		//Add an employee form
+		
+		//Create insert employee name row
+		Text enameText = new Text("Employee Name:");
+		TextField ename = new TextField();
+		pane.add(enameText, 10, 0);
+		pane.add(ename, 11, 0);
+		
+		//Create insert position row
+		Text positionText = new Text("Position:");
+		
+		pane.add(positionText, 10, 1);
+		
+		//Create insert uniform row
+		Text uniformText = new Text("Uniform:");
+		
+		pane.add(uniformText, 10, 2);
+		
+		//Create insert wage row
+		Text wageText = new Text("Wage:");
+		
+		pane.add(wageText, 10, 3);
+		
+		//Create insert punch in row
+		Text punchInText = new Text("Punch In:");
+		
+		pane.add(punchInText, 10, 4);
+		
+		//Create gold star row
+		Text goldStarText = new Text("Gold Star:");
+		
+		pane.add(goldStarText, 10, 5);
+		
+		//Create add employee button
+		Button eSubmit = new Button("Add Employee");
+		eSubmit.setOnAction(e->{
+			
+		});
+		pane.add(eSubmit, 11, 6);
 		
 		pane.setPadding(new Insets(10, 10, 10, 10));
 		pane.setVgap(10);
