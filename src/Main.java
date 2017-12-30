@@ -45,6 +45,7 @@ public class Main extends Application {
 		//Adding menus into the menuBar
 		menu.getMenus().addAll(fileMenu, creditsMenu, themes);
 								
+		
 		//Create Tab Pane
 		TabPane tpane = new TabPane();
 		tpane.setTabClosingPolicy(TabClosingPolicy.UNAVAILABLE);
@@ -66,9 +67,10 @@ public class Main extends Application {
 		seventies.setOnAction(e->{
 			scene.getStylesheets().add("seventiesTheme.css");
 		});
-
 		
 		
+		//Adding theme
+		scene.getStylesheets().add("Themes/seventiesTheme.css"); 
 		//Mainstage is set up
 		mainStage = primaryStage;
 		mainStage.setResizable(false);
