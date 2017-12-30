@@ -29,6 +29,7 @@ public class Main extends Application {
 		MenuBar menu = new MenuBar();
 		Menu fileMenu = new Menu("File");
 		Menu creditsMenu = new Menu("Credits");
+		
 														
 		//Adding menu items to file menu
 		MenuItem exit = new MenuItem("Exit");
