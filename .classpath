@@ -1,20 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-<<<<<<< HEAD
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="lib" path="C:/Users/IceOf/Desktop/RestaurantApp/New_Compressed_zipped_Folder/mysql-connector-java-5.1.39/mysql-connector-java-5.1.43-bin.jar"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER">
-=======
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8">
->>>>>>> 105fca3e5a310d9e6f6ad9e6a8c416cf67dedb4b
-		<accessrules>
-			<accessrule kind="accessible" pattern="JavaFX/**"/>
-		</accessrules>
-	</classpathentry>
-<<<<<<< HEAD
-=======
-	<classpathentry kind="src" path="src"/>
-	<classpathentry kind="lib" path="E:/Semester3/Java/mysql-connector-java-5.1.39/mysql-connector-java-5.1.43-bin.jar"/>
->>>>>>> 105fca3e5a310d9e6f6ad9e6a8c416cf67dedb4b
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
