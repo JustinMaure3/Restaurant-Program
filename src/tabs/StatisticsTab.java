@@ -43,6 +43,9 @@ public class StatisticsTab extends Tab{
 		pane.setVgap(10);
 		pane.setHgap(10);
 		this.setContent(pane);
+		
+		goBtn.setOnAction(e->{
+		});
 
 	}
 	public static StatisticsTab getInstance() {
