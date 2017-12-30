@@ -74,6 +74,9 @@ public class Main extends Application {
 			scene.getStylesheets().add("Themes/ninetiesTheme.css");
 		});
 
+		//Default theme for the application
+		scene.getStylesheets().add("Themes/defaultTheme.css");
+		
 		//Mainstage is set up
 		mainStage = primaryStage;
 		mainStage.setResizable(false);
