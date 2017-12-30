@@ -36,4 +36,11 @@ public class Const {
 		public static final String MANAGER_COLUMN_POSITION = "position";
 		public static final String MANAGER_COLUMN_MANAGERID= "managerID";
 		public static final String MANAGER_COLUMN_MANAGERSAFECODE = "managersafecode";
+		
+		//Creating constants for the store locations table
+		public static final String TABLE_STORELOCATIONS = "storelocations";
+		public static final String STORELOCATIONS_COLUMN_ID = "id";
+		public static final String STORELOCATIONS_COLUMN_LOCATION = "location";
+		public static final String STORELOCATIONS_COLUMN_REGIONALMAN = "regionalman";
+		public static final String STORELOCATIONS_COLUMN_CUSTREVIEW = "custreview";
 }
