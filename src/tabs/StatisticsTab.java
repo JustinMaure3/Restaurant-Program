@@ -4,7 +4,7 @@ package tabs;
 
 import Tables.FoodTable;
 import javafx.collections.FXCollections;
-
+import javafx.collections.ObservableList;
 import javafx.geometry.Insets;
 import javafx.scene.chart.PieChart;
 import javafx.scene.control.Button;
@@ -52,29 +52,136 @@ public class StatisticsTab extends Tab{
 		return tab;
 	}
 	
-	
-	public static PieChart generateChart() {
-		FoodTable table = new FoodTable();
-		
+	//Pie chart for the month of January
+	public static PieChart januaryPieChart() {	
 		int january;
-		int februray;
-		int march;
-		int april;
-		int may;
-		int june;
-		int july;
-		int august;
-		int september;
-		int october;
-		int november;
-		int december;
-		
-		
-		
+
 		PieChart pieChart = new PieChart();
-		pieChart.setTitle("Monthl Earnings");
+		pieChart.setTitle("January");
 		pieChart.setLabelsVisible(true);
-		return null;
+		return pieChart;
+	}
+	
+	
+	//Pie chart for the month of February
+	public static PieChart februaryPieChart() {
+		int february;
+				
+		PieChart pieChart = new PieChart();
+		pieChart.setTitle("February");
+		pieChart.setLabelsVisible(true);
+		return pieChart;
+		
+	}
+	
+	//Pie chart for the month of March
+	public static PieChart marchPieChart() {
+		int march;
+				
+		PieChart pieChart = new PieChart();
+		pieChart.setTitle("March");
+		pieChart.setLabelsVisible(true);
+		return pieChart;
+		
+	}
+	
+	//Pie chart for the month of April
+	public static PieChart aprilPieChart() {
+		int paril;
+				
+		PieChart pieChart = new PieChart();
+		pieChart.setTitle("April");
+		pieChart.setLabelsVisible(true);
+		return pieChart;
+		
+	}
+	
+	//Pie chart for the month of May
+	public static PieChart mayPieChart() {
+		int may;
+				
+		PieChart pieChart = new PieChart();
+		pieChart.setTitle("May");
+		pieChart.setLabelsVisible(true);
+		return pieChart;
+		
+	}
+	
+	//Pie chart for the month of June
+	public static PieChart junePieChart() {
+		int june;
+				
+		PieChart pieChart = new PieChart();
+		pieChart.setTitle("June");
+		pieChart.setLabelsVisible(true);
+		return pieChart;
+		
+	}
+	
+	//Pie chart for the month of July
+	public static PieChart julyPieChart() {
+		int july;
+				
+		PieChart pieChart = new PieChart();
+		pieChart.setTitle("July");
+		pieChart.setLabelsVisible(true);
+		return pieChart;
+		
+	}
+	
+	//Pie chart for the month of August
+	public static PieChart augustPieChart() {
+		int august;
+				
+		PieChart pieChart = new PieChart();
+		pieChart.setTitle("August");
+		pieChart.setLabelsVisible(true);
+		return pieChart;
+		
+	}
+	
+	//Pie chart for the month of September
+	public static PieChart septemberPieChart() {
+		int september;
+				
+		PieChart pieChart = new PieChart();
+		pieChart.setTitle("September");
+		pieChart.setLabelsVisible(true);
+		return pieChart;
+		
+	}
+	
+	//Pie chart for the month of October
+	public static PieChart octoberPieChart() {
+		int october;
+				
+		PieChart pieChart = new PieChart();
+		pieChart.setTitle("October");
+		pieChart.setLabelsVisible(true);
+		return pieChart;
+		
+	}
+	
+	//Pie chart for the month of November
+	public static PieChart novemberPieChart() {
+		int november;
+				
+		PieChart pieChart = new PieChart();
+		pieChart.setTitle("November");
+		pieChart.setLabelsVisible(true);
+		return pieChart;
+		
+	}
+	
+	//Pie chart for the month of December
+	public static PieChart decemberPieChart() {
+		int december;
+				
+		PieChart pieChart = new PieChart();
+		pieChart.setTitle("December");
+		pieChart.setLabelsVisible(true);
+		return pieChart;
+		
 	}
 	
 	

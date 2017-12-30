@@ -2,8 +2,13 @@ package PlaceHolder;
 
 public class Manager extends Employee {
 	//Adding private ints for managerID and their safe code
-	private int managerID;
-	private int managerSafeCode;
+	protected int managerID;
+	protected int managerSafeCode;
+	
+	//Empty construct for manager
+	public Manager() {
+		
+	}
 	
 	//Manager constructor with ID
 	public Manager(int ID, String name, double wage, String uniform, String position, int managerID, int managerSafeCode) {
@@ -24,4 +29,19 @@ public class Manager extends Employee {
 		this.managerID = managerID;
 		this.managerSafeCode = managerSafeCode;
 	}
+	
+	public int getManagerID() {
+		return managerID;
+	}
+	public void setManagerID(int managerID) {
+		this.managerID = managerID;
+	}
+	public int getManagerSafeCode() {
+		return managerSafeCode;
+	}
+	public void setManagerSafeCode(int managerSafeCode) {
+		this.managerSafeCode = managerSafeCode;
+	}
+	
+	
 }
