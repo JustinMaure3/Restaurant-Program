@@ -57,7 +57,7 @@ public class StatisticsTab extends Tab{
 		int january;
 
 		PieChart pieChart = new PieChart();
-		pieChart.setTitle("January Earnings");
+		pieChart.setTitle("January");
 		pieChart.setLabelsVisible(true);
 		return pieChart;
 	}
@@ -68,7 +68,29 @@ public class StatisticsTab extends Tab{
 		int february;
 				
 		PieChart pieChart = new PieChart();
-		pieChart.setTitle("January Earnings");
+		pieChart.setTitle("February");
+		pieChart.setLabelsVisible(true);
+		return pieChart;
+		
+	}
+	
+	//Pie chart for the month of March
+	public static PieChart marchPieChart() {
+		int march;
+				
+		PieChart pieChart = new PieChart();
+		pieChart.setTitle("March");
+		pieChart.setLabelsVisible(true);
+		return pieChart;
+		
+	}
+	
+	//Pie chart for the month of April
+	public static PieChart aprilPieChart() {
+		int paril;
+				
+		PieChart pieChart = new PieChart();
+		pieChart.setTitle("April");
 		pieChart.setLabelsVisible(true);
 		return pieChart;
 		
