@@ -3,6 +3,7 @@ package tabs;
 import java.util.ArrayList;
 
 import PlaceHolder.FoodDrink;
+import Tables.FoodTable;
 import javafx.scene.control.Tab;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
@@ -21,35 +22,40 @@ public class MenuTab extends Tab {
 		VBox menu = new VBox();
 				
 		
-		//Get an arraylist of all the database contents.
+		//Create an arraylist
+		FoodTable menuItems = new FoodTable();
 		
-		ArrayList<FoodDrink> menuItems = new ArrayList<FoodDrink>(FoodDrink.getAllFoodDrink());			
+		//Populate the arraylist with the database contents
+		ArrayList<FoodDrink> foodDrinkItems = menuItems.getAllFoodDrink();			
 		
 		//Loop to set the contents of the arraylist to their own panes
 		int i = 0;
-		while(i < menuItems.length()){
+		while(i < foodDrinkItems.size()){
 			
 			//Create an HBox to hold the information about the current food item
 			HBox newItem = new HBox();
 			
 			//Create objects to hold the food's information and then add them to the HBox
-			Text name = new Text(menuItems(i).getName());
-			Text rating = new Text(menuItems(i).getRating());
-			Text description = new Text(menuItems(i).getDescription());
-			ImageView picture = new ImageView(menuItems(i).getPicture());
-			Text price = new Text(menuItems(i).getPrice());
-			Text amountSold = new Text(menuItems(i).getAmountSold());
+			Text name = new Text(foodDrinkItems.get(i).getName());
+			Text rating = new Text(foodDrinkItems.get(i).getRating() + "");
+			Text description = new Text(foodDrinkItems.get(i).getDescription());
+			ImageView picture = new ImageView(foodDrinkItems.get(i).getPicture());
+			Text price = new Text(foodDrinkItems.get(i).getPrice() + "");
+			Text amountSold = new Text(foodDrinkItems.get(i).getAmountSold() + "");
 			
 			//Add all of the info into the hbox
-			newItem.addAll(name, rating, description, picture, price, amountSold);
+			newItem.getChildren().addAll(name, rating, description, picture, price, amountSold);
 			
 			//Add the HBox to the VBox
-			menu.add(newItem);
+			menu.getChildren().add(newItem);
 			//Increment i
 			i++;
 		}
 		
-		//set the panes to the scene
+		//Add the menu to the main pane
+		pane.getChildren().add(menu);
+		
+		//Set the pane to the scene
 		this.setContent(pane);
 		
 	}
