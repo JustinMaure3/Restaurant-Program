@@ -25,7 +25,6 @@ public class Main extends Application {
 
 	@Override
 	public void start(Stage primaryStage) throws Exception {
-
 		//Setting up a Menu bar
 		MenuBar menu = new MenuBar();
 		Menu fileMenu = new Menu("File");
@@ -54,10 +53,8 @@ public class Main extends Application {
 		bpane.setTop(menu);
 		bpane.setCenter(tpane);
 		Scene scene = new Scene(bpane, 1024, 768);
-
-
-		//Main stage is set up
-
+		
+		//Mainstage is set up
 		mainStage = primaryStage;
 		mainStage.setResizable(false);
 		mainStage.setScene(scene);

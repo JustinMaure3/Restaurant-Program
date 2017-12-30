@@ -109,6 +109,7 @@ public class CrewMemberTable {
 			}
 			
 		}
+
 		//Creating a method to add an instance of the crewMember class to the database table
 		public void createCrewMember(CrewMember crewMember) {
 			String query = "INSERT INTO " + Const.TABLE_CREWMEMBER + 
