@@ -9,13 +9,16 @@ public class FoodDrink {
 	private String picture;
 	private double price;
 	private double amountSold;
+	private String month;
 	
 	//Empty constructor 
 	public FoodDrink() {
 		
 	}
+	
+	
 	//Food and drink constructor with ID
-	public FoodDrink(int ID, String name, int rating, String description, String picture, Double price, Double amountSold) {
+	public FoodDrink(int ID, String name, int rating, String description, String picture, Double price, Double amountSold, String month) {
 		this.ID = ID;
 		this.name = name;
 		this.rating = rating;
@@ -23,6 +26,7 @@ public class FoodDrink {
 		this.picture = picture;
 		this.price = price;
 		this.amountSold = amountSold;
+		this.month = month;
 	}
 	//Food and drink constructor without id
 	public FoodDrink(String name, int rating, String description, String picture, Double price, Double amountSold) {
@@ -32,6 +36,7 @@ public class FoodDrink {
 		this.picture = picture;
 		this.price = price;
 		this.amountSold = amountSold;
+		this.month = month;
 	}
 	
 	//Getters and setters
@@ -80,6 +85,16 @@ public class FoodDrink {
 	}
 	public void setAmountSold(double amountSold) {
 		this.amountSold = amountSold;
+	}
+
+
+	public String getMonth() {
+		return month;
+	}
+
+
+	public void setMonth(String month) {
+		this.month = month;
 	}
 	
 }

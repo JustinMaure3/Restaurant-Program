@@ -2,10 +2,10 @@ package PlaceHolder;
 
 public class StoreLocations {
 	//Location, Sanatation score, RegionalManager, customerReview
-	protected String location;
-	protected int santScore;
-	protected String regionalMan;
-	protected int custReview;
+	private String location;
+	private int santScore;
+	private String regionalMan;
+	private int custReview;
 	
 	public String getLocation() {
 		return location;
