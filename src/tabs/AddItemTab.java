@@ -1,6 +1,8 @@
 package tabs;
 
+import PlaceHolder.Employee;
 import PlaceHolder.FoodDrink;
+import Tables.CrewMemberTable;
 import Tables.FoodTable;
 import javafx.collections.FXCollections;
 import javafx.geometry.Insets;
@@ -119,6 +121,18 @@ public class AddItemTab extends Tab{
 		//Create add employee button
 		Button eSubmit = new Button("Add Employee");
 		eSubmit.setOnAction(e->{
+			//Create an instance of the CrewMember table
+			CrewMemberTable cmTable = new CrewMemberTable();
+			
+			Employee employee = new Employee(
+					name.getText(),
+					Integer.parseInt(wage.getText()) + 0.0,
+					uniform.getSelectionModel().getSelectedItem().name(),
+					position.getSelectionModel().getSelectedItem().name(),
+					Integer.parseInt(punchIn.getText())
+					);
+//			cmTable.createFoodDrink(employee);
+			
 			
 		});
 		pane.add(eSubmit, 11, 6);
