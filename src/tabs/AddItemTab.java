@@ -16,7 +16,7 @@ public class AddItemTab extends Tab{
 	private static AddItemTab tab;
 	
 	private AddItemTab() {
-		this.setText("Add Item");
+		this.setText("Add");
 		//create the layout view
 		GridPane pane = new GridPane();
 		
@@ -87,23 +87,27 @@ public class AddItemTab extends Tab{
 		
 		//Create insert position row
 		Text positionText = new Text("Position:");
-		
+		ComboBox<ENUMS.Positions> position = new ComboBox<>();
+		position.setItems(FXCollections.observableArrayList(ENUMS.Positions.values()));
 		pane.add(positionText, 10, 1);
+		pane.add(position, 11, 1);
 		
 		//Create insert uniform row
-		Text uniformText = new Text("Uniform:");
+		Text uniformText = new Text("Uniform Size:");
 		
 		pane.add(uniformText, 10, 2);
 		
 		//Create insert wage row
 		Text wageText = new Text("Wage:");
-		
+		TextField wage = new TextField();
 		pane.add(wageText, 10, 3);
+		pane.add(wage, 11, 3);
 		
 		//Create insert punch in row
-		Text punchInText = new Text("Punch In:");
-		
+		Text punchInText = new Text("Punch-in ID:");
+		TextField punchIn = new TextField();
 		pane.add(punchInText, 10, 4);
+		pane.add(punchIn, 11, 4);
 		
 		//Create gold star row
 		Text goldStarText = new Text("Gold Star:");
