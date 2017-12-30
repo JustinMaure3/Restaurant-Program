@@ -1,7 +1,7 @@
 .root{
-    -fx-background-color: #f5c600;
-    -fx-font-family: helvetica;
-}
+     -fx-background-color: #f5c600;
+     -fx-font-family: helvetica;
+ }
 
 .button {
     -fx-background-color: #9b4923;
