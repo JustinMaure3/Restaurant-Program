@@ -53,6 +53,8 @@ public class Main extends Application {
 		bpane.setTop(menu);
 		bpane.setCenter(tpane);
 		Scene scene = new Scene(bpane, 1024, 768);
+		scene.getStylesheets().add("seventiesTheme.css");
+		
 		
 		//Mainstage is set up
 		mainStage = primaryStage;
