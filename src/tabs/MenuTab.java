@@ -30,31 +30,31 @@ public class MenuTab extends Tab {
 		FoodTable menuItems = new FoodTable();
 		
 		//Populate the arraylist with the database contents
-		ArrayList<FoodDrink> foodDrinkItems = menuItems.getAllFoodDrink();			
-		
-		//Loop to set the contents of the arraylist to their own panes
-		int i = 0;
-		while(i < foodDrinkItems.size()){
-			
-			//Create an HBox to hold the information about the current food item
-			HBox newItem = new HBox();
-			
-			//Create objects to hold the food's information and then add them to the HBox
-			Text name = new Text(foodDrinkItems.get(i).getName());
-			Text rating = new Text(foodDrinkItems.get(i).getRating() + "");
-			Text description = new Text(foodDrinkItems.get(i).getDescription());
-			ImageView picture = new ImageView(foodDrinkItems.get(i).getPicture());
-			Text price = new Text(foodDrinkItems.get(i).getPrice() + "");
-			Text amountSold = new Text(foodDrinkItems.get(i).getAmountSold() + "");
-			
-			//Add all of the info into the hbox
-			newItem.getChildren().addAll(name, rating, description, picture, price, amountSold);
-			
-			//Add the HBox to the VBox
-			menu.getChildren().add(newItem);
-			//Increment i
-			i++;
-		}
+//		ArrayList<FoodDrink> foodDrinkItems = menuItems.getAllFoodDrink();			
+//		
+//		//Loop to set the contents of the arraylist to their own panes
+//		int i = 0;
+//		while(i < foodDrinkItems.size()){
+//			
+//			//Create an HBox to hold the information about the current food item
+//			HBox newItem = new HBox();
+//			
+//			//Create objects to hold the food's information and then add them to the HBox
+//			Text name = new Text(foodDrinkItems.get(i).getName());
+//			Text rating = new Text(foodDrinkItems.get(i).getRating() + "");
+//			Text description = new Text(foodDrinkItems.get(i).getDescription());
+//			ImageView picture = new ImageView(foodDrinkItems.get(i).getPicture());
+//			Text price = new Text(foodDrinkItems.get(i).getPrice() + "");
+//			Text amountSold = new Text(foodDrinkItems.get(i).getAmountSold() + "");
+//			
+//			//Add all of the info into the hbox
+//			newItem.getChildren().addAll(name, rating, description, picture, price, amountSold);
+//			
+//			//Add the HBox to the VBox
+//			menu.getChildren().add(newItem);
+//			//Increment i
+//			i++;
+//		}
 		
 		//Add the menu to the main pane
 		pane.getChildren().add(menu);
