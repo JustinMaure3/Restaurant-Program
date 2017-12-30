@@ -151,5 +151,27 @@ public class StatisticsTab extends Tab{
 		
 	}
 	
+	//Pie chart for the month of October
+	public static PieChart octoberPieChart() {
+		int october;
+				
+		PieChart pieChart = new PieChart();
+		pieChart.setTitle("October");
+		pieChart.setLabelsVisible(true);
+		return pieChart;
+		
+	}
+	
+	//Pie chart for the month of November
+	public static PieChart novemberPieChart() {
+		int november;
+				
+		PieChart pieChart = new PieChart();
+		pieChart.setTitle("November");
+		pieChart.setLabelsVisible(true);
+		return pieChart;
+		
+	}
+	
 
 }
