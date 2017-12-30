@@ -94,8 +94,10 @@ public class AddItemTab extends Tab{
 		
 		//Create insert uniform row
 		Text uniformText = new Text("Uniform Size:");
-		
+		ComboBox<ENUMS.UniformSizes> uniform = new ComboBox<>();
+		uniform.setItems(FXCollections.observableArrayList(ENUMS.UniformSizes.values()));
 		pane.add(uniformText, 10, 2);
+		pane.add(uniform, 11, 2);
 		
 		//Create insert wage row
 		Text wageText = new Text("Wage:");
