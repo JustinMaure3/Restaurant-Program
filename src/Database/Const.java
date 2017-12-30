@@ -15,6 +15,7 @@ public class Const {
 	public static final String FOOD_DRINK_COLUMN_RATING = "rating";
 	public static final String FOOD_DRINK_COLUMN_PRICE = "price";
 	public static final String FOOD_DRINK_COLUMN_AMOUNT_SOLD = "amountSold";
+	public static final String FOOD_DRINK_COLUMN_MONTH = "month";
 	
 	//Creating constants for the crew member table
 		public static final String TABLE_CREWMEMBER = "employees";
