@@ -1,5 +1,6 @@
 package tabs;
 
+import PlaceHolder.CrewMember;
 import PlaceHolder.Employee;
 import PlaceHolder.FoodDrink;
 import Tables.CrewMemberTable;
@@ -115,8 +116,9 @@ public class AddItemTab extends Tab{
 		
 		//Create gold star row
 		Text goldStarText = new Text("Gold Star:");
-		
+		TextField goldStar = new TextField();
 		pane.add(goldStarText, 10, 5);
+		pane.add(goldStar, 11, 5);
 		
 		//Create add employee button
 		Button eSubmit = new Button("Add Employee");
@@ -124,14 +126,15 @@ public class AddItemTab extends Tab{
 			//Create an instance of the CrewMember table
 			CrewMemberTable cmTable = new CrewMemberTable();
 			
-			Employee employee = new Employee(
+			CrewMember crewMember = new CrewMember(
 					name.getText(),
 					Integer.parseInt(wage.getText()) + 0.0,
 					uniform.getSelectionModel().getSelectedItem().name(),
 					position.getSelectionModel().getSelectedItem().name(),
-					Integer.parseInt(punchIn.getText())
+					Integer.parseInt(punchIn.getText()),
+					Integer.parseInt(goldStar.getText())
 					);
-//			cmTable.createFoodDrink(employee);
+			cmTable.createCrewMember(crewMember);
 			
 			
 		});

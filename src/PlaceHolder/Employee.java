@@ -8,26 +8,6 @@ public class Employee {
 	protected double wage;
 	protected String uniform;
 	protected String position;
-	protected int punchInID;
-	protected Boolean hasGoldStar;
-	
-	//Create a constructor
-	public Employee(String name, Double wage, String uniform, String position, int punchInID, Boolean hasGoldStar) {
-		this.name = name;
-		this.wage = wage;
-		this.uniform = uniform;
-		this.position = position;
-		this.punchInID = punchInID;
-		this.hasGoldStar = hasGoldStar;
-	}
-	//Temporary constructor with out goldstar
-	public Employee(String name, Double wage, String uniform, String position, int punchInID) {
-		this.name = name;
-		this.wage = wage;
-		this.uniform = uniform;
-		this.position = position;
-		this.punchInID = punchInID;
-	}
 	
 	//Getters and setters for employee
 	public int getID() {
