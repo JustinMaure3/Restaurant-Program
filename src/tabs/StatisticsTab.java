@@ -107,5 +107,16 @@ public class StatisticsTab extends Tab{
 		
 	}
 	
+	//Pie chart for the month of February
+	public static PieChart junePieChart() {
+		int june;
+				
+		PieChart pieChart = new PieChart();
+		pieChart.setTitle("June");
+		pieChart.setLabelsVisible(true);
+		return pieChart;
+		
+	}
+	
 
 }
