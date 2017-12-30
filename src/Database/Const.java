@@ -15,8 +15,9 @@ public class Const {
 	public static final String FOOD_DRINK_COLUMN_RATING = "rating";
 	public static final String FOOD_DRINK_COLUMN_PRICE = "price";
 	public static final String FOOD_DRINK_COLUMN_AMOUNT_SOLD = "amountSold";
+	public static final String FOOD_DRINK_COLUMN_MONTH = "month";
 	
-	//Creating constants for the employee table
+	//Creating constants for the crew member table
 		public static final String TABLE_CREWMEMBER = "employees";
 		public static final String CREWMEMBER_COLUMN_ID = "id";
 		public static final String CREWMEMBER_COLUMN_NAME = "name";
@@ -26,13 +27,21 @@ public class Const {
 		public static final String CREWMEMBER_COLUMN_CREWMEMBERPUNCHIN = "crewmemberpunchin";
 		public static final String CREWMEMBER_COLUMN_CREWMEMBERGOLDSTAR = "crewmembergoldstar";
 		
-//		//Creating constants for the employee table
-//				public static final String TABLE_EMPLOYEE = "employees";
-//				public static final String EMPLOYEE_COLUMN_ID = "id";
-//				public static final String EMPLOYEE_COLUMN_NAME = "name";
-//				public static final String EMPLOYEE_COLUMN_WAGE = "wage";
-//				public static final String EMPLOYEE_COLUMN_UNIFORM = "uniform";
-//				public static final String EMPLOYEE_COLUMN_POSITION = "position";
-//				public static final String EMPLOYEE_COLUMN_CREWMEMBERPUNCHIN = "crewmemberpunchin";
-//				public static final String EMPLOYEE_COLUMN_CREWMEMBERGOLDSTAR = "crewmembergoldstar";
+		//Creating constants for the manager table
+		public static final String TABLE_MANAGER = "employees";
+		public static final String MANAGER_COLUMN_ID = "id";
+		public static final String MANAGER_COLUMN_NAME = "name";
+		public static final String MANAGER_COLUMN_WAGE = "wage";
+		public static final String MANAGER_COLUMN_UNIFORM = "uniform";
+		public static final String MANAGER_COLUMN_POSITION = "position";
+		public static final String MANAGER_COLUMN_MANAGERID= "managerID";
+		public static final String MANAGER_COLUMN_MANAGERSAFECODE = "managersafecode";
+		
+		//Creating constants for the store locations table
+		public static final String TABLE_STORELOCATIONS = "storelocations";
+		public static final String STORELOCATIONS_COLUMN_ID = "id";
+		public static final String STORELOCATIONS_COLUMN_LOCATION = "location";
+		public static final String STORELOCATIONS_COLUMN_REGIONALMAN = "regionalman";
+		public static final String STORELOCATIONS_COLUMN_CUSTREVIEW = "custreview";
+		public static final String STORELOCATIONS_COLUMN_SANTSCORE = "santscore";
 }
