@@ -2,6 +2,7 @@ package tabs;
 
 
 
+import Tables.FoodTable;
 import javafx.collections.FXCollections;
 
 import javafx.geometry.Insets;
@@ -53,8 +54,26 @@ public class StatisticsTab extends Tab{
 	
 	
 	public static PieChart generateChart() {
+		FoodTable table = new FoodTable();
+		
+		int january;
+		int februray;
+		int march;
+		int april;
+		int may;
+		int june;
+		int july;
+		int august;
+		int september;
+		int october;
+		int november;
+		int december;
 		
 		
+		
+		PieChart pieChart = new PieChart();
+		pieChart.setTitle("Monthl Earnings");
+		pieChart.setLabelsVisible(true);
 		return null;
 	}
 	
