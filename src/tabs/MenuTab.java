@@ -1,30 +1,21 @@
 package tabs;
 
-
-
 import java.util.ArrayList;
 
-
-
 import PlaceHolder.FoodDrink;
-
 import Tables.FoodTable;
-
 import javafx.scene.control.Tab;
-
 import javafx.scene.image.ImageView;
-
 import javafx.scene.layout.BorderPane;
-
 import javafx.scene.layout.HBox;
-
 import javafx.scene.layout.VBox;
-
 import javafx.scene.text.Text;
 
 
 
 public class MenuTab extends Tab {
+	
+	private static MenuTab tab;
 
 	private MenuTab() {
 		this.setText("Menu");
@@ -71,10 +62,12 @@ public class MenuTab extends Tab {
 		//Set the pane to the scene
 		this.setContent(pane);
 	}
-
+	
 	public static MenuTab getInstance() {
-		// TODO Auto-generated method stub
-		return null;
+		if(tab == null) {
+			tab = new MenuTab();
+		}
+		return tab;
 	}
 
 }

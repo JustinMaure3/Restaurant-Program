@@ -27,6 +27,8 @@ public class RemoveItemTab extends Tab {
 //		ArrayList<FoodDrink> foodDrinkItems = fTable.getAllFoodDrink();
 		
 		//set the list with all the items in the arraylist
+//		
+//		//set the list with all the items in the arraylist
 //		list.setItems(FXCollections.observableArrayList(foodDrinkItems));
 		pane.setCenter(list);
 		
