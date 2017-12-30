@@ -40,11 +40,12 @@ public class Main extends Application {
 		MenuItem seventies = new MenuItem("Seventies");
 		themes.getItems().add(seventies);
 		
-
+		MenuItem modern = new MenuItem("Modern");
+		themes.getItems().add(modern);
 														
 		//Adding menus into the menuBar
 		menu.getMenus().addAll(fileMenu, creditsMenu, themes);
-								
+							
 		
 		//Create Tab Pane
 		TabPane tpane = new TabPane();
@@ -65,12 +66,16 @@ public class Main extends Application {
 		
 		//Set theme when clicked on in the theme menu
 		seventies.setOnAction(e->{
-			scene.getStylesheets().add("seventiesTheme.css");
+			scene.getStylesheets().add("Themes/seventiesTheme.css");
 		});
 		
+		modern.setOnAction(e->{
+			scene.getStylesheets().add("Themes/modernStyleSheet.css");
+		});
 		
 		//Adding theme
 		scene.getStylesheets().add("Themes/seventiesTheme.css"); 
+		scene.getStylesheets().add("Themes/modernStyleSheet.css"); 
 		//Mainstage is set up
 		mainStage = primaryStage;
 		mainStage.setResizable(false);
