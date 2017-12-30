@@ -86,7 +86,7 @@ public class ManagerTable {
 				
 			}
 
-			//Creating a method to add an instance of the crewMember class to the database table
+			//Creating a method to add an instance of the store locations class to the database table
 			public void createManager(Manager manager) {
 				String query = "INSERT INTO " + Const.TABLE_MANAGER + 
 						   "(" + Const.MANAGER_COLUMN_NAME + "," +

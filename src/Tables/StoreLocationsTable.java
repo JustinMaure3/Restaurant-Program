@@ -4,105 +4,96 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
-
 import Database.Const;
 import Database.Database;
-import PlaceHolder.Manager;
+import PlaceHolder.StoreLocations;
 
 public class StoreLocationsTable {
-//	//Creating an instance of the database
-//	Database db = Database.getInstance();
-//	
-//	//Construct
-//	public StoreLocationsTable() {
-//		
-//	}
-//
-//	//Creating a method to get all instances of manager class within the table
-//	public ArrayList<StoreLocations> getAllStoreLocations() {
-//		String query = "SELECT * FROM " + Const.table;
-//		ArrayList<Manager> manager = new ArrayList<Manager>();
-//		try {
-//			//Use the singleton an grab its connection to create a statement
-//			Statement getItems = db.getConnection().createStatement();
-//			ResultSet data = getItems.executeQuery(query);
-//			//This while loop will run once for each item in the result set
-//			while(data.next()) {
-//				//Build each item and add it to the ArrayList
-//				manager.add(new Manager(data.getInt(Const.MANAGER_COLUMN_ID),
-//								   data.getString(Const.MANAGER_COLUMN_NAME),
-//								   data.getDouble(Const.MANAGER_COLUMN_WAGE),
-//								   data.getString(Const.MANAGER_COLUMN_UNIFORM),
-//								   data.getString(Const.MANAGER_COLUMN_POSITION),
-//								   data.getInt(Const.MANAGER_COLUMN_MANAGERID),
-//								   data.getInt(Const.MANAGER_COLUMN_MANAGERSAFECODE)));
-//				
-//				
-//			}
-//		}catch(SQLException e) {
-//			e.printStackTrace();
-//		}
-//		return manager;
-//	}
-//
-//	//Creating a method to get a single instance of a manager class
-//	public Manager getManager(int managerID) {
-//		String query = "SELECT FROM " + Const.TABLE_MANAGER + " WHERE " + 
-//				   Const.MANAGER_COLUMN_ID + " = " + managerID;
-//		Manager manager = new Manager();
-//		try {
-//			Statement getItem = db.getConnection().createStatement();
-//			ResultSet data = getItem.executeQuery(query);
-//			data.next();
-//			//Build each item and add it to the ArrayList
-//			manager = new Manager(data.getInt(Const.MANAGER_COLUMN_ID),
-//					   data.getString(Const.MANAGER_COLUMN_NAME),
-//					   data.getDouble(Const.MANAGER_COLUMN_WAGE),
-//					   data.getString(Const.MANAGER_COLUMN_UNIFORM),
-//					   data.getString(Const.MANAGER_COLUMN_POSITION),
-//					   data.getInt(Const.MANAGER_COLUMN_MANAGERID),
-//					   data.getInt(Const.MANAGER_COLUMN_MANAGERSAFECODE));
-//		}catch(SQLException e) {
-//			e.printStackTrace();
-//		}
-//		return manager;
-//	}
-//
-//	//Creating method to update an instance of the Manager class in the database table
-//	public void updateManager(Manager manager) {
-//		
-//		
-//	}
-//
-//	//Creating a method to delete an instance of the Manager class from the database table
-//	public void deleteManager(Manager manager) {
-//		String query = "DELETE FROM " + Const.TABLE_MANAGER + " WHERE " +
-//				   Const.MANAGER_COLUMN_ID + " = " + manager.getID();
-//		try {
-//			db.getConnection().createStatement().execute(query);
-//		} catch(SQLException e) {
-//			e.printStackTrace();
-//		}
-//		
-//	}
-//
-//	//Creating a method to add an instance of the crewMember class to the database table
-//	public void createManager(Manager manager) {
-//		String query = "INSERT INTO " + Const.TABLE_MANAGER + 
-//				   "(" + Const.MANAGER_COLUMN_NAME + "," +
-//				   Const.MANAGER_COLUMN_POSITION + "," +
-//				   Const.MANAGER_COLUMN_UNIFORM + "," +
-//				   Const.MANAGER_COLUMN_WAGE + "," +
-//				   Const.MANAGER_COLUMN_MANAGERID + "," +
-//				   Const.MANAGER_COLUMN_MANAGERSAFECODE + ") values ('"+
-//				   manager.getName() + "','" + manager.getPosition() + "','" +
-//				   manager.getUniform() + "','" + manager.getWage() + "','" +
-//				   manager.getManagerID() + "','" + manager.getManagerSafeCode() + "')";
-//		try {
-//			db.getConnection().createStatement().execute(query);
-//		}catch(SQLException e) {
-//			e.printStackTrace();
-//		}
-//		
-//	}
+	//Creating an instance of the database
+	Database db = Database.getInstance();
+	
+	//Construct
+	public StoreLocationsTable() {
+		
+	}
+
+	//Creating a method to get all instances of store locations class within the table
+	public ArrayList<StoreLocations> getAllStoreLocations() {
+		String query = "SELECT * FROM " + Const.TABLE_STORELOCATIONS;
+		ArrayList<StoreLocations> storelocations = new ArrayList<StoreLocations>();
+		try {
+			//Use the singleton an grab its connection to create a statement
+			Statement getItems = db.getConnection().createStatement();
+			ResultSet data = getItems.executeQuery(query);
+			//This while loop will run once for each item in the result set
+			while(data.next()) {
+				//Build each item and add it to the ArrayList
+				storelocations.add(new StoreLocations(data.getInt(Const.STORELOCATIONS_COLUMN_ID),
+								   data.getString(Const.STORELOCATIONS_COLUMN_LOCATION),
+								   data.getString(Const.STORELOCATIONS_COLUMN_REGIONALMAN),
+								   data.getInt(Const.STORELOCATIONS_COLUMN_CUSTREVIEW),
+								   data.getInt(Const.STORELOCATIONS_COLUMN_SANTSCORE)));
+				
+				
+			}
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}
+		return storelocations;
+	}
+
+	//Creating a method to get a single instance of a store locations class
+	public StoreLocations getStoreLocation(int storelocationID) {
+		String query = "SELECT FROM " + Const.TABLE_STORELOCATIONS + " WHERE " + 
+				   Const.STORELOCATIONS_COLUMN_ID + " = " + storelocationID;
+		StoreLocations storeLocations = new StoreLocations();
+		try {
+			Statement getItem = db.getConnection().createStatement();
+			ResultSet data = getItem.executeQuery(query);
+			data.next();
+			//Build each item and add it to the ArrayList
+			storeLocations = new StoreLocations(data.getInt(Const.STORELOCATIONS_COLUMN_ID),
+					   data.getString(Const.STORELOCATIONS_COLUMN_LOCATION),
+					   data.getString(Const.STORELOCATIONS_COLUMN_REGIONALMAN),
+					   data.getInt(Const.STORELOCATIONS_COLUMN_CUSTREVIEW),
+					   data.getInt(Const.STORELOCATIONS_COLUMN_SANTSCORE));
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}
+		return storeLocations;
+	}
+
+	//Creating method to update an instance of the store locations class in the database table
+	public void updateStoreLocations(StoreLocations storeLocations) {
+		
+	}
+
+	//Creating a method to delete an instance of the store locations class from the database table
+	public void deleteStoreLocations(StoreLocations storeLocations) {
+		String query = "DELETE FROM " + Const.TABLE_STORELOCATIONS + " WHERE " +
+				   Const.STORELOCATIONS_COLUMN_ID + " = " + storeLocations.getID();
+		try {
+			db.getConnection().createStatement().execute(query);
+		} catch(SQLException e) {
+			e.printStackTrace();
+		}
+		
+	}
+
+	//Creating a method to add an instance of the store locations class to the database table
+	public void createStoreLocations(StoreLocations storeLocations) {
+		String query = "INSERT INTO " + Const.TABLE_STORELOCATIONS + 
+				   "(" + Const.STORELOCATIONS_COLUMN_LOCATION + "," +
+				   Const.STORELOCATIONS_COLUMN_REGIONALMAN + "," +
+				   Const.STORELOCATIONS_COLUMN_CUSTREVIEW + "," +
+				   Const.STORELOCATIONS_COLUMN_SANTSCORE + ") values ('"+
+				   storeLocations.getLocation() + "','" + storeLocations.getCustReview() + "','" +
+				   storeLocations.getRegionalMan() + "','" + storeLocations.getSantScore() + "')";
+		try {
+			db.getConnection().createStatement().execute(query);
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}
+		
+	}
 }

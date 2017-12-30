@@ -8,14 +8,13 @@ public class StoreLocations {
 	private String regionalMan;
 	private int custReview;
 	
-	
 	//Empty construct for store locations
 		public StoreLocations() {
 			
 		}
 		
 		//Store locations constructor constructor with ID
-		public StoreLocations(int ID, String location, int santScore, String regionalMan, int custReview) {
+		public StoreLocations(int ID, String location, String regionalMan, int custReview, int santScore) {
 			this.ID = ID;
 			this.location = location;
 			this.santScore = santScore;
@@ -24,7 +23,7 @@ public class StoreLocations {
 		}
 		
 		//Store locations constructor without ID
-		public StoreLocations( String location, int santScore, String regionalMan, int custReview) {
+		public StoreLocations( String location, String regionalMan, int custReview, int santScore) {
 			this.location = location;
 			this.santScore = santScore;
 			this.regionalMan = regionalMan;
@@ -55,6 +54,13 @@ public class StoreLocations {
 	}
 	public void setCustReview(int custReview) {
 		this.custReview = custReview;
+	}
+	public int getID() {
+		return ID;
+	}
+
+	public void setID(int iD) {
+		ID = iD;
 	}
 
 }

@@ -43,4 +43,5 @@ public class Const {
 		public static final String STORELOCATIONS_COLUMN_LOCATION = "location";
 		public static final String STORELOCATIONS_COLUMN_REGIONALMAN = "regionalman";
 		public static final String STORELOCATIONS_COLUMN_CUSTREVIEW = "custreview";
+		public static final String STORELOCATIONS_COLUMN_SANTSCORE = "santscore";
 }
