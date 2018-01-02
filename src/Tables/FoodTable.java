@@ -98,7 +98,13 @@ public class FoodTable implements FoodDrinkDAO {
 	//Creating method to update an instance of foodDrink class in the database table
 	@Override
 	public void updateFoodDrink(FoodDrink foodDrink) {
-		
+		String query = "UPDATE FROM " + Const.TABLE_FOOD_DRINK + " WHERE " +
+						Const.FOOD_DRINK_COLUMN_NAME + " = " + foodDrink.getName();
+		try {
+			db.getConnection().createStatement().execute(query);
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}
 		
 	}
 

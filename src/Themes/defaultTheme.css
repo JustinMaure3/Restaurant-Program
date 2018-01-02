@@ -1,0 +1,16 @@
+.root {
+    -fx-background-color: #2BFF1F;
+    -fx-font-family: helvetica;
+}
+
+.button {
+    -fx-background-color: #000000;
+    -fx-text-fill: white;
+    -fx-background-radius: 5;
+    -fx-border-color: white;
+    -fx-border-radius: 5;
+}
+
+.tab {
+    -fx-background-color: #82FE7C;
+}
