@@ -6,10 +6,6 @@
 			<accessrule kind="accessible" pattern="javafx/**"/>
 		</accessrules>
 	</classpathentry>
-<<<<<<< HEAD
 	<classpathentry kind="lib" path="E:/Semester3/Java/mysql-connector-java-5.1.39/mysql-connector-java-5.1.43-bin.jar"/>
-=======
-	<classpathentry kind="lib" path="C:/Users/IceOf/Desktop/RestaurantApp/New_Compressed_zipped_Folder/mysql-connector-java-5.1.39/mysql-connector-java-5.1.43-bin.jar"/>
->>>>>>> c6fe7666fc8a4cd6b8e4210dbb0449044d9a4e69
 	<classpathentry kind="output" path="bin"/>
 </classpath>
