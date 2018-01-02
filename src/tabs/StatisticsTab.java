@@ -2,6 +2,9 @@ package tabs;
 
 
 
+import java.util.ArrayList;
+
+import PlaceHolder.FoodDrink;
 import Tables.FoodTable;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -20,7 +23,8 @@ import javafx.scene.text.Text;
 
 
 public class StatisticsTab extends Tab{
-
+	private static FoodTable table = new FoodTable();
+	private static ArrayList<FoodDrink> foodDrinkItems = table.getAllFoodDrink();
 	private static StatisticsTab tab;
 
 	private StatisticsTab() {
@@ -56,13 +60,24 @@ public class StatisticsTab extends Tab{
 	}
 	
 	//Pie chart for the month of January
-	public static PieChart januaryPieChart() {	
-		FoodTable table = new FoodTable();
-		int january;
-
+	public static PieChart januaryPieChart() {		
+		ArrayList<Double> itemAmt = new ArrayList();
+		
+		int i = 0;
+		while (i < foodDrinkItems.size()) {
+			itemAmt.add(foodDrinkItems.get(i).getAmountSold());
+		}
+		
 		PieChart pieChart = new PieChart();
 		pieChart.setTitle("January");
 		pieChart.setLabelsVisible(true);
+		
+		ObservableList<PieChart.Data> data = FXCollections.observableArrayList();
+		while (i < foodDrinkItems.size()) {
+		data = FXCollections.observableArrayList(
+				new PieChart.Data((foodDrinkItems.get(i).getName() + ": "), itemAmt.get(i)));
+		i++;
+		}
 		return pieChart;
 	}
 	
