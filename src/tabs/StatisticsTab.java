@@ -57,6 +57,7 @@ public class StatisticsTab extends Tab{
 	
 	//Pie chart for the month of January
 	public static PieChart januaryPieChart() {	
+		FoodTable table = new FoodTable();
 		int january;
 
 		PieChart pieChart = new PieChart();
