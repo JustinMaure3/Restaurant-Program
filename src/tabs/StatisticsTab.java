@@ -174,11 +174,22 @@ public class StatisticsTab extends Tab{
 	
 	//Pie chart for the month of June
 	public static PieChart junePieChart() {
-		int june;
+		ArrayList<Double> itemAmt = new ArrayList();
+		
+		int i = 0;
+		while (i < foodDrinkItems.size()) {
+			itemAmt.add(foodDrinkItems.get(i).getAmountSold());
+		}
 				
 		PieChart pieChart = new PieChart();
 		pieChart.setTitle("June");
 		pieChart.setLabelsVisible(true);
+		
+		ObservableList<PieChart.Data> data = FXCollections.observableArrayList();
+		while (i < foodDrinkItems.size()) {
+			data = FXCollections.observableArrayList(
+					new PieChart.Data((foodDrinkItems.get(i).getName() + ": "), itemAmt.get(i)));
+		}
 		return pieChart;
 		
 	}
