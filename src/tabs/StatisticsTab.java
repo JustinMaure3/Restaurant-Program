@@ -4,6 +4,7 @@ package tabs;
 
 import java.util.ArrayList;
 
+import ENUMS.MonthlyStats;
 import PlaceHolder.FoodDrink;
 import Tables.FoodTable;
 import javafx.collections.FXCollections;
@@ -49,6 +50,7 @@ public class StatisticsTab extends Tab{
 		this.setContent(pane);
 		
 		goBtn.setOnAction(e->{
+			MonthlyStats stat = monthComboBox.getSelectionModel().getSelectedItem();
 		});
 
 	}
