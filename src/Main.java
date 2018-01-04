@@ -29,23 +29,33 @@ public class Main extends Application {
 		MenuBar menu = new MenuBar();
 		Menu fileMenu = new Menu("File");
 		Menu creditsMenu = new Menu("Credits");
+		Menu themes = new Menu("Themes");
+
 														
 		//Adding menu items to file menu
 		MenuItem exit = new MenuItem("Exit");
 		fileMenu.getItems().add(exit);
+		
+		//Adding menu items to themes menu
+		MenuItem seventies = new MenuItem("70's");
+		MenuItem nineties = new MenuItem("90's");
+		themes.getItems().addAll(seventies, nineties);
+		
+
 														
 		//Adding menus into the menuBar
-		menu.getMenus().addAll(fileMenu, creditsMenu);
+		menu.getMenus().addAll(fileMenu, creditsMenu, themes);
 								
+		
 		//Create Tab Pane
 		TabPane tpane = new TabPane();
 		tpane.setTabClosingPolicy(TabClosingPolicy.UNAVAILABLE);
-		HomeTab htab = new HomeTab();
-		MenuTab mtab = new MenuTab();
-		AddItemTab addTab = new AddItemTab();
-		RemoveItemTab removeTab = new RemoveItemTab();
-		UpdateItemTab updateTab = new UpdateItemTab();
-		StatisticsTab stab = new StatisticsTab();
+		HomeTab htab = HomeTab.getInstance();
+		MenuTab mtab = MenuTab.getInstance();
+		AddItemTab addTab = AddItemTab.getInstance();
+		RemoveItemTab removeTab = RemoveItemTab.getInstance();
+		UpdateItemTab updateTab = UpdateItemTab.getInstance();
+		StatisticsTab stab = StatisticsTab.getInstance();
 		tpane.getTabs().addAll(htab, mtab, addTab, removeTab, updateTab, stab);
 		
 		//Setting up the main page
@@ -53,6 +63,19 @@ public class Main extends Application {
 		bpane.setTop(menu);
 		bpane.setCenter(tpane);
 		Scene scene = new Scene(bpane, 1024, 768);
+		
+		//Set theme when clicked on in the theme menu
+		seventies.setOnAction(e->{
+			scene.getStylesheets().add("Themes/seventiesTheme.css");
+		});
+		
+		//Set the 90's theme when clicked on in the menu menu
+		nineties.setOnAction(e->{
+			scene.getStylesheets().add("Themes/ninetiesTheme.css");
+		});
+
+		//Default theme for the application
+		scene.getStylesheets().add("Themes/defaultTheme.css");
 		
 		//Mainstage is set up
 		mainStage = primaryStage;
