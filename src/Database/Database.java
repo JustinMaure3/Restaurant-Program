@@ -39,6 +39,18 @@ public class Database {
 			Const.CREWMEMBER_COLUMN_CREWMEMBERGOLDSTAR + "VARCHAR(50)," +
 			"PRIMARY KEY(" + Const.CREWMEMBER_COLUMN_ID + "));";
 	
+	//Create a string that will be used as a query to create the Locations table
+	public static final String CREATE_TABLE_LOCATIONS =
+			"CREATE TABLE " + Const.TABLE_STORELOCATIONS + " (" +
+			Const.STORELOCATIONS_COLUMN_ID + "int NOT NULL AUTO_INCREMENT, " +
+			Const.STORELOCATIONS_COLUMN_LOCATION + "VARCHAR(50)," +
+			Const.STORELOCATIONS_COLUMN_REGIONALMAN + "VARCHAR(50)," +
+			Const.STORELOCATIONS_COLUMN_CUSTREVIEW + "VARCHAR(50)," +
+			Const.STORELOCATIONS_COLUMN_SANTSCORE + "VARCHAR(50)," +
+			"PRIMARY KEY(" + Const.STORELOCATIONS_COLUMN_ID + "));";
+	
+	
+	
 	//Private constructor
 	private Database() {
 		//If the connection exists
@@ -53,6 +65,7 @@ public class Database {
 			//create the food drink table
 			createTable(Const.TABLE_FOOD_DRINK, CREATE_TABLE_FOOD_DRINK, connection);
 			createTable(Const.TABLE_CREWMEMBER, CREATE_TABLE_CREWMEMBER, connection);
+			createTable(Const.TABLE_STORELOCATIONS, CREATE_TABLE_LOCATIONS, connection);
 		}
 	}
 	
