@@ -1,16 +1,44 @@
 package Database;
 
 import java.sql.Connection;
+import java.sql.DatabaseMetaData;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 
 
 
 public class Database {
 
 	//Create an instance variable
-		private static Database instance = null;
-		private Connection connection = null;
-		
+	private static Database instance = null;
+	private Connection connection = null;
+	
+	//Create a string that will be used in a query to create the food drink table
+	public static final String CREATE_TABLE_FOOD_DRINK = 
+			"CREATE TABLE " + Const.TABLE_FOOD_DRINK + " (" +
+			Const.FOOD_DRINK_COLUMN_ID + "int NOT NULL AUTO_INCREMENT, " +
+			Const.FOOD_DRINK_COLUMN_NAME + "VARCHAR(50)," +
+			Const.FOOD_DRINK_COLUMN_RATING + "VARCHAR(50)," +
+			Const.FOOD_DRINK_COLUMN_DESCRIPTION + "VARCHAR(100)," +
+			Const.FOOD_DRINK_COLUMN_PICTURE + "VARCHAR(50)," +
+			Const.FOOD_DRINK_COLUMN_PRICE + "VARCHAR(50)," +
+			Const.FOOD_DRINK_COLUMN_AMOUNT_SOLD + "VARCHAR(50)," +
+			Const.FOOD_DRINK_COLUMN_MONTH + "VARCHAR(50)," +
+			"PRIMARY KEY(" + Const.FOOD_DRINK_COLUMN_ID + "));";
+	
+	//Create a string that will be used as a query to create the crewmembers table
+	public static final String CREATE_TABLE_CREWMEMBER = 
+			"CREATE TABLE " + Const.TABLE_CREWMEMBER + " (" +
+			Const.CREWMEMBER_COLUMN_ID + "int NOT NULL AUTO_INCREMENT, " +
+			Const.CREWMEMBER_COLUMN_NAME + "VARCHAR(50)," +
+			Const.CREWMEMBER_COLUMN_WAGE + "VARCHAR(50)," +
+			Const.CREWMEMBER_COLUMN_UNIFORM + "VARCHAR(50)," +
+			Const.CREWMEMBER_COLUMN_POSITION + "VARCHAR(50)," +
+			Const.CREWMEMBER_COLUMN_CREWMEMBERPUNCHIN + "VARCHAR(50)," +
+			Const.CREWMEMBER_COLUMN_CREWMEMBERGOLDSTAR + "VARCHAR(50)," +
+			"PRIMARY KEY(" + Const.CREWMEMBER_COLUMN_ID + "));";
+	
 	//Private constructor
 	private Database() {
 		//If the connection exists
@@ -22,6 +50,9 @@ public class Database {
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
+			//create the food drink table
+			createTable(Const.TABLE_FOOD_DRINK, CREATE_TABLE_FOOD_DRINK, connection);
+			createTable(Const.TABLE_CREWMEMBER, CREATE_TABLE_CREWMEMBER, connection);
 		}
 	}
 	
@@ -48,4 +79,25 @@ public class Database {
 		}
 	}
 	
+	//Create a method that will create a table
+	public void createTable(String tableName, String tableQuery, Connection connection) {
+		Statement createTables;
+		try {
+			DatabaseMetaData md = connection.getMetaData();
+			ResultSet result = md.getTables(null, null, tableName, null);
+			//Check to see if the table exists
+			if(result.next()) {
+				System.out.println(tableName + " Table already exists");
+			} 
+			//if it doesnt already exist then create the table
+			else {
+				createTables = connection.createStatement();
+				createTables.execute(tableQuery);
+				System.out.println("Table has been created");
+			}
+			
+		} catch(SQLException e) {
+			e.printStackTrace();
+		}
+	}
 }
