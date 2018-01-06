@@ -1,3 +1,6 @@
+import java.sql.Connection;
+
+import Database.Database;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.Menu;
@@ -34,6 +37,11 @@ public class Main extends Application {
 														
 		//Adding menu items to file menu
 		MenuItem exit = new MenuItem("Exit");
+		exit.setOnAction(e->{
+			Database db = Database.getInstance();
+			db.close();
+			System.exit(0);
+		});
 		fileMenu.getItems().add(exit);
 		
 		//Adding menu items to themes menu
