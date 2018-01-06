@@ -1,6 +1,8 @@
 package tabs;
 
+import PlaceHolder.CrewMember;
 import PlaceHolder.FoodDrink;
+import Tables.CrewMemberTable;
 import Tables.FoodTable;
 import javafx.collections.FXCollections;
 import javafx.geometry.Insets;
@@ -102,6 +104,7 @@ public class UpdateItemTab extends Tab {
 					//Create an instance of the food table
 					FoodTable fTable = new FoodTable();
 					
+					//Update a food item with all the new records
 					FoodDrink food = new FoodDrink(
 							foodName.getText(),
 							rating.getSelectionModel().getSelectedItem().ordinal(),
@@ -127,10 +130,77 @@ public class UpdateItemTab extends Tab {
 		pane.add(eNameText, 10, 1);
 		pane.add(eName, 11, 1);
 		
+		//Create insert position row
+		Text positionText = new Text("Position:");
+		ComboBox<ENUMS.Positions> position = new ComboBox<>();
+		position.setItems(FXCollections.observableArrayList(ENUMS.Positions.values()));
+				
+		//Create insert uniform row
+		Text uniformText = new Text("Uniform Size:");
+		ComboBox<ENUMS.UniformSizes> uniform = new ComboBox<>();
+		uniform.setItems(FXCollections.observableArrayList(ENUMS.UniformSizes.values()));
+				
+		//Create insert wage row
+		Text wageText = new Text("Wage:");
+		TextField wage = new TextField();
+				
+		//Create insert punch in row
+		Text punchInText = new Text("Punch-in ID:");
+		TextField punchIn = new TextField();
+				
+		//Create gold star row
+		Text goldStarText = new Text("Gold Star:");
+		TextField goldStar = new TextField();
+		
+//		____________HIDDEN CATEGORIES END_____________
+		
+		//if employee categories are not hidden show them
+		if(!isEmployeeHidden) {
+			//Show the position row
+			pane.add(positionText, 10, 2);
+			pane.add(position, 11, 2);
+			
+			//Show the uniform row
+			pane.add(uniformText, 10, 3);
+			pane.add(uniform, 11, 3);
+			
+			//Show the wage row
+			pane.add(wageText, 10, 4);
+			pane.add(wage, 11, 4);
+			
+			//Show the punch in row
+			pane.add(punchInText, 10, 5);
+			pane.add(punchIn, 11, 5);
+			
+			//Show the gold star row
+			pane.add(goldStarText, 10, 6);
+			pane.add(goldStar, 11, 6);
+		}
+//		____________HIDDEN CATEGORIES END_____________
+		
 		//create button for employee update
 		Button eUpdate = new Button("Update Employee");
 		eUpdate.setOnAction(e->{
-			
+			if(!eName.getText().isEmpty()) {
+				if(isEmployeeHidden) {
+					isEmployeeHidden = false;
+					pane.add(eUpdate, 11, 7);
+				} else {
+					//Create an instance of the CrewMember table
+					CrewMemberTable cmTable = new CrewMemberTable();
+					
+					//Update the crew member
+					CrewMember crewMember = new CrewMember(
+							eName.getText(),
+							Integer.parseInt(wage.getText()) + 0.0,
+							uniform.getSelectionModel().getSelectedItem().name(),
+							position.getSelectionModel().getSelectedItem().name(),
+							Integer.parseInt(punchIn.getText()),
+							Integer.parseInt(goldStar.getText())
+							);
+					cmTable.updateCrewMember(crewMember);
+				}
+			}
 		});
 		pane.add(eUpdate, 11, 2);
 		
