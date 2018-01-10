@@ -62,6 +62,13 @@ public class AddItemTab extends Tab{
 		pane.add(amountSoldText, 0, 5);
 		pane.add(amountSold, 1, 5);
 		
+		//Create insert month row
+		Text monthText = new Text("Month");
+		ComboBox<ENUMS.MonthlyStats> month = new ComboBox<>();
+		month.setItems(FXCollections.observableArrayList(ENUMS.MonthlyStats.values()));
+		pane.add(monthText, 0, 6);
+		pane.add(month, 1, 6);
+		
 		//Create submit button
 		Button submitButton = new Button("Add Food/Drink");
 		submitButton.setOnAction(e->{
@@ -73,12 +80,14 @@ public class AddItemTab extends Tab{
 					rating.getSelectionModel().getSelectedItem().ordinal(),
 					desc.getText(),
 					picture.getText(),
-					Integer.parseInt(price.getText()) + 0.0,
-					Integer.parseInt(amountSold.getText()) + 0.0
+					Double.parseDouble(price.getText()),
+					Double.parseDouble(amountSold.getText()),
+					month.getSelectionModel().getSelectedItem().name()
 					);
 			fTable.createFoodDrink(food);
 		});
-		pane.add(submitButton, 1, 6);
+		
+		pane.add(submitButton, 1, 7);
 		
 		//Add an employee form
 		

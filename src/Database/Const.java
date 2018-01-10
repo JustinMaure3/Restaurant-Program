@@ -28,7 +28,7 @@ public class Const {
 		public static final String CREWMEMBER_COLUMN_CREWMEMBERGOLDSTAR = "crewmembergoldstar";
 		
 		//Creating constants for the manager table
-		public static final String TABLE_MANAGER = "employees";
+		public static final String TABLE_MANAGER = "managers";
 		public static final String MANAGER_COLUMN_ID = "id";
 		public static final String MANAGER_COLUMN_NAME = "name";
 		public static final String MANAGER_COLUMN_WAGE = "wage";
