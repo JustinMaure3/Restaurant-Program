@@ -47,12 +47,10 @@ public class Main extends Application {
 		//Adding menu items to themes menu
 
 		MenuItem modern = new MenuItem("Modern");
-		themes.getItems().add(modern);
-
 		MenuItem seventies = new MenuItem("70's");
 		MenuItem nineties = new MenuItem("90's");
-		MenuItem defaultTheme = new MenuItem("Defaut");
-		themes.getItems().addAll(defaultTheme, seventies, nineties);
+		MenuItem defaultTheme = new MenuItem("Default");
+		themes.getItems().addAll(defaultTheme, seventies, nineties, modern);
 														
 		//Adding menus into the menuBar
 		menu.getMenus().addAll(fileMenu, creditsMenu, themes);
@@ -71,7 +69,6 @@ public class Main extends Application {
 		
 		tpane.getTabs().addAll(htab, addTab, removeTab, updateTab, stab);
 		
-		tpane.getTabs().addAll(htab, /*mtab,*/ addTab, removeTab, updateTab, stab);
 		
 		//Setting up the main page
 		BorderPane bpane = new BorderPane();
