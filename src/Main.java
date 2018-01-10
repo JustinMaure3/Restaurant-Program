@@ -45,15 +45,22 @@ public class Main extends Application {
 		fileMenu.getItems().add(exit);
 		
 		//Adding menu items to themes menu
+
+		MenuItem seventies = new MenuItem("Seventies");
+		themes.getItems().add(seventies);
+<<<<<<< HEAD
+		MenuItem modern = new MenuItem("Modern");
+		themes.getItems().add(modern);
+=======
+>>>>>>> staging
+
 		MenuItem seventies = new MenuItem("70's");
 		MenuItem nineties = new MenuItem("90's");
 		themes.getItems().addAll(seventies, nineties);
-		
-
 														
 		//Adding menus into the menuBar
 		menu.getMenus().addAll(fileMenu, creditsMenu, themes);
-								
+							
 		
 		//Create Tab Pane
 		TabPane tpane = new TabPane();
@@ -75,8 +82,19 @@ public class Main extends Application {
 		//Set theme when clicked on in the theme menu
 		seventies.setOnAction(e->{
 			scene.getStylesheets().add("Themes/seventiesTheme.css");
+<<<<<<< HEAD
+		});
+		modern.setOnAction(e->{
+			scene.getStylesheets().add("Themes/modernStyleSheet.css");
 		});
 		
+=======
+		});
+		
+
+		//Adding theme
+		scene.getStylesheets().add("Themes/seventiesTheme.css"); 
+
 		//Set the 90's theme when clicked on in the menu menu
 		nineties.setOnAction(e->{
 			scene.getStylesheets().add("Themes/ninetiesTheme.css");
@@ -85,6 +103,7 @@ public class Main extends Application {
 		//Default theme for the application
 		scene.getStylesheets().add("Themes/defaultTheme.css");
 		
+>>>>>>> staging
 		//Mainstage is set up
 		mainStage = primaryStage;
 		mainStage.setResizable(false);
