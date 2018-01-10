@@ -46,11 +46,9 @@ public class Main extends Application {
 		
 		//Adding menu items to themes menu
 		MenuItem modern = new MenuItem("Modern");
-		themes.getItems().add(modern);
-
 		MenuItem seventies = new MenuItem("70's");
 		MenuItem nineties = new MenuItem("90's");
-		themes.getItems().addAll(seventies, nineties);
+		themes.getItems().addAll(seventies, nineties, modern);
 														
 		//Adding menus into the menuBar
 		menu.getMenus().addAll(fileMenu, creditsMenu, themes);
@@ -60,12 +58,12 @@ public class Main extends Application {
 		TabPane tpane = new TabPane();
 		tpane.setTabClosingPolicy(TabClosingPolicy.UNAVAILABLE);
 		HomeTab htab = HomeTab.getInstance();
-		MenuTab mtab = MenuTab.getInstance();
+//		MenuTab mtab = MenuTab.getInstance();
 		AddItemTab addTab = AddItemTab.getInstance();
 		RemoveItemTab removeTab = RemoveItemTab.getInstance();
 		UpdateItemTab updateTab = UpdateItemTab.getInstance();
 		StatisticsTab stab = StatisticsTab.getInstance();
-		tpane.getTabs().addAll(htab, mtab, addTab, removeTab, updateTab, stab);
+		tpane.getTabs().addAll(htab, /*mtab,*/ addTab, removeTab, updateTab, stab);
 		
 		//Setting up the main page
 		BorderPane bpane = new BorderPane();
@@ -78,13 +76,10 @@ public class Main extends Application {
 			scene.getStylesheets().add("Themes/seventiesTheme.css");
 
 		});
+		
 		modern.setOnAction(e->{
 			scene.getStylesheets().add("Themes/modernStyleSheet.css");
 		});
-		
-
-		//Adding theme
-		scene.getStylesheets().add("Themes/seventiesTheme.css"); 
 
 		//Set the 90's theme when clicked on in the menu menu
 		nineties.setOnAction(e->{
