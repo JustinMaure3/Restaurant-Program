@@ -59,12 +59,12 @@ public class Main extends Application {
 		TabPane tpane = new TabPane();
 		tpane.setTabClosingPolicy(TabClosingPolicy.UNAVAILABLE);
 		HomeTab htab = HomeTab.getInstance();
-		MenuTab mtab = MenuTab.getInstance();
+		//MenuTab mtab = MenuTab.getInstance();
 		AddItemTab addTab = AddItemTab.getInstance();
 		RemoveItemTab removeTab = RemoveItemTab.getInstance();
 		UpdateItemTab updateTab = UpdateItemTab.getInstance();
 		StatisticsTab stab = StatisticsTab.getInstance();
-		tpane.getTabs().addAll(htab, mtab, addTab, removeTab, updateTab, stab);
+		tpane.getTabs().addAll(htab, addTab, removeTab, updateTab, stab);
 		
 		//Setting up the main page
 		BorderPane bpane = new BorderPane();

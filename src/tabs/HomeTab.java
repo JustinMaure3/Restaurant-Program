@@ -1,7 +1,10 @@
 package tabs;
 
+import java.util.ArrayList;
 import java.util.Random;
 
+import PlaceHolder.FoodDrink;
+import Tables.FoodTable;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -21,10 +24,14 @@ public class HomeTab extends Tab {
 	private HomeTab() {
 		this.setText("Home");
 		
+		FoodTable menuItems = new FoodTable();
+		
+		FoodDrink topFoodItem = menuItems.getTopFoodDrink(1);
+		
 		//Restaurant name and the popular foodname and employee of the month 
 		Text restName = new Text("Dinner Diner");
-		Text popName = new Text("TOP FOOD TEST");//Here would grab the most popular food item name
-		Text empName = new Text("TOP EMPLOYEE TEST");
+		Text popName = new Text(topFoodItem.getName() + "");//Here would grab the most popular food item name
+		Text empName = new Text();
 		
 		Random r = new Random();
 		

@@ -18,7 +18,7 @@ public class MenuTab extends Tab {
 	private static MenuTab tab;
 
 	private MenuTab() {
-		this.setText("Menu");
+		/**this.setText("Menu");
 		
 		//Create the panes necessary for this tab
 		
@@ -69,5 +69,6 @@ public class MenuTab extends Tab {
 		}
 		return tab;
 	}
-
+**/
+	}
 }
