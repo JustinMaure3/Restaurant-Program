@@ -140,7 +140,7 @@ public class FoodTable implements FoodDrinkDAO {
 				   Const.FOOD_DRINK_COLUMN_MONTH + ") values ('"+
 				   foodDrink.getName() + "','" + foodDrink.getRating() + "','" +
 				   foodDrink.getDescription() + "','" + foodDrink.getPicture() + "','" +
-				   foodDrink.getPrice() + "','" + foodDrink.getAmountSold() + foodDrink.getMonth() + "')";
+				   foodDrink.getPrice() + "','" + foodDrink.getAmountSold() + "','" + foodDrink.getMonth() + "')";
 		try {
 			db.getConnection().createStatement().execute(query);
 		}catch(SQLException e) {

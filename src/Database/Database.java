@@ -2,6 +2,7 @@ package Database;
 
 import java.sql.Connection;
 import java.sql.DatabaseMetaData;
+import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -17,37 +18,37 @@ public class Database {
 	//Create a string that will be used in a query to create the food drink table
 	public static final String CREATE_TABLE_FOOD_DRINK = 
 			"CREATE TABLE " + Const.TABLE_FOOD_DRINK + " (" +
-			Const.FOOD_DRINK_COLUMN_ID + "int NOT NULL AUTO_INCREMENT, " +
-			Const.FOOD_DRINK_COLUMN_NAME + "VARCHAR(50)," +
-			Const.FOOD_DRINK_COLUMN_RATING + "VARCHAR(50)," +
-			Const.FOOD_DRINK_COLUMN_DESCRIPTION + "VARCHAR(100)," +
-			Const.FOOD_DRINK_COLUMN_PICTURE + "VARCHAR(50)," +
-			Const.FOOD_DRINK_COLUMN_PRICE + "VARCHAR(50)," +
-			Const.FOOD_DRINK_COLUMN_AMOUNT_SOLD + "VARCHAR(50)," +
-			Const.FOOD_DRINK_COLUMN_MONTH + "VARCHAR(50)," +
-			"PRIMARY KEY(" + Const.FOOD_DRINK_COLUMN_ID + "));";
+			Const.FOOD_DRINK_COLUMN_ID + " int NOT NULL AUTO_INCREMENT, " +
+			Const.FOOD_DRINK_COLUMN_NAME + " VARCHAR(50), " +
+			Const.FOOD_DRINK_COLUMN_RATING + " VARCHAR(50), " +
+			Const.FOOD_DRINK_COLUMN_DESCRIPTION + " VARCHAR(100), " +
+			Const.FOOD_DRINK_COLUMN_PICTURE + " VARCHAR(50), " +
+			Const.FOOD_DRINK_COLUMN_PRICE + " VARCHAR(50), " +
+			Const.FOOD_DRINK_COLUMN_AMOUNT_SOLD + " VARCHAR(50), " +
+			Const.FOOD_DRINK_COLUMN_MONTH + " VARCHAR(50), " +
+			"PRIMARY KEY(" + Const.FOOD_DRINK_COLUMN_ID + ")" + ");";
 	
 	//Create a string that will be used as a query to create the crewmembers table
 	public static final String CREATE_TABLE_CREWMEMBER = 
 			"CREATE TABLE " + Const.TABLE_CREWMEMBER + " (" +
-			Const.CREWMEMBER_COLUMN_ID + "int NOT NULL AUTO_INCREMENT, " +
-			Const.CREWMEMBER_COLUMN_NAME + "VARCHAR(50)," +
-			Const.CREWMEMBER_COLUMN_WAGE + "VARCHAR(50)," +
-			Const.CREWMEMBER_COLUMN_UNIFORM + "VARCHAR(50)," +
-			Const.CREWMEMBER_COLUMN_POSITION + "VARCHAR(50)," +
-			Const.CREWMEMBER_COLUMN_CREWMEMBERPUNCHIN + "VARCHAR(50)," +
-			Const.CREWMEMBER_COLUMN_CREWMEMBERGOLDSTAR + "VARCHAR(50)," +
-			"PRIMARY KEY(" + Const.CREWMEMBER_COLUMN_ID + "));";
+			Const.CREWMEMBER_COLUMN_ID + " int NOT NULL AUTO_INCREMENT, " +
+			Const.CREWMEMBER_COLUMN_NAME + " VARCHAR(50), " +
+			Const.CREWMEMBER_COLUMN_WAGE + " VARCHAR(50), " +
+			Const.CREWMEMBER_COLUMN_UNIFORM + " VARCHAR(50), " +
+			Const.CREWMEMBER_COLUMN_POSITION + " VARCHAR(50), " +
+			Const.CREWMEMBER_COLUMN_CREWMEMBERPUNCHIN + " VARCHAR(50), " +
+			Const.CREWMEMBER_COLUMN_CREWMEMBERGOLDSTAR + " VARCHAR(50), " +
+			"PRIMARY KEY(" + Const.CREWMEMBER_COLUMN_ID + ")" + ");";
 	
 	//Create a string that will be used as a query to create the Locations table
 	public static final String CREATE_TABLE_LOCATIONS =
 			"CREATE TABLE " + Const.TABLE_STORELOCATIONS + " (" +
-			Const.STORELOCATIONS_COLUMN_ID + "int NOT NULL AUTO_INCREMENT, " +
-			Const.STORELOCATIONS_COLUMN_LOCATION + "VARCHAR(50)," +
-			Const.STORELOCATIONS_COLUMN_REGIONALMAN + "VARCHAR(50)," +
-			Const.STORELOCATIONS_COLUMN_CUSTREVIEW + "VARCHAR(50)," +
-			Const.STORELOCATIONS_COLUMN_SANTSCORE + "VARCHAR(50)," +
-			"PRIMARY KEY(" + Const.STORELOCATIONS_COLUMN_ID + "));";
+			Const.STORELOCATIONS_COLUMN_ID + " int NOT NULL AUTO_INCREMENT, " +
+			Const.STORELOCATIONS_COLUMN_LOCATION + " VARCHAR(50)," +
+			Const.STORELOCATIONS_COLUMN_REGIONALMAN + " VARCHAR(50), " +
+			Const.STORELOCATIONS_COLUMN_SANTSCORE + " VARCHAR(50), " +
+			Const.STORELOCATIONS_COLUMN_CUSTREVIEW + " VARCHAR(50), " +
+			"PRIMARY KEY(" + Const.STORELOCATIONS_COLUMN_ID + ")" + ");";
 	
 	
 	
@@ -57,7 +58,7 @@ public class Database {
 		if(connection == null) {
 			try {
 				Class.forName("com.mysql.jdbc.Driver");
-				//connection = DriverManager.getConnection("jdbc:mysql://php.scweb.ca/" + Const.DB_NAME +"?useSSL=false", Const.DB_USER, Const.DB_PASS);
+				connection = DriverManager.getConnection("jdbc:mysql://php.scweb.ca/" + Const.DB_NAME +"?useSSL=false", Const.DB_USER, Const.DB_PASS);
 				System.out.println("Connection Sucessfully Created");
 			} catch (Exception e) {
 				e.printStackTrace();
