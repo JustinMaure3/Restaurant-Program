@@ -20,10 +20,11 @@ import tabs.UpdateItemTab;
 public class Main extends Application {
 
 	public static Stage mainStage;
-	
+	public static String displayedTable = "";
 	public static void main(String[] args) {
 		Application.launch(args);
 
+	
 	}
 
 	@Override
@@ -33,7 +34,25 @@ public class Main extends Application {
 		Menu fileMenu = new Menu("File");
 		Menu creditsMenu = new Menu("Credits");
 		Menu themes = new Menu("Themes");
+		Menu display = new Menu("Display");
 
+		//Adding menu items to the Display menu
+		
+		
+		
+		MenuItem food = new MenuItem("Food");
+		food.setOnAction(e->{
+			displayedTable = "food";
+		});
+		MenuItem employees = new MenuItem("Employees");
+		employees.setOnAction(e->{
+			displayedTable = "employees";
+		});
+		MenuItem locations = new MenuItem("Locations");
+		locations.setOnAction(e->{
+			displayedTable = "locations";
+		});
+		display.getItems().addAll(food,employees, locations);
 														
 		//Adding menu items to file menu
 		MenuItem exit = new MenuItem("Exit");
@@ -54,7 +73,7 @@ public class Main extends Application {
 		themes.getItems().addAll(seventies, nineties);
 														
 		//Adding menus into the menuBar
-		menu.getMenus().addAll(fileMenu, creditsMenu, themes);
+		menu.getMenus().addAll(fileMenu, creditsMenu, themes, display);
 							
 		
 		//Create Tab Pane
@@ -66,7 +85,7 @@ public class Main extends Application {
 		RemoveItemTab removeTab = RemoveItemTab.getInstance();
 		UpdateItemTab updateTab = UpdateItemTab.getInstance();
 		StatisticsTab stab = StatisticsTab.getInstance();
-		tpane.getTabs().addAll(htab,mtab, addTab, removeTab, updateTab, stab);
+		tpane.getTabs().addAll(htab, mtab, addTab, removeTab, updateTab, stab);
 		
 		//Setting up the main page
 		BorderPane bpane = new BorderPane();
@@ -103,5 +122,9 @@ public class Main extends Application {
 		mainStage.show();
 		
 	}
+	public String displayedTable() {
+		return displayedTable;
+	}
+	
 
 }
