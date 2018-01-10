@@ -1,7 +1,4 @@
 package tabs;
-
-
-
 import java.util.ArrayList;
 
 import ENUMS.MonthlyStats;
@@ -51,6 +48,7 @@ public class StatisticsTab extends Tab{
 		
 		goBtn.setOnAction(e->{
 			MonthlyStats stat = monthComboBox.getSelectionModel().getSelectedItem();
+			
 		});
 
 	}

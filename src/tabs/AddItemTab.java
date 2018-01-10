@@ -80,12 +80,13 @@ public class AddItemTab extends Tab{
 					rating.getSelectionModel().getSelectedItem().ordinal(),
 					desc.getText(),
 					picture.getText(),
-					Integer.parseInt(price.getText()) + 0.0,
-					Integer.parseInt(amountSold.getText()) + 0.0,
+					Double.parseDouble(price.getText()),
+					Double.parseDouble(amountSold.getText()),
 					month.getSelectionModel().getSelectedItem().name()
 					);
 			fTable.createFoodDrink(food);
 		});
+		
 		pane.add(submitButton, 1, 7);
 		
 		//Add an employee form
