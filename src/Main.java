@@ -66,11 +66,7 @@ public class Main extends Application {
 		RemoveItemTab removeTab = RemoveItemTab.getInstance();
 		UpdateItemTab updateTab = UpdateItemTab.getInstance();
 		StatisticsTab stab = StatisticsTab.getInstance();
-<<<<<<< HEAD
 		tpane.getTabs().addAll(htab, mtab, addTab, removeTab, updateTab, stab);
-=======
-		tpane.getTabs().addAll(htab,mtab, addTab, removeTab, updateTab, stab);
->>>>>>> staging
 		
 		//Setting up the main page
 		BorderPane bpane = new BorderPane();
