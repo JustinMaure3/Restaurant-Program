@@ -19,7 +19,7 @@ public class RemoveItemTab extends Tab {
 	private static RemoveItemTab tab;
 
 	private RemoveItemTab() {
-		this.setText("Remove Item");
+		this.setText("Remove");
 		
 		GridPane gpane = new GridPane();
 		
