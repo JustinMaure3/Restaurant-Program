@@ -51,7 +51,8 @@ public class Main extends Application {
 
 		MenuItem seventies = new MenuItem("70's");
 		MenuItem nineties = new MenuItem("90's");
-		themes.getItems().addAll(seventies, nineties);
+		MenuItem defaultTheme = new MenuItem("Defaut");
+		themes.getItems().addAll(defaultTheme, seventies, nineties);
 														
 		//Adding menus into the menuBar
 		menu.getMenus().addAll(fileMenu, creditsMenu, themes);
@@ -76,24 +77,58 @@ public class Main extends Application {
 		
 		//Set theme when clicked on in the theme menu
 		seventies.setOnAction(e->{
-			
-			scene.getStylesheets().add("Themes/seventiesTheme.css");
+			//Allow the user to switch between themes
+			if(scene.getStylesheets().contains("Themes/defaultTheme.css") || 
+					scene.getStylesheets().contains("Themes/ninetiesTheme.css") ||
+					scene.getStylesheets().contains("Themes/modernStyleSheet.css") ) {
+				
+				scene.getStylesheets().remove("Themes/defaultTheme.css");
+				scene.getStylesheets().remove("Themes/ninetiesTheme.css");
+				scene.getStylesheets().remove("Themes/modernStyleSheet.css");
+				scene.getStylesheets().add("Themes/seventiesTheme.css");	
+			}
 		});
 
 		modern.setOnAction(e->{
-			scene.getStylesheets().add("Themes/modernStyleSheet.css");
+			//Allow the user to switch between themes
+			if(scene.getStylesheets().contains("Themes/defaultTheme.css") || 
+					scene.getStylesheets().contains("Themes/ninetiesTheme.css") ||
+					scene.getStylesheets().contains("Themes/seventiesTheme.css") ) {
+				
+				scene.getStylesheets().remove("Themes/defaultTheme.css");
+				scene.getStylesheets().remove("Themes/ninetiesTheme.css");
+				scene.getStylesheets().remove("Themes/seventiesTheme.css");
+				scene.getStylesheets().add("Themes/modernStyleSheet.css");	
+			}
 		});
-		
-
-		//Adding theme
-		scene.getStylesheets().add("Themes/seventiesTheme.css"); 
 
 		//Set the 90's theme when clicked on in the menu menu
 		nineties.setOnAction(e->{
-			scene.getStylesheets().add("Themes/ninetiesTheme.css");
+			//Allow the user to switch between themes
+			if(scene.getStylesheets().contains("Themes/defaultTheme.css") || 
+					scene.getStylesheets().contains("Themes/modernStyleSheet.css") ||
+					scene.getStylesheets().contains("Themes/seventiesTheme.css") ) {
+				
+				scene.getStylesheets().remove("Themes/defaultTheme.css");
+				scene.getStylesheets().remove("Themes/defaultStyleSheet.css");
+				scene.getStylesheets().remove("Themes/seventiesTheme.css");
+				scene.getStylesheets().add("Themes/ninetiesTheme.css");	
+			}
 		});
 
 		//Default theme for the application
+		defaultTheme.setOnAction(e->{
+			//Allow the user to switch between themes
+			if(scene.getStylesheets().contains("Themes/ninetiesTheme.css") || 
+					scene.getStylesheets().contains("Themes/modernStyleSheet.css") ||
+					scene.getStylesheets().contains("Themes/seventiesTheme.css") ) {
+				
+				scene.getStylesheets().remove("Themes/ninetiesTheme.css");
+				scene.getStylesheets().remove("Themes/defaultStyleSheet.css");
+				scene.getStylesheets().remove("Themes/seventiesTheme.css");
+				scene.getStylesheets().add("Themes/defaultTheme.css");	
+			}
+		});
 		scene.getStylesheets().add("Themes/defaultTheme.css");
 		
 		//Mainstage is set up
