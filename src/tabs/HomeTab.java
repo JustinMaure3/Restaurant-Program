@@ -3,7 +3,9 @@ package tabs;
 import java.util.ArrayList;
 import java.util.Random;
 
+import PlaceHolder.CrewMember;
 import PlaceHolder.FoodDrink;
+import Tables.CrewMemberTable;
 import Tables.FoodTable;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -25,13 +27,15 @@ public class HomeTab extends Tab {
 		this.setText("Home");
 		
 		FoodTable menuItems = new FoodTable();
+		CrewMemberTable crewMember = new CrewMemberTable();
 		
 		FoodDrink topFoodItem = menuItems.getTopFoodDrink(1);
+		CrewMember topCrewMember = crewMember.getCrewMemberOfMonthk(1);
 		
 		//Restaurant name and the popular foodname and employee of the month 
 		Text restName = new Text("Dinner Diner");
 		Text popName = new Text(topFoodItem.getName() + "");//Here would grab the most popular food item name
-		Text empName = new Text();
+		Text empName = new Text(topCrewMember.getName() + "");
 		
 		Random r = new Random();
 		

@@ -76,6 +76,7 @@ public class Main extends Application {
 		
 		//Set theme when clicked on in the theme menu
 		seventies.setOnAction(e->{
+			
 			scene.getStylesheets().add("Themes/seventiesTheme.css");
 		});
 		modern.setOnAction(e->{
