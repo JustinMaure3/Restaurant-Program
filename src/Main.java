@@ -45,6 +45,7 @@ public class Main extends Application {
 		fileMenu.getItems().add(exit);
 		
 		//Adding menu items to themes menu
+
 		MenuItem modern = new MenuItem("Modern");
 		themes.getItems().add(modern);
 
@@ -65,7 +66,7 @@ public class Main extends Application {
 		RemoveItemTab removeTab = RemoveItemTab.getInstance();
 		UpdateItemTab updateTab = UpdateItemTab.getInstance();
 		StatisticsTab stab = StatisticsTab.getInstance();
-		tpane.getTabs().addAll(htab, mtab, addTab, removeTab, updateTab, stab);
+		tpane.getTabs().addAll(htab,mtab, addTab, removeTab, updateTab, stab);
 		
 		//Setting up the main page
 		BorderPane bpane = new BorderPane();
@@ -75,9 +76,10 @@ public class Main extends Application {
 		
 		//Set theme when clicked on in the theme menu
 		seventies.setOnAction(e->{
+			
 			scene.getStylesheets().add("Themes/seventiesTheme.css");
-
 		});
+
 		modern.setOnAction(e->{
 			scene.getStylesheets().add("Themes/modernStyleSheet.css");
 		});

@@ -70,4 +70,4 @@ public class MenuTab extends Tab {
 		return tab;
 	}
 
-}
+	}

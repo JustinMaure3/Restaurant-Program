@@ -9,6 +9,7 @@ import Database.Const;
 import Database.Database;
 import PlaceHolder.CrewMember;
 import PlaceHolder.Employee;
+import PlaceHolder.FoodDrink;
 
 public class CrewMemberTable {
 	//Creating an instance of the database
@@ -72,26 +73,19 @@ public class CrewMemberTable {
 		
 		//Creating a method to grab the employee of the month
 			public CrewMember getCrewMemberOfMonthk(int crewMemberGoldStar) {
-				String query = "SELECT FROM " + Const.TABLE_CREWMEMBER + " WHERE " + 
-						   Const.CREWMEMBER_COLUMN_CREWMEMBERGOLDSTAR + " > " + crewMemberGoldStar;
+				String query = "SELECT * FROM " + Const.TABLE_CREWMEMBER  + " ORDER BY " + Const.CREWMEMBER_COLUMN_CREWMEMBERGOLDSTAR + " DESC ";
 				CrewMember crewMember = new CrewMember();
 				try {
 					Statement getItem = db.getConnection().createStatement();
 					ResultSet data = getItem.executeQuery(query);
 					data.next();
-					crewMember = new CrewMember(data.getInt(Const.CREWMEMBER_COLUMN_ID),
-							   data.getString(Const.CREWMEMBER_COLUMN_NAME),
-							   data.getDouble(Const.CREWMEMBER_COLUMN_WAGE),
-							   data.getString(Const.CREWMEMBER_COLUMN_UNIFORM),
-							   data.getString(Const.CREWMEMBER_COLUMN_POSITION),
-							   data.getInt(Const.CREWMEMBER_COLUMN_CREWMEMBERGOLDSTAR),
-							   data.getInt(Const.CREWMEMBER_COLUMN_CREWMEMBERPUNCHIN));
+					crewMember = new CrewMember(data.getString(Const.CREWMEMBER_COLUMN_NAME),
+							data.getInt(Const.CREWMEMBER_COLUMN_CREWMEMBERGOLDSTAR));
 		}catch(SQLException e) {
 			e.printStackTrace();
 		}
 		return crewMember;
 	}
-
 		//Creating method to update an instance of the crewMember class in the database table
 		public void updateCrewMember(CrewMember crewMember) {
 			

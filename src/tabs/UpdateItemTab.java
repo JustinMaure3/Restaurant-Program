@@ -91,6 +91,8 @@ public class UpdateItemTab extends Tab {
 			//Show the month row
 			pane.add(monthText, 0, 7);
 			pane.add(month, 1, 7);
+			
+			this.setContent(pane);
 		}
 		
 		//Create Button for food update
@@ -98,8 +100,9 @@ public class UpdateItemTab extends Tab {
 		fUpdate.setOnAction(e->{
 			if(!foodName.getText().isEmpty()) {
 				if(isFoodHidden) {
-					isFoodHidden = false;
+					pane.getChildren().remove(fUpdate);
 					pane.add(fUpdate, 1, 8);
+					isFoodHidden = false;
 				} else {
 					//Create an instance of the food table
 					FoodTable fTable = new FoodTable();
@@ -183,8 +186,9 @@ public class UpdateItemTab extends Tab {
 		eUpdate.setOnAction(e->{
 			if(!eName.getText().isEmpty()) {
 				if(isEmployeeHidden) {
-					isEmployeeHidden = false;
+					pane.getChildren().remove(eUpdate);
 					pane.add(eUpdate, 11, 7);
+					isEmployeeHidden = false;
 				} else {
 					//Create an instance of the CrewMember table
 					CrewMemberTable cmTable = new CrewMemberTable();
