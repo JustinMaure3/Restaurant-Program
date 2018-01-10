@@ -137,8 +137,8 @@ public class AddItemTab extends Tab{
 			CrewMemberTable cmTable = new CrewMemberTable();
 			
 			CrewMember crewMember = new CrewMember(
-					name.getText(),
-					Integer.parseInt(wage.getText()) + 0.0,
+					ename.getText(),
+					Double.parseDouble(wage.getText()),
 					uniform.getSelectionModel().getSelectedItem().name(),
 					position.getSelectionModel().getSelectedItem().name(),
 					Integer.parseInt(punchIn.getText()),
