@@ -61,12 +61,20 @@ public class Main extends Application {
 		TabPane tpane = new TabPane();
 		tpane.setTabClosingPolicy(TabClosingPolicy.UNAVAILABLE);
 		HomeTab htab = HomeTab.getInstance();
+<<<<<<< HEAD
 		//MenuTab mtab = MenuTab.getInstance();
+=======
+//		MenuTab mtab = MenuTab.getInstance();
+>>>>>>> 0fd223d2cbb199f26741e87091411422d5f13036
 		AddItemTab addTab = AddItemTab.getInstance();
 		RemoveItemTab removeTab = RemoveItemTab.getInstance();
 		UpdateItemTab updateTab = UpdateItemTab.getInstance();
 		StatisticsTab stab = StatisticsTab.getInstance();
+<<<<<<< HEAD
 		tpane.getTabs().addAll(htab, addTab, removeTab, updateTab, stab);
+=======
+		tpane.getTabs().addAll(htab, /*mtab,*/ addTab, removeTab, updateTab, stab);
+>>>>>>> 0fd223d2cbb199f26741e87091411422d5f13036
 		
 		//Setting up the main page
 		BorderPane bpane = new BorderPane();
@@ -79,10 +87,10 @@ public class Main extends Application {
 			
 			scene.getStylesheets().add("Themes/seventiesTheme.css");
 		});
+
 		modern.setOnAction(e->{
 			scene.getStylesheets().add("Themes/modernStyleSheet.css");
 		});
-		
 		
 
 		//Adding theme
