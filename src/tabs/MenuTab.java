@@ -14,7 +14,7 @@ import javafx.scene.text.Text;
 
 
 public class MenuTab extends Tab {
-	
+	/**
 	private static MenuTab tab;
 
 	private MenuTab() {
@@ -69,5 +69,5 @@ public class MenuTab extends Tab {
 		}
 		return tab;
 	}
-
+**/
 	}
