@@ -1,16 +1,27 @@
 .root {
-    -fx-background-color: #2BFF1F;
+    -fx-background-color: #A7C5C9;
     -fx-font-family: helvetica;
+    
 }
 
 .button {
-    -fx-background-color: #000000;
-    -fx-text-fill: white;
+    -fx-background-color: #A0A0A0;
+    -fx-text-fill: black;
     -fx-background-radius: 5;
     -fx-border-color: white;
     -fx-border-radius: 5;
+    -fx-padding: 10,10,10,10;
+}
+
+.button:hover {
+	-fx-background-color: white;
 }
 
 .tab {
-    -fx-background-color: #82FE7C;
+    -fx-background-color: #A0A0A0;
 }
+
+.tab:hover {
+    -fx-background-color: #A7C5C9;
+}
+

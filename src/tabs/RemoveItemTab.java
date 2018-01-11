@@ -19,7 +19,7 @@ public class RemoveItemTab extends Tab {
 	private static RemoveItemTab tab;
 
 	private RemoveItemTab() {
-		this.setText("Remove Item");
+		this.setText("Remove");
 		
 		GridPane gpane = new GridPane();
 		
@@ -33,12 +33,12 @@ public class RemoveItemTab extends Tab {
 			//Create a food table
 			FoodTable fTable = new FoodTable();
 			//Create the array that'll give us all foodDrink in our database
-//			ArrayList<FoodDrink> foodDrinkItems = fTable.getAllFoodDrink();
+			ArrayList<FoodDrink> foodDrinkItems = fTable.getAllFoodDrink();
 			
 			//set the list with all the items in the arraylist
-//			
-//			//set the list with all the items in the arraylist
-//			list.setItems(FXCollections.observableArrayList(foodDrinkItems));
+			
+			//set the list with all the items in the arraylist
+			list.setItems(FXCollections.observableArrayList(foodDrinkItems));
 			pane.setCenter(list);
 			
 			
@@ -72,12 +72,12 @@ public class RemoveItemTab extends Tab {
 			//Create a food table
 			CrewMemberTable cmTable = new CrewMemberTable();
 			//Create the array that'll give us all foodDrink in our database
-//			ArrayList<CrewMember> cmItems = cmTable.getAllCrewMembers();
+			ArrayList<CrewMember> cmItems = cmTable.getAllCrewMembers();
 			
 			//set the list with all the items in the arraylist
-//			
-//			//set the list with all the items in the arraylist
-//			list.setItems(FXCollections.observableArrayList(cmItems));
+			
+			//set the list with all the items in the arraylist
+			list.setItems(FXCollections.observableArrayList(cmItems));
 			pane.setCenter(list);
 			
 			

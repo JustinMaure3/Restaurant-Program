@@ -49,8 +49,8 @@ public class FoodTable implements FoodDrinkDAO {
 	//Creating a method to get a single instance of a foodDrink class
 	@Override
 	public FoodDrink getFoodDrink(int foodID) {
-		String query = "SELECT FROM " + Const.TABLE_FOOD_DRINK + " WHERE " + 
-				   Const.FOOD_DRINK_COLUMN_ID + " = " + foodID;
+		String query = "SELECT FROM " + Const.TABLE_FOOD_DRINK + " WHERE " 
+				+ Const.FOOD_DRINK_COLUMN_ID + " = " + foodID;
 		FoodDrink foodItem = new FoodDrink();
 		try {
 			Statement getItem = db.getConnection().createStatement();
@@ -73,22 +73,15 @@ public class FoodTable implements FoodDrinkDAO {
 	
 	//Creating a method to grab the top fooditem
 		@Override
-		public FoodDrink getTopFoodDrink(int foodSales) {
-			String query = "SELECT FROM " + Const.TABLE_FOOD_DRINK + " WHERE " + 
-					   Const.FOOD_DRINK_COLUMN_AMOUNT_SOLD + " > " + foodSales;
+		public FoodDrink getTopFoodDrink (int foodSales) {
+			String query = "SELECT * FROM " + Const.TABLE_FOOD_DRINK  + " ORDER BY " + Const.FOOD_DRINK_COLUMN_AMOUNT_SOLD + " DESC ";
 			FoodDrink foodItem = new FoodDrink();
 			try {
 				Statement getItem = db.getConnection().createStatement();
 				ResultSet data = getItem.executeQuery(query);
 				data.next();
-				foodItem = new FoodDrink(data.getInt(Const.FOOD_DRINK_COLUMN_ID),
-						   data.getString(Const.FOOD_DRINK_COLUMN_NAME),
-						   data.getInt(Const.FOOD_DRINK_COLUMN_RATING),
-						   data.getString(Const.FOOD_DRINK_COLUMN_DESCRIPTION),
-						   data.getString(Const.FOOD_DRINK_COLUMN_PICTURE),
-						   data.getDouble(Const.FOOD_DRINK_COLUMN_PRICE),
-						   data.getDouble(Const.FOOD_DRINK_COLUMN_AMOUNT_SOLD),
-						   data.getString(Const.FOOD_DRINK_COLUMN_MONTH));
+				foodItem = new FoodDrink(data.getString(Const.FOOD_DRINK_COLUMN_NAME),
+						data.getDouble(Const.FOOD_DRINK_COLUMN_AMOUNT_SOLD));
 			}catch(SQLException e) {
 				e.printStackTrace();
 			}
@@ -98,8 +91,14 @@ public class FoodTable implements FoodDrinkDAO {
 	//Creating method to update an instance of foodDrink class in the database table
 	@Override
 	public void updateFoodDrink(FoodDrink foodDrink) {
-		String query = "UPDATE FROM " + Const.TABLE_FOOD_DRINK + " WHERE " +
-						Const.FOOD_DRINK_COLUMN_NAME + " = " + foodDrink.getName();
+		String query = "UPDATE " + Const.TABLE_FOOD_DRINK + " SET " + 
+				Const.FOOD_DRINK_COLUMN_RATING + " = " + foodDrink.getRating() + ", " +
+				Const.FOOD_DRINK_COLUMN_DESCRIPTION + " = " + foodDrink.getDescription() + ", " +
+				Const.FOOD_DRINK_COLUMN_PICTURE + " = " + foodDrink.getPicture() + ", " +
+				Const.FOOD_DRINK_COLUMN_PRICE + " = " + foodDrink.getPrice() + ", " +
+				Const.FOOD_DRINK_COLUMN_AMOUNT_SOLD + " = " + foodDrink.getAmountSold() + ", " +
+				Const.FOOD_DRINK_COLUMN_MONTH + " = " + foodDrink.getMonth() + " WHERE " +
+				Const.FOOD_DRINK_COLUMN_NAME + " = " + foodDrink.getName();
 		try {
 			db.getConnection().createStatement().execute(query);
 		}catch(SQLException e) {
@@ -134,7 +133,7 @@ public class FoodTable implements FoodDrinkDAO {
 				   Const.FOOD_DRINK_COLUMN_MONTH + ") values ('"+
 				   foodDrink.getName() + "','" + foodDrink.getRating() + "','" +
 				   foodDrink.getDescription() + "','" + foodDrink.getPicture() + "','" +
-				   foodDrink.getPrice() + "','" + foodDrink.getAmountSold() + foodDrink.getMonth() + "')";
+				   foodDrink.getPrice() + "','" + foodDrink.getAmountSold() + "','" + foodDrink.getMonth() + "')";
 		try {
 			db.getConnection().createStatement().execute(query);
 		}catch(SQLException e) {

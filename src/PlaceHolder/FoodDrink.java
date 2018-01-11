@@ -28,6 +28,13 @@ public class FoodDrink {
 		this.amountSold = amountSold;
 		this.month = month;
 	}
+	
+	//Food and drink constructor with ID
+		public FoodDrink(String name, Double amountSold) {
+			this.name = name;
+			this.amountSold = amountSold;
+		}
+		
 	//Food and drink constructor without id
 	public FoodDrink(String name, int rating, String description, String picture, Double price, Double amountSold, String month) {
 		this.name = name;
