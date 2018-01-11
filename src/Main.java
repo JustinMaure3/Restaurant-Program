@@ -1,4 +1,8 @@
 import Database.Database;
+import PlaceHolder.CrewMember;
+import PlaceHolder.StoreLocations;
+import Tables.CrewMemberTable;
+import Tables.StoreLocationsTable;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.Menu;
@@ -78,6 +82,15 @@ public class Main extends Application {
 		TabPane tpane = new TabPane();
 		tpane.setTabClosingPolicy(TabClosingPolicy.UNAVAILABLE);
 		HomeTab htab = HomeTab.getInstance();
+		
+		
+		//Adding values into locations
+		//StoreLocationsTable storelocationstable = new StoreLocationsTable();
+		
+		//StoreLocations storeLocations = new StoreLocations("330 GoodBoy Ave", "Jacob Makich", 32, 86);
+		
+		//storelocationstable.createStoreLocations(storeLocations);
+		
 
 		//MenuTab mtab = MenuTab.getInstance();
 
