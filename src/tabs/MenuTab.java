@@ -14,15 +14,12 @@ import javafx.scene.text.Text;
 
 
 public class MenuTab extends Tab {
-<<<<<<< HEAD
+
 //	public String changeTable(String table) {
 //		if(table ==)
 //		return table;
 //	}
 	
-=======
-	/**
->>>>>>> 3a406909d20c49d4220c6b2bd7fed8a8fa3ffba5
 	private static MenuTab tab;
 
 	private MenuTab() {
@@ -80,5 +77,5 @@ public class MenuTab extends Tab {
 		}
 		return tab;
 	}
-**/
+
 	}
