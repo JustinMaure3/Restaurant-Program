@@ -19,32 +19,24 @@ import javafx.scene.text.Text;
 
 
 
-public class MenuTab extends Tab {
+public class MenuTab extends Tab {	
 
-//	public String changeTable(String table) {
-//		if(table ==)
-//		return table;
-//	}
-	//public String changeTable(String table) {
-		//if(table ==)
-	//	return table;
-	//}
-	
-<<<<<<< HEAD
-	public static String displayedTable;
-=======
-	
->>>>>>> staging
+	public static String displayedTable = "food";
+
 	
 	private static MenuTab tab;
+	
+	public static BorderPane pane;
+	
 
 	private MenuTab() {
 		this.setText("Menu");
+		pane = new BorderPane();
 	
 		//Create the panes necessary for this tab
 		
-		BorderPane pane = new BorderPane();
-		VBox menu = new VBox();		
+		
+		VBox data = new VBox();		
 		
 		//If statement checking what table is selected
 		if(displayedTable == "food") {
@@ -60,7 +52,7 @@ public class MenuTab extends Tab {
 			while(i < foodDrinkItems.size()){
 				
 				//Create an HBox to hold the information about the current food item
-				HBox newItem = new HBox();
+				HBox newItemFood = new HBox();
 				
 				//Create objects to hold the food's information and then add them to the HBox
 				Text name = new Text("  " + foodDrinkItems.get(i).getName() + "  ");
@@ -73,10 +65,10 @@ public class MenuTab extends Tab {
 				Text amountSold = new Text("  " + foodDrinkItems.get(i).getAmountSold() + "  ");
 				
 				//Add all of the info into the hbox
-				newItem.getChildren().addAll(picture, name, rating, description, price, amountSold);
+				newItemFood.getChildren().addAll(picture, name, rating, description, price, amountSold);
 				
 				//Add the HBox to the VBox
-				menu.getChildren().add(newItem);
+				data.getChildren().add(newItemFood);
 				//Increment i
 				i++;
 			}
@@ -93,7 +85,7 @@ public class MenuTab extends Tab {
 			while(i < crewMemberItems.size()){
 				
 				//Create an HBox to hold the information about the current food item
-				HBox newItem = new HBox();
+				HBox newItemCrew = new HBox();
 				
 				//Create objects to hold the food's information and then add them to the HBox
 				Text name = new Text("  " + crewMemberItems.get(i).getName() + "  ");
@@ -104,10 +96,10 @@ public class MenuTab extends Tab {
 				Text crewMemberGoldStar = new Text("  " + crewMemberItems.get(i).getCrewMemberGoldStar() + "  ");
 				
 				//Add all of the info into the hbox
-				newItem.getChildren().addAll(name, wage, uniform, position, crewMemberPunchIn, crewMemberGoldStar);
+				newItemCrew.getChildren().addAll(name, wage, uniform, position, crewMemberPunchIn, crewMemberGoldStar);
 				
 				//Add the HBox to the VBox
-				menu.getChildren().add(newItem);
+				data.getChildren().add(newItemCrew);
 				//Increment i
 				i++;
 			}
@@ -123,7 +115,7 @@ public class MenuTab extends Tab {
 			while(e < managerItems.size()){
 				
 				//Create an HBox to hold the information about the current food item
-				HBox newItem2 = new HBox();
+				HBox newItemManager = new HBox();
 				
 				//Create objects to hold the food's information and then add them to the HBox
 				Text name = new Text("  " + managerItems.get(e).getName() + "  ");
@@ -134,10 +126,10 @@ public class MenuTab extends Tab {
 				Text managerSafeCode = new Text("  " + managerItems.get(e).getManagerSafeCode() + "  ");
 				
 				//Add all of the info into the hbox
-				newItem2.getChildren().addAll(name, wage, uniform, position, managerID, managerSafeCode);
+				newItemManager.getChildren().addAll(name, wage, uniform, position, managerID, managerSafeCode);
 				
 				//Add the HBox to the VBox
-				menu.getChildren().add(newItem2);
+				data.getChildren().add(newItemManager);
 				//Increment i
 				e++;
 			}
@@ -154,7 +146,7 @@ public class MenuTab extends Tab {
 			while(i < LocationsItems.size()){
 				
 				//Create an HBox to hold the information about the current food item
-				HBox newItem = new HBox();
+				HBox newItemLocations = new HBox();
 				
 				//Create objects to hold the food's information and then add them to the HBox
 				Text location = new Text("  " + LocationsItems.get(i).getLocation() + "  ");
@@ -163,10 +155,10 @@ public class MenuTab extends Tab {
 				Text custReview = new Text(LocationsItems.get(i).getCustReview() + "  ");
 				
 				//Add all of the info into the hbox
-				newItem.getChildren().addAll(location, santScore, regionalMan, custReview);
+				newItemLocations.getChildren().addAll(location, santScore, regionalMan, custReview);
 				
 				//Add the HBox to the VBox
-				menu.getChildren().add(newItem);
+				data.getChildren().add(newItemLocations);
 				//Increment i
 				i++;
 			}
@@ -175,7 +167,7 @@ public class MenuTab extends Tab {
 		
 		
 		//Add the menu to the main pane
-		pane.getChildren().add(menu);
+		pane.getChildren().add(data);
 		
 		//Set the pane to the scene
 		this.setContent(pane);
@@ -187,10 +179,12 @@ public class MenuTab extends Tab {
 		}
 		return tab;
 	}
-<<<<<<< HEAD
-}
-=======
+//	public static void refresh() {
+//		MenuTab.setContent(pane);
+//	}
 
-	}
->>>>>>> staging
+}
+
+
+
 

@@ -18,11 +18,6 @@ import tabs.UpdateItemTab;
 public class Main extends Application {
 
 	public static Stage mainStage;
-<<<<<<< HEAD
-=======
-	public static String displayedTable = "";
-	
->>>>>>> staging
 	public static void main(String[] args) {
 		Application.launch(args);
 	
@@ -44,14 +39,17 @@ public class Main extends Application {
 		MenuItem food = new MenuItem("Food");
 		food.setOnAction(e->{
 			MenuTab.displayedTable = "food";
+			MenuTab.refresh();
 		});
 		MenuItem employees = new MenuItem("Employees");
 		employees.setOnAction(e->{
 			MenuTab.displayedTable = "employees";
+			MenuTab.refresh();
 		});
 		MenuItem locations = new MenuItem("Locations");
 		locations.setOnAction(e->{
 			MenuTab.displayedTable = "locations";
+			MenuTab.refresh();
 		});
 		display.getItems().addAll(food,employees, locations);
 														
