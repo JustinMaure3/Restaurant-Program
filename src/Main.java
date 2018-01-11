@@ -1,5 +1,3 @@
-import java.sql.Connection;
-
 import Database.Database;
 import javafx.application.Application;
 import javafx.scene.Scene;
@@ -21,6 +19,7 @@ public class Main extends Application {
 
 	public static Stage mainStage;
 	public static String displayedTable = "";
+	
 	public static void main(String[] args) {
 		Application.launch(args);
 
@@ -79,24 +78,20 @@ public class Main extends Application {
 		TabPane tpane = new TabPane();
 		tpane.setTabClosingPolicy(TabClosingPolicy.UNAVAILABLE);
 		HomeTab htab = HomeTab.getInstance();
-<<<<<<< HEAD
+
 		//MenuTab mtab = MenuTab.getInstance();
-=======
->>>>>>> 56e0b1a61689ef835f079d7d683fd0657f2fbfc1
+
 		MenuTab mtab = MenuTab.getInstance();
 		AddItemTab addTab = AddItemTab.getInstance();
 		RemoveItemTab removeTab = RemoveItemTab.getInstance();
 		UpdateItemTab updateTab = UpdateItemTab.getInstance();
 		StatisticsTab stab = StatisticsTab.getInstance();
-<<<<<<< HEAD
-		
-		tpane.getTabs().addAll(htab, mtab, addTab, removeTab, updateTab, stab);
-		
-		
-=======
 
+		
 		tpane.getTabs().addAll(htab, mtab, addTab, removeTab, updateTab, stab);
->>>>>>> 56e0b1a61689ef835f079d7d683fd0657f2fbfc1
+
+
+
 		
 		//Setting up the main page
 		BorderPane bpane = new BorderPane();
