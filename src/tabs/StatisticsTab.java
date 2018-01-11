@@ -13,7 +13,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 
 import javafx.scene.control.Tab;
-
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 
 import javafx.scene.text.Text;
@@ -30,6 +30,7 @@ public class StatisticsTab extends Tab{
 		this.setText("Statistics");
 		//This GridPane will contain the content
 		GridPane pane = new GridPane();
+		BorderPane mainPane = new BorderPane();
 		//Text for the ComboBox named monthBox "Monthly Stats"
 		Text monthBoxText = new Text("Monthly Stats: ");
 		pane.add(monthBoxText, 0, 0);
@@ -44,10 +45,52 @@ public class StatisticsTab extends Tab{
 		pane.setPadding(new Insets(10,10,10,10));
 		pane.setVgap(10);
 		pane.setHgap(10);
-		this.setContent(pane);
+		mainPane.setLeft(pane);
+		this.setContent(mainPane);
 		
 		goBtn.setOnAction(e->{
 			MonthlyStats stat = monthComboBox.getSelectionModel().getSelectedItem();
+			String newStat = stat + "";
+			
+			switch(newStat) {
+			case "JANUARY":
+				mainPane.setCenter(januaryPieChart());
+				break;
+			case "FEBRUARY":
+				mainPane.setCenter(februaryPieChart());
+				break;
+			case "MARCH":
+				mainPane.setCenter(marchPieChart());
+				break;
+			case "APRIL":
+				mainPane.setCenter(aprilPieChart());
+				break;
+			case "MAY":
+				mainPane.setCenter(mayPieChart());
+				break;
+			case "JUNE":
+				mainPane.setCenter(junePieChart());
+				break;
+			case "JULY":
+				mainPane.setCenter(julyPieChart());
+				break;
+			case "AUGUST":
+				mainPane.setCenter(augustPieChart());
+				break;
+			case "SEPTEMBER":
+				mainPane.setCenter(septemberPieChart());
+				break;
+			case "OCTOBER":
+				mainPane.setCenter(octoberPieChart());
+				break;
+			case "NOVEMBER":
+				mainPane.setCenter(novemberPieChart());
+				break;
+			case "DECEMBER":
+				mainPane.setCenter(decemberPieChart());
+				break;
+			
+			}
 			
 		});
 
@@ -78,6 +121,7 @@ public class StatisticsTab extends Tab{
 				new PieChart.Data((foodDrinkItems.get(i).getName() + ": "), itemAmt.get(i)));
 			i++;
 		}
+		pieChart.setData(data);
 		return pieChart;
 	}
 	
@@ -101,6 +145,7 @@ public class StatisticsTab extends Tab{
 					new PieChart.Data((foodDrinkItems.get(i).getName() + ": "), itemAmt.get(i)));
 			i++;
 		}
+		pieChart.setData(data);
 		return pieChart;
 		
 	}
@@ -124,6 +169,7 @@ public class StatisticsTab extends Tab{
 					new PieChart.Data((foodDrinkItems.get(i).getName() + ": "), itemAmt.get(i)));
 			i++;
 		}
+		pieChart.setData(data);
 		return pieChart;
 		
 	}
@@ -146,6 +192,7 @@ public class StatisticsTab extends Tab{
 					new PieChart.Data((foodDrinkItems.get(i).getName() + ": "), itemAmt.get(i)));
 			i++;
 		}
+		pieChart.setData(data);
 		return pieChart;
 		
 	}
@@ -169,6 +216,7 @@ public class StatisticsTab extends Tab{
 					new PieChart.Data((foodDrinkItems.get(i).getName() + ": "), itemAmt.get(i)));
 			i++;
 		}
+		pieChart.setData(data);
 		return pieChart;
 		
 	}
@@ -192,6 +240,7 @@ public class StatisticsTab extends Tab{
 					new PieChart.Data((foodDrinkItems.get(i).getName() + ": "), itemAmt.get(i)));
 			i++;
 		}
+		pieChart.setData(data);
 		return pieChart;
 		
 	}
@@ -214,6 +263,7 @@ public class StatisticsTab extends Tab{
 					new PieChart.Data((foodDrinkItems.get(i).getName() + ": "), itemAmt.get(i)));
 			i++;
 		}
+		pieChart.setData(data);
 		return pieChart;
 		
 	}
@@ -236,6 +286,7 @@ public class StatisticsTab extends Tab{
 					new PieChart.Data((foodDrinkItems.get(i).getName() + ": "), itemAmt.get(i)));
 			i++;
 		}
+		pieChart.setData(data);
 		return pieChart;
 		
 	}
@@ -258,6 +309,7 @@ public class StatisticsTab extends Tab{
 					new PieChart.Data((foodDrinkItems.get(i).getName() + ": "), itemAmt.get(i)));
 			i++;
 		}
+		pieChart.setData(data);
 		return pieChart;
 		
 	}
@@ -281,6 +333,7 @@ public class StatisticsTab extends Tab{
 					new PieChart.Data((foodDrinkItems.get(i).getName() + ": "), itemAmt.get(i)));
 			i++;
 		}
+		pieChart.setData(data);
 		return pieChart;
 		
 	}
@@ -304,6 +357,7 @@ public class StatisticsTab extends Tab{
 					new PieChart.Data((foodDrinkItems.get(i).getName() + ": "), itemAmt.get(i)));
 			i++;
 		}
+		pieChart.setData(data);
 		return pieChart;
 		
 	}
@@ -327,6 +381,7 @@ public class StatisticsTab extends Tab{
 					new PieChart.Data((foodDrinkItems.get(i).getName() + ": "), itemAmt.get(i)));
 			i++;
 		}
+		pieChart.setData(data);
 		return pieChart;
 		
 	}
