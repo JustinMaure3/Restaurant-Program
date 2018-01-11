@@ -16,11 +16,12 @@ import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontPosture;
 import javafx.scene.text.Text;
+import javafx.scene.text.TextAlignment;
 
 public class HomeTab extends Tab {
 	
 	private static HomeTab tab;
-
+	public static TextAlignment CENTER;
 	private HomeTab() {
 		this.setText("Home");
 		
@@ -35,13 +36,23 @@ public class HomeTab extends Tab {
 		Text popName = new Text(topFoodItem.getName() + " is the best selling item this year!");//Here would grab the most popular food item name
 		Text empName = new Text(topCrewMember.getName() + " is the top employee of this year!");
 		
+		
+		
 		//ImageViews
-		ImageView starImage = new ImageView("Pictures/star.png");
 		ImageView foodImage = new ImageView("Pictures/" + topFoodItem.getPicture());
 		
-		starImage.setFitHeight(300);
-		starImage.setFitWidth(300);
+		//If its empty then we now have a default value preventing crashes
+		if(topFoodItem.getName() == null ) {
+			 popName = new Text("There seems to be no top food please enter one");
+			 foodImage = new ImageView("Pictures/star.png");
+		}
 		
+		//If its empty we now have a default value preventing crashes
+		if(topCrewMember.getName() == null) {
+			empName = new Text("There seems to be no employee of the year sorry!");
+		}
+		
+		//Setting size of food images
 		foodImage.setFitHeight(300);
 		foodImage.setFitWidth(300);
 		
@@ -53,17 +64,18 @@ public class HomeTab extends Tab {
 		//Tip for the restaurant
 		Text tipText = new Text("RANDOM TIP I WILL BE GENERATING VERY SHORTLY");
 		
+		//Switch case changes everytime the app opens
 		switch(randomTip){
 		case 0:
-			tipText = new Text("If a food item is not selling a great idea is to remove the item completly from the menu and maybe try another item");
+			tipText = new Text("If a food item is not selling a great idea is to remove \nthe item from the menu and maybe try another item");
 			break;
 			
 		case 1:
-			tipText = new Text("If an employee goes above and beyond their work give them a gold star to show you appreciate them!");
+			tipText = new Text("If an employee goes above and beyond their work give \nthem a gold star to show you appreciate them!");
 			break;
 			
 		case 2:
-			tipText = new Text("Running out of supplise? Check out the locations table to find a location for one of our branches");
+			tipText = new Text("Running out of supplies? Check out the locations table to find a location for one of our branches");
 			break;
 			
 			default:
@@ -74,10 +86,11 @@ public class HomeTab extends Tab {
 		//HBox containing the title of the restaurant
 		VBox main = new VBox();
 		HBox title = new HBox();
-		HBox empFood = new HBox();
+		VBox foodTitlePic = new VBox();
+		HBox foodTitle = new HBox();
+		HBox foodPicture = new HBox();
 		HBox tip = new HBox();
-		VBox Vemp = new VBox();
-		VBox Vfood = new VBox();
+		HBox emp = new HBox();
 		
 		//Font specifically for the title
 		Font titleFont = Font.font("Times New Roman", FontPosture.REGULAR, 30);
@@ -85,28 +98,29 @@ public class HomeTab extends Tab {
 		restName.setFont(titleFont);
 		popName.setFont(subTitleFont);
 		empName.setFont(subTitleFont);
+		tipText.setFont(subTitleFont);
 		
+		tipText.setTextAlignment(CENTER);
 		//Adding the title to the HBox then setting some padding and setting the title to the center top
 		title.getChildren().add(restName);
 		title.setAlignment(Pos.TOP_CENTER);
 		title.setPadding(new Insets(25, 0, 0, 0));
 		
-		//This is where we will add the employee name and picture and food name and picture
-		Vemp.getChildren().addAll(empName,starImage);//THIS WILL ADD EMP PICTURE WHEN AVAILABLE
-		//Vemp.setPadding(new Insets(10, 150, 0, 100));
-		Vfood.getChildren().addAll(popName, foodImage);//THIS WILL ADD POP FOOD AND PICTURE WHEN AVAILABLE
-		//Vfood.setPadding(new Insets(10, 100, 0, 150));
+		foodTitle.getChildren().add(popName);
+		foodPicture.getChildren().add(foodImage);
 		
-		empFood.getChildren().addAll(Vemp, Vfood);
-		empFood.setAlignment(Pos.CENTER);
-		
-		
+		foodTitle.setAlignment(Pos.CENTER);
+		foodPicture.setAlignment(Pos.CENTER);
+		foodTitlePic.getChildren().addAll(foodTitle, foodPicture);
 		
 		tip.getChildren().add(tipText);
+		tip.setAlignment(Pos.CENTER);
+		
+		emp.getChildren().add(empName);
+		emp.setAlignment(Pos.CENTER);
 		
 		//Everything will be added to the main and it will go from top to bottom
-		main.getChildren().addAll(title,empFood,tip);
-		
+		main.getChildren().addAll(title,foodTitlePic,emp, tip);
 		
 		this.setContent(main);
 		
