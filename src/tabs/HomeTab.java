@@ -36,9 +36,23 @@ public class HomeTab extends Tab {
 		Text popName = new Text(topFoodItem.getName() + " is the best selling item this year!");//Here would grab the most popular food item name
 		Text empName = new Text(topCrewMember.getName() + " is the top employee of this year!");
 		
+		
+		
 		//ImageViews
 		ImageView foodImage = new ImageView("Pictures/" + topFoodItem.getPicture());
 		
+		//If its empty then we now have a default value preventing crashes
+		if(topFoodItem.getName() == null ) {
+			 popName = new Text("There seems to be no top food please enter one");
+			 foodImage = new ImageView("Pictures/star.png");
+		}
+		
+		//If its empty we now have a default value preventing crashes
+		if(topCrewMember.getName() == null) {
+			empName = new Text("There seems to be no employee of the year sorry!");
+		}
+		
+		//Setting size of food images
 		foodImage.setFitHeight(300);
 		foodImage.setFitWidth(300);
 		
@@ -50,6 +64,7 @@ public class HomeTab extends Tab {
 		//Tip for the restaurant
 		Text tipText = new Text("RANDOM TIP I WILL BE GENERATING VERY SHORTLY");
 		
+		//Switch case changes everytime the app opens
 		switch(randomTip){
 		case 0:
 			tipText = new Text("If a food item is not selling a great idea is to remove \nthe item from the menu and maybe try another item");

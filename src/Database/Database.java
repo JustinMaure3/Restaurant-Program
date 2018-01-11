@@ -38,6 +38,18 @@ public class Database {
 			Const.CREWMEMBER_COLUMN_CREWMEMBERGOLDSTAR + " VARCHAR(50), " +
 			"PRIMARY KEY(" + Const.CREWMEMBER_COLUMN_ID + ")" + ");";
 	
+	//Create a string that will be used as a query to create the Managers table
+		public static final String CREATE_TABLE_MANAGER = 
+				"CREATE TABLE " + Const.TABLE_MANAGER + " (" +
+				Const.MANAGER_COLUMN_ID + " int NOT NULL AUTO_INCREMENT, " +
+				Const.MANAGER_COLUMN_NAME + " VARCHAR(50), " +
+				Const.MANAGER_COLUMN_WAGE + " VARCHAR(50), " +
+				Const.MANAGER_COLUMN_UNIFORM + " VARCHAR(50), " +
+				Const.MANAGER_COLUMN_POSITION + " VARCHAR(50), " +
+				Const.MANAGER_COLUMN_MANAGERID + " VARCHAR(50), " +
+				Const.MANAGER_COLUMN_MANAGERSAFECODE + " VARCHAR(50), " +
+				"PRIMARY KEY(" + Const.MANAGER_COLUMN_ID + ")" + ");";
+	
 	//Create a string that will be used as a query to create the Locations table
 	public static final String CREATE_TABLE_LOCATIONS =
 			"CREATE TABLE " + Const.TABLE_STORELOCATIONS + " (" +
@@ -65,6 +77,7 @@ public class Database {
 			createTable(Const.TABLE_FOOD_DRINK, CREATE_TABLE_FOOD_DRINK, connection);
 			createTable(Const.TABLE_CREWMEMBER, CREATE_TABLE_CREWMEMBER, connection);
 			createTable(Const.TABLE_STORELOCATIONS, CREATE_TABLE_LOCATIONS, connection);
+			createTable(Const.TABLE_MANAGER, CREATE_TABLE_MANAGER, connection);
 		}
 	}
 	
