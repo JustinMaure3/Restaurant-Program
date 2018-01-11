@@ -81,7 +81,8 @@ public class FoodTable implements FoodDrinkDAO {
 				ResultSet data = getItem.executeQuery(query);
 				data.next();
 				foodItem = new FoodDrink(data.getString(Const.FOOD_DRINK_COLUMN_NAME),
-						data.getDouble(Const.FOOD_DRINK_COLUMN_AMOUNT_SOLD));
+						data.getDouble(Const.FOOD_DRINK_COLUMN_AMOUNT_SOLD),
+						data.getString(Const.FOOD_DRINK_COLUMN_PICTURE));
 			}catch(SQLException e) {
 				e.printStackTrace();
 			}

@@ -86,7 +86,6 @@ public class Main extends Application {
 		StatisticsTab stab = StatisticsTab.getInstance();
 
 		tpane.getTabs().addAll(htab, mtab, addTab, removeTab, updateTab, stab);
-
 		
 		//Setting up the main page
 		BorderPane bpane = new BorderPane();

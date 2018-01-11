@@ -30,9 +30,10 @@ public class FoodDrink {
 	}
 	
 	//Food and drink constructor with ID
-		public FoodDrink(String name, Double amountSold) {
+		public FoodDrink(String name, Double amountSold, String picture) {
 			this.name = name;
 			this.amountSold = amountSold;
+			this.picture = picture;
 		}
 		
 	//Food and drink constructor without id
