@@ -48,9 +48,9 @@ public class CrewMemberTable {
 		}
 
 		//Creating a method to get a single instance of a crewMember class
-		public CrewMember getCrewMember(int crewMemberID) {
+		public CrewMember getCrewMember(String crewmemberName) {
 			String query = "SELECT FROM " + Const.TABLE_CREWMEMBER + " WHERE " + 
-					   Const.CREWMEMBER_COLUMN_ID + " = " + crewMemberID;
+					   Const.CREWMEMBER_COLUMN_NAME + " = " + crewmemberName;
 			CrewMember crewMember = new CrewMember();
 			try {
 				Statement getItem = db.getConnection().createStatement();

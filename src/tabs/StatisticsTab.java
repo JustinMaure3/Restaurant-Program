@@ -48,10 +48,60 @@ public class StatisticsTab extends Tab{
 		
 		goBtn.setOnAction(e->{
 			MonthlyStats stat = monthComboBox.getSelectionModel().getSelectedItem();
+			String response = stat + "";
 			
+			switch(response){
+		case "JANUARY":
+			januaryPieChart();
+				break;
+				
+			case "FEBRUARY":
+				
+				break;
+				
+			case "MARCH":
+				
+				break;
+				
+			case "APRIL":
+							
+				break;
+							
+			case "MAY":
+				
+				break;
+				
+			case "JUNE":
+				
+				break;
+				
+			case "JULY":
+			
+				break;
+				
+			case "AUGUST":
+				
+				break;
+			
+			case "SEPTEMBER":
+				septemberPieChart();
+				break;
+				
+		case "OCTOBER":
+			
+				break;
+				
+			case "NOVEMBER":				
+				break;
+				
+			case "DECEMBER":
+				
+				break;
+			}
 		});
-
+		
 	}
+		
 	public static StatisticsTab getInstance() {
 		if(tab == null) {
 			tab = new StatisticsTab();
