@@ -21,18 +21,26 @@ import javafx.scene.text.Text;
 
 public class MenuTab extends Tab {
 
+//	public String changeTable(String table) {
+//		if(table ==)
+//		return table;
+//	}
 	//public String changeTable(String table) {
 		//if(table ==)
 	//	return table;
 	//}
 	
+<<<<<<< HEAD
 	public static String displayedTable;
+=======
+	
+>>>>>>> staging
 	
 	private static MenuTab tab;
 
 	private MenuTab() {
 		this.setText("Menu");
-		
+	
 		//Create the panes necessary for this tab
 		
 		BorderPane pane = new BorderPane();
@@ -179,5 +187,10 @@ public class MenuTab extends Tab {
 		}
 		return tab;
 	}
+<<<<<<< HEAD
 }
+=======
+
+	}
+>>>>>>> staging
 
