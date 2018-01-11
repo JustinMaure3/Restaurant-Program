@@ -21,6 +21,14 @@ public class CrewMember extends Employee {
 			this.crewMemberPunchIn = crewMemberPunchIn;
 			this.crewMemberGoldStar = crewMemberGoldStar;
 		}
+		
+		//Constructor for crewmember with only name and gold stars
+		public CrewMember(String name, int crewMemberGoldStar) {
+			this.name = name;
+			this.crewMemberGoldStar = crewMemberGoldStar;
+		}
+		
+		
 		//Manager constructor without ID
 		public CrewMember(String name, double wage, String uniform, String position, int crewMemberPunchIn, int crewMemberGoldStar) {
 			this.name = name;
