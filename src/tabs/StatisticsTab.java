@@ -13,7 +13,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 
 import javafx.scene.control.Tab;
-
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 
 import javafx.scene.text.Text;
@@ -84,7 +84,9 @@ public class StatisticsTab extends Tab{
 				break;
 			
 			case "SEPTEMBER":
-				septemberPieChart();
+				BorderPane bpane = new BorderPane();
+				bpane.setCenter(septemberPieChart());
+				this.setContent(bpane);
 				break;
 				
 		case "OCTOBER":
@@ -297,6 +299,7 @@ public class StatisticsTab extends Tab{
 		int i = 0;
 		while (i <foodDrinkItems.size()) {
 			itemAmt.add(foodDrinkItems.get(i).getAmountSold());
+			i++;
 		}
 		PieChart pieChart = new PieChart();
 		pieChart.setTitle("September");
@@ -308,6 +311,7 @@ public class StatisticsTab extends Tab{
 					new PieChart.Data((foodDrinkItems.get(i).getName() + ": "), itemAmt.get(i)));
 			i++;
 		}
+		pieChart.setData(data);
 		return pieChart;
 		
 	}
