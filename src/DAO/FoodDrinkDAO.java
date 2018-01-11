@@ -9,7 +9,7 @@ public interface FoodDrinkDAO {
 	//Get all
 	public ArrayList<FoodDrink> getAllFoodDrink();
 	//Get 1
-	public FoodDrink getFoodDrink(int itemID);
+	public FoodDrink getFoodDrink(String foodName);
 	//Update
 	public void updateFoodDrink(FoodDrink foodDrink);
 	//Delete

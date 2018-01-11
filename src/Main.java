@@ -88,9 +88,6 @@ public class Main extends Application {
 		tpane.getTabs().addAll(htab, mtab, addTab, removeTab, updateTab, stab);
 
 		
-		tpane.getTabs().addAll(htab, addTab, removeTab, updateTab, stab);
-
-		
 		//Setting up the main page
 		BorderPane bpane = new BorderPane();
 		bpane.setTop(menu);

@@ -48,9 +48,9 @@ public class FoodTable implements FoodDrinkDAO {
 
 	//Creating a method to get a single instance of a foodDrink class
 	@Override
-	public FoodDrink getFoodDrink(int foodID) {
+	public FoodDrink getFoodDrink(String foodName) {
 		String query = "SELECT FROM " + Const.TABLE_FOOD_DRINK + " WHERE " 
-				+ Const.FOOD_DRINK_COLUMN_ID + " = " + foodID;
+				+ Const.FOOD_DRINK_COLUMN_NAME + " = " + foodName;
 		FoodDrink foodItem = new FoodDrink();
 		try {
 			Statement getItem = db.getConnection().createStatement();
