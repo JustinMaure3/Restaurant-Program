@@ -20,10 +20,8 @@ import tabs.UpdateItemTab;
 public class Main extends Application {
 
 	public static Stage mainStage;
-	public static String displayedTable = "";
 	public static void main(String[] args) {
 		Application.launch(args);
-
 	
 	}
 
@@ -42,15 +40,15 @@ public class Main extends Application {
 		
 		MenuItem food = new MenuItem("Food");
 		food.setOnAction(e->{
-			displayedTable = "food";
+			MenuTab.displayedTable = "food";
 		});
 		MenuItem employees = new MenuItem("Employees");
 		employees.setOnAction(e->{
-			displayedTable = "employees";
+			MenuTab.displayedTable = "employees";
 		});
 		MenuItem locations = new MenuItem("Locations");
 		locations.setOnAction(e->{
-			displayedTable = "locations";
+			MenuTab.displayedTable = "locations";
 		});
 		display.getItems().addAll(food,employees, locations);
 														
@@ -153,12 +151,11 @@ public class Main extends Application {
 		mainStage = primaryStage;
 		mainStage.setResizable(false);
 		mainStage.setScene(scene);
-		mainStage.show();
+		mainStage.show();	
 		
 	}
-	public String displayedTable() {
-		return displayedTable;
-	}
+	
 	
 
 }
+
