@@ -1,7 +1,4 @@
 package tabs;
-
-
-
 import java.util.ArrayList;
 
 import ENUMS.MonthlyStats;
@@ -16,7 +13,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 
 import javafx.scene.control.Tab;
-
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 
 import javafx.scene.text.Text;
@@ -51,9 +48,62 @@ public class StatisticsTab extends Tab{
 		
 		goBtn.setOnAction(e->{
 			MonthlyStats stat = monthComboBox.getSelectionModel().getSelectedItem();
+			String response = stat + "";
+			
+			switch(response){
+		case "JANUARY":
+			januaryPieChart();
+				break;
+				
+			case "FEBRUARY":
+				
+				break;
+				
+			case "MARCH":
+				
+				break;
+				
+			case "APRIL":
+							
+				break;
+							
+			case "MAY":
+				
+				break;
+				
+			case "JUNE":
+				
+				break;
+				
+			case "JULY":
+			
+				break;
+				
+			case "AUGUST":
+				
+				break;
+			
+			case "SEPTEMBER":
+				BorderPane bpane = new BorderPane();
+				bpane.setCenter(septemberPieChart());
+				this.setContent(bpane);
+				break;
+				
+		case "OCTOBER":
+			
+				break;
+				
+			case "NOVEMBER":				
+				break;
+				
+			case "DECEMBER":
+				
+				break;
+			}
 		});
-
+		
 	}
+		
 	public static StatisticsTab getInstance() {
 		if(tab == null) {
 			tab = new StatisticsTab();
@@ -249,6 +299,7 @@ public class StatisticsTab extends Tab{
 		int i = 0;
 		while (i <foodDrinkItems.size()) {
 			itemAmt.add(foodDrinkItems.get(i).getAmountSold());
+			i++;
 		}
 		PieChart pieChart = new PieChart();
 		pieChart.setTitle("September");
@@ -260,6 +311,7 @@ public class StatisticsTab extends Tab{
 					new PieChart.Data((foodDrinkItems.get(i).getName() + ": "), itemAmt.get(i)));
 			i++;
 		}
+		pieChart.setData(data);
 		return pieChart;
 		
 	}

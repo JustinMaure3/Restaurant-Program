@@ -46,7 +46,8 @@ public class AddItemTab extends Tab{
 		//Create insert picture row
 		Text picText = new Text("Picture:");
 		//Add enums for all pictures to choose from?
-		TextField picture = new TextField();
+		ComboBox<ENUMS.Pictures> picture = new ComboBox<>();
+		picture.setItems(FXCollections.observableArrayList(ENUMS.Pictures.values()));
 		pane.add(picText, 0, 3);
 		pane.add(picture, 1, 3);
 		
@@ -79,13 +80,14 @@ public class AddItemTab extends Tab{
 					name.getText(),
 					rating.getSelectionModel().getSelectedItem().ordinal(),
 					desc.getText(),
-					picture.getText(),
-					Integer.parseInt(price.getText()) + 0.0,
-					Integer.parseInt(amountSold.getText()) + 0.0,
+					getPictureDisplay(picture.getSelectionModel().getSelectedItem().name()),
+					Double.parseDouble(price.getText()),
+					Double.parseDouble(amountSold.getText()),
 					month.getSelectionModel().getSelectedItem().name()
 					);
 			fTable.createFoodDrink(food);
 		});
+		
 		pane.add(submitButton, 1, 7);
 		
 		//Add an employee form
@@ -135,8 +137,8 @@ public class AddItemTab extends Tab{
 			CrewMemberTable cmTable = new CrewMemberTable();
 			
 			CrewMember crewMember = new CrewMember(
-					name.getText(),
-					Integer.parseInt(wage.getText()) + 0.0,
+					ename.getText(),
+					Double.parseDouble(wage.getText()),
 					uniform.getSelectionModel().getSelectedItem().name(),
 					position.getSelectionModel().getSelectedItem().name(),
 					Integer.parseInt(punchIn.getText()),
@@ -159,6 +161,42 @@ public class AddItemTab extends Tab{
 			tab = new AddItemTab();
 		}
 		return tab;
+	}
+	
+	//Method to check which picture is used for the input given from the Picture enum
+	public String getPictureDisplay(String pic) {
+		String picture = "";
+		if(pic == "Beet_Salad") {
+			picture = "Beet Salad.jpg";
+		} else if (pic == "American_Breakfast") {
+			picture = "Classic American Breakfast.jpg";
+		} else if (pic == "Cocktails") {
+			picture = "Cocktails.jpg";
+		} else if (pic == "Coffee") {
+			picture = "Coffee.jpg";
+		} else if (pic == "Cucumber_Water") {
+			picture = "Cucumber Water.jpg";
+		} else if (pic == "Curry") {
+			picture = "curry-bowl-garnished-with-greens_4460x4460.jpg";
+		} else if (pic == "Sandwich") {
+			picture = "hotel-room-service-sandwich_4460x4460.jpg";
+		} else if (pic == "Hummus") {
+			picture = "Hummus.jpg";
+		} else if (pic == "Penne") {
+			picture = "Penne.jpg";
+		} else if (pic == "Pizza") {
+			picture = "Pizza.jpg";
+		} else if (pic == "Rose_Wine") {
+			picture = "Rose Wine.jpg";
+		} else if (pic == "Sloppy_Joe") {
+			picture = "Sloppy Joe.jpg";
+		} else if (pic == "Tacos") {
+			picture = "Taocs.jpg";
+		} else if (pic == "Waffles") {
+			picture = "Waffles.jpg";
+		} 
+		
+		return picture;
 	}
 
 }

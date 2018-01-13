@@ -8,37 +8,43 @@ import Tables.CrewMemberTable;
 import Tables.FoodTable;
 import javafx.collections.FXCollections;
 import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.control.Tab;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.Pane;
 
 public class RemoveItemTab extends Tab {
 	
 	private static RemoveItemTab tab;
 
 	private RemoveItemTab() {
-		this.setText("Remove Item");
+		this.setText("Remove");
 		
 		GridPane gpane = new GridPane();
+		BorderPane bpane = new BorderPane();
+		
 		
 		//Create a button to launch to remove food/Drink form
 		Button removeF = new Button("Remove Food/Drink");
 		removeF.setOnAction(e->{
 			//Create the layout
 			BorderPane pane = new BorderPane();
-			//Create a listVuew thatll hold a bunch of instances of food and drink
+			//Create a listVuew that'll hold a bunch of instances of food and drink
 			ListView<FoodDrink> list = new ListView();
 			//Create a food table
 			FoodTable fTable = new FoodTable();
 			//Create the array that'll give us all foodDrink in our database
-//			ArrayList<FoodDrink> foodDrinkItems = fTable.getAllFoodDrink();
+			ArrayList<FoodDrink> foodDrinkItems = fTable.getAllFoodDrink();
 			
 			//set the list with all the items in the arraylist
-//			
-//			//set the list with all the items in the arraylist
-//			list.setItems(FXCollections.observableArrayList(foodDrinkItems));
+			
+			//set the list with all the items in the arraylist
+			list.setItems(FXCollections.observableArrayList(foodDrinkItems));
+			list.setMaxWidth(600);
+			list.setMaxHeight(600);
 			pane.setCenter(list);
 			
 			
@@ -49,15 +55,18 @@ public class RemoveItemTab extends Tab {
 				fTable.deleteFoodDrink(foodItem);
 				list.setItems(FXCollections.observableArrayList(fTable.getAllFoodDrink()));
 			});
+			remove.setMaxWidth(200);
 			pane.setBottom(remove);
+			pane.setAlignment(remove, Pos.CENTER);
 			
 			//Create Back button
 			Button back = new Button("Back");
 			back.setOnAction(e1->{
 				this.setContent(gpane);
 			});
+			back.setMaxWidth(200);
 			pane.setTop(back);
-			
+			pane.setAlignment(back, Pos.CENTER);
 			
 			this.setContent(pane);
 		});
@@ -72,12 +81,14 @@ public class RemoveItemTab extends Tab {
 			//Create a food table
 			CrewMemberTable cmTable = new CrewMemberTable();
 			//Create the array that'll give us all foodDrink in our database
-//			ArrayList<CrewMember> cmItems = cmTable.getAllCrewMembers();
+			ArrayList<CrewMember> cmItems = cmTable.getAllCrewMembers();
 			
 			//set the list with all the items in the arraylist
-//			
-//			//set the list with all the items in the arraylist
-//			list.setItems(FXCollections.observableArrayList(cmItems));
+			
+			//set the list with all the items in the arraylist
+			list.setItems(FXCollections.observableArrayList(cmItems));
+			list.setMaxWidth(600);
+			list.setMaxHeight(600);
 			pane.setCenter(list);
 			
 			
@@ -88,20 +99,25 @@ public class RemoveItemTab extends Tab {
 				cmTable.deleteCrewMember(crewMember);
 				list.setItems(FXCollections.observableArrayList(cmTable.getAllCrewMembers()));
 			});
+			remove.setMaxWidth(200);
 			pane.setBottom(remove);
+			pane.setAlignment(remove, Pos.CENTER);
 			
 			//Create Back button
 			Button back = new Button("Back");
 			back.setOnAction(e1->{
 				this.setContent(gpane);
 			});
+			back.setMaxWidth(200);
 			pane.setTop(back);
+			pane.setAlignment(back, Pos.CENTER);
 			
 			this.setContent(pane);
 		});
+		
 		//set the two buttons on a grid pane
-		gpane.add(removeF, 0, 0);
-		gpane.add(removeE, 1, 0);
+		gpane.add(removeF, 35, 28);
+		gpane.add(removeE, 36, 28);
 		
 		
 		gpane.setPadding(new Insets(10, 10, 10, 10));
