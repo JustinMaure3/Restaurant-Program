@@ -3,8 +3,10 @@ package tabs;
 import PlaceHolder.CrewMember;
 import PlaceHolder.Employee;
 import PlaceHolder.FoodDrink;
+import PlaceHolder.Manager;
 import Tables.CrewMemberTable;
 import Tables.FoodTable;
+import Tables.ManagerTable;
 import javafx.collections.FXCollections;
 import javafx.geometry.Insets;
 import javafx.scene.control.Button;
@@ -149,6 +151,66 @@ public class AddItemTab extends Tab{
 			
 		});
 		pane.add(eSubmit, 11, 6);
+		
+		//Add an Manager form
+		
+		//Create insert manager name row
+		Text mnameText = new Text("Employee Name:");
+		TextField mname = new TextField();
+		pane.add(mnameText, 20, 0);
+		pane.add(mname, 21, 0);
+				
+		//Create insert position row
+		Text mPositionText = new Text("Position:");
+		ComboBox<ENUMS.Positions> mPosition = new ComboBox<>();
+		mPosition.setItems(FXCollections.observableArrayList(ENUMS.Positions.values()));
+		pane.add(mPositionText, 20, 1);
+		pane.add(mPosition, 21, 1);
+				
+		//Create insert uniform row
+		Text mUniformText = new Text("Uniform Size:");
+		ComboBox<ENUMS.UniformSizes> mUniform = new ComboBox<>();
+		mUniform.setItems(FXCollections.observableArrayList(ENUMS.UniformSizes.values()));
+		pane.add(mUniformText, 10, 2);
+		pane.add(mUniform, 11, 2);
+				
+		//Create insert wage row
+		Text mWageText = new Text("Wage:");
+		TextField mWage = new TextField();
+		pane.add(mWageText, 20, 3);
+		pane.add(mWage, 21, 3);
+				
+		//Create insert manager ID row
+		Text managerIDText = new Text("Manager ID:");
+		TextField managerID = new TextField();
+		pane.add(managerIDText, 20, 4);
+		pane.add(managerID, 21, 4);
+						
+		//Create manager safe code row
+		Text managerSafeCodeText = new Text("Manager Safe Code:");
+		TextField managerSafeCode = new TextField();
+		pane.add(managerSafeCodeText, 20, 5);
+		pane.add(managerSafeCode, 21, 5);
+				
+		//Create add manager button
+		Button mSubmit = new Button("Add Manager");
+		mSubmit.setOnAction(e->{
+			//Create an instance of the Manager table
+			ManagerTable mTable = new ManagerTable();
+					
+			Manager manager = new Manager(
+					mname.getText(),
+					Double.parseDouble(mWage.getText()),
+					mUniform.getSelectionModel().getSelectedItem().name(),
+					mPosition.getSelectionModel().getSelectedItem().name(),
+					Integer.parseInt(managerID.getText()),
+					Integer.parseInt(managerSafeCode.getText())
+					);
+			mTable.createManager(manager);
+					
+					
+		});
+		pane.add(mSubmit, 21, 6);
 		
 		pane.setPadding(new Insets(10, 10, 10, 10));
 		pane.setVgap(10);

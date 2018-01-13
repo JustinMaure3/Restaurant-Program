@@ -21,7 +21,7 @@ public class Manager extends Employee {
 		this.managerSafeCode = managerSafeCode;
 	}
 	//Manager constructor without ID
-	public Manager(String name, double wage, String uniform, String position) {
+	public Manager(String name, double wage, String uniform, String position, int managerID, int managerSafeCode) {
 		this.name = name;
 		this.wage = wage;
 		this.uniform = uniform;
