@@ -32,9 +32,6 @@ public class Main extends Application {
 		//Setting up a Menu bar
 		MenuBar menu = new MenuBar();
 		Menu fileMenu = new Menu("File");
-		Menu creditsMenu = new Menu("Credits");
-		Menu themes = new Menu("Themes");
-		Menu display = new Menu("Display");
 
 		//Adding menu items to the Display menu
 		
@@ -64,18 +61,25 @@ public class Main extends Application {
 			db.close();
 			System.exit(0);
 		});
-		fileMenu.getItems().add(exit);
+		
 		
 		//Adding menu items to themes menu
+		
+
+		MenuItem creditsMenu = new MenuItem("Credits");
+		Menu themes = new Menu("Themes");
+		MenuItem display = new MenuItem("Display");
 
 		MenuItem modern = new MenuItem("Modern");
 		MenuItem seventies = new MenuItem("70's");
 		MenuItem nineties = new MenuItem("90's");
 		MenuItem defaultTheme = new MenuItem("Default");
 		themes.getItems().addAll(defaultTheme, seventies, nineties, modern);
-														
+										
+	
 		//Adding menus into the menuBar
-		menu.getMenus().addAll(fileMenu, creditsMenu, themes, display);
+		fileMenu.getItems().addAll(themes,display,creditsMenu,exit);
+		menu.getMenus().addAll(fileMenu);
 							
 		
 		//Create Tab Pane

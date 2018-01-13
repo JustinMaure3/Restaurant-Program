@@ -155,15 +155,15 @@ public class AddItemTab extends Tab{
 		//Add an Manager form
 		
 		//Create insert manager name row
-		Text mnameText = new Text("Employee Name:");
+		Text mnameText = new Text("Manager Name:");
 		TextField mname = new TextField();
 		pane.add(mnameText, 20, 0);
 		pane.add(mname, 21, 0);
 				
 		//Create insert position row
 		Text mPositionText = new Text("Position:");
-		ComboBox<ENUMS.Positions> mPosition = new ComboBox<>();
-		mPosition.setItems(FXCollections.observableArrayList(ENUMS.Positions.values()));
+		ComboBox<ENUMS.ManagerPositions> mPosition = new ComboBox<>();
+		mPosition.setItems(FXCollections.observableArrayList(ENUMS.ManagerPositions.values()));
 		pane.add(mPositionText, 20, 1);
 		pane.add(mPosition, 21, 1);
 				
@@ -177,20 +177,20 @@ public class AddItemTab extends Tab{
 		//Create insert wage row
 		Text mWageText = new Text("Wage:");
 		TextField mWage = new TextField();
-		pane.add(mWageText, 20, 3);
-		pane.add(mWage, 21, 3);
+		pane.add(mWageText, 20, 2);
+		pane.add(mWage, 21, 2);
 				
 		//Create insert manager ID row
 		Text managerIDText = new Text("Manager ID:");
 		TextField managerID = new TextField();
-		pane.add(managerIDText, 20, 4);
-		pane.add(managerID, 21, 4);
+		pane.add(managerIDText, 20, 3);
+		pane.add(managerID, 21, 3);
 						
 		//Create manager safe code row
 		Text managerSafeCodeText = new Text("Manager Safe Code:");
 		TextField managerSafeCode = new TextField();
-		pane.add(managerSafeCodeText, 20, 5);
-		pane.add(managerSafeCode, 21, 5);
+		pane.add(managerSafeCodeText, 20, 4);
+		pane.add(managerSafeCode, 21, 4);
 				
 		//Create add manager button
 		Button mSubmit = new Button("Add Manager");
@@ -210,7 +210,7 @@ public class AddItemTab extends Tab{
 					
 					
 		});
-		pane.add(mSubmit, 21, 6);
+		pane.add(mSubmit, 21, 5);
 		
 		pane.setPadding(new Insets(10, 10, 10, 10));
 		pane.setVgap(10);
