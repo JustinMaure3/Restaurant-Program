@@ -43,19 +43,19 @@ public class Main extends Application {
 		MenuItem food = new MenuItem("Food");
 		food.setOnAction(e->{
 			MenuTab.displayedTable = "food";
-			MenuTab.refresh();
+			//MenuTab.refresh();
 		});
 		MenuItem employees = new MenuItem("Employees");
 		employees.setOnAction(e->{
 			MenuTab.displayedTable = "employees";
-			MenuTab.refresh();
+			//MenuTab.refresh();
 		});
 		MenuItem locations = new MenuItem("Locations");
 		locations.setOnAction(e->{
 			MenuTab.displayedTable = "locations";
-			MenuTab.refresh();
+			//MenuTab.refresh();
 		});
-		display.getItems().addAll(food,employees, locations);
+		//display.getItems().addAll(food,employees, locations);
 														
 		//Adding menu items to file menu
 		MenuItem exit = new MenuItem("Exit");

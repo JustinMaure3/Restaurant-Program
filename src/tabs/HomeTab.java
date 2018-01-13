@@ -40,7 +40,6 @@ public class HomeTab extends Tab {
 		
 		//ImageViews
 		ImageView foodImage = new ImageView("Pictures/" + topFoodItem.getPicture());
-		
 		//If its empty then we now have a default value preventing crashes
 		if(topFoodItem.getName() == null ) {
 			 popName = new Text("There seems to be no top food please enter one");
@@ -54,7 +53,7 @@ public class HomeTab extends Tab {
 		
 		//Setting size of food images
 		foodImage.setFitHeight(300);
-		foodImage.setFitWidth(300);
+		foodImage.setFitWidth(350);
 		
 		Random r = new Random();
 		
@@ -67,11 +66,11 @@ public class HomeTab extends Tab {
 		//Switch case changes everytime the app opens
 		switch(randomTip){
 		case 0:
-			tipText = new Text("If a food item is not selling a great idea is to remove \nthe item from the menu and maybe try another item");
+			tipText = new Text("If a food item is not selling a great idea is to remove the item from the menu and maybe try another item");
 			break;
 			
 		case 1:
-			tipText = new Text("If an employee goes above and beyond their work give \nthem a gold star to show you appreciate them!");
+			tipText = new Text("If an employee goes above and beyond their work give them a gold star to show you appreciate them!");
 			break;
 			
 		case 2:
@@ -83,6 +82,7 @@ public class HomeTab extends Tab {
 				break;
 		}
 		
+		tipText.setTextAlignment(CENTER);
 		//HBox containing the title of the restaurant
 		VBox main = new VBox();
 		HBox title = new HBox();
@@ -92,13 +92,19 @@ public class HomeTab extends Tab {
 		HBox tip = new HBox();
 		HBox emp = new HBox();
 		
+		title.setPadding(new Insets(25, 0, 0, 0));
+		foodTitle.setPadding(new Insets(15, 0, 0, 0));
+		foodPicture.setPadding(new Insets(5, 0, 5, 0));
+		emp.setPadding(new Insets(15, 0, 25, 0));
+		
 		//Font specifically for the title
-		Font titleFont = Font.font("Times New Roman", FontPosture.REGULAR, 30);
+		Font titleFont = Font.font("Times New Roman",FontPosture.REGULAR, 40);
+		Font tipFont = Font.font("Times New Roman", FontPosture.ITALIC, 20);
 		Font subTitleFont = Font.font("Times New Roman", FontPosture.REGULAR, 25);
 		restName.setFont(titleFont);
 		popName.setFont(subTitleFont);
 		empName.setFont(subTitleFont);
-		tipText.setFont(subTitleFont);
+		tipText.setFont(tipFont);
 		
 		tipText.setTextAlignment(CENTER);
 		//Adding the title to the HBox then setting some padding and setting the title to the center top
@@ -121,6 +127,8 @@ public class HomeTab extends Tab {
 		
 		//Everything will be added to the main and it will go from top to bottom
 		main.getChildren().addAll(title,foodTitlePic,emp, tip);
+		
+		
 		
 		this.setContent(main);
 		
