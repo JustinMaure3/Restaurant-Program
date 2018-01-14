@@ -5,13 +5,24 @@ import PlaceHolder.Manager;
 
 public interface ManagerDAO {
 	//Everything we want to do with the table
+	/**
+	 * This grabs all the fooDrink items
+	 */
 			public ArrayList<Manager> getAllManagers();
-			//Get 1
+			/**
+			 * This gets one Manager item
+			 */
 			public Manager getManager(int itemID);
-			//Update
+			/**
+			 * This updates Manager item
+			 */
 			public void updateManager(Manager manager);
-			//Delete
+			/**
+			 * This deletes Manager item
+			 */
 			public void deleteManager(Manager manager);;
-			//Create
+			/**
+			 * This creates Manager 
+			 */
 			public void createManager(Manager manager);
 }

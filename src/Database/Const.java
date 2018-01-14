@@ -1,5 +1,9 @@
 package Database;
-
+/**
+ * This is used to create constants for every table
+ * @author Stefano,Max,Tomas,Justin
+ *
+ */
 public class Const {
 	//My name user and password for the server
 	public static final String DB_NAME = "siaconetti968db";

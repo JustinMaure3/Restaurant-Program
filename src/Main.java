@@ -28,7 +28,11 @@ import tabs.MenuTab;
 import tabs.RemoveItemTab;
 import tabs.StatisticsTab;
 import tabs.UpdateItemTab;
-
+/**
+ * 
+ * @author Stefano,Max,Tomas,Justin
+ *
+ */
 public class Main extends Application {
 
 	public static Stage mainStage;
