@@ -3,10 +3,13 @@ package tabs;
 import java.util.ArrayList;
 
 import PlaceHolder.FoodDrink;
+import Tables.CrewMemberTable;
 import Tables.FoodTable;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.chart.PieChart;
+import javafx.scene.chart.PieChart.Data;
+import javafx.scene.control.ListView;
 import javafx.scene.control.Tab;
 import javafx.scene.layout.BorderPane;
 
@@ -32,33 +35,29 @@ public class StatisticsTab extends Tab {
 	}
 	
 	public static PieChart generateChart() {
-		FoodTable foodTable = new FoodTable();
+		//Create a listVuew that'll hold a bunch of instances of food and drink
+				ListView<FoodDrink> list = new ListView<FoodDrink>();
+				//Create a food table
+				FoodTable fTable = new FoodTable();
+				//Create the array that'll give us all foodDrink in our database
+				ArrayList<FoodDrink> foodDrinkItems = fTable.getAllFoodDrink();
+				
+				//set the list with all the items in the arraylist
+				list.setItems(FXCollections.observableArrayList(foodDrinkItems));
+	
 		
-
-		ArrayList<FoodDrink> foodDrinkItems = foodTable.getAllFoodDrink();
+		PieChart chart = new PieChart();
+		chart.setLabelsVisible(true);
 		
-		PieChart piechart = new PieChart();
 		
-		piechart.setLabelsVisible(true);
-		ObservableList<PieChart.Data> data2 = null;
 		
-		for(int i = 0; i < foodTable.getAllFoodDrink().size(); i ++) {
-		FoodDrink oneFood = foodDrinkItems.get(i);
 		
-			ObservableList<PieChart.Data> data = 
-				FXCollections.observableArrayList(
-						new PieChart.Data(oneFood.getName(), oneFood.getAmountSold()));
-			
-			 data2 = FXCollections.observableArrayList(data);
-
-		}
-		
-
-		piechart.setData(data2);
-		return piechart;
+		//chart.setData(list);
+		return chart;
 	}
 	
 	
 	
 }
+
 
