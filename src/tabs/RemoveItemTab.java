@@ -8,8 +8,10 @@ import java.util.ArrayList;
 
 import PlaceHolder.CrewMember;
 import PlaceHolder.FoodDrink;
+import PlaceHolder.Manager;
 import Tables.CrewMemberTable;
 import Tables.FoodTable;
+import Tables.ManagerTable;
 import javafx.collections.FXCollections;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -115,10 +117,52 @@ public class RemoveItemTab extends Tab {
 			this.setContent(pane);
 		});
 		
-		//set the two buttons on a grid pane
-		gpane.add(removeF, 35, 28);
-		gpane.add(removeE, 36, 28);
+		//Create button for the remove Manager form
+		Button removeM = new Button("Remove Manager");
+		removeM.setOnAction(e->{
+			//Create the layout
+			BorderPane pane = new BorderPane();
+			//Create a listView that'll hold a bunch of instances of managers
+			ListView<Manager> list = new ListView<Manager>();
+			//Create a manager table
+			ManagerTable mTable = new ManagerTable();
+			//Create the array that'll give us all managers in our database
+			ArrayList<Manager> mItems = mTable.getAllManagers();
+					
+			//set the list with all the items in the arraylist and display it
+			list.setItems(FXCollections.observableArrayList(mItems));
+			list.setMaxWidth(600);
+			list.setMaxHeight(600);
+			pane.setCenter(list);
+					
+					
+			//Create the remove button
+			Button remove = new Button("Remove");
+			remove.setOnAction(e1->{
+				Manager manager = list.getSelectionModel().getSelectedItem();
+				mTable.deleteManager(manager);
+				list.setItems(FXCollections.observableArrayList(mTable.getAllManagers()));
+			});
+			remove.setMaxWidth(200);
+			pane.setBottom(remove);
+			pane.setAlignment(remove, Pos.CENTER);
+					
+			//Create Back button
+			Button back = new Button("Back");
+			back.setOnAction(e1->{
+				this.setContent(gpane);
+			});
+			back.setMaxWidth(200);
+			pane.setTop(back);
+			pane.setAlignment(back, Pos.CENTER);
+					
+			this.setContent(pane);
+		});
 		
+		//set the three buttons on a grid pane
+		gpane.add(removeF, 31, 28);
+		gpane.add(removeE, 32, 28);
+		gpane.add(removeM, 33, 28);
 		
 		gpane.setPadding(new Insets(10, 10, 10, 10));
 		gpane.setVgap(10);
