@@ -6,7 +6,6 @@ package tabs;
  *
  */
 import PlaceHolder.CrewMember;
-import PlaceHolder.Employee;
 import PlaceHolder.FoodDrink;
 import PlaceHolder.Manager;
 import Tables.CrewMemberTable;
@@ -52,7 +51,6 @@ public class AddItemTab extends Tab{
 		
 		//Create insert picture row
 		Text picText = new Text("Picture:");
-		//Add enums for all pictures to choose from?
 		ComboBox<ENUMS.Pictures> picture = new ComboBox<>();
 		picture.setItems(FXCollections.observableArrayList(ENUMS.Pictures.values()));
 		pane.add(picText, 0, 3);

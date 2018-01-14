@@ -14,13 +14,11 @@ import Tables.FoodTable;
 import Tables.ManagerTable;
 import javafx.collections.FXCollections;
 import javafx.geometry.Insets;
-import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.ListView;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.text.Text;
 
@@ -38,7 +36,7 @@ public class UpdateItemTab extends Tab {
 		pane.add(foodDrinkText, 1, 0);
 		
 		//Create a listVuew that'll hold a bunch of instances of food and drink
-		ListView<FoodDrink> list = new ListView();
+		ListView<FoodDrink> list = new ListView<FoodDrink>();
 		//Create a food table
 		FoodTable fTable = new FoodTable();
 		//Create the array that'll give us all foodDrink in our database
@@ -64,11 +62,11 @@ public class UpdateItemTab extends Tab {
 		Text employeeText = new Text("Employee");
 		pane.add(employeeText, 11, 0);
 		
-		//Create a listView that'll hold a bunch of instances of employee
+		//Create a listView that'll hold a bunch of instances of crew members
 		ListView<CrewMember> elist = new ListView<CrewMember>();
-		//Create a employee table
+		//Create a crew member table
 		CrewMemberTable cmTable = new CrewMemberTable();
-		//Create the array that'll give us all employees in our database
+		//Create the array that'll give us all crew members in our database
 		ArrayList<CrewMember> cmItems = cmTable.getAllCrewMembers();
 		
 		//set the list with all the items in the arraylist
@@ -77,7 +75,7 @@ public class UpdateItemTab extends Tab {
 		elist.setMaxHeight(300);
 		pane.add(elist, 11, 1);
 		
-		//create button for employee update
+		//create button for crew member update
 		Button eUpdate = new Button("Update Employee");
 		eUpdate.setOnAction(e->{
 			if(!elist.getSelectionModel().isEmpty()) {

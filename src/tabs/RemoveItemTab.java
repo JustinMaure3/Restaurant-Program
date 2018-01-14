@@ -20,7 +20,6 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.Tab;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
-import javafx.scene.layout.Pane;
 
 public class RemoveItemTab extends Tab {
 	
@@ -30,7 +29,6 @@ public class RemoveItemTab extends Tab {
 		this.setText("Remove");
 		
 		GridPane gpane = new GridPane();
-		BorderPane bpane = new BorderPane();
 		
 		
 		//Create a button to launch to remove food/Drink form
@@ -38,8 +36,8 @@ public class RemoveItemTab extends Tab {
 		removeF.setOnAction(e->{
 			//Create the layout
 			BorderPane pane = new BorderPane();
-			//Create a listVuew that'll hold a bunch of instances of food and drink
-			ListView<FoodDrink> list = new ListView();
+			//Create a listView that'll hold a bunch of instances of food and drink
+			ListView<FoodDrink> list = new ListView<FoodDrink>();
 			//Create a food table
 			FoodTable fTable = new FoodTable();
 			//Create the array that'll give us all foodDrink in our database
@@ -80,11 +78,11 @@ public class RemoveItemTab extends Tab {
 		removeE.setOnAction(e->{
 			//Create the layout
 			BorderPane pane = new BorderPane();
-			//Create a listView that'll hold a bunch of instances of food and drink
+			//Create a listView that'll hold a bunch of instances of crewMember
 			ListView<CrewMember> list = new ListView<CrewMember>();
-			//Create a food table
+			//Create a crew member table
 			CrewMemberTable cmTable = new CrewMemberTable();
-			//Create the array that'll give us all foodDrink in our database
+			//Create the array that'll give us all crew members in our database
 			ArrayList<CrewMember> cmItems = cmTable.getAllCrewMembers();
 			
 			//set the list with all the items in the arraylist
