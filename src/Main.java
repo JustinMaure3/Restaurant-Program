@@ -47,6 +47,7 @@ public class Main extends Application {
 		MenuItem food = new MenuItem("Food");
 		MenuItem addTable = new MenuItem("Add all to Table");
 		
+		//Creating an onClick for the food button
 		food.setOnAction(e->{
 			MenuTab.displayedTable = "food";
 			VBox data = new VBox();	
@@ -98,25 +99,25 @@ public class Main extends Application {
 			while(i < foodDrinkItems.size()){
 				
 				//Create objects to hold the food's information and then add them to the HBox
-				Text name = new Text("  " + foodDrinkItems.get(i).getName() + "  ");
-				foodNameColumn.getChildren().addAll(name);
+				Text foodName = new Text("  " + foodDrinkItems.get(i).getName() + "  ");
+				foodNameColumn.getChildren().addAll(foodName);
 				
-				Text rating = new Text(foodDrinkItems.get(i).getRating() + "  ");
-				ratingColumn.getChildren().addAll(rating);
+				Text foodRating = new Text(foodDrinkItems.get(i).getRating() + "  ");
+				ratingColumn.getChildren().addAll(foodRating);
 				
-				Text description = new Text(foodDrinkItems.get(i).getDescription() + "  ");
-				descriptionColumn.getChildren().addAll(description);
+				Text foodDescription = new Text(foodDrinkItems.get(i).getDescription() + "  ");
+				descriptionColumn.getChildren().addAll(foodDescription);
 				
-				ImageView picture = new ImageView("Pictures/" + foodDrinkItems.get(i).getPicture());
-				pictureColumn.getChildren().addAll(picture);
-				picture.setFitHeight(100);
-				picture.setFitWidth(100);
+				ImageView foodPicture = new ImageView("Pictures/" + foodDrinkItems.get(i).getPicture());
+				pictureColumn.getChildren().addAll(foodPicture);
+				foodPicture.setFitHeight(100);
+				foodPicture.setFitWidth(100);
 				
-				Text price = new Text(foodDrinkItems.get(i).getPrice() + "  ");
-				priceColumn.getChildren().addAll(price);
+				Text foodPrice = new Text(foodDrinkItems.get(i).getPrice() + "  ");
+				priceColumn.getChildren().addAll(foodPrice);
 				
-				Text amountSold = new Text("  " + foodDrinkItems.get(i).getAmountSold() + "  ");
-				amountSoldColumn.getChildren().addAll(amountSold);
+				Text foodAmountSold = new Text("  " + foodDrinkItems.get(i).getAmountSold() + "  ");
+				amountSoldColumn.getChildren().addAll(foodAmountSold);
 				
 				//Add all of the info into the hbox
 				
@@ -177,9 +178,7 @@ public class Main extends Application {
 			
 			//Loop to set the contents of the arraylist to their own panes
 			int i = 0;
-			while(i < crewMemberItems.size()){
-				
-				
+			while(i < crewMemberItems.size()){				
 				
 				//Create objects to hold the food's information and then add them to the HBox
 				Text empName = new Text("  " + crewMemberItems.get(i).getName() + "  ");
