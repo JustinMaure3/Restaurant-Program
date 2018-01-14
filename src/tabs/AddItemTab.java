@@ -172,26 +172,26 @@ public class AddItemTab extends Tab{
 		Text mUniformText = new Text("Uniform Size:");
 		ComboBox<ENUMS.UniformSizes> mUniform = new ComboBox<>();
 		mUniform.setItems(FXCollections.observableArrayList(ENUMS.UniformSizes.values()));
-		pane.add(mUniformText, 10, 2);
-		pane.add(mUniform, 11, 2);
+		pane.add(mUniformText, 20, 2);
+		pane.add(mUniform, 21, 2);
 				
 		//Create insert wage row
 		Text mWageText = new Text("Wage:");
 		TextField mWage = new TextField();
-		pane.add(mWageText, 20, 2);
-		pane.add(mWage, 21, 2);
+		pane.add(mWageText, 20, 3);
+		pane.add(mWage, 21, 3);
 				
 		//Create insert manager ID row
 		Text managerIDText = new Text("Manager ID:");
 		TextField managerID = new TextField();
-		pane.add(managerIDText, 20, 3);
-		pane.add(managerID, 21, 3);
+		pane.add(managerIDText, 20, 4);
+		pane.add(managerID, 21, 4);
 						
 		//Create manager safe code row
 		Text managerSafeCodeText = new Text("Manager Safe Code:");
 		TextField managerSafeCode = new TextField();
-		pane.add(managerSafeCodeText, 20, 4);
-		pane.add(managerSafeCode, 21, 4);
+		pane.add(managerSafeCodeText, 20, 5);
+		pane.add(managerSafeCode, 21, 5);
 				
 		//Create add manager button
 		Button mSubmit = new Button("Add Manager");
@@ -211,7 +211,7 @@ public class AddItemTab extends Tab{
 					
 					
 		});
-		pane.add(mSubmit, 21, 5);
+		pane.add(mSubmit, 21, 6);
 		
 		pane.setPadding(new Insets(10, 10, 10, 10));
 		pane.setVgap(10);
