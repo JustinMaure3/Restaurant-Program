@@ -88,7 +88,19 @@ public class CrewMemberTable {
 	}
 		//Creating method to update an instance of the crewMember class in the database table
 		public void updateCrewMember(CrewMember crewMember) {
-			
+			String query = "UPDATE " + Const.TABLE_CREWMEMBER + " SET " + 
+					Const.CREWMEMBER_COLUMN_NAME + " = '" + crewMember.getName() + "', " +
+					Const.CREWMEMBER_COLUMN_WAGE + " = '" + crewMember.getWage() + "', " +
+					Const.CREWMEMBER_COLUMN_UNIFORM + " = '" + crewMember.getUniform() + "', " +
+					Const.CREWMEMBER_COLUMN_POSITION + " = '" + crewMember.getPosition() + "', " +
+					Const.CREWMEMBER_COLUMN_CREWMEMBERPUNCHIN + " = '" + crewMember.getCrewMemberPunchIn() + "', " +
+					Const.CREWMEMBER_COLUMN_CREWMEMBERGOLDSTAR + " = '" + crewMember.getCrewMemberGoldStar() + "' WHERE " +
+					Const.CREWMEMBER_COLUMN_ID + " = '" + crewMember.getID() + "'";
+			try {
+				db.getConnection().createStatement().execute(query);
+			}catch(SQLException e) {
+				e.printStackTrace();
+			}
 			
 		}
 
