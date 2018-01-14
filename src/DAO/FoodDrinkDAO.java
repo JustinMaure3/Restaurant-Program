@@ -6,17 +6,30 @@ import PlaceHolder.FoodDrink;
 
 public interface FoodDrinkDAO {
 	//Everything we want to do with the Table
-	//Get all
+	/**
+	 * This grabs all the fooDrink items
+	 */
 	public ArrayList<FoodDrink> getAllFoodDrink();
-	//Get 1
+	/**
+	 * This gets one foodDrink item
+	 */
 	public FoodDrink getFoodDrink(String foodName);
-	//Update
+	/**
+	 * This updates foodDrink item
+	 */
 	public void updateFoodDrink(FoodDrink foodDrink);
-	//Delete
+	/**
+	 * This deletes foodDrink item
+	 */
 	public void deleteFoodDrink(FoodDrink foodDrink);
-	//Create
+	/**
+	 * This creates foodDrink 
+	 */
 	public void createFoodDrink(FoodDrink foodDrink);
 	
+	/**
+	 * This grabs the top foodDrink
+	 */
 	FoodDrink getTopFoodDrink(int foodSales);
 	
 }

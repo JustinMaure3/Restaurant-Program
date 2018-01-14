@@ -8,7 +8,11 @@ import Database.Const;
 import Database.Database;
 import PlaceHolder.CrewMember;
 import PlaceHolder.Manager;
-
+/**
+ * Manager table with all of its methods
+ * @author Stefano,Max,Tomas,Justin
+ *
+ */
 public class ManagerTable {
 			//Creating an instance of the database
 			Database db = Database.getInstance();

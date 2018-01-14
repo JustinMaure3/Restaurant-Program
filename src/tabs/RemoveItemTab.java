@@ -1,5 +1,9 @@
 package tabs;
-
+/**
+ * Used to remove a item of the users choosing on the table of their choosing
+ * @author Stefano,Max,Tomas,Justin
+ *
+ */
 import java.util.ArrayList;
 
 import PlaceHolder.CrewMember;
@@ -38,8 +42,6 @@ public class RemoveItemTab extends Tab {
 			FoodTable fTable = new FoodTable();
 			//Create the array that'll give us all foodDrink in our database
 			ArrayList<FoodDrink> foodDrinkItems = fTable.getAllFoodDrink();
-			
-			//set the list with all the items in the arraylist
 			
 			//set the list with all the items in the arraylist
 			list.setItems(FXCollections.observableArrayList(foodDrinkItems));
@@ -82,8 +84,6 @@ public class RemoveItemTab extends Tab {
 			CrewMemberTable cmTable = new CrewMemberTable();
 			//Create the array that'll give us all foodDrink in our database
 			ArrayList<CrewMember> cmItems = cmTable.getAllCrewMembers();
-			
-			//set the list with all the items in the arraylist
 			
 			//set the list with all the items in the arraylist
 			list.setItems(FXCollections.observableArrayList(cmItems));

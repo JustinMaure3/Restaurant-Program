@@ -1,5 +1,9 @@
 package ENUMS;
-
+/**
+ * ENUM used for pictures
+ * @author Stefano,Max,Tomas,Justin
+ *
+ */
 public enum Pictures {
 
 	Beet_Salad,

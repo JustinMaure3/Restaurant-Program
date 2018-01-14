@@ -1,5 +1,9 @@
 package PlaceHolder;
-
+/**
+ * Creates Store Locations
+ * @author Stefano,Max,Tomas,Justin
+ *
+ */
 public class StoreLocations {
 	//Location, Sanatation score, RegionalManager, customerReview
 	private int ID;

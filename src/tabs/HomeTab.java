@@ -1,7 +1,15 @@
 package tabs;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
+=======
+/**
+ * Hometab displays employee of the year and fooddrink of the year and displays a random tip
+ * @author Stefano,Max,Tomas,Justin
+ *
+ */
+>>>>>>> 5e56a841696a57729f55521f2e8f58d3fc1f9d21
 import java.util.Random;
 >>>>>>> 57bb8cc65d12063f5d4d458b25a00ebe2cd3c05c
 import PlaceHolder.CrewMember;
@@ -158,10 +166,15 @@ tipText.setTextAlignment(CENTER);
 		
 		//Restaurant name and the popular foodname and employee of the month 
 		Text restName = new Text("Dinner Diner");
-		Text popName = new Text(topFoodItem.getName() + " is the best selling item this year!");//Here would grab the most popular food item name
-		Text empName = new Text(topCrewMember.getName() + " is the top employee of this year!");
 		
 		
+		Text popName = new Text("There seems to be no top food at the moment. Why not enter one using the add item tab?");//Here would grab the most popular food item name
+		Text empName = new Text("There seems to be no employee of the month. Why not enter one using the add item tab?");
+		
+		if((topCrewMember.getName() != null) && (topFoodItem.getName() != null)) {
+		 popName = new Text(topFoodItem.getName() + " is the best selling item this year!");//Here would grab the most popular food item name
+		 empName = new Text(topCrewMember.getName() + " is the top employee of this year!");
+		}
 		
 		//ImageViews
 		ImageView foodImage = new ImageView("Pictures/" + topFoodItem.getPicture());
