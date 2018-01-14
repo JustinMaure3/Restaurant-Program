@@ -163,18 +163,17 @@ public class UpdateItemTab extends Tab {
 			if(!foodName.getText().isEmpty()) {
 				//Create an instance of the food table
 				FoodTable fTable = new FoodTable();
-					
+				
 				//Update a food item with all the new records
-				FoodDrink food = new FoodDrink(
-						foodName.getText(),
-						rating.getSelectionModel().getSelectedItem().ordinal(),
-						desc.getText(),
-						picture.getSelectionModel().getSelectedItem().name(),
-						Double.parseDouble(price.getText()),
-						Double.parseDouble(amountSold.getText()),
-						month.getSelectionModel().getSelectedItem().name()
-						);
-				fTable.updateFoodDrink(food);
+				foodDrink.setName(foodName.getText());
+				foodDrink.setRating(rating.getSelectionModel().getSelectedItem().ordinal());
+				foodDrink.setDescription(desc.getText());
+				foodDrink.setPicture(AddItemTab.getPictureDisplay(picture.getSelectionModel().getSelectedItem().name()));
+				foodDrink.setPrice(Double.parseDouble(price.getText()));
+				foodDrink.setAmountSold(Double.parseDouble(amountSold.getText()));
+				foodDrink.setMonth(month.getSelectionModel().getSelectedItem().name());
+				
+				fTable.updateFoodDrink(foodDrink);
 			}
 		});
 		gpane.add(fUpdate, 1, 8);
@@ -254,15 +253,14 @@ public class UpdateItemTab extends Tab {
 				CrewMemberTable cmTable = new CrewMemberTable();
 							
 				//Update the crew member
-				CrewMember newCrewMember = new CrewMember(
-						eName.getText(),
-						Double.parseDouble(wage.getText()),
-						uniform.getSelectionModel().getSelectedItem().name(),
-						position.getSelectionModel().getSelectedItem().name(),
-						Integer.parseInt(punchIn.getText()),
-						Integer.parseInt(goldStar.getText())
-						);
-				cmTable.updateCrewMember(newCrewMember);
+				crewMember.setName(eName.getText());
+				crewMember.setWage(Double.parseDouble(wage.getText()));
+				crewMember.setUniform(uniform.getSelectionModel().getSelectedItem().name());
+				crewMember.setPosition(position.getSelectionModel().getSelectedItem().name());
+				crewMember.setCrewMemberPunchIn(Integer.parseInt(punchIn.getText()));
+				crewMember.setCrewMemberGoldStar(Integer.parseInt(goldStar.getText()));
+				
+				cmTable.updateCrewMember(crewMember);
 			}
 		});
 		gpane.add(eUpdate, 1, 7);
@@ -281,4 +279,6 @@ public class UpdateItemTab extends Tab {
 		gpane.setHgap(10);
 		this.setContent(gpane);
 	}
+	
+		
 }

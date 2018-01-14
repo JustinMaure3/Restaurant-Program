@@ -227,7 +227,7 @@ public class AddItemTab extends Tab{
 	}
 	
 	//Method to check which picture is used for the input given from the Picture enum
-	public String getPictureDisplay(String pic) {
+	public static String getPictureDisplay(String pic) {
 		String picture = "";
 		if(pic == "Beet_Salad") {
 			picture = "Beet Salad.jpg";
