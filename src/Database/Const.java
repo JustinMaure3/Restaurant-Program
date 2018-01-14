@@ -2,11 +2,9 @@ package Database;
 
 public class Const {
 	//My name user and password for the server
-<<<<<<< HEAD
 	public static final String DB_NAME = "mfontes453db";
-=======
-	public static final String DB_NAME = "school";
->>>>>>> 57bb8cc65d12063f5d4d458b25a00ebe2cd3c05c
+//	public static final String DB_NAME = "school";
+
 	//public static final String DB_USER = "siaconetti968";
 	public static final String DB_USER = "root";
 	public static final String DB_PASS = "turtledove";
