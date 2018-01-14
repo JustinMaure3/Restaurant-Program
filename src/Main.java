@@ -119,14 +119,13 @@ public class Main extends Application {
 				Text foodAmountSold = new Text("  " + foodDrinkItems.get(i).getAmountSold() + "  ");
 				amountSoldColumn.getChildren().addAll(foodAmountSold);
 				
-				//Add all of the info into the hbox
-				
-				newItemFood.getChildren().addAll(pictureColumn, foodNameColumn, ratingColumn, descriptionColumn, priceColumn, amountSoldColumn);
-				
-				
 				//Increment i
 				i++;
 			}
+			
+			//Add all of the info into the hbox
+			newItemFood.getChildren().addAll(pictureColumn, foodNameColumn, ratingColumn, descriptionColumn, priceColumn, amountSoldColumn);
+			
 			//Add the HBox to the VBox
 			data.getChildren().add(newItemFood);
 			MenuTab.tab.setContent(data);
@@ -198,14 +197,14 @@ public class Main extends Application {
 				crewMemberPunchInColumn.getChildren().addAll(crewMemberPunchIn);
 				
 				Text crewMemberGoldStar = new Text("  " + crewMemberItems.get(i).getCrewMemberGoldStar() + "  ");
-				crewMemberGoldStarColumn.getChildren().addAll(crewMemberGoldStar);
-				
-				//Add all of the info into the hbox
-				newItemCrew.getChildren().addAll(nameColumn, wageColumn, uniformColumn, positionColumn, crewMemberPunchInColumn, crewMemberGoldStarColumn);
+				crewMemberGoldStarColumn.getChildren().addAll(crewMemberGoldStar);				
 			
 				//Increment i
 				i++;
 			}
+			
+			//Add all of the info into the hbox
+			newItemCrew.getChildren().addAll(nameColumn, wageColumn, uniformColumn, positionColumn, crewMemberPunchInColumn, crewMemberGoldStarColumn);
 			
 			//Add the HBox to the VBox
 			data.getChildren().add(newItemCrew);
@@ -274,14 +273,14 @@ public class Main extends Application {
 				managerIDColumn.getChildren().addAll(managerID);
 				
 				Text managerSafeCode = new Text("  " + managerItems.get(e1).getManagerSafeCode() + "  ");
-				managerSafeCodeColumn.getChildren().addAll(managerSafeCode);
-				
-				//Add all of the info into the hbox
-				newItemManager.getChildren().addAll(managerNameColumn, managerWageColumn, managerUniformColumn, managerPositionColumn, managerIDColumn, managerSafeCodeColumn);
+				managerSafeCodeColumn.getChildren().addAll(managerSafeCode);				
 				
 				//Increment i
 				e1++;
 			}
+			
+			//Add all of the info into the hbox
+			newItemManager.getChildren().addAll(managerNameColumn, managerWageColumn, managerUniformColumn, managerPositionColumn, managerIDColumn, managerSafeCodeColumn);
 
 			//Add the HBox to the VBox
 			dataTwo.getChildren().add(newItemManager);
@@ -344,12 +343,11 @@ public class Main extends Application {
 				Text custReview = new Text(locationItems.get(e1).getCustReview() + "  ");
 				custReviewColumn.getChildren().addAll(custReview);
 				
-				//Add all of the info into the hbox
-				newItemLocations.getChildren().addAll(locationColumn, santScoreColumn, regionalManColumn, custReviewColumn);
-				
 				//Increment i
 				e1++;
 			}
+			//Add all of the info into the hbox
+			newItemLocations.getChildren().addAll(locationColumn, santScoreColumn, regionalManColumn, custReviewColumn);
 
 			//Add the HBox to the VBox
 			locationData.getChildren().add(newItemLocations);
