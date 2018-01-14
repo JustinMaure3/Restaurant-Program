@@ -31,10 +31,15 @@ public class HomeTab extends Tab {
 		
 		//Restaurant name and the popular foodname and employee of the month 
 		Text restName = new Text("Dinner Diner");
-		Text popName = new Text(topFoodItem.getName() + " is the best selling item this year!");//Here would grab the most popular food item name
-		Text empName = new Text(topCrewMember.getName() + " is the top employee of this year!");
 		
 		
+		Text popName = new Text("There seems to be no top food at the moment. Why not enter one using the add item tab?");//Here would grab the most popular food item name
+		Text empName = new Text("There seems to be no employee of the month. Why not enter one using the add item tab?");
+		
+		if((topCrewMember.getName() != null) && (topFoodItem.getName() != null)) {
+		 popName = new Text(topFoodItem.getName() + " is the best selling item this year!");//Here would grab the most popular food item name
+		 empName = new Text(topCrewMember.getName() + " is the top employee of this year!");
+		}
 		
 		//ImageViews
 		ImageView foodImage = new ImageView("Pictures/" + topFoodItem.getPicture());

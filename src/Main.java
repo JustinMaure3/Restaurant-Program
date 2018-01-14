@@ -4,9 +4,11 @@ import Database.Database;
 import PlaceHolder.CrewMember;
 import PlaceHolder.FoodDrink;
 import PlaceHolder.Manager;
+import PlaceHolder.StoreLocations;
 import Tables.CrewMemberTable;
 import Tables.FoodTable;
 import Tables.ManagerTable;
+import Tables.StoreLocationsTable;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.Menu;
@@ -151,7 +153,36 @@ public class Main extends Application {
 		MenuItem locations = new MenuItem("Locations");
 		locations.setOnAction(e->{
 			MenuTab.displayedTable = "locations";
-			//MenuTab.refresh();
+			VBox data = new VBox();	
+			//Create an arraylist
+			StoreLocationsTable menuItems = new StoreLocationsTable();
+			
+			//Populate the arraylist with the database contents
+			ArrayList<StoreLocations> LocationsItems = menuItems.getAllStoreLocations();			
+			
+			//Loop to set the contents of the arraylist to their own panes
+			int i = 0;
+			while(i < LocationsItems.size()){
+				
+				//Create an HBox to hold the information about the current food item
+				HBox newItemLocations = new HBox();
+				
+				//Create objects to hold the food's information and then add them to the HBox
+				Text location = new Text("  " + LocationsItems.get(i).getLocation() + "  ");
+				Text santScore = new Text(LocationsItems.get(i).getSantScore() + "  ");
+				Text regionalMan = new Text(LocationsItems.get(i).getRegionalMan() + "  ");
+				Text custReview = new Text(LocationsItems.get(i).getCustReview() + "  ");
+				
+				//Add all of the info into the hbox
+				newItemLocations.getChildren().addAll(location, santScore, regionalMan, custReview);
+				
+				//Add the HBox to the VBox
+				data.getChildren().add(newItemLocations);
+				//Increment i
+				i++;
+			}
+			MenuTab.tab.setContent(data);
+			
 		});
 
 		Menu display = new Menu("Display");
