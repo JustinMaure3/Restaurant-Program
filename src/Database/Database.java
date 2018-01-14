@@ -6,7 +6,11 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-
+/**
+ * This is used to create tables and make a connection
+ * @author Stefano,Max,Tomas,Justin
+ *
+ */
 public class Database {
 
 	//Create an instance variable

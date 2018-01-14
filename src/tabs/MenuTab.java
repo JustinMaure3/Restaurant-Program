@@ -1,5 +1,9 @@
 package tabs;
-
+/**
+ * Displays the database table depending on what table they wanted to see
+ * @author Stefano,Max,Tomas,Justin
+ *
+ */
 import java.util.ArrayList;
 import PlaceHolder.CrewMember;
 import PlaceHolder.FoodDrink;
@@ -72,95 +76,6 @@ public class MenuTab extends Tab {
 				i++;
 			}
 			
-		}else if(displayedTable == "employees") {
-			//Create an arraylist
-			CrewMemberTable employeeList = new CrewMemberTable();
-			
-			//Populate the arraylist with the database contents
-			ArrayList<CrewMember> crewMemberItems = employeeList.getAllCrewMembers();			
-			
-			//Loop to set the contents of the arraylist to their own panes
-			int i = 0;
-			while(i < crewMemberItems.size()){
-				
-				//Create an HBox to hold the information about the current food item
-				HBox newItemCrew = new HBox();
-				
-				//Create objects to hold the food's information and then add them to the HBox
-				Text name = new Text("  " + crewMemberItems.get(i).getName() + "  ");
-				Text wage = new Text(crewMemberItems.get(i).getWage() + "  ");
-				Text uniform = new Text(crewMemberItems.get(i).getUniform() + "  ");
-				Text position = new Text(crewMemberItems.get(i).getPosition() + "  ");
-				Text crewMemberPunchIn = new Text(crewMemberItems.get(i).getCrewMemberPunchIn() + "  ");
-				Text crewMemberGoldStar = new Text("  " + crewMemberItems.get(i).getCrewMemberGoldStar() + "  ");
-				
-				//Add all of the info into the hbox
-				newItemCrew.getChildren().addAll(name, wage, uniform, position, crewMemberPunchIn, crewMemberGoldStar);
-				
-				//Add the HBox to the VBox
-				data.getChildren().add(newItemCrew);
-				//Increment i
-				i++;
-			}
-			
-			//Create an arraylist
-			ManagerTable managerList = new ManagerTable();
-			
-			//Populate the arraylist with the database contents
-			ArrayList<Manager> managerItems = managerList.getAllManagers();			
-			
-			//Loop to set the contents of the arraylist to their own panes
-			int e = 0;
-			while(e < managerItems.size()){
-				
-				//Create an HBox to hold the information about the current food item
-				HBox newItemManager = new HBox();
-				
-				//Create objects to hold the food's information and then add them to the HBox
-				Text name = new Text("  " + managerItems.get(e).getName() + "  ");
-				Text wage = new Text(managerItems.get(e).getWage() + "  ");
-				Text uniform = new Text(managerItems.get(e).getUniform() + "  ");
-				Text position = new Text(managerItems.get(e).getPosition() + "  ");
-				Text managerID = new Text(managerItems.get(e).getManagerID() + "  ");
-				Text managerSafeCode = new Text("  " + managerItems.get(e).getManagerSafeCode() + "  ");
-				
-				//Add all of the info into the hbox
-				newItemManager.getChildren().addAll(name, wage, uniform, position, managerID, managerSafeCode);
-				
-				//Add the HBox to the VBox
-				data.getChildren().add(newItemManager);
-				//Increment i
-				e++;
-			}
-			
-		}else if(displayedTable == "locations") {
-			//Create an arraylist
-			StoreLocationsTable menuItems = new StoreLocationsTable();
-			
-			//Populate the arraylist with the database contents
-			ArrayList<StoreLocations> LocationsItems = menuItems.getAllStoreLocations();			
-			
-			//Loop to set the contents of the arraylist to their own panes
-			int i = 0;
-			while(i < LocationsItems.size()){
-				
-				//Create an HBox to hold the information about the current food item
-				HBox newItemLocations = new HBox();
-				
-				//Create objects to hold the food's information and then add them to the HBox
-				Text location = new Text("  " + LocationsItems.get(i).getLocation() + "  ");
-				Text santScore = new Text(LocationsItems.get(i).getSantScore() + "  ");
-				Text regionalMan = new Text(LocationsItems.get(i).getRegionalMan() + "  ");
-				Text custReview = new Text(LocationsItems.get(i).getCustReview() + "  ");
-				
-				//Add all of the info into the hbox
-				newItemLocations.getChildren().addAll(location, santScore, regionalMan, custReview);
-				
-				//Add the HBox to the VBox
-				data.getChildren().add(newItemLocations);
-				//Increment i
-				i++;
-			}
 		}
 		
 		//Add the menu to the main pane

@@ -7,9 +7,13 @@
 		</accessrules>
 	</classpathentry>
 <<<<<<< HEAD
+<<<<<<< HEAD
 	<classpathentry exported="true" kind="lib" path="E:/Semester3/Java/mysql-connector-java-5.1.39/mysql-connector-java-5.1.43-bin.jar"/>
 =======
 	<classpathentry kind="lib" path="C:/Users/Administrator/Desktop/mysql-connector-java-5.1.39/mysql-connector-java-5.1.39/mysql-connector-java-5.1.43-bin.jar"/>
 >>>>>>> 57bb8cc65d12063f5d4d458b25a00ebe2cd3c05c
+=======
+	<classpathentry kind="lib" path="E:/Semester3/Java/mysql-connector-java-5.1.39/mysql-connector-java-5.1.43-bin.jar"/>
+>>>>>>> 5e56a841696a57729f55521f2e8f58d3fc1f9d21
 	<classpathentry kind="output" path="bin"/>
 </classpath>

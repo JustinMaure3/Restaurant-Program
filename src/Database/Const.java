@@ -1,13 +1,29 @@
 package Database;
-
+/**
+ * This is used to create constants for every table
+ * @author Stefano,Max,Tomas,Justin
+ *
+ */
 public class Const {
 	//My name user and password for the server
+<<<<<<< HEAD
 	public static final String DB_NAME = "mfontes453db";
 //	public static final String DB_NAME = "school";
 
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+	public static final String DB_NAME = "mfontes453db";
+=======
+	public static final String DB_NAME = "school";
+>>>>>>> 57bb8cc65d12063f5d4d458b25a00ebe2cd3c05c
+=======
+	public static final String DB_NAME = "siaconetti968db";
+>>>>>>> 5e56a841696a57729f55521f2e8f58d3fc1f9d21
+>>>>>>> staging
 	//public static final String DB_USER = "siaconetti968";
 	public static final String DB_USER = "root";
-	public static final String DB_PASS = "turtledove";
+	public static final String DB_PASS = "stefano01";
 	//public static final String DB_PASS = "q8hccq8hcc6pv7d6pv7d";
 	
 	//Creating constants for our Food Drink Table
