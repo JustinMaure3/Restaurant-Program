@@ -53,45 +53,51 @@ public class Main extends Application {
 			FoodTable menuItems = new FoodTable();
 			
 			//Populate the arraylist with the database contents
-			ArrayList<FoodDrink> foodDrinkItems = menuItems.getAllFoodDrink();			
+			ArrayList<FoodDrink> foodDrinkItems = menuItems.getAllFoodDrink();
+			
+			//Create an HBox to hold the information about the current food item
+			HBox newItemFood = new HBox();
+			
+			//Create a VBoxes that will act as the columns of the table
+			VBox foodNameColumn = new VBox();
+			foodNameColumn.setSpacing(10.0);
+			VBox ratingColumn = new VBox();
+			ratingColumn.setSpacing(10.0);
+			VBox descriptionColumn = new VBox();
+			descriptionColumn.setSpacing(10.0);
+			VBox pictureColumn = new VBox();
+			pictureColumn.setSpacing(10.0);
+			VBox priceColumn = new VBox();
+			priceColumn.setSpacing(10.0);
+			VBox amountSoldColumn = new VBox();
+			amountSoldColumn.setSpacing(10.0);
+			
+			//Create titles for each column
+			Text foodNameTitle = new Text("Name");
+			foodNameColumn.getChildren().addAll(foodNameTitle);
+			
+			Text ratingTitle = new Text("Rating");
+			ratingColumn.getChildren().addAll(ratingTitle);
+			
+			Text descriptionTitle = new Text("Description");
+			descriptionColumn.getChildren().addAll(descriptionTitle);
+			
+			Text pictureTitle = new Text("Picture");
+			pictureColumn.getChildren().addAll(pictureTitle);
+			
+			Text priceTitle = new Text("Price");
+			priceColumn.getChildren().addAll(priceTitle);
+			
+			Text amountSoldTitle = new Text("Amount Sold");
+			amountSoldColumn.getChildren().addAll(amountSoldTitle);
 			
 			//Loop to set the contents of the arraylist to their own panes
 			int i = 0;
 			while(i < foodDrinkItems.size()){
 				
-				//Create an HBox to hold the information about the current food item
-				HBox newItemFood = new HBox();
-				
-				//Create a VBoxes that will act as the columns of the table
-				VBox nameColumn = new VBox();
-				VBox ratingColumn = new VBox();
-				VBox descriptionColumn = new VBox();
-				VBox pictureColumn = new VBox();
-				VBox priceColumn = new VBox();
-				VBox amountSoldColumn = new VBox();
-				
-				//Create titles for each column
-				Text nameTitle = new Text("Name");
-				nameColumn.getChildren().addAll(nameTitle);
-				
-				Text ratingTitle = new Text("Rating");
-				ratingColumn.getChildren().addAll(ratingTitle);
-				
-				Text descriptionTitle = new Text("Description");
-				descriptionColumn.getChildren().addAll(descriptionTitle);
-				
-				Text pictureTitle = new Text("Picture");
-				pictureColumn.getChildren().addAll(pictureTitle);
-				
-				Text priceTitle = new Text("Price");
-				priceColumn.getChildren().addAll(priceTitle);
-				
-				Text amountSoldTitle = new Text("Amount Sold");
-				amountSoldColumn.getChildren().addAll(amountSoldTitle);
-				
 				//Create objects to hold the food's information and then add them to the HBox
 				Text name = new Text("  " + foodDrinkItems.get(i).getName() + "  ");
-				nameColumn.getChildren().addAll(name);
+				foodNameColumn.getChildren().addAll(name);
 				
 				Text rating = new Text(foodDrinkItems.get(i).getRating() + "  ");
 				ratingColumn.getChildren().addAll(rating);
@@ -112,7 +118,7 @@ public class Main extends Application {
 				
 				//Add all of the info into the hbox
 				
-				newItemFood.getChildren().addAll(pictureColumn, nameColumn, ratingColumn, descriptionColumn, priceColumn, amountSoldColumn);
+				newItemFood.getChildren().addAll(pictureColumn, foodNameColumn, ratingColumn, descriptionColumn, priceColumn, amountSoldColumn);
 				
 				//Add the HBox to the VBox
 				data.getChildren().add(newItemFood);
@@ -129,41 +135,49 @@ public class Main extends Application {
 			CrewMemberTable employeeList = new CrewMemberTable();
 			
 			//Populate the arraylist with the database contents
-			ArrayList<CrewMember> crewMemberItems = employeeList.getAllCrewMembers();			
+			ArrayList<CrewMember> crewMemberItems = employeeList.getAllCrewMembers();
+			
+			//Create an HBox to hold the information about the current food item
+			HBox newItemCrew = new HBox();
+			
+			//Create a VBoxes that will act as the columns of the table
+			VBox nameColumn = new VBox();
+			nameColumn.setSpacing(10.0);
+			VBox wageColumn = new VBox();
+			wageColumn.setSpacing(10.0);
+			VBox uniformColumn = new VBox();
+			uniformColumn.setSpacing(10.0);
+			VBox positionColumn = new VBox();
+			positionColumn.setSpacing(10.0);
+			VBox crewMemberPunchInColumn = new VBox();
+			crewMemberPunchInColumn.setSpacing(10.0);
+			VBox crewMemberGoldStarColumn = new VBox();
+			crewMemberGoldStarColumn.setSpacing(10.0);
+			
+			//Create titles for each column
+			Text nameTitle = new Text("Name");
+			nameColumn.getChildren().addAll(nameTitle);
+			
+			Text wageTitle = new Text("Wage");
+			wageColumn.getChildren().addAll(wageTitle);
+			
+			Text uniformTitle = new Text("Uniform");
+			uniformColumn.getChildren().addAll(uniformTitle);
+			
+			Text positionTitle = new Text("Position");
+			positionColumn.getChildren().addAll(positionTitle);
+			
+			Text crewMemberPunchInTitle = new Text("Punch In Number");
+			crewMemberPunchInColumn.getChildren().addAll(crewMemberPunchInTitle);
+			
+			Text crewMemberGoldStarTitle = new Text("Gold Stars");
+			crewMemberGoldStarColumn.getChildren().addAll(crewMemberGoldStarTitle);
 			
 			//Loop to set the contents of the arraylist to their own panes
 			int i = 0;
 			while(i < crewMemberItems.size()){
 				
-				//Create an HBox to hold the information about the current food item
-				HBox newItemCrew = new HBox();
 				
-				//Create a VBoxes that will act as the columns of the table
-				VBox nameColumn = new VBox();
-				VBox wageColumn = new VBox();
-				VBox uniformColumn = new VBox();
-				VBox positionColumn = new VBox();
-				VBox crewMemberPunchInColumn = new VBox();
-				VBox crewMemberGoldStarColumn = new VBox();
-				
-				//Create titles for each column
-				Text nameTitle = new Text("Name");
-				nameColumn.getChildren().addAll(nameTitle);
-				
-				Text wageTitle = new Text("Wage");
-				wageColumn.getChildren().addAll(wageTitle);
-				
-				Text uniformTitle = new Text("Uniform");
-				uniformColumn.getChildren().addAll(uniformTitle);
-				
-				Text positionTitle = new Text("Position");
-				positionColumn.getChildren().addAll(positionTitle);
-				
-				Text crewMemberPunchInTitle = new Text("Punch In Number");
-				crewMemberPunchInColumn.getChildren().addAll(crewMemberPunchInTitle);
-				
-				Text crewMemberGoldStarTitle = new Text("Gold Stars");
-				crewMemberGoldStarColumn.getChildren().addAll(crewMemberGoldStarTitle);
 				
 				//Create objects to hold the food's information and then add them to the HBox
 				Text name = new Text("  " + crewMemberItems.get(i).getName() + "  ");
@@ -198,54 +212,62 @@ public class Main extends Application {
 			ManagerTable managerList = new ManagerTable();
 			
 			//Populate the arraylist with the database contents
-			ArrayList<Manager> managerItems = managerList.getAllManagers();			
+			ArrayList<Manager> managerItems = managerList.getAllManagers();	
+			
+			//Create an HBox to hold the information about the current food item
+			HBox newItemManager = new HBox();
+			
+			//Create a VBoxes that will act as the columns of the table
+			VBox managerNameColumn = new VBox();
+			nameColumn.setSpacing(10.0);
+			VBox managerWageColumn = new VBox();
+			wageColumn.setSpacing(10.0);
+			VBox managerUniformColumn = new VBox();
+			uniformColumn.setSpacing(10.0);
+			VBox managerPositionColumn = new VBox();
+			positionColumn.setSpacing(10.0);
+			VBox managerIDColumn = new VBox();
+			managerIDColumn.setSpacing(10.0);
+			VBox managerSafeCodeColumn = new VBox();
+			managerSafeCodeColumn.setSpacing(10.0);
+			
+			//Create titles for each column
+			Text managerNameTitle = new Text("Name");
+			managerNameColumn.getChildren().addAll(managerNameTitle);
+			
+			Text managerWageTitle = new Text("Wage");
+			managerWageColumn.getChildren().addAll(managerWageTitle);
+			
+			Text managerUniformTitle = new Text("Uniform");
+			managerUniformColumn.getChildren().addAll(managerUniformTitle);
+			
+			Text managerPositionTitle = new Text("Position");
+			managerPositionColumn.getChildren().addAll(managerPositionTitle);
+			
+			Text managerIDTitle = new Text("Manager ID");
+			managerIDColumn.getChildren().addAll(managerIDTitle);
+			
+			Text managerSafeCodeTitle = new Text("Manager Safe Code");
+			managerSafeCodeColumn.getChildren().addAll(managerSafeCodeTitle);
 			
 			//Loop to set the contents of the arraylist to their own panes
 			int e1 = 0;
 			while(e1 < managerItems.size()){
 				
-				//Create an HBox to hold the information about the current food item
-				HBox newItemManager = new HBox();
 				
-				//Create a VBoxes that will act as the columns of the table
-				VBox nameColumn = new VBox();
-				VBox wageColumn = new VBox();
-				VBox uniformColumn = new VBox();
-				VBox positionColumn = new VBox();
-				VBox managerIDColumn = new VBox();
-				VBox managerSafeCodeColumn = new VBox();
-				
-				//Create titles for each column
-				Text nameTitle = new Text("Name");
-				nameColumn.getChildren().addAll(nameTitle);
-				
-				Text wageTitle = new Text("Wage");
-				wageColumn.getChildren().addAll(wageTitle);
-				
-				Text uniformTitle = new Text("Uniform");
-				uniformColumn.getChildren().addAll(uniformTitle);
-				
-				Text positionTitle = new Text("Position");
-				positionColumn.getChildren().addAll(positionTitle);
-				
-				Text managerIDTitle = new Text("Manager ID");
-				managerIDColumn.getChildren().addAll(managerIDTitle);
-				
-				Text managerSafeCodeTitle = new Text("Manager Safe Code");
-				managerSafeCodeColumn.getChildren().addAll(managerSafeCodeTitle);
 				
 				//Create objects to hold the food's information and then add them to the HBox
 				Text name = new Text("  " + managerItems.get(e1).getName() + "  ");
-				nameColumn.getChildren().addAll(name);
+				managerNameColumn.getChildren().addAll(name);
 				
 				Text wage = new Text(managerItems.get(e1).getWage() + "  ");
-				wageColumn.getChildren().addAll(wage);
+				managerWageColumn.getChildren().addAll(wage);
 				
 				Text uniform = new Text(managerItems.get(e1).getUniform() + "  ");
-				uniformColumn.getChildren().addAll(uniform);
+				managerUniformColumn.getChildren().addAll(uniform);
 				
 				Text position = new Text(managerItems.get(e1).getPosition() + "  ");
-				positionColumn.getChildren().addAll(position);
+				managerPositionColumn.getChildren().addAll(position);
 				
 				Text managerID = new Text(managerItems.get(e1).getManagerID() + "  ");
 				managerIDColumn.getChildren().addAll(managerID);
@@ -254,7 +276,7 @@ public class Main extends Application {
 				managerSafeCodeColumn.getChildren().addAll(managerSafeCode);
 				
 				//Add all of the info into the hbox
-				newItemManager.getChildren().addAll(nameColumn, wageColumn, uniformColumn, positionColumn, managerIDColumn, managerSafeCodeColumn);
+				newItemManager.getChildren().addAll(managerNameColumn, managerWageColumn, managerUniformColumn, managerPositionColumn, managerIDColumn, managerSafeCodeColumn);
 				
 				//Add the HBox to the VBox
 				dataTwo.getChildren().add(newItemManager);
@@ -275,33 +297,37 @@ public class Main extends Application {
 			StoreLocationsTable locationsList = new StoreLocationsTable();
 			
 			//Populate the arraylist with the database contents
-			ArrayList<StoreLocations> locationItems = locationsList.getAllStoreLocations();			
+			ArrayList<StoreLocations> locationItems = locationsList.getAllStoreLocations();	
+			
+			//Create an HBox to hold the information about the current food item
+			HBox newItemLocations = new HBox();
+			
+			//Create a VBoxes that will act as the columns of the table
+			VBox locationColumn = new VBox();
+			locationColumn.setSpacing(10.0);
+			VBox santScoreColumn = new VBox();
+			santScoreColumn.setSpacing(10.0);
+			VBox regionalManColumn = new VBox();
+			regionalManColumn.setSpacing(10.0);
+			VBox custReviewColumn = new VBox();
+			custReviewColumn.setSpacing(10.0);
+			
+			//Create titles for each column
+			Text locationTitle = new Text("Location");
+			locationColumn.getChildren().addAll(locationTitle);
+			
+			Text santScoreTitle = new Text("Sanitation Score");
+			santScoreColumn.getChildren().addAll(santScoreTitle);
+			
+			Text regionalManTitle = new Text("Regional Manager");
+			regionalManColumn.getChildren().addAll(regionalManTitle);
+			
+			Text custReviewTitle = new Text("Customer Review");
+			custReviewColumn.getChildren().addAll(custReviewTitle);
 			
 			//Loop to set the contents of the arraylist to their own panes
 			int e1 = 0;
 			while(e1 < locationItems.size()){
-				
-				//Create an HBox to hold the information about the current food item
-				HBox newItemLocations = new HBox();
-				
-				//Create a VBoxes that will act as the columns of the table
-				VBox locationColumn = new VBox();
-				VBox santScoreColumn = new VBox();
-				VBox regionalManColumn = new VBox();
-				VBox custReviewColumn = new VBox();
-				
-				//Create titles for each column
-				Text locationTitle = new Text("Location");
-				locationColumn.getChildren().addAll(locationTitle);
-				
-				Text santScoreTitle = new Text("Sanitation Score");
-				santScoreColumn.getChildren().addAll(santScoreTitle);
-				
-				Text regionalManTitle = new Text("Regional Manager");
-				regionalManColumn.getChildren().addAll(regionalManTitle);
-				
-				Text custReviewTitle = new Text("Customer Review");
-				custReviewColumn.getChildren().addAll(custReviewTitle);
 				
 				//Create objects to hold the food's information and then add them to the HBox
 				Text location = new Text("  " + locationItems.get(e1).getLocation() + "  ");
