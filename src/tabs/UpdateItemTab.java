@@ -8,8 +8,10 @@ import java.util.ArrayList;
 
 import PlaceHolder.CrewMember;
 import PlaceHolder.FoodDrink;
+import PlaceHolder.Manager;
 import Tables.CrewMemberTable;
 import Tables.FoodTable;
+import Tables.ManagerTable;
 import javafx.collections.FXCollections;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -62,11 +64,11 @@ public class UpdateItemTab extends Tab {
 		Text employeeText = new Text("Employee");
 		pane.add(employeeText, 11, 0);
 		
-		//Create a listView that'll hold a bunch of instances of food and drink
+		//Create a listView that'll hold a bunch of instances of employee
 		ListView<CrewMember> elist = new ListView<CrewMember>();
-		//Create a food table
+		//Create a employee table
 		CrewMemberTable cmTable = new CrewMemberTable();
-		//Create the array that'll give us all foodDrink in our database
+		//Create the array that'll give us all employees in our database
 		ArrayList<CrewMember> cmItems = cmTable.getAllCrewMembers();
 		
 		//set the list with all the items in the arraylist
@@ -84,6 +86,33 @@ public class UpdateItemTab extends Tab {
 			}
 		});
 		pane.add(eUpdate, 11, 2);
+		
+		//create manager title
+		Text managerText = new Text("Manager");
+		pane.add(managerText, 21, 0);
+				
+		//Create a listView that'll hold a bunch of instances of manager
+		ListView<Manager> mlist = new ListView<Manager>();
+		//Create a manager table
+		ManagerTable mTable = new ManagerTable();
+		//Create the array that'll give us all managers in our database
+		ArrayList<Manager> mItems = mTable.getAllManagers();
+				
+		//set the list with all the items in the arraylist
+		mlist.setItems(FXCollections.observableArrayList(mItems));
+		mlist.setMaxWidth(300);
+		mlist.setMaxHeight(300);
+		pane.add(mlist, 21, 1);
+				
+		//create button for manager update
+		Button mUpdate = new Button("Update Manager");
+		mUpdate.setOnAction(e->{
+			if(!mlist.getSelectionModel().isEmpty()) {
+				Manager manager = mlist.getSelectionModel().getSelectedItem();
+				getHiddenManagers(pane, manager);
+			}
+		});
+		pane.add(mUpdate, 21, 2);
 		
 		//Setting the page up
 		pane.setPadding(new Insets(10, 10, 10, 10));
@@ -131,7 +160,6 @@ public class UpdateItemTab extends Tab {
 				
 		//Create insert picture row
 		Text picText = new Text("Picture:");
-		//Add enums for all pictures to choose from?
 		ComboBox<ENUMS.Pictures> picture = new ComboBox<>();
 		picture.setItems(FXCollections.observableArrayList(ENUMS.Pictures.values()));
 		//Show the picture row
@@ -284,5 +312,93 @@ public class UpdateItemTab extends Tab {
 		this.setContent(gpane);
 	}
 	
+	public void getHiddenManagers(GridPane pane, Manager manager) {
+		GridPane gpane = new GridPane();
+		
+		//create manager title
+		Text managerText = new Text("Manager");
+		gpane.add(managerText, 1, 0);
+				
+		//create first row input for manager
+		Text mNameText = new Text("Name:");
+		TextField mName = new TextField();
+		mName.setText(manager.getName());
+		gpane.add(mNameText, 0, 1);
+		gpane.add(mName, 1, 1);
+				
+		//Create insert position row
+		Text positionText = new Text("Position:");
+		ComboBox<ENUMS.ManagerPositions> position = new ComboBox<>();
+		position.setItems(FXCollections.observableArrayList(ENUMS.ManagerPositions.values()));
+		//Show the position row
+		gpane.add(positionText, 0, 2);
+		gpane.add(position, 1, 2);
+						
+		//Create insert uniform row
+		Text uniformText = new Text("Uniform Size:");
+		ComboBox<ENUMS.UniformSizes> uniform = new ComboBox<>();
+		uniform.setItems(FXCollections.observableArrayList(ENUMS.UniformSizes.values()));
+		//Show the uniform row
+		gpane.add(uniformText, 0, 3);
+		gpane.add(uniform, 1, 3);
+						
+		//Create insert wage row
+		Text wageText = new Text("Wage:");
+		TextField wage = new TextField();
+		wage.setText(manager.getWage() + "");
+		//Show the wage row
+		gpane.add(wageText, 0, 4);
+		gpane.add(wage, 1, 4);
+						
+		//Create insert manager ID row
+		Text managerIDText = new Text("Manager ID:");
+		TextField managerID = new TextField();
+		managerID.setText(manager.getManagerID() + "");
+		//Show the punch in row
+		gpane.add(managerIDText, 0, 5);
+		gpane.add(managerID, 1, 5);
+						
+		//Create gold star row
+		Text managerSCText = new Text("Safety Code:");
+		TextField managerSC = new TextField();
+		managerSC.setText(manager.getManagerSafeCode() + "");
+		//Show the gold star row
+		gpane.add(managerSCText, 0, 6);
+		gpane.add(managerSC, 1, 6);
+				
+		//create button for Manager update
+		Button mUpdate = new Button("Update Manager");
+		mUpdate.setOnAction(e->{
+			if(!mName.getText().isEmpty()) {
+				//Create an instance of the Manager table
+				ManagerTable mTable = new ManagerTable();
+							
+				//Update the manager
+				manager.setName(mName.getText());
+				manager.setWage(Double.parseDouble(wage.getText()));
+				manager.setUniform(uniform.getSelectionModel().getSelectedItem().name());
+				manager.setPosition(position.getSelectionModel().getSelectedItem().name());
+				manager.setManagerID(Integer.parseInt(managerID.getText()));
+				manager.setManagerSafeCode(Integer.parseInt(managerSC.getText()));
+				
+				mTable.updateManager(manager);
+			}
+		});
+		gpane.add(mUpdate, 1, 7);
+		
+		Button back = new Button("Back");
+		back.setOnAction(e->{
+			this.setContent(pane);
+		});
+		gpane.add(back, 1, 8);
+		
+		
+		
+		//Setting the page up
+		gpane.setPadding(new Insets(10, 10, 10, 10));
+		gpane.setVgap(10);
+		gpane.setHgap(10);
+		this.setContent(gpane);
+	}
 		
 }

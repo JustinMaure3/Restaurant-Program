@@ -74,7 +74,19 @@ public class ManagerTable {
 
 			//Creating method to update an instance of the Manager class in the database table
 			public void updateManager(Manager manager) {
-				
+				String query = "UPDATE " + Const.TABLE_MANAGER + " SET " + 
+						Const.MANAGER_COLUMN_NAME + " = '" + manager.getName() + "', " +
+						Const.MANAGER_COLUMN_WAGE + " = '" + manager.getWage() + "', " +
+						Const.MANAGER_COLUMN_UNIFORM + " = '" + manager.getUniform() + "', " +
+						Const.MANAGER_COLUMN_POSITION + " = '" + manager.getPosition() + "', " +
+						Const.MANAGER_COLUMN_MANAGERID + " = '" + manager.getManagerID() + "', " +
+						Const.MANAGER_COLUMN_MANAGERSAFECODE + " = '" + manager.getManagerSafeCode() + "' WHERE " +
+						Const.MANAGER_COLUMN_ID + " = '" + manager.getID() + "'";
+				try {
+					db.getConnection().createStatement().execute(query);
+				}catch(SQLException e) {
+					e.printStackTrace();
+				}
 				
 			}
 
