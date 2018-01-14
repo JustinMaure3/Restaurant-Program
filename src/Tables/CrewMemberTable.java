@@ -72,7 +72,7 @@ public class CrewMemberTable {
 		
 		
 		//Creating a method to grab the employee of the month
-			public CrewMember getCrewMemberOfMonthk(int crewMemberGoldStar) {
+			public CrewMember getCrewMemberOfMonth(int crewMemberGoldStar) {
 				String query = "SELECT * FROM " + Const.TABLE_CREWMEMBER  + " ORDER BY " + Const.CREWMEMBER_COLUMN_CREWMEMBERGOLDSTAR + " DESC ";
 				CrewMember crewMember = new CrewMember();
 				try {

@@ -150,6 +150,7 @@ public class AddItemTab extends Tab{
 			
 			
 		});
+		
 		pane.add(eSubmit, 11, 6);
 		
 		//Add an Manager form

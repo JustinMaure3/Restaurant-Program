@@ -1,8 +1,6 @@
 package tabs;
 
-import java.util.ArrayList;
 import java.util.Random;
-
 import PlaceHolder.CrewMember;
 import PlaceHolder.FoodDrink;
 import Tables.CrewMemberTable;
@@ -29,7 +27,7 @@ public class HomeTab extends Tab {
 		CrewMemberTable crewMember = new CrewMemberTable();
 		
 		FoodDrink topFoodItem = menuItems.getTopFoodDrink(1);
-		CrewMember topCrewMember = crewMember.getCrewMemberOfMonthk(1);
+		CrewMember topCrewMember = crewMember.getCrewMemberOfMonth(1);
 		
 		//Restaurant name and the popular foodname and employee of the month 
 		Text restName = new Text("Dinner Diner");
