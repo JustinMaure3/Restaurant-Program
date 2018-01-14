@@ -45,6 +45,8 @@ public class Main extends Application {
 
 		//Adding menu items to the Display menu
 		MenuItem food = new MenuItem("Food");
+		MenuItem addTable = new MenuItem("Add all to Table");
+		
 		food.setOnAction(e->{
 			MenuTab.displayedTable = "food";
 			VBox data = new VBox();	
@@ -359,10 +361,79 @@ public class Main extends Application {
 		MenuItem nineties = new MenuItem("90's");
 		MenuItem defaultTheme = new MenuItem("Default");
 		themes.getItems().addAll(defaultTheme, seventies, nineties, modern);
-										
+								
+		
+		addTable.setOnAction(e->{
+			FoodTable fTable = new FoodTable();
+			FoodDrink foodAdd = new FoodDrink();
+			 foodAdd = new FoodDrink("Pizza", 5, "Nice and greasy!", "Pizza.jpg", 3.99, 10.0, "APRIL");
+			 fTable.createFoodDrink(foodAdd);
+			 foodAdd = new FoodDrink("Beet_Salad", 4, "Ew", "Beet Salad.jpg", 3.44, 16.0, "MARCH");
+			 fTable.createFoodDrink(foodAdd);
+			 foodAdd = new FoodDrink("American_Breakfast", 2, "Soothing", "Classic American Breakfast.jpg", 1.55, 6.0, "JUNE");
+			 fTable.createFoodDrink(foodAdd);
+			 foodAdd = new FoodDrink("Cocktails", 1, "Party!", "Cocktails.jpg", 5.00, 10.0, "JULY");
+			 fTable.createFoodDrink(foodAdd);
+			 foodAdd = new FoodDrink("Coffee", 6, "Bitter", "Coffee.jpg", 1.00, 2.0, "SEPTEMBER");
+			 fTable.createFoodDrink(foodAdd);
+			 foodAdd = new FoodDrink("Cucumber_Water", 9, "10 dollars?!", "Cucumber Water.jpg", 10.00, 7.0, "OCTOBER");
+			 fTable.createFoodDrink(foodAdd);
+			 foodAdd = new FoodDrink("Curry", 8, "Tastes great!", "curry-bowl-garnished-with-greens_4460x4460.jpg", 9.99, 4.0, "NOVEMBER");
+			 fTable.createFoodDrink(foodAdd);
+			 
+			 
+			 	CrewMemberTable cTable = new CrewMemberTable();
+				CrewMember crewAdd = new CrewMember();
+				
+				crewAdd = new CrewMember("Tomas", 12.99, "L", "Cook", 3325, 5);  
+				cTable.createCrewMember(crewAdd);
+				
+				crewAdd = new CrewMember("Justin", 14.99, "M", "Dish_Washer", 3145, 9);  
+				cTable.createCrewMember(crewAdd);
+				
+				crewAdd = new CrewMember("Max", 11.99, "S", "Waiter", 1425, 2);  
+				cTable.createCrewMember(crewAdd);
+				
+				crewAdd = new CrewMember("Stefano", 9.99, "XXL", "Pizza_Maker", 12315, 1);  
+				cTable.createCrewMember(crewAdd);
+				
+				ManagerTable mTable = new ManagerTable();
+				Manager manAdd = new Manager();
+				
+				manAdd = new Manager("Desmond", 16.99, "L", "Manager", 12312, 5123); 
+				mTable.createManager(manAdd);
+				
+				manAdd = new Manager("Cody", 17.99, "M", "General_manager", 12451, 91234);  
+				mTable.createManager(manAdd);
+				
+				manAdd = new Manager("Jess", 18.99, "S", "Supervisor", 6543, 24123);  
+				mTable.createManager(manAdd);
+				
+				manAdd = new Manager("Alex", 19.99, "XXL", "General_manager_assistant", 9876, 11234);  
+				mTable.createManager(manAdd);	
+				
+				
+				
+				StoreLocationsTable lTable = new StoreLocationsTable();
+				StoreLocations locAdd = new StoreLocations();
+				
+				locAdd = new StoreLocations("532 Cool Street", "David Blake", 75, 44); 
+				lTable.createStoreLocations(locAdd);
+				
+				locAdd = new StoreLocations("51341 WhereAmI Street?", "Cody", 44, 43);
+				lTable.createStoreLocations(locAdd);
+				
+				locAdd = new StoreLocations("8827 PleaseStop", "Alduin", 76, 65);  
+				lTable.createStoreLocations(locAdd);
+				
+				locAdd = new StoreLocations("77 ImFallen rd",  "Billy", 11, 87);  
+				lTable.createStoreLocations(locAdd);
+				
+				
+		});
 	
 		//Adding menus into the menuBar
-		fileMenu.getItems().addAll(themes,display,creditsMenu,exit);
+		fileMenu.getItems().addAll(themes,display,creditsMenu, addTable, exit);
 		menu.getMenus().addAll(fileMenu);
 							
 		
