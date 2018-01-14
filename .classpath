@@ -1,19 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
 	<classpathentry kind="src" path="src"/>
-	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8">
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8">
 		<accessrules>
 			<accessrule kind="accessible" pattern="javafx/**"/>
 		</accessrules>
 	</classpathentry>
-<<<<<<< HEAD
-<<<<<<< HEAD
-	<classpathentry exported="true" kind="lib" path="E:/Semester3/Java/mysql-connector-java-5.1.39/mysql-connector-java-5.1.43-bin.jar"/>
-=======
-	<classpathentry kind="lib" path="C:/Users/Administrator/Desktop/mysql-connector-java-5.1.39/mysql-connector-java-5.1.39/mysql-connector-java-5.1.43-bin.jar"/>
->>>>>>> 57bb8cc65d12063f5d4d458b25a00ebe2cd3c05c
-=======
-	<classpathentry kind="lib" path="E:/Semester3/Java/mysql-connector-java-5.1.39/mysql-connector-java-5.1.43-bin.jar"/>
->>>>>>> 5e56a841696a57729f55521f2e8f58d3fc1f9d21
+	<classpathentry kind="lib" path="E:/mysql-connector-java-5.1.39.zip"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

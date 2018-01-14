@@ -28,11 +28,7 @@ import tabs.MenuTab;
 import tabs.RemoveItemTab;
 import tabs.StatisticsTab;
 import tabs.UpdateItemTab;
-/**
- * 
- * @author Stefano,Max,Tomas,Justin
- *
- */
+
 public class Main extends Application {
 
 	public static Stage mainStage;
@@ -66,18 +62,57 @@ public class Main extends Application {
 				//Create an HBox to hold the information about the current food item
 				HBox newItemFood = new HBox();
 				
+				//Create a VBoxes that will act as the columns of the table
+				VBox nameColumn = new VBox();
+				VBox ratingColumn = new VBox();
+				VBox descriptionColumn = new VBox();
+				VBox pictureColumn = new VBox();
+				VBox priceColumn = new VBox();
+				VBox amountSoldColumn = new VBox();
+				
+				//Create titles for each column
+				Text nameTitle = new Text("Name");
+				nameColumn.getChildren().addAll(nameTitle);
+				
+				Text ratingTitle = new Text("Rating");
+				ratingColumn.getChildren().addAll(ratingTitle);
+				
+				Text descriptionTitle = new Text("Description");
+				descriptionColumn.getChildren().addAll(descriptionTitle);
+				
+				Text pictureTitle = new Text("Picture");
+				pictureColumn.getChildren().addAll(pictureTitle);
+				
+				Text priceTitle = new Text("Price");
+				priceColumn.getChildren().addAll(priceTitle);
+				
+				Text amountSoldTitle = new Text("Amount Sold");
+				amountSoldColumn.getChildren().addAll(amountSoldTitle);
+				
 				//Create objects to hold the food's information and then add them to the HBox
 				Text name = new Text("  " + foodDrinkItems.get(i).getName() + "  ");
+				nameColumn.getChildren().addAll(name);
+				
 				Text rating = new Text(foodDrinkItems.get(i).getRating() + "  ");
+				ratingColumn.getChildren().addAll(rating);
+				
 				Text description = new Text(foodDrinkItems.get(i).getDescription() + "  ");
+				descriptionColumn.getChildren().addAll(description);
+				
 				ImageView picture = new ImageView("Pictures/" + foodDrinkItems.get(i).getPicture());
+				pictureColumn.getChildren().addAll(picture);
 				picture.setFitHeight(100);
 				picture.setFitWidth(100);
+				
 				Text price = new Text(foodDrinkItems.get(i).getPrice() + "  ");
+				priceColumn.getChildren().addAll(price);
+				
 				Text amountSold = new Text("  " + foodDrinkItems.get(i).getAmountSold() + "  ");
+				amountSoldColumn.getChildren().addAll(amountSold);
 				
 				//Add all of the info into the hbox
-				newItemFood.getChildren().addAll(picture, name, rating, description, price, amountSold);
+				
+				newItemFood.getChildren().addAll(pictureColumn, nameColumn, ratingColumn, descriptionColumn, priceColumn, amountSoldColumn);
 				
 				//Add the HBox to the VBox
 				data.getChildren().add(newItemFood);
@@ -103,16 +138,54 @@ public class Main extends Application {
 				//Create an HBox to hold the information about the current food item
 				HBox newItemCrew = new HBox();
 				
+				//Create a VBoxes that will act as the columns of the table
+				VBox nameColumn = new VBox();
+				VBox wageColumn = new VBox();
+				VBox uniformColumn = new VBox();
+				VBox positionColumn = new VBox();
+				VBox crewMemberPunchInColumn = new VBox();
+				VBox crewMemberGoldStarColumn = new VBox();
+				
+				//Create titles for each column
+				Text nameTitle = new Text("Name");
+				nameColumn.getChildren().addAll(nameTitle);
+				
+				Text wageTitle = new Text("Wage");
+				wageColumn.getChildren().addAll(wageTitle);
+				
+				Text uniformTitle = new Text("Uniform");
+				uniformColumn.getChildren().addAll(uniformTitle);
+				
+				Text positionTitle = new Text("Position");
+				positionColumn.getChildren().addAll(positionTitle);
+				
+				Text crewMemberPunchInTitle = new Text("Punch In Number");
+				crewMemberPunchInColumn.getChildren().addAll(crewMemberPunchInTitle);
+				
+				Text crewMemberGoldStarTitle = new Text("Gold Stars");
+				crewMemberGoldStarColumn.getChildren().addAll(crewMemberGoldStarTitle);
+				
 				//Create objects to hold the food's information and then add them to the HBox
 				Text name = new Text("  " + crewMemberItems.get(i).getName() + "  ");
+				nameColumn.getChildren().addAll(name);
+				
 				Text wage = new Text(crewMemberItems.get(i).getWage() + "  ");
+				wageColumn.getChildren().addAll(wage);
+				
 				Text uniform = new Text(crewMemberItems.get(i).getUniform() + "  ");
+				uniformColumn.getChildren().addAll(uniform);
+				
 				Text position = new Text(crewMemberItems.get(i).getPosition() + "  ");
+				positionColumn.getChildren().addAll(position);
+				
 				Text crewMemberPunchIn = new Text(crewMemberItems.get(i).getCrewMemberPunchIn() + "  ");
+				crewMemberPunchInColumn.getChildren().addAll(crewMemberPunchIn);
+				
 				Text crewMemberGoldStar = new Text("  " + crewMemberItems.get(i).getCrewMemberGoldStar() + "  ");
+				crewMemberGoldStarColumn.getChildren().addAll(crewMemberGoldStar);
 				
 				//Add all of the info into the hbox
-				newItemCrew.getChildren().addAll(name, wage, uniform, position, crewMemberPunchIn, crewMemberGoldStar);
+				newItemCrew.getChildren().addAll(nameColumn, wageColumn, uniformColumn, positionColumn, crewMemberPunchInColumn, crewMemberGoldStarColumn);
 				
 				//Add the HBox to the VBox
 				data.getChildren().add(newItemCrew);
@@ -134,16 +207,54 @@ public class Main extends Application {
 				//Create an HBox to hold the information about the current food item
 				HBox newItemManager = new HBox();
 				
+				//Create a VBoxes that will act as the columns of the table
+				VBox nameColumn = new VBox();
+				VBox wageColumn = new VBox();
+				VBox uniformColumn = new VBox();
+				VBox positionColumn = new VBox();
+				VBox managerIDColumn = new VBox();
+				VBox managerSafeCodeColumn = new VBox();
+				
+				//Create titles for each column
+				Text nameTitle = new Text("Name");
+				nameColumn.getChildren().addAll(nameTitle);
+				
+				Text wageTitle = new Text("Wage");
+				wageColumn.getChildren().addAll(wageTitle);
+				
+				Text uniformTitle = new Text("Uniform");
+				uniformColumn.getChildren().addAll(uniformTitle);
+				
+				Text positionTitle = new Text("Position");
+				positionColumn.getChildren().addAll(positionTitle);
+				
+				Text managerIDTitle = new Text("Manager ID");
+				managerIDColumn.getChildren().addAll(managerIDTitle);
+				
+				Text managerSafeCodeTitle = new Text("Manager Safe Code");
+				managerSafeCodeColumn.getChildren().addAll(managerSafeCodeTitle);
+				
 				//Create objects to hold the food's information and then add them to the HBox
 				Text name = new Text("  " + managerItems.get(e1).getName() + "  ");
+				nameColumn.getChildren().addAll(name);
+				
 				Text wage = new Text(managerItems.get(e1).getWage() + "  ");
+				wageColumn.getChildren().addAll(wage);
+				
 				Text uniform = new Text(managerItems.get(e1).getUniform() + "  ");
+				uniformColumn.getChildren().addAll(uniform);
+				
 				Text position = new Text(managerItems.get(e1).getPosition() + "  ");
+				positionColumn.getChildren().addAll(position);
+				
 				Text managerID = new Text(managerItems.get(e1).getManagerID() + "  ");
+				managerIDColumn.getChildren().addAll(managerID);
+				
 				Text managerSafeCode = new Text("  " + managerItems.get(e1).getManagerSafeCode() + "  ");
+				managerSafeCodeColumn.getChildren().addAll(managerSafeCode);
 				
 				//Add all of the info into the hbox
-				newItemManager.getChildren().addAll(name, wage, uniform, position, managerID, managerSafeCode);
+				newItemManager.getChildren().addAll(nameColumn, wageColumn, uniformColumn, positionColumn, managerIDColumn, managerSafeCodeColumn);
 				
 				//Add the HBox to the VBox
 				dataTwo.getChildren().add(newItemManager);
@@ -157,35 +268,70 @@ public class Main extends Application {
 		MenuItem locations = new MenuItem("Locations");
 		locations.setOnAction(e->{
 			MenuTab.displayedTable = "locations";
-			VBox data = new VBox();	
+//			
+//			private int ID;
+//			private String location;
+//			private int santScore;
+//			private String regionalMan;
+//			private int custReview;
+			
+			VBox data = new VBox();
 			//Create an arraylist
-			StoreLocationsTable menuItems = new StoreLocationsTable();
+			StoreLocationsTable locationsList = new StoreLocationsTable();
 			
 			//Populate the arraylist with the database contents
-			ArrayList<StoreLocations> LocationsItems = menuItems.getAllStoreLocations();			
+			ArrayList<StoreLocations> locationItems = locationsList.getAllStoreLocations();			
 			
 			//Loop to set the contents of the arraylist to their own panes
-			int i = 0;
-			while(i < LocationsItems.size()){
+			int e1 = 0;
+			while(e1 < locationItems.size()){
 				
 				//Create an HBox to hold the information about the current food item
 				HBox newItemLocations = new HBox();
 				
+				//Create a VBoxes that will act as the columns of the table
+				VBox locationColumn = new VBox();
+				VBox santScoreColumn = new VBox();
+				VBox regionalManColumn = new VBox();
+				VBox custReviewColumn = new VBox();
+				
+				//Create titles for each column
+				Text locationTitle = new Text("Location");
+				locationColumn.getChildren().addAll(locationTitle);
+				
+				Text santScoreTitle = new Text("Sanitation Score");
+				santScoreColumn.getChildren().addAll(santScoreTitle);
+				
+				Text regionalManTitle = new Text("Regional Manager");
+				regionalManColumn.getChildren().addAll(regionalManTitle);
+				
+				Text custReviewTitle = new Text("Customer Review");
+				custReviewColumn.getChildren().addAll(custReviewTitle);
+				
 				//Create objects to hold the food's information and then add them to the HBox
-				Text location = new Text("  " + LocationsItems.get(i).getLocation() + "  ");
-				Text santScore = new Text(LocationsItems.get(i).getSantScore() + "  ");
-				Text regionalMan = new Text(LocationsItems.get(i).getRegionalMan() + "  ");
-				Text custReview = new Text(LocationsItems.get(i).getCustReview() + "  ");
+				Text location = new Text("  " + locationItems.get(e1).getLocation() + "  ");
+				locationColumn.getChildren().addAll(location);
+				
+				Text santScore = new Text(locationItems.get(e1).getSantScore() + "  ");
+				santScoreColumn.getChildren().addAll(santScore);
+				
+				Text regionalMan = new Text(locationItems.get(e1).getRegionalMan() + "  ");
+				regionalManColumn.getChildren().addAll(regionalMan);
+				
+				Text custReview = new Text(locationItems.get(e1).getCustReview() + "  ");
+				custReviewColumn.getChildren().addAll(custReview);
 				
 				//Add all of the info into the hbox
-				newItemLocations.getChildren().addAll(location, santScore, regionalMan, custReview);
+				newItemLocations.getChildren().addAll(locationColumn, santScoreColumn, regionalManColumn, custReviewColumn);
 				
 				//Add the HBox to the VBox
 				data.getChildren().add(newItemLocations);
 				//Increment i
-				i++;
+				e1++;
 			}
-			MenuTab.tab.setContent(data);
+				VBox all = new VBox();
+				all.getChildren().addAll(data);
+			MenuTab.tab.setContent(all);
 			
 		});
 
