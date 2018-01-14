@@ -260,7 +260,6 @@ public class Main extends Application {
 			if(scene.getStylesheets().contains("Themes/defaultTheme.css") || 
 					scene.getStylesheets().contains("Themes/ninetiesTheme.css") ||
 					scene.getStylesheets().contains("Themes/modernStyleSheet.css") ) {
-				
 				scene.getStylesheets().remove("Themes/defaultTheme.css");
 				scene.getStylesheets().remove("Themes/ninetiesTheme.css");
 				scene.getStylesheets().remove("Themes/modernStyleSheet.css");
