@@ -72,7 +72,6 @@ public class Database {
 		if(connection == null) {
 			try {
 				Class.forName("com.mysql.jdbc.Driver");
-				//connection = DriverManager.getConnection("jdbc:mysql://php.scweb.ca/" + Const.DB_NAME +"?useSSL=false", Const.DB_USER, Const.DB_PASS);
 				connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + Const.DB_NAME +"?useSSL=false", Const.DB_USER, Const.DB_PASS);
 
 				System.out.println("Connection Sucessfully Created");
