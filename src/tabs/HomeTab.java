@@ -1,5 +1,9 @@
 package tabs;
-
+/**
+ * Hometab displays employee of the year and fooddrink of the year and displays a random tip
+ * @author Stefano,Max,Tomas,Justin
+ *
+ */
 import java.util.Random;
 import PlaceHolder.CrewMember;
 import PlaceHolder.FoodDrink;

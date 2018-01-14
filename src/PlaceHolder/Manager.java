@@ -1,5 +1,9 @@
 package PlaceHolder;
-
+/**
+ * Creates Manager
+ * @author Stefano,Max,Tomas,Justin
+ *
+ */
 public class Manager extends Employee {
 	//Adding private ints for managerID and their safe code
 	protected int managerID;

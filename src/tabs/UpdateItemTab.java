@@ -1,5 +1,9 @@
 package tabs;
-
+/**
+ * Used to update different items that has been chosen by the user from tables chosen from the user
+ * @author Stefano,Max,Tomas,Justin
+ *
+ */
 import java.util.ArrayList;
 
 import PlaceHolder.CrewMember;

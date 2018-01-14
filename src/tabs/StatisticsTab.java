@@ -1,4 +1,9 @@
 package tabs;
+/**
+ * Displays the statistics of the foodDrinks
+ * @author Stefano,Max,Tomas,Justin
+ *
+ */
 import java.util.ArrayList;
 
 import ENUMS.MonthlyStats;

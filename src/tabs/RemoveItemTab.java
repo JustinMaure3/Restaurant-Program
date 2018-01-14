@@ -1,5 +1,9 @@
 package tabs;
-
+/**
+ * Used to remove a item of the users choosing on the table of their choosing
+ * @author Stefano,Max,Tomas,Justin
+ *
+ */
 import java.util.ArrayList;
 
 import PlaceHolder.CrewMember;
