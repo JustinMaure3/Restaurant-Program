@@ -8,7 +8,11 @@ import DAO.FoodDrinkDAO;
 import Database.Const;
 import Database.Database;
 import PlaceHolder.FoodDrink;
-
+/**
+ * FoodDraink table with all of its methods
+ * @author Stefano,Max,Tomas,Justin
+ *
+ */
 public class FoodTable implements FoodDrinkDAO {
 
 	//Creating an instance of the database

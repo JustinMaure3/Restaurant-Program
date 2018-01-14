@@ -1,5 +1,10 @@
 package tabs;
-
+/**
+ * Add item tab that is used to add different items
+ * to the database depending on which database you choose to add
+ * @author Stefano,Max,Tomas,Justin
+ *
+ */
 import PlaceHolder.CrewMember;
 import PlaceHolder.Employee;
 import PlaceHolder.FoodDrink;

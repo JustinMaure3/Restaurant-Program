@@ -1,5 +1,9 @@
 package PlaceHolder;
-
+/**
+ * Creates Employee
+ * @author Stefano,Max,Tomas,Justin
+ *
+ */
 public class Employee {
 //The basic requirements to be a employee
 	//ID,NAME,WAGE,UNIFORM

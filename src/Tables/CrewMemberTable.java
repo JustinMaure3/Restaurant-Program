@@ -10,7 +10,11 @@ import Database.Database;
 import PlaceHolder.CrewMember;
 import PlaceHolder.Employee;
 import PlaceHolder.FoodDrink;
-
+/**
+ * Crewmemeber table with all of its methods
+ * @author Stefano,Max,Tomas,Justin
+ *
+ */
 public class CrewMemberTable {
 	//Creating an instance of the database
 		Database db = Database.getInstance();

@@ -1,5 +1,9 @@
 package ENUMS;
-
+/**
+ * ENUM used for manager positions
+ * @author Stefano,Max,Tomas,Justin
+ *
+ */
 public enum ManagerPositions {
 
 	Manager,

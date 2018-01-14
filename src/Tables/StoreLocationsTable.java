@@ -7,7 +7,11 @@ import java.util.ArrayList;
 import Database.Const;
 import Database.Database;
 import PlaceHolder.StoreLocations;
-
+/**
+ * Store locations table with all of its methods
+ * @author Stefano,Max,Tomas,Justin
+ *
+ */
 public class StoreLocationsTable {
 	//Creating an instance of the database
 	Database db = Database.getInstance();

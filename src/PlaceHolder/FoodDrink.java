@@ -1,5 +1,9 @@
 package PlaceHolder;
-
+/**
+ * Creates FoodDrink
+ * @author Stefano,Max,Tomas,Justin
+ *
+ */
 public class FoodDrink {
 	//The basic requirements to be a "Food/Drink"
 	private int ID;
