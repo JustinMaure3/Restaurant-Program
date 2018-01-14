@@ -1,7 +1,6 @@
 package tabs;
 
 import java.util.ArrayList;
-
 import PlaceHolder.CrewMember;
 import PlaceHolder.FoodDrink;
 import PlaceHolder.Manager;
@@ -24,7 +23,7 @@ public class MenuTab extends Tab {
 	public static String displayedTable = "food";
 
 	
-	private static MenuTab tab;
+	public static MenuTab tab;
 	
 	public static BorderPane pane;
 	
@@ -164,8 +163,6 @@ public class MenuTab extends Tab {
 			}
 		}
 		
-		
-		
 		//Add the menu to the main pane
 		pane.getChildren().add(data);
 		
@@ -179,9 +176,6 @@ public class MenuTab extends Tab {
 		}
 		return tab;
 	}
-//	public static void refresh() {
-//		MenuTab.setContent(pane);
-//	}
 
 }
 

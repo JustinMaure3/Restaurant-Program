@@ -1,8 +1,12 @@
+import java.util.ArrayList;
+
 import Database.Database;
 import PlaceHolder.CrewMember;
-import PlaceHolder.StoreLocations;
+import PlaceHolder.FoodDrink;
+import PlaceHolder.Manager;
 import Tables.CrewMemberTable;
-import Tables.StoreLocationsTable;
+import Tables.FoodTable;
+import Tables.ManagerTable;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.Menu;
@@ -10,7 +14,11 @@ import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.TabPane;
 import javafx.scene.control.TabPane.TabClosingPolicy;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import tabs.AddItemTab;
 import tabs.HomeTab;
@@ -34,25 +42,121 @@ public class Main extends Application {
 		Menu fileMenu = new Menu("File");
 
 		//Adding menu items to the Display menu
-		
-		
-		
 		MenuItem food = new MenuItem("Food");
 		food.setOnAction(e->{
 			MenuTab.displayedTable = "food";
-			//MenuTab.refresh();
+			VBox data = new VBox();	
+
+			//Create an arraylist
+			FoodTable menuItems = new FoodTable();
+			
+			//Populate the arraylist with the database contents
+			ArrayList<FoodDrink> foodDrinkItems = menuItems.getAllFoodDrink();			
+			
+			//Loop to set the contents of the arraylist to their own panes
+			int i = 0;
+			while(i < foodDrinkItems.size()){
+				
+				//Create an HBox to hold the information about the current food item
+				HBox newItemFood = new HBox();
+				
+				//Create objects to hold the food's information and then add them to the HBox
+				Text name = new Text("  " + foodDrinkItems.get(i).getName() + "  ");
+				Text rating = new Text(foodDrinkItems.get(i).getRating() + "  ");
+				Text description = new Text(foodDrinkItems.get(i).getDescription() + "  ");
+				ImageView picture = new ImageView("Pictures/" + foodDrinkItems.get(i).getPicture());
+				picture.setFitHeight(100);
+				picture.setFitWidth(100);
+				Text price = new Text(foodDrinkItems.get(i).getPrice() + "  ");
+				Text amountSold = new Text("  " + foodDrinkItems.get(i).getAmountSold() + "  ");
+				
+				//Add all of the info into the hbox
+				newItemFood.getChildren().addAll(picture, name, rating, description, price, amountSold);
+				
+				//Add the HBox to the VBox
+				data.getChildren().add(newItemFood);
+				//Increment i
+				i++;
+			}
+			MenuTab.tab.setContent(data);
 		});
 		MenuItem employees = new MenuItem("Employees");
 		employees.setOnAction(e->{
+			VBox data = new VBox();	
 			MenuTab.displayedTable = "employees";
-			//MenuTab.refresh();
+			//Create an arraylist
+			CrewMemberTable employeeList = new CrewMemberTable();
+			
+			//Populate the arraylist with the database contents
+			ArrayList<CrewMember> crewMemberItems = employeeList.getAllCrewMembers();			
+			
+			//Loop to set the contents of the arraylist to their own panes
+			int i = 0;
+			while(i < crewMemberItems.size()){
+				
+				//Create an HBox to hold the information about the current food item
+				HBox newItemCrew = new HBox();
+				
+				//Create objects to hold the food's information and then add them to the HBox
+				Text name = new Text("  " + crewMemberItems.get(i).getName() + "  ");
+				Text wage = new Text(crewMemberItems.get(i).getWage() + "  ");
+				Text uniform = new Text(crewMemberItems.get(i).getUniform() + "  ");
+				Text position = new Text(crewMemberItems.get(i).getPosition() + "  ");
+				Text crewMemberPunchIn = new Text(crewMemberItems.get(i).getCrewMemberPunchIn() + "  ");
+				Text crewMemberGoldStar = new Text("  " + crewMemberItems.get(i).getCrewMemberGoldStar() + "  ");
+				
+				//Add all of the info into the hbox
+				newItemCrew.getChildren().addAll(name, wage, uniform, position, crewMemberPunchIn, crewMemberGoldStar);
+				
+				//Add the HBox to the VBox
+				data.getChildren().add(newItemCrew);
+				//Increment i
+				i++;
+			}
+			
+			VBox dataTwo = new VBox();
+			//Create an arraylist
+			ManagerTable managerList = new ManagerTable();
+			
+			//Populate the arraylist with the database contents
+			ArrayList<Manager> managerItems = managerList.getAllManagers();			
+			
+			//Loop to set the contents of the arraylist to their own panes
+			int e1 = 0;
+			while(e1 < managerItems.size()){
+				
+				//Create an HBox to hold the information about the current food item
+				HBox newItemManager = new HBox();
+				
+				//Create objects to hold the food's information and then add them to the HBox
+				Text name = new Text("  " + managerItems.get(e1).getName() + "  ");
+				Text wage = new Text(managerItems.get(e1).getWage() + "  ");
+				Text uniform = new Text(managerItems.get(e1).getUniform() + "  ");
+				Text position = new Text(managerItems.get(e1).getPosition() + "  ");
+				Text managerID = new Text(managerItems.get(e1).getManagerID() + "  ");
+				Text managerSafeCode = new Text("  " + managerItems.get(e1).getManagerSafeCode() + "  ");
+				
+				//Add all of the info into the hbox
+				newItemManager.getChildren().addAll(name, wage, uniform, position, managerID, managerSafeCode);
+				
+				//Add the HBox to the VBox
+				dataTwo.getChildren().add(newItemManager);
+				//Increment i
+				e1++;
+			}
+				VBox all = new VBox();
+				all.getChildren().addAll(data,dataTwo);
+			MenuTab.tab.setContent(all);
 		});
 		MenuItem locations = new MenuItem("Locations");
 		locations.setOnAction(e->{
 			MenuTab.displayedTable = "locations";
 			//MenuTab.refresh();
 		});
-		//display.getItems().addAll(food,employees, locations);
+
+		Menu display = new Menu("Display");
+		
+		display.getItems().addAll(food,employees, locations);
 														
 		//Adding menu items to file menu
 		MenuItem exit = new MenuItem("Exit");
@@ -68,7 +172,6 @@ public class Main extends Application {
 
 		MenuItem creditsMenu = new MenuItem("Credits");
 		Menu themes = new Menu("Themes");
-		MenuItem display = new MenuItem("Display");
 
 		MenuItem modern = new MenuItem("Modern");
 		MenuItem seventies = new MenuItem("70's");
