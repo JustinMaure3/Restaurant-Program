@@ -47,6 +47,7 @@ public class Main extends Application {
 		MenuItem food = new MenuItem("Food");
 		MenuItem addTable = new MenuItem("Add all to Table");
 		
+		//Creating an onClick for the food button
 		food.setOnAction(e->{
 			MenuTab.displayedTable = "food";
 			VBox data = new VBox();	
@@ -98,35 +99,36 @@ public class Main extends Application {
 			while(i < foodDrinkItems.size()){
 				
 				//Create objects to hold the food's information and then add them to the HBox
-				Text name = new Text("  " + foodDrinkItems.get(i).getName() + "  ");
-				foodNameColumn.getChildren().addAll(name);
+				Text foodName = new Text("  " + foodDrinkItems.get(i).getName() + "  ");
+				foodNameColumn.getChildren().addAll(foodName);
 				
-				Text rating = new Text(foodDrinkItems.get(i).getRating() + "  ");
-				ratingColumn.getChildren().addAll(rating);
+				Text foodRating = new Text(foodDrinkItems.get(i).getRating() + "  ");
+				ratingColumn.getChildren().addAll(foodRating);
 				
-				Text description = new Text(foodDrinkItems.get(i).getDescription() + "  ");
-				descriptionColumn.getChildren().addAll(description);
+				Text foodDescription = new Text(foodDrinkItems.get(i).getDescription() + "  ");
+				descriptionColumn.getChildren().addAll(foodDescription);
 				
-				ImageView picture = new ImageView("Pictures/" + foodDrinkItems.get(i).getPicture());
-				pictureColumn.getChildren().addAll(picture);
-				picture.setFitHeight(100);
-				picture.setFitWidth(100);
+				ImageView foodPicture = new ImageView("Pictures/" + foodDrinkItems.get(i).getPicture());
+				pictureColumn.getChildren().addAll(foodPicture);
+				foodPicture.setFitHeight(100);
+				foodPicture.setFitWidth(100);
 				
-				Text price = new Text(foodDrinkItems.get(i).getPrice() + "  ");
-				priceColumn.getChildren().addAll(price);
+				Text foodPrice = new Text(foodDrinkItems.get(i).getPrice() + "  ");
+				priceColumn.getChildren().addAll(foodPrice);
 				
-				Text amountSold = new Text("  " + foodDrinkItems.get(i).getAmountSold() + "  ");
-				amountSoldColumn.getChildren().addAll(amountSold);
+				Text foodAmountSold = new Text("  " + foodDrinkItems.get(i).getAmountSold() + "  ");
+				amountSoldColumn.getChildren().addAll(foodAmountSold);
 				
 				//Add all of the info into the hbox
 				
 				newItemFood.getChildren().addAll(pictureColumn, foodNameColumn, ratingColumn, descriptionColumn, priceColumn, amountSoldColumn);
 				
-				//Add the HBox to the VBox
-				data.getChildren().add(newItemFood);
+				
 				//Increment i
 				i++;
 			}
+			//Add the HBox to the VBox
+			data.getChildren().add(newItemFood);
 			MenuTab.tab.setContent(data);
 		});
 		MenuItem employees = new MenuItem("Employees");
@@ -177,9 +179,7 @@ public class Main extends Application {
 			
 			//Loop to set the contents of the arraylist to their own panes
 			int i = 0;
-			while(i < crewMemberItems.size()){
-				
-				
+			while(i < crewMemberItems.size()){				
 				
 				//Create objects to hold the food's information and then add them to the HBox
 				Text empName = new Text("  " + crewMemberItems.get(i).getName() + "  ");
@@ -202,12 +202,13 @@ public class Main extends Application {
 				
 				//Add all of the info into the hbox
 				newItemCrew.getChildren().addAll(nameColumn, wageColumn, uniformColumn, positionColumn, crewMemberPunchInColumn, crewMemberGoldStarColumn);
-				
-				//Add the HBox to the VBox
-				data.getChildren().add(newItemCrew);
+			
 				//Increment i
 				i++;
 			}
+			
+			//Add the HBox to the VBox
+			data.getChildren().add(newItemCrew);
 			
 			VBox dataTwo = new VBox();
 			//Create an arraylist
@@ -278,11 +279,12 @@ public class Main extends Application {
 				//Add all of the info into the hbox
 				newItemManager.getChildren().addAll(managerNameColumn, managerWageColumn, managerUniformColumn, managerPositionColumn, managerIDColumn, managerSafeCodeColumn);
 				
-				//Add the HBox to the VBox
-				dataTwo.getChildren().add(newItemManager);
 				//Increment i
 				e1++;
 			}
+
+			//Add the HBox to the VBox
+			dataTwo.getChildren().add(newItemManager);
 				VBox all = new VBox();
 				all.getChildren().addAll(data,dataTwo);
 			MenuTab.tab.setContent(all);
@@ -345,11 +347,12 @@ public class Main extends Application {
 				//Add all of the info into the hbox
 				newItemLocations.getChildren().addAll(locationColumn, santScoreColumn, regionalManColumn, custReviewColumn);
 				
-				//Add the HBox to the VBox
-				locationData.getChildren().add(newItemLocations);
 				//Increment i
 				e1++;
 			}
+
+			//Add the HBox to the VBox
+			locationData.getChildren().add(newItemLocations);
 			MenuTab.tab.setContent(locationData);
 			
 		});
