@@ -266,16 +266,11 @@ public class Main extends Application {
 				VBox all = new VBox();
 				all.getChildren().addAll(data,dataTwo);
 			MenuTab.tab.setContent(all);
-		});
+		});		
+		
 		MenuItem locations = new MenuItem("Locations");
 		locations.setOnAction(e->{
 			MenuTab.displayedTable = "locations";
-//			
-//			private int ID;
-//			private String location;
-//			private int santScore;
-//			private String regionalMan;
-//			private int custReview;
 			
 			VBox data = new VBox();
 			//Create an arraylist
@@ -331,9 +326,7 @@ public class Main extends Application {
 				//Increment i
 				e1++;
 			}
-				VBox all = new VBox();
-				all.getChildren().addAll(data);
-			MenuTab.tab.setContent(all);
+			MenuTab.tab.setContent(data);
 			
 		});
 
