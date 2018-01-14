@@ -1,13 +1,17 @@
 package tabs;
 
+import java.util.ArrayList;
+
 import PlaceHolder.CrewMember;
 import PlaceHolder.FoodDrink;
 import Tables.CrewMemberTable;
 import Tables.FoodTable;
 import javafx.collections.FXCollections;
 import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.ListView;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.BorderPane;
@@ -27,21 +31,25 @@ public class UpdateItemTab extends Tab {
 		Text foodDrinkText = new Text("Food/Drink");
 		pane.add(foodDrinkText, 1, 0);
 		
-		//create first row input for food
-		Text foodNameText = new Text("Name:");
-		TextField foodName = new TextField();
-		pane.add(foodNameText, 0, 1);
-		pane.add(foodName, 1, 1);
+		//Create a listVuew that'll hold a bunch of instances of food and drink
+		ListView<FoodDrink> list = new ListView();
+		//Create a food table
+		FoodTable fTable = new FoodTable();
+		//Create the array that'll give us all foodDrink in our database
+		ArrayList<FoodDrink> foodDrinkItems = fTable.getAllFoodDrink();
+		
+		//set the list with all the items in the arraylist
+		list.setItems(FXCollections.observableArrayList(foodDrinkItems));
+		list.setMaxWidth(300);
+		list.setMaxHeight(300);
+		pane.add(list, 1, 1);
 		
 		//Create Button for food update
 		Button fUpdate = new Button("Update Food/Drink");
 		fUpdate.setOnAction(e->{
-			if(!foodName.getText().isEmpty()) {
-//				FoodTable ftable = new FoodTable();
-				
-//				FoodDrink foodDrink = ftable.getFoodDrink(foodName.getText());
-//				getHiddenFood(pane, foodDrink);
-				getHiddenFood(pane);
+			if(!list.getSelectionModel().isEmpty()) {
+				FoodDrink foodDrink = list.getSelectionModel().getSelectedItem();
+				getHiddenFood(pane, foodDrink);
 			}
 		});
 		pane.add(fUpdate, 1, 2);
@@ -50,17 +58,25 @@ public class UpdateItemTab extends Tab {
 		Text employeeText = new Text("Employee");
 		pane.add(employeeText, 11, 0);
 		
-		//create first row input for employee
-		Text eNameText = new Text("Name:");
-		TextField eName = new TextField();
-		pane.add(eNameText, 10, 1);
-		pane.add(eName, 11, 1);
+		//Create a listView that'll hold a bunch of instances of food and drink
+		ListView<CrewMember> elist = new ListView<CrewMember>();
+		//Create a food table
+		CrewMemberTable cmTable = new CrewMemberTable();
+		//Create the array that'll give us all foodDrink in our database
+		ArrayList<CrewMember> cmItems = cmTable.getAllCrewMembers();
+		
+		//set the list with all the items in the arraylist
+		elist.setItems(FXCollections.observableArrayList(cmItems));
+		elist.setMaxWidth(300);
+		elist.setMaxHeight(300);
+		pane.add(elist, 11, 1);
 		
 		//create button for employee update
 		Button eUpdate = new Button("Update Employee");
 		eUpdate.setOnAction(e->{
-			if(!eName.getText().isEmpty()) {
-				getHiddenEmployees(pane);
+			if(!elist.getSelectionModel().isEmpty()) {
+				CrewMember crewMember = elist.getSelectionModel().getSelectedItem();
+				getHiddenEmployees(pane, crewMember);
 			}
 		});
 		pane.add(eUpdate, 11, 2);
@@ -79,8 +95,7 @@ public class UpdateItemTab extends Tab {
 		return tab;
 	}
 	
-//	public void getHiddenFood(GridPane pane, FoodDrink foodDrink) {
-	public void getHiddenFood(GridPane pane) {
+	public void getHiddenFood(GridPane pane, FoodDrink foodDrink) {
 		GridPane gpane = new GridPane();
 		
 		//create food title
@@ -90,7 +105,7 @@ public class UpdateItemTab extends Tab {
 		//create first row input for food
 		Text foodNameText = new Text("Name:");
 		TextField foodName = new TextField();
-//		foodName.setText(foodDrink.getName());
+		foodName.setText(foodDrink.getName());
 		gpane.add(foodNameText, 0, 1);
 		gpane.add(foodName, 1, 1);
 				
@@ -105,7 +120,7 @@ public class UpdateItemTab extends Tab {
 		//Create insert description row
 		Text descText = new Text("Description:");
 		TextField desc = new TextField();
-//		desc.setText(foodDrink.getDescription());
+		desc.setText(foodDrink.getDescription());
 		//Show the description row
 		gpane.add(descText, 0, 3);
 		gpane.add(desc, 1, 3);
@@ -122,7 +137,7 @@ public class UpdateItemTab extends Tab {
 		//Create insert price row
 		Text priceText = new Text("Price:");
 		TextField price = new TextField();
-//		price.setText(foodDrink.getPrice() + "");
+		price.setText(foodDrink.getPrice() + "");
 		//Show the price row
 		gpane.add(priceText, 0, 5);
 		gpane.add(price, 1, 5);
@@ -130,7 +145,7 @@ public class UpdateItemTab extends Tab {
 		//Create insert amountSold row
 		Text amountSoldText = new Text("Amount Sold:");
 		TextField amountSold = new TextField();
-//		amountSold.setText(foodDrink.getAmountSold() + "");
+		amountSold.setText(foodDrink.getAmountSold() + "");
 		//Show the amountSold row
 		gpane.add(amountSoldText, 0, 6);
 		gpane.add(amountSold, 1, 6);
@@ -177,7 +192,7 @@ public class UpdateItemTab extends Tab {
 		this.setContent(gpane);
 	}
 	
-	public void getHiddenEmployees(GridPane pane) {
+	public void getHiddenEmployees(GridPane pane, CrewMember crewMember) {
 		GridPane gpane = new GridPane();
 		
 		//create employee title
@@ -187,6 +202,7 @@ public class UpdateItemTab extends Tab {
 		//create first row input for employee
 		Text eNameText = new Text("Name:");
 		TextField eName = new TextField();
+		eName.setText(crewMember.getName());
 		gpane.add(eNameText, 0, 1);
 		gpane.add(eName, 1, 1);
 				
@@ -209,6 +225,7 @@ public class UpdateItemTab extends Tab {
 		//Create insert wage row
 		Text wageText = new Text("Wage:");
 		TextField wage = new TextField();
+		wage.setText(crewMember.getWage() + "");
 		//Show the wage row
 		gpane.add(wageText, 0, 4);
 		gpane.add(wage, 1, 4);
@@ -216,6 +233,7 @@ public class UpdateItemTab extends Tab {
 		//Create insert punch in row
 		Text punchInText = new Text("Punch-in ID:");
 		TextField punchIn = new TextField();
+		punchIn.setText(crewMember.getCrewMemberPunchIn() + "");
 		//Show the punch in row
 		gpane.add(punchInText, 0, 5);
 		gpane.add(punchIn, 1, 5);
@@ -223,6 +241,7 @@ public class UpdateItemTab extends Tab {
 		//Create gold star row
 		Text goldStarText = new Text("Gold Star:");
 		TextField goldStar = new TextField();
+		goldStar.setText(crewMember.getCrewMemberGoldStar() + "");
 		//Show the gold star row
 		gpane.add(goldStarText, 0, 6);
 		gpane.add(goldStar, 1, 6);
@@ -235,7 +254,7 @@ public class UpdateItemTab extends Tab {
 				CrewMemberTable cmTable = new CrewMemberTable();
 							
 				//Update the crew member
-				CrewMember crewMember = new CrewMember(
+				CrewMember newCrewMember = new CrewMember(
 						eName.getText(),
 						Double.parseDouble(wage.getText()),
 						uniform.getSelectionModel().getSelectedItem().name(),
@@ -243,7 +262,7 @@ public class UpdateItemTab extends Tab {
 						Integer.parseInt(punchIn.getText()),
 						Integer.parseInt(goldStar.getText())
 						);
-				cmTable.updateCrewMember(crewMember);
+				cmTable.updateCrewMember(newCrewMember);
 			}
 		});
 		gpane.add(eUpdate, 1, 7);

@@ -93,13 +93,14 @@ public class FoodTable implements FoodDrinkDAO {
 	@Override
 	public void updateFoodDrink(FoodDrink foodDrink) {
 		String query = "UPDATE " + Const.TABLE_FOOD_DRINK + " SET " + 
+				Const.FOOD_DRINK_COLUMN_NAME + " = " + foodDrink.getName() + ", " +
 				Const.FOOD_DRINK_COLUMN_RATING + " = " + foodDrink.getRating() + ", " +
 				Const.FOOD_DRINK_COLUMN_DESCRIPTION + " = " + foodDrink.getDescription() + ", " +
 				Const.FOOD_DRINK_COLUMN_PICTURE + " = " + foodDrink.getPicture() + ", " +
 				Const.FOOD_DRINK_COLUMN_PRICE + " = " + foodDrink.getPrice() + ", " +
 				Const.FOOD_DRINK_COLUMN_AMOUNT_SOLD + " = " + foodDrink.getAmountSold() + ", " +
 				Const.FOOD_DRINK_COLUMN_MONTH + " = " + foodDrink.getMonth() + " WHERE " +
-				Const.FOOD_DRINK_COLUMN_NAME + " = " + foodDrink.getName();
+				Const.FOOD_DRINK_COLUMN_ID + " = " + foodDrink.getID();
 		try {
 			db.getConnection().createStatement().execute(query);
 		}catch(SQLException e) {

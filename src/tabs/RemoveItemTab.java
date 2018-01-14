@@ -40,8 +40,6 @@ public class RemoveItemTab extends Tab {
 			ArrayList<FoodDrink> foodDrinkItems = fTable.getAllFoodDrink();
 			
 			//set the list with all the items in the arraylist
-			
-			//set the list with all the items in the arraylist
 			list.setItems(FXCollections.observableArrayList(foodDrinkItems));
 			list.setMaxWidth(600);
 			list.setMaxHeight(600);
@@ -82,8 +80,6 @@ public class RemoveItemTab extends Tab {
 			CrewMemberTable cmTable = new CrewMemberTable();
 			//Create the array that'll give us all foodDrink in our database
 			ArrayList<CrewMember> cmItems = cmTable.getAllCrewMembers();
-			
-			//set the list with all the items in the arraylist
 			
 			//set the list with all the items in the arraylist
 			list.setItems(FXCollections.observableArrayList(cmItems));
