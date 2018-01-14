@@ -123,11 +123,12 @@ public class Main extends Application {
 				
 				newItemFood.getChildren().addAll(pictureColumn, foodNameColumn, ratingColumn, descriptionColumn, priceColumn, amountSoldColumn);
 				
-				//Add the HBox to the VBox
-				data.getChildren().add(newItemFood);
+				
 				//Increment i
 				i++;
 			}
+			//Add the HBox to the VBox
+			data.getChildren().add(newItemFood);
 			MenuTab.tab.setContent(data);
 		});
 		MenuItem employees = new MenuItem("Employees");
@@ -201,12 +202,13 @@ public class Main extends Application {
 				
 				//Add all of the info into the hbox
 				newItemCrew.getChildren().addAll(nameColumn, wageColumn, uniformColumn, positionColumn, crewMemberPunchInColumn, crewMemberGoldStarColumn);
-				
-				//Add the HBox to the VBox
-				data.getChildren().add(newItemCrew);
+			
 				//Increment i
 				i++;
 			}
+			
+			//Add the HBox to the VBox
+			data.getChildren().add(newItemCrew);
 			
 			VBox dataTwo = new VBox();
 			//Create an arraylist
@@ -277,11 +279,12 @@ public class Main extends Application {
 				//Add all of the info into the hbox
 				newItemManager.getChildren().addAll(managerNameColumn, managerWageColumn, managerUniformColumn, managerPositionColumn, managerIDColumn, managerSafeCodeColumn);
 				
-				//Add the HBox to the VBox
-				dataTwo.getChildren().add(newItemManager);
 				//Increment i
 				e1++;
 			}
+
+			//Add the HBox to the VBox
+			dataTwo.getChildren().add(newItemManager);
 				VBox all = new VBox();
 				all.getChildren().addAll(data,dataTwo);
 			MenuTab.tab.setContent(all);
@@ -344,11 +347,12 @@ public class Main extends Application {
 				//Add all of the info into the hbox
 				newItemLocations.getChildren().addAll(locationColumn, santScoreColumn, regionalManColumn, custReviewColumn);
 				
-				//Add the HBox to the VBox
-				locationData.getChildren().add(newItemLocations);
 				//Increment i
 				e1++;
 			}
+
+			//Add the HBox to the VBox
+			locationData.getChildren().add(newItemLocations);
 			MenuTab.tab.setContent(locationData);
 			
 		});
