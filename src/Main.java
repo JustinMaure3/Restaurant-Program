@@ -180,17 +180,17 @@ public class Main extends Application {
 				
 				
 				//Create objects to hold the food's information and then add them to the HBox
-				Text name = new Text("  " + crewMemberItems.get(i).getName() + "  ");
-				nameColumn.getChildren().addAll(name);
+				Text empName = new Text("  " + crewMemberItems.get(i).getName() + "  ");
+				nameColumn.getChildren().addAll(empName);
 				
-				Text wage = new Text(crewMemberItems.get(i).getWage() + "  ");
-				wageColumn.getChildren().addAll(wage);
+				Text empWage = new Text(crewMemberItems.get(i).getWage() + "  ");
+				wageColumn.getChildren().addAll(empWage);
 				
-				Text uniform = new Text(crewMemberItems.get(i).getUniform() + "  ");
-				uniformColumn.getChildren().addAll(uniform);
+				Text empUniform = new Text(crewMemberItems.get(i).getUniform() + "  ");
+				uniformColumn.getChildren().addAll(empUniform);
 				
-				Text position = new Text(crewMemberItems.get(i).getPosition() + "  ");
-				positionColumn.getChildren().addAll(position);
+				Text empPosition = new Text(crewMemberItems.get(i).getPosition() + "  ");
+				positionColumn.getChildren().addAll(empPosition);
 				
 				Text crewMemberPunchIn = new Text(crewMemberItems.get(i).getCrewMemberPunchIn() + "  ");
 				crewMemberPunchInColumn.getChildren().addAll(crewMemberPunchIn);
@@ -219,13 +219,13 @@ public class Main extends Application {
 			
 			//Create a VBoxes that will act as the columns of the table
 			VBox managerNameColumn = new VBox();
-			nameColumn.setSpacing(10.0);
+			managerNameColumn.setSpacing(10.0);
 			VBox managerWageColumn = new VBox();
-			wageColumn.setSpacing(10.0);
+			managerWageColumn.setSpacing(10.0);
 			VBox managerUniformColumn = new VBox();
-			uniformColumn.setSpacing(10.0);
+			managerUniformColumn.setSpacing(10.0);
 			VBox managerPositionColumn = new VBox();
-			positionColumn.setSpacing(10.0);
+			managerPositionColumn.setSpacing(10.0);
 			VBox managerIDColumn = new VBox();
 			managerIDColumn.setSpacing(10.0);
 			VBox managerSafeCodeColumn = new VBox();
@@ -253,8 +253,6 @@ public class Main extends Application {
 			//Loop to set the contents of the arraylist to their own panes
 			int e1 = 0;
 			while(e1 < managerItems.size()){
-				
-				
 				
 				//Create objects to hold the food's information and then add them to the HBox
 				Text name = new Text("  " + managerItems.get(e1).getName() + "  ");
@@ -292,7 +290,7 @@ public class Main extends Application {
 		locations.setOnAction(e->{
 			MenuTab.displayedTable = "locations";
 			
-			VBox data = new VBox();
+			VBox locationData = new VBox();
 			//Create an arraylist
 			StoreLocationsTable locationsList = new StoreLocationsTable();
 			
@@ -346,11 +344,11 @@ public class Main extends Application {
 				newItemLocations.getChildren().addAll(locationColumn, santScoreColumn, regionalManColumn, custReviewColumn);
 				
 				//Add the HBox to the VBox
-				data.getChildren().add(newItemLocations);
+				locationData.getChildren().add(newItemLocations);
 				//Increment i
 				e1++;
 			}
-			MenuTab.tab.setContent(data);
+			MenuTab.tab.setContent(locationData);
 			
 		});
 
