@@ -8,8 +8,6 @@ import Tables.FoodTable;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.chart.PieChart;
-import javafx.scene.chart.PieChart.Data;
-import javafx.scene.control.ListView;
 import javafx.scene.control.Tab;
 import javafx.scene.layout.BorderPane;
 
@@ -35,29 +33,23 @@ public class StatisticsTab extends Tab {
 	}
 	
 	public static PieChart generateChart() {
-		//Create a listVuew that'll hold a bunch of instances of food and drink
-				ListView<FoodDrink> list = new ListView<FoodDrink>();
-				//Create a food table
-				FoodTable fTable = new FoodTable();
-				//Create the array that'll give us all foodDrink in our database
-				ArrayList<FoodDrink> foodDrinkItems = fTable.getAllFoodDrink();
-				
-				//set the list with all the items in the arraylist
-				list.setItems(FXCollections.observableArrayList(foodDrinkItems));
+		FoodTable menuItems = new FoodTable();
+		ArrayList<FoodDrink> foodDrinkItems = menuItems.getAllFoodDrink();	
 	
-		
+		int allFood = menuItems.getItemCount("Pizza");
 		PieChart chart = new PieChart();
 		chart.setLabelsVisible(true);
 		
+		ObservableList<PieChart.Data> data;
+					
+		 data = FXCollections.observableArrayList(new PieChart.Data("Pizza", allFood));
 		
 		
-		
-		//chart.setData(list);
+		chart.setData(data);
 		return chart;
 	}
 	
 	
 	
 }
-
 

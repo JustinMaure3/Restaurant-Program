@@ -148,9 +148,9 @@ public class FoodTable implements FoodDrinkDAO {
 		
 	}
 	
-	public int getItemCount(FoodDrink foodDrink) {
+	public int getItemCount(String name) {
 		String query = "SELECT * FROM " + Const.TABLE_FOOD_DRINK + " WHERE "
-						+ Const.CREWMEMBER_COLUMN_ID + " = '" + foodDrink + "'";
+						+ Const.CREWMEMBER_COLUMN_ID + " = '" + name + "'";
 		ArrayList<FoodDrink> items = new ArrayList<FoodDrink>();
 		try {
 			Statement getItems = db.getConnection().createStatement();

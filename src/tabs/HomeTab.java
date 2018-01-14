@@ -46,11 +46,12 @@ public class HomeTab extends Tab {
 		}
 		
 		//ImageViews
-		ImageView foodImage = new ImageView("Pictures/" + topFoodItem.getPicture());
+		ImageView foodImage;
+		 popName = new Text("There seems to be no top food please enter one");
+		 foodImage = new ImageView("Pictures/star.png");
 		//If its empty then we now have a default value preventing crashes
-		if(topFoodItem.getName() == null ) {
-			 popName = new Text("There seems to be no top food please enter one");
-			 foodImage = new ImageView("Pictures/star.png");
+		if(topFoodItem.getName() != null ) {
+			 foodImage = new ImageView("Pictures/" + topFoodItem.getPicture());
 		}
 		
 		//If its empty we now have a default value preventing crashes

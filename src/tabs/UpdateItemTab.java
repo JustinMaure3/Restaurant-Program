@@ -193,7 +193,7 @@ public class UpdateItemTab extends Tab {
 			if(!foodName.getText().isEmpty()) {
 				//Create an instance of the food table
 				FoodTable fTable = new FoodTable();
-				
+				try {
 				//Update a food item with all the new records
 				foodDrink.setName(foodName.getText());
 				foodDrink.setRating(rating.getSelectionModel().getSelectedItem().ordinal());
@@ -203,7 +203,21 @@ public class UpdateItemTab extends Tab {
 				foodDrink.setAmountSold(Double.parseDouble(amountSold.getText()));
 				foodDrink.setMonth(month.getSelectionModel().getSelectedItem().name());
 				
-				fTable.updateFoodDrink(foodDrink);
+				
+					fTable.updateFoodDrink(foodDrink);
+				}catch(Exception e1) {
+					foodName.setPromptText("Please enter a valid value");
+					foodName.setText("");
+					
+					desc.setPromptText("Please enter a valid value");
+					desc.setText("");
+					
+					price.setPromptText("Please enter a valid value");
+					price.setText("");
+					
+					amountSold.setPromptText("Please enter a valid value");
+					amountSold.setText("");
+				}
 			}
 		});
 		gpane.add(fUpdate, 1, 8);
@@ -282,6 +296,7 @@ public class UpdateItemTab extends Tab {
 				//Create an instance of the CrewMember table
 				CrewMemberTable cmTable = new CrewMemberTable();
 							
+				try {
 				//Update the crew member
 				crewMember.setName(eName.getText());
 				crewMember.setWage(Double.parseDouble(wage.getText()));
@@ -291,6 +306,19 @@ public class UpdateItemTab extends Tab {
 				crewMember.setCrewMemberGoldStar(Integer.parseInt(goldStar.getText()));
 				
 				cmTable.updateCrewMember(crewMember);
+				}catch(Exception e1){
+					eName.setPromptText("Please enter a valid value");
+					eName.setText("");
+					
+					wage.setPromptText("Please enter a valid value");
+					wage.setText("");
+					
+					punchIn.setPromptText("Please enter a valid value");
+					punchIn.setText("");
+					
+					goldStar.setPromptText("Please enter a valid value");
+					goldStar.setText("");
+				}
 			}
 		});
 		gpane.add(eUpdate, 1, 7);
