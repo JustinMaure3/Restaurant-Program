@@ -42,8 +42,7 @@ public class MenuTab extends Tab {
 		
 		VBox data = new VBox();		
 		
-		//If statement checking what table is selected
-		if(displayedTable == "food") {
+		
 		
 			//Create an arraylist
 			FoodTable menuItems = new FoodTable();
@@ -77,7 +76,7 @@ public class MenuTab extends Tab {
 				i++;
 			}
 			
-		}
+		
 		
 		//Add the menu to the main pane
 		pane.setContent(data);
