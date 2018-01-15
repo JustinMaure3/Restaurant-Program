@@ -102,7 +102,7 @@ public class HomeTab extends Tab {
 		
 		title.setPadding(new Insets(25, 0, 0, 0));
 		foodTitle.setPadding(new Insets(15, 0, 0, 0));
-		foodPicture.setPadding(new Insets(5, 0, 5, 0));
+		foodPicture.setPadding(new Insets(5, 5, 5, 5));
 		emp.setPadding(new Insets(15, 0, 25, 0));
 		
 		//Font specifically for the title
