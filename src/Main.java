@@ -50,36 +50,8 @@ public class Main extends Application {
 		MenuItem food = new MenuItem("Food");
 		MenuItem addTable = new MenuItem("Add all to Table");
 		
-		//Creating an onClick for the food button
-		food.setOnAction(e->{
-			MenuTab.newFoodDrink();
-			MenuTab.displayedTable = "Food";
-			MenuTab.check = MenuTab.newFoodDrink();
+		
 
-			MenuTab.getInstance();
-		});
-		
-		MenuItem employees = new MenuItem("Employees");
-		
-		employees.setOnAction(e->{
-			MenuTab.newEmployee();
-			MenuTab.displayedTable = "Employee";
-			MenuTab.check = MenuTab.newEmployee();
-
-			MenuTab.getInstance();
-		
-		});		
-		
-		MenuItem locations = new MenuItem("Locations");
-		locations.setOnAction(e->{
-			MenuTab.newLocations();
-			MenuTab.displayedTable = "Employee";
-			
-		});
-
-		Menu display = new Menu("Display");
-		
-		display.getItems().addAll(food,employees, locations);
 														
 		//Adding menu items to file menu
 		MenuItem exit = new MenuItem("Exit");
@@ -88,7 +60,6 @@ public class Main extends Application {
 			db.close();
 			System.exit(0);
 		});
-		
 		
 		//Adding menu items to themes menu
 		
@@ -175,6 +146,11 @@ public class Main extends Application {
 		creditsMenu.setOnAction(e->{
 			mainStage.setScene(new CreditsScene());
 		});
+		
+
+
+		Menu display = new Menu("Display");
+		
 		//Adding menus into the menuBar
 		fileMenu.getItems().addAll(themes,display,creditsMenu, addTable, exit);
 		menu.getMenus().addAll(fileMenu);
@@ -185,14 +161,6 @@ public class Main extends Application {
 		tpane.setTabClosingPolicy(TabClosingPolicy.UNAVAILABLE);
 		HomeTab htab = HomeTab.getInstance();
 		
-		
-		//Adding values into locations
-		//StoreLocationsTable storelocationstable = new StoreLocationsTable();
-		
-		//StoreLocations storeLocations = new StoreLocations("330 GoodBoy Ave", "Jacob Makich", 32, 86);
-		
-		//storelocationstable.createStoreLocations(storeLocations);
-		
 
 		//MenuTab mtab = MenuTab.getInstance();
 
@@ -201,9 +169,43 @@ public class Main extends Application {
 		RemoveItemTab removeTab = RemoveItemTab.getInstance();
 		UpdateItemTab updateTab = UpdateItemTab.getInstance();
 		StatisticsTab stab = StatisticsTab.getInstance();
-
 		
-		tpane.getTabs().addAll(htab, mtab, addTab, removeTab, updateTab, stab);
+
+		MenuItem employees = new MenuItem("Employees");
+
+		MenuItem locations = new MenuItem("Locations");
+
+		display.getItems().addAll(food,employees, locations);
+		//Creating an onClick for the food button
+				food.setOnAction(e->{
+					MenuTab.displayedTable = "Food";
+					MenuTab.check = MenuTab.newFoodDrink();
+
+
+					tpane.getTabs().addAll(htab, mtab, addTab, removeTab, updateTab, stab);
+				});
+				
+				
+				employees.setOnAction(e->{
+					MenuTab.newEmployee();
+					MenuTab.displayedTable = "Employee";
+					MenuTab.check = MenuTab.newEmployee();
+
+
+					tpane.getTabs().addAll(htab, mtab, addTab, removeTab, updateTab, stab);
+				
+				});		
+				
+				locations.setOnAction(e->{
+					MenuTab.newLocations();
+					MenuTab.displayedTable = "Locations";
+					MenuTab.check = MenuTab.newLocations();
+					tpane.getTabs().addAll(htab, mtab, addTab, removeTab, updateTab, stab);
+					
+				});
+
+
+				tpane.getTabs().addAll(htab, mtab, addTab, removeTab, updateTab, stab);
 
 
 
