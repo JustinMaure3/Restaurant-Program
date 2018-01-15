@@ -21,6 +21,8 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.scene.text.Font;
+import javafx.scene.text.FontPosture;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import tabs.AddItemTab;
@@ -94,6 +96,15 @@ public class Main extends Application {
 			Text amountSoldTitle = new Text("Amount Sold");
 			amountSoldColumn.getChildren().addAll(amountSoldTitle);
 			
+			
+			Font subTitleFont = Font.font("Times New Roman", FontPosture.REGULAR, 25);
+			foodNameTitle.setFont(subTitleFont);
+			ratingTitle.setFont(subTitleFont);
+			descriptionTitle.setFont(subTitleFont);
+			pictureTitle.setFont(subTitleFont);
+			priceTitle.setFont(subTitleFont);
+			amountSoldTitle.setFont(subTitleFont);
+			
 			//Loop to set the contents of the arraylist to their own panes
 			int i = 0;
 			while(i < foodDrinkItems.size()){
@@ -112,6 +123,10 @@ public class Main extends Application {
 				pictureColumn.getChildren().addAll(foodPicture);
 				foodPicture.setFitHeight(30);
 				foodPicture.setFitWidth(30);
+<<<<<<< HEAD
+				pictureColumn.setPadding(new Insets(0, 0, 0, 15));
+=======
+>>>>>>> c617865d52581e94a164726e78e65dc2c357bce5
 				
 				Text foodPrice = new Text(foodDrinkItems.get(i).getPrice() + "  ");
 				priceColumn.getChildren().addAll(foodPrice);
@@ -175,6 +190,14 @@ public class Main extends Application {
 			
 			Text crewMemberGoldStarTitle = new Text("Gold Stars");
 			crewMemberGoldStarColumn.getChildren().addAll(crewMemberGoldStarTitle);
+			
+			Font subTitleFont = Font.font("Times New Roman", FontPosture.REGULAR, 25);
+			nameTitle.setFont(subTitleFont);
+			wageTitle.setFont(subTitleFont);
+			positionTitle.setFont(subTitleFont);
+			uniformTitle.setFont(subTitleFont);
+			crewMemberPunchInTitle.setFont(subTitleFont);
+			crewMemberGoldStarTitle.setFont(subTitleFont);
 			
 			//Loop to set the contents of the arraylist to their own panes
 			int i = 0;
@@ -252,6 +275,13 @@ public class Main extends Application {
 			Text managerSafeCodeTitle = new Text("Manager Safe Code");
 			managerSafeCodeColumn.getChildren().addAll(managerSafeCodeTitle);
 			
+			managerNameTitle.setFont(subTitleFont);
+			managerWageTitle.setFont(subTitleFont);
+			managerUniformTitle.setFont(subTitleFont);
+			managerPositionTitle.setFont(subTitleFont);
+			managerIDTitle.setFont(subTitleFont);
+			managerSafeCodeTitle.setFont(subTitleFont);
+			
 			//Loop to set the contents of the arraylist to their own panes
 			int e1 = 0;
 			while(e1 < managerItems.size()){
@@ -325,6 +355,13 @@ public class Main extends Application {
 			
 			Text custReviewTitle = new Text("Customer Review");
 			custReviewColumn.getChildren().addAll(custReviewTitle);
+			
+
+			Font subTitleFont = Font.font("Times New Roman", FontPosture.REGULAR, 25);
+			locationTitle.setFont(subTitleFont);
+			santScoreTitle.setFont(subTitleFont);
+			regionalManTitle.setFont(subTitleFont);
+			custReviewTitle.setFont(subTitleFont);
 			
 			//Loop to set the contents of the arraylist to their own panes
 			int e1 = 0;
