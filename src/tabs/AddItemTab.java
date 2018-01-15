@@ -94,6 +94,11 @@ public class AddItemTab extends Tab{
 					month.getSelectionModel().getSelectedItem().name()
 					);
 			fTable.createFoodDrink(food);
+			
+			amountSold.setText("");
+			price.setText("");
+			desc.setText("");
+			name.setText("");
 			}catch(Exception e1){
 				
 				FadeTransition fade = new FadeTransition(Duration.millis(2000), submitButton);
@@ -176,6 +181,11 @@ public class AddItemTab extends Tab{
 							Integer.parseInt(goldStar.getText())
 							);
 					cmTable.createCrewMember(crewMember);
+					
+					goldStar.setText("");
+					punchIn.setText("");
+					wage.setText("");
+					ename.setText("");
 				}catch(Exception e1){
 					FadeTransition fade = new FadeTransition(Duration.millis(2000), eSubmit);
 					fade.setFromValue(0); //starting opacity
@@ -257,7 +267,11 @@ public class AddItemTab extends Tab{
 					Integer.parseInt(managerSafeCode.getText())
 					);
 			mTable.createManager(manager);
-					
+			
+			managerSafeCode.setText("");
+			managerID.setText("");
+			mWage.setText("");
+			mname.setText("");
 			}catch(Exception e1){
 				
 				FadeTransition fade = new FadeTransition(Duration.millis(2000), mSubmit);

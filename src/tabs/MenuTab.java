@@ -1,4 +1,5 @@
 package tabs;
+import java.awt.Color;
 /**
  * Displays the database table depending on what table they wanted to see
  * @author Stefano,Max,Tomas,Justin
@@ -14,12 +15,20 @@ import Tables.FoodTable;
 import Tables.ManagerTable;
 import Tables.StoreLocationsTable;
 import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.Tab;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.Border;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.BorderStroke;
+import javafx.scene.layout.BorderStrokeStyle;
+import javafx.scene.layout.BorderWidths;
+import javafx.scene.layout.CornerRadii;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.scene.text.Font;
+import javafx.scene.text.FontPosture;
 import javafx.scene.text.Text;
 
 
@@ -79,12 +88,23 @@ public class MenuTab extends Tab {
 		
 		Text pictureTitle = new Text("Picture");
 		pictureColumn.getChildren().addAll(pictureTitle);
+		pictureColumn.setPadding(new Insets(0, 0, 0, 15));
+		
 		
 		Text priceTitle = new Text("Price");
 		priceColumn.getChildren().addAll(priceTitle);
 		
 		Text amountSoldTitle = new Text("Amount Sold");
 		amountSoldColumn.getChildren().addAll(amountSoldTitle);
+		
+
+		Font subTitleFont = Font.font("Times New Roman", FontPosture.REGULAR, 25);
+		foodNameTitle.setFont(subTitleFont);
+		ratingTitle.setFont(subTitleFont);
+		descriptionTitle.setFont(subTitleFont);
+		pictureTitle.setFont(subTitleFont);
+		priceTitle.setFont(subTitleFont);
+		amountSoldTitle.setFont(subTitleFont);
 		
 		//Loop to set the contents of the arraylist to their own panes
 		int i = 0;
@@ -115,12 +135,14 @@ public class MenuTab extends Tab {
 			i++;
 		}
 		
+		//pictureColumn.setStyle("-fx-border-style: solid inside;");
 		//Add all of the info into the hbox
 		newItemFood.getChildren().addAll(pictureColumn, foodNameColumn, ratingColumn, descriptionColumn, priceColumn, amountSoldColumn);
 		
 		//Add the HBox to the VBox
 		data.getChildren().add(newItemFood);
 		this.setContent(data);
+		
 		}
 	
 	
