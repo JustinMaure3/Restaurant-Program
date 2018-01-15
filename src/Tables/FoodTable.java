@@ -171,5 +171,31 @@ public class FoodTable implements FoodDrinkDAO {
 		}
 		return items.size();
 	}
+	
+	public ArrayList<FoodDrink> getAllFoodDrinkFrom(String month) {
+		String query = "SELECT * FROM " + Const.TABLE_FOOD_DRINK + " WHERE " +
+				Const.FOOD_DRINK_COLUMN_MONTH + " = '" + month + "'";
+		ArrayList<FoodDrink> foodDrinks = new ArrayList<FoodDrink>();
+		try {
+			//Use the singleton an grab its connection to create a statement
+			Statement getItems = db.getConnection().createStatement();
+			ResultSet data = getItems.executeQuery(query);
+			//This while loop will run once for each item in the result set
+			while(data.next()) {
+				//Build each item and add it to the ArrayList
+				foodDrinks.add(new FoodDrink(data.getInt(Const.FOOD_DRINK_COLUMN_ID),
+								   data.getString(Const.FOOD_DRINK_COLUMN_NAME),
+								   data.getInt(Const.FOOD_DRINK_COLUMN_RATING),
+								   data.getString(Const.FOOD_DRINK_COLUMN_DESCRIPTION),
+								   data.getString(Const.FOOD_DRINK_COLUMN_PICTURE),
+								   data.getDouble(Const.FOOD_DRINK_COLUMN_PRICE),
+								   data.getDouble(Const.FOOD_DRINK_COLUMN_AMOUNT_SOLD),
+								   data.getString(Const.FOOD_DRINK_COLUMN_MONTH)));
+			}
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}
+		return foodDrinks;
+	}
 }
 
