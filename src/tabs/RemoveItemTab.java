@@ -56,6 +56,7 @@ public class RemoveItemTab extends Tab {
 				FoodDrink foodItem = list.getSelectionModel().getSelectedItem();
 				fTable.deleteFoodDrink(foodItem);
 				list.setItems(FXCollections.observableArrayList(fTable.getAllFoodDrink()));
+				StatisticsTab.pane.setCenter(StatisticsTab.generateChart());
 			});
 			remove.setMaxWidth(200);
 			pane.setBottom(remove);
@@ -98,6 +99,7 @@ public class RemoveItemTab extends Tab {
 				CrewMember crewMember = list.getSelectionModel().getSelectedItem();
 				cmTable.deleteCrewMember(crewMember);
 				list.setItems(FXCollections.observableArrayList(cmTable.getAllCrewMembers()));
+				StatisticsTab.pane.setCenter(StatisticsTab.generateChart());
 			});
 			remove.setMaxWidth(200);
 			pane.setBottom(remove);
@@ -140,6 +142,7 @@ public class RemoveItemTab extends Tab {
 				Manager manager = list.getSelectionModel().getSelectedItem();
 				mTable.deleteManager(manager);
 				list.setItems(FXCollections.observableArrayList(mTable.getAllManagers()));
+				StatisticsTab.pane.setCenter(StatisticsTab.generateChart());
 			});
 			remove.setMaxWidth(200);
 			pane.setBottom(remove);

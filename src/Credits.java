@@ -10,11 +10,11 @@ public class Credits extends BorderPane {
 		
 		Text text1 = new Text("XAMPP");
 		Text text2 = new Text("Github.com");
-		Text text3 = new Text("");
-		Text text4 = new Text("");
-		Text text5 = new Text("");
-		Text text6 = new Text("");
-		Text text7 = new Text("");
+		Text text3 = new Text("StackOverFlow.com");
+		Text text4 = new Text("Wikipedia.com");
+		Text text5 = new Text("docs.oracle.com");
+		Text text6 = new Text("discordapp.com");
+		Text text7 = new Text("Cai Filiault");
 		Text text8 = new Text("");
 		Text text9 = new Text("");
 		Text text10 = new Text("");

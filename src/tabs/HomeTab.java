@@ -45,7 +45,6 @@ public class HomeTab extends Tab {
 		}catch(Exception e1) {
 			 popName = new Text("There seems to be no top food at the moment. Why not enter one using the add item tab?");//Here would grab the most popular food item name
 			 empName = new Text("There seems to be no employee of the month. Why not enter one using the add item tab?");
-			
 		}
 		
 		try {

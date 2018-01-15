@@ -99,6 +99,8 @@ public class AddItemTab extends Tab{
 			price.setText("");
 			desc.setText("");
 			name.setText("");
+
+			StatisticsTab.pane.setCenter(StatisticsTab.generateChart());
 			}catch(Exception e1){
 				
 				FadeTransition fade = new FadeTransition(Duration.millis(2000), submitButton);
@@ -186,6 +188,8 @@ public class AddItemTab extends Tab{
 					punchIn.setText("");
 					wage.setText("");
 					ename.setText("");
+
+					StatisticsTab.pane.setCenter(StatisticsTab.generateChart());
 				}catch(Exception e1){
 					FadeTransition fade = new FadeTransition(Duration.millis(2000), eSubmit);
 					fade.setFromValue(0); //starting opacity
@@ -272,6 +276,8 @@ public class AddItemTab extends Tab{
 			managerID.setText("");
 			mWage.setText("");
 			mname.setText("");
+
+			StatisticsTab.pane.setCenter(StatisticsTab.generateChart());
 			}catch(Exception e1){
 				
 				FadeTransition fade = new FadeTransition(Duration.millis(2000), mSubmit);
