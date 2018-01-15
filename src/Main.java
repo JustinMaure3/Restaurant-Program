@@ -450,6 +450,9 @@ public class Main extends Application {
 				
 		});
 	
+		creditsMenu.setOnAction(e->{
+			mainStage.setScene(new CreditsScene());
+		});
 		//Adding menus into the menuBar
 		fileMenu.getItems().addAll(themes,display,creditsMenu, addTable, exit);
 		menu.getMenus().addAll(fileMenu);
