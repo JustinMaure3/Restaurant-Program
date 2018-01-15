@@ -42,15 +42,9 @@ public class MenuTab extends Tab {
 		
 		
 		VBox data = new VBox();		
-		
-<<<<<<< HEAD
-		
-		
-=======
 		//If statement checking what table is selected
 		if(displayedTable == "food") {	
 
->>>>>>> fd3c9e2f7a75e92348aa4ba980e78b3e465e0e4e
 			//Create an arraylist
 			FoodTable menuItems = new FoodTable();
 			
@@ -122,18 +116,15 @@ public class MenuTab extends Tab {
 				i++;
 			}
 			
-<<<<<<< HEAD
 		
 		
 		//Add the menu to the main pane
 		pane.setContent(data);
-=======
 			//Add all of the info into the hbox
 			newItemFood.getChildren().addAll(pictureColumn, foodNameColumn, ratingColumn, descriptionColumn, priceColumn, amountSoldColumn);
 			
 			//Add the HBox to the VBox
 			data.getChildren().add(newItemFood);
->>>>>>> fd3c9e2f7a75e92348aa4ba980e78b3e465e0e4e
 		
 		//Set the pane to the scene
 		this.setContent(pane);
