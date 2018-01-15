@@ -46,11 +46,12 @@ public class HomeTab extends Tab {
 		}
 		
 		//ImageViews
-		ImageView foodImage = new ImageView("Pictures/" + topFoodItem.getPicture());
+		ImageView foodImage;
+		 popName = new Text("There seems to be no top food please enter one");
+		 foodImage = new ImageView("Pictures/star.png");
 		//If its empty then we now have a default value preventing crashes
-		if(topFoodItem.getName() == null ) {
-			 popName = new Text("There seems to be no top food please enter one");
-			 foodImage = new ImageView("Pictures/star.png");
+		if(topFoodItem.getName() != null ) {
+			 foodImage = new ImageView("Pictures/" + topFoodItem.getPicture());
 		}
 		
 		//If its empty we now have a default value preventing crashes
@@ -101,7 +102,7 @@ public class HomeTab extends Tab {
 		
 		title.setPadding(new Insets(25, 0, 0, 0));
 		foodTitle.setPadding(new Insets(15, 0, 0, 0));
-		foodPicture.setPadding(new Insets(5, 0, 5, 0));
+		foodPicture.setPadding(new Insets(5, 5, 5, 5));
 		emp.setPadding(new Insets(15, 0, 25, 0));
 		
 		//Font specifically for the title

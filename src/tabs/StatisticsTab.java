@@ -3,6 +3,7 @@ package tabs;
 import java.util.ArrayList;
 
 import PlaceHolder.FoodDrink;
+import Tables.CrewMemberTable;
 import Tables.FoodTable;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -32,30 +33,20 @@ public class StatisticsTab extends Tab {
 	}
 	
 	public static PieChart generateChart() {
-		FoodTable foodTable = new FoodTable();
+		FoodTable menuItems = new FoodTable();
+		ArrayList<FoodDrink> foodDrinkItems = menuItems.getAllFoodDrink();	
+	
+		int allFood = menuItems.getItemCount("Pizza");
+		PieChart chart = new PieChart();
+		chart.setLabelsVisible(true);
 		
-
-		ArrayList<FoodDrink> foodDrinkItems = foodTable.getAllFoodDrink();
+		ObservableList<PieChart.Data> data;
+					
+		 data = FXCollections.observableArrayList(new PieChart.Data("Pizza", allFood));
 		
-		PieChart piechart = new PieChart();
 		
-		piechart.setLabelsVisible(true);
-		ObservableList<PieChart.Data> data2 = null;
-		
-		for(int i = 0; i < foodTable.getAllFoodDrink().size(); i ++) {
-		FoodDrink oneFood = foodDrinkItems.get(i);
-		
-			ObservableList<PieChart.Data> data = 
-				FXCollections.observableArrayList(
-						new PieChart.Data(oneFood.getName(), oneFood.getAmountSold()));
-			
-			 data2 = FXCollections.observableArrayList(data);
-
-		}
-		
-
-		piechart.setData(data2);
-		return piechart;
+		chart.setData(data);
+		return chart;
 	}
 	
 	

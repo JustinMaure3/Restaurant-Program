@@ -81,6 +81,7 @@ public class AddItemTab extends Tab{
 			//Create an instance of the food table
 			FoodTable fTable = new FoodTable();
 			
+			try {
 			FoodDrink food = new FoodDrink(
 					name.getText(),
 					rating.getSelectionModel().getSelectedItem().ordinal(),
@@ -91,6 +92,19 @@ public class AddItemTab extends Tab{
 					month.getSelectionModel().getSelectedItem().name()
 					);
 			fTable.createFoodDrink(food);
+			}catch(Exception e1){
+				amountSold.setPromptText("Please enter a valid value");
+				amountSold.setText("");
+				
+				price.setPromptText("Please enter a valid value");
+				price.setText("");
+				
+				desc.setPromptText("Please enter a valid value");
+				desc.setText("");
+				
+				name.setPromptText("Please enter a valid value");
+				name.setText("");
+			}
 		});
 		
 		pane.add(submitButton, 1, 7);
@@ -141,15 +155,55 @@ public class AddItemTab extends Tab{
 			//Create an instance of the CrewMember table
 			CrewMemberTable cmTable = new CrewMemberTable();
 			
-			CrewMember crewMember = new CrewMember(
-					ename.getText(),
-					Double.parseDouble(wage.getText()),
-					uniform.getSelectionModel().getSelectedItem().name(),
-					position.getSelectionModel().getSelectedItem().name(),
-					Integer.parseInt(punchIn.getText()),
-					Integer.parseInt(goldStar.getText())
-					);
-			cmTable.createCrewMember(crewMember);
+			boolean checking = false;
+			
+			
+			
+			
+			try {
+				Double.parseDouble(wage.getText());
+			}catch(Exception e1) {
+				checking = true;
+			}
+				
+				try {
+					Integer.parseInt(punchIn.getText());
+				}catch(Exception e1) {
+					
+					checking = true;
+				}
+				
+				try {
+					Integer.parseInt(goldStar.getText());
+				}catch(Exception e1) {
+					
+					checking = true;
+				
+			}
+				try {
+					CrewMember crewMember = new CrewMember(
+							ename.getText(),
+							Double.parseDouble(wage.getText()),
+							uniform.getSelectionModel().getSelectedItem().name(),
+							position.getSelectionModel().getSelectedItem().name(),
+							Integer.parseInt(punchIn.getText()),
+							Integer.parseInt(goldStar.getText())
+							);
+					cmTable.createCrewMember(crewMember);
+				}catch(Exception e1){
+					
+					goldStar.setPromptText("Please enter a valid value");
+					goldStar.setText("");
+					
+					punchIn.setPromptText("Please enter a valid value");
+					punchIn.setText("");
+					
+					wage.setPromptText("Please enter a valid value");
+					wage.setText("");
+					
+					ename.setPromptText("Please enter a valid value");
+					ename.setText("");
+				}
 			
 			
 		});
@@ -201,7 +255,8 @@ public class AddItemTab extends Tab{
 		mSubmit.setOnAction(e->{
 			//Create an instance of the Manager table
 			ManagerTable mTable = new ManagerTable();
-					
+				
+			try {
 			Manager manager = new Manager(
 					mname.getText(),
 					Double.parseDouble(mWage.getText()),
@@ -212,6 +267,19 @@ public class AddItemTab extends Tab{
 					);
 			mTable.createManager(manager);
 					
+			}catch(Exception e1){
+				managerSafeCode.setPromptText("Please enter a valid value");
+				managerSafeCode.setText("");
+				
+				managerID.setPromptText("Please enter a valid value");
+				managerID.setText("");
+
+				mWage.setPromptText("Please enter a valid value");
+				mWage.setText("");
+				
+				mname.setPromptText("Please enter a valid value");
+				mname.setText("");
+			}
 					
 		});
 		pane.add(mSubmit, 21, 6);
