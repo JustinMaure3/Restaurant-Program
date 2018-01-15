@@ -266,6 +266,9 @@ public class UpdateItemTab extends Tab {
 					list.setItems(FXCollections.observableArrayList(fTable.getAllFoodDrink()));
 					this.setContent(pane);
 					StatisticsTab.pane.setCenter(StatisticsTab.generateChart());
+					MenuTab.tab.setContent(MenuTab.newFoodDrink());
+
+					HomeTab.tab.setContent(HomeTab.homeRefresh());
 				}catch(Exception e1) {
 					FadeTransition fade = new FadeTransition(Duration.millis(2000), fUpdate);
 					fade.setFromValue(0); //starting opacity
@@ -378,6 +381,8 @@ public class UpdateItemTab extends Tab {
 				elist.setItems(FXCollections.observableArrayList(cmTable.getAllCrewMembers()));
 				this.setContent(pane);
 				StatisticsTab.pane.setCenter(StatisticsTab.generateChart());
+				MenuTab.tab.setContent(MenuTab.newEmployee());
+				HomeTab.tab.setContent(HomeTab.homeRefresh());
 				}catch(Exception e1){
 					
 
@@ -495,6 +500,8 @@ public class UpdateItemTab extends Tab {
 				mlist.setItems(FXCollections.observableArrayList(mTable.getAllManagers()));
 				this.setContent(pane);
 				StatisticsTab.pane.setCenter(StatisticsTab.generateChart());
+				MenuTab.tab.setContent(MenuTab.newEmployee());
+				HomeTab.tab.setContent(HomeTab.homeRefresh());
 				}catch(Exception e1) {
 					
 					FadeTransition fade = new FadeTransition(Duration.millis(2000), mUpdate);

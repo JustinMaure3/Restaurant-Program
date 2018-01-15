@@ -48,6 +48,8 @@ public class RemoveItemTab extends Tab {
 			//Create the array that'll give us all foodDrink in our database
 			ArrayList<FoodDrink> foodDrinkItems = fTable.getAllFoodDrink();
 			
+
+				
 			//set the list with all the items in the arraylist
 			list.setItems(FXCollections.observableArrayList(foodDrinkItems));
 			list.setMaxWidth(600);
@@ -81,6 +83,10 @@ public class RemoveItemTab extends Tab {
 				UpdateItemTab.refresh();
 				RemoveItemTab.refresh();
 				StatisticsTab.pane.setCenter(StatisticsTab.generateChart());
+				MenuTab.tab.setContent(MenuTab.newFoodDrink());
+				StatisticsTab.pane.setCenter(StatisticsTab.generateChart());
+
+				HomeTab.tab.setContent(HomeTab.homeRefresh());
 			});
 			remove.setMaxWidth(200);
 			pane.setBottom(remove);
@@ -107,6 +113,8 @@ public class RemoveItemTab extends Tab {
 			CrewMemberTable cmTable = new CrewMemberTable();
 			//Create the array that'll give us all crew members in our database
 			ArrayList<CrewMember> cmItems = cmTable.getAllCrewMembers();
+			
+			
 			
 			//set the list with all the items in the arraylist
 			elist.setItems(FXCollections.observableArrayList(cmItems));
@@ -141,6 +149,10 @@ public class RemoveItemTab extends Tab {
 				UpdateItemTab.refresh();
 				RemoveItemTab.refresh();
 				StatisticsTab.pane.setCenter(StatisticsTab.generateChart());
+				MenuTab.tab.setContent(MenuTab.newEmployee());
+				StatisticsTab.pane.setCenter(StatisticsTab.generateChart());
+
+				HomeTab.tab.setContent(HomeTab.homeRefresh());
 			});
 			remove.setMaxWidth(200);
 			pane.setBottom(remove);
@@ -201,6 +213,11 @@ public class RemoveItemTab extends Tab {
 				UpdateItemTab.refresh();
 				RemoveItemTab.refresh();
 				StatisticsTab.pane.setCenter(StatisticsTab.generateChart());
+				StatisticsTab.pane.setCenter(StatisticsTab.generateChart());
+				MenuTab.tab.setContent(MenuTab.newEmployee());
+				StatisticsTab.pane.setCenter(StatisticsTab.generateChart());
+
+				HomeTab.tab.setContent(HomeTab.homeRefresh());
 			});
 			remove.setMaxWidth(200);
 			pane.setBottom(remove);

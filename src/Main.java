@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-
 import Database.Database;
 import PlaceHolder.CrewMember;
 import PlaceHolder.FoodDrink;
@@ -517,8 +516,11 @@ public class Main extends Application {
 		UpdateItemTab updateTab = UpdateItemTab.getInstance();
 		StatisticsTab stab = StatisticsTab.getInstance();
 
-		
-		tpane.getTabs().addAll(htab, mtab, addTab, removeTab, updateTab, stab);
+
+				
+				
+
+				tpane.getTabs().addAll(htab, mtab, addTab, removeTab, updateTab, stab);
 
 
 
