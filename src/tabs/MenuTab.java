@@ -103,8 +103,8 @@ public class MenuTab extends Tab {
 				
 				ImageView foodPicture = new ImageView("Pictures/" + foodDrinkItems.get(i).getPicture());
 				pictureColumn.getChildren().addAll(foodPicture);
-				foodPicture.setFitHeight(100);
-				foodPicture.setFitWidth(100);
+				foodPicture.setFitHeight(25);
+				foodPicture.setFitWidth(25);
 				
 				Text foodPrice = new Text(foodDrinkItems.get(i).getPrice() + "  ");
 				priceColumn.getChildren().addAll(foodPrice);
