@@ -1,8 +1,10 @@
 package tabs;
 
 
-import DAO.FoodDrinkDAO;
+import java.util.ArrayList;
+
 import PlaceHolder.FoodDrink;
+import Tables.FoodTable;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.chart.PieChart;
@@ -31,23 +33,21 @@ public class StatisticsTab extends Tab {
 	}
 	
 	public static PieChart generateChart() {
-//		FoodDrink table = new FoodDrink();
-//	
-//		int pennies = table.getItemCount();
-//		
-//		
-//		PieChart chart = new PieChart();
-//		chart.setTitle("All Coins Found");
-//		chart.setLabelsVisible(true);
-//		ObservableList<PieChart.Data> data = 
-//				FXCollections.observableArrayList(new PieChart.Data("Penny: " + pennies, pennies),
-//						new PieChart.Data("Nickel: " + nickel , nickel),
-//						new PieChart.Data("Dime: " + dime , dime),
-//						new PieChart.Data("Quarter: " + quarter , quarter),
-//						new PieChart.Data("Loonie: " + loonie , loonie),
-//						new PieChart.Data("Toonie: " + toonie , toonie));
-//		chart.setData(data);
-		return null;
+		FoodTable table = new FoodTable();
+		
+		PieChart chart = new PieChart();
+		chart.setTitle("Total Sales of Each Menu Item");
+		chart.setLabelsVisible(true);
+		ArrayList<FoodDrink> foodItems = table.getAllFoodDrink();
+		ArrayList<PieChart.Data> foodItemData = new ArrayList<PieChart.Data>();
+		for(int i = 0; i < foodItems.size(); i++) {
+				foodItemData.add(new PieChart.Data(foodItems.get(i).getName(), foodItems.get(i).getAmountSold()));
+		}
+		
+		ObservableList<PieChart.Data> data = FXCollections.observableArrayList(foodItemData);
+		chart.setData(data);
+		
+		return chart;
 	}
 	
 	

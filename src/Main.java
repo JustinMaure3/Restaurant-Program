@@ -123,7 +123,10 @@ public class Main extends Application {
 				pictureColumn.getChildren().addAll(foodPicture);
 				foodPicture.setFitHeight(30);
 				foodPicture.setFitWidth(30);
+<<<<<<< HEAD
 				pictureColumn.setPadding(new Insets(0, 0, 0, 15));
+=======
+>>>>>>> c617865d52581e94a164726e78e65dc2c357bce5
 				
 				Text foodPrice = new Text(foodDrinkItems.get(i).getPrice() + "  ");
 				priceColumn.getChildren().addAll(foodPrice);

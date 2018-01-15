@@ -74,3 +74,8 @@
     -fx-background-color: #e0e0e0;
 
 }
+
+.VBox{
+	-fx-padding: 15;
+	-fx-spacing: 10;
+}
