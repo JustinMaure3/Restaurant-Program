@@ -22,11 +22,31 @@ import javafx.scene.text.TextAlignment;
 
 public class HomeTab extends Tab {
 	
-	private static HomeTab tab;
+	public static HomeTab tab;
 	public static TextAlignment CENTER;
+	public static Text popName = new Text();
+	public static Text empName = new Text();
+	
+	
 	private HomeTab() {
 		this.setText("Home");
 		
+		
+		
+		this.setContent(homeRefresh());
+		
+		
+		
+	}
+	
+	public static HomeTab getInstance() {
+		if(tab == null) {
+			tab = new HomeTab();
+		}
+		return tab;
+	}
+	
+	public static VBox homeRefresh() {
 		FoodTable menuItems = new FoodTable();
 		CrewMemberTable crewMember = new CrewMemberTable();
 		
@@ -37,8 +57,7 @@ public class HomeTab extends Tab {
 		Text restName = new Text("Dinner Diner");
 		
 		
-		Text popName = new Text();
-		Text empName = new Text();
+		
 		try {
 			 popName = new Text(topFoodItem.getName() + " is the best selling item this year!");//Here would grab the most popular food item name
 			 empName = new Text(topCrewMember.getName() + " is the top employee of this year!");
@@ -143,19 +162,8 @@ public class HomeTab extends Tab {
 		//Everything will be added to the main and it will go from top to bottom
 		main.getChildren().addAll(title,foodTitlePic,emp, tip);
 		
+		return main;
 		
-		
-		this.setContent(main);
-		
-		
-		
-	}
-	
-	public static HomeTab getInstance() {
-		if(tab == null) {
-			tab = new HomeTab();
-		}
-		return tab;
 	}
 	
 }

@@ -82,6 +82,8 @@ public class RemoveItemTab extends Tab {
 				StatisticsTab.pane.setCenter(StatisticsTab.generateChart());
 				MenuTab.tab.setContent(MenuTab.newFoodDrink());
 				StatisticsTab.pane.setCenter(StatisticsTab.generateChart());
+
+				HomeTab.tab.setContent(HomeTab.homeRefresh());
 			});
 			remove.setMaxWidth(200);
 			pane.setBottom(remove);
@@ -146,6 +148,8 @@ public class RemoveItemTab extends Tab {
 				StatisticsTab.pane.setCenter(StatisticsTab.generateChart());
 				MenuTab.tab.setContent(MenuTab.newEmployee());
 				StatisticsTab.pane.setCenter(StatisticsTab.generateChart());
+
+				HomeTab.tab.setContent(HomeTab.homeRefresh());
 			});
 			remove.setMaxWidth(200);
 			pane.setBottom(remove);
@@ -210,6 +214,9 @@ public class RemoveItemTab extends Tab {
 				StatisticsTab.pane.setCenter(StatisticsTab.generateChart());
 				StatisticsTab.pane.setCenter(StatisticsTab.generateChart());
 				MenuTab.tab.setContent(MenuTab.newEmployee());
+				StatisticsTab.pane.setCenter(StatisticsTab.generateChart());
+
+				HomeTab.tab.setContent(HomeTab.homeRefresh());
 			});
 			remove.setMaxWidth(200);
 			pane.setBottom(remove);
