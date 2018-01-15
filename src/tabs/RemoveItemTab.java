@@ -16,10 +16,12 @@ import javafx.collections.FXCollections;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
+import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
 import javafx.scene.control.Tab;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
+import javafx.util.Callback;
 
 public class RemoveItemTab extends Tab {
 	
@@ -47,6 +49,23 @@ public class RemoveItemTab extends Tab {
 			list.setItems(FXCollections.observableArrayList(foodDrinkItems));
 			list.setMaxWidth(600);
 			list.setMaxHeight(600);
+			list.setCellFactory(new Callback<ListView<FoodDrink>, ListCell<FoodDrink>>(){
+				@Override
+				public ListCell<FoodDrink> call(ListView<FoodDrink> param) {
+					ListCell<FoodDrink> cell = new ListCell<FoodDrink>() {
+						@Override
+						protected void updateItem(FoodDrink item, boolean empty) {
+							super.updateItem(item, empty);
+							if(item != null) {
+								setText(item.getName());
+							} else {
+								setText(null);
+							}
+						}
+					};
+					return cell;
+				}
+			});
 			pane.setCenter(list);
 			
 			
@@ -90,6 +109,23 @@ public class RemoveItemTab extends Tab {
 			list.setItems(FXCollections.observableArrayList(cmItems));
 			list.setMaxWidth(600);
 			list.setMaxHeight(600);
+			list.setCellFactory(new Callback<ListView<CrewMember>, ListCell<CrewMember>>(){
+				@Override
+				public ListCell<CrewMember> call(ListView<CrewMember> param) {
+					ListCell<CrewMember> cell = new ListCell<CrewMember>() {
+						@Override
+						protected void updateItem(CrewMember item, boolean empty) {
+							super.updateItem(item, empty);
+							if(item != null) {
+								setText(item.getName());
+							} else {
+								setText(null);
+							}
+						}
+					};
+					return cell;
+				}
+			});
 			pane.setCenter(list);
 			
 			
@@ -133,6 +169,23 @@ public class RemoveItemTab extends Tab {
 			list.setItems(FXCollections.observableArrayList(mItems));
 			list.setMaxWidth(600);
 			list.setMaxHeight(600);
+			list.setCellFactory(new Callback<ListView<Manager>, ListCell<Manager>>(){
+				@Override
+				public ListCell<Manager> call(ListView<Manager> param) {
+					ListCell<Manager> cell = new ListCell<Manager>() {
+						@Override
+						protected void updateItem(Manager item, boolean empty) {
+							super.updateItem(item, empty);
+							if(item != null) {
+								setText(item.getName());
+							} else {
+								setText(null);
+							}
+						}
+					};
+					return cell;
+				}
+			});
 			pane.setCenter(list);
 					
 					

@@ -19,11 +19,13 @@ import javafx.collections.FXCollections;
 import javafx.geometry.Insets;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
 import javafx.scene.text.Text;
+import javafx.util.Callback;
 import javafx.util.Duration;
 
 public class UpdateItemTab extends Tab {
@@ -50,6 +52,23 @@ public class UpdateItemTab extends Tab {
 		list.setItems(FXCollections.observableArrayList(foodDrinkItems));
 		list.setMaxWidth(300);
 		list.setMaxHeight(300);
+		list.setCellFactory(new Callback<ListView<FoodDrink>, ListCell<FoodDrink>>(){
+			@Override
+			public ListCell<FoodDrink> call(ListView<FoodDrink> param) {
+				ListCell<FoodDrink> cell = new ListCell<FoodDrink>() {
+					@Override
+					protected void updateItem(FoodDrink item, boolean empty) {
+						super.updateItem(item, empty);
+						if(item != null) {
+							setText(item.getName());
+						} else {
+							setText(null);
+						}
+					}
+				};
+				return cell;
+			}
+		});
 		pane.add(list, 1, 1);
 		
 		//Create Button for food update
@@ -77,6 +96,23 @@ public class UpdateItemTab extends Tab {
 		elist.setItems(FXCollections.observableArrayList(cmItems));
 		elist.setMaxWidth(300);
 		elist.setMaxHeight(300);
+		elist.setCellFactory(new Callback<ListView<CrewMember>, ListCell<CrewMember>>(){
+			@Override
+			public ListCell<CrewMember> call(ListView<CrewMember> param) {
+				ListCell<CrewMember> cell = new ListCell<CrewMember>() {
+					@Override
+					protected void updateItem(CrewMember item, boolean empty) {
+						super.updateItem(item, empty);
+						if(item != null) {
+							setText(item.getName());
+						} else {
+							setText(null);
+						}
+					}
+				};
+				return cell;
+			}
+		});
 		pane.add(elist, 11, 1);
 		
 		//create button for crew member update
@@ -104,6 +140,23 @@ public class UpdateItemTab extends Tab {
 		mlist.setItems(FXCollections.observableArrayList(mItems));
 		mlist.setMaxWidth(300);
 		mlist.setMaxHeight(300);
+		mlist.setCellFactory(new Callback<ListView<Manager>, ListCell<Manager>>(){
+			@Override
+			public ListCell<Manager> call(ListView<Manager> param) {
+				ListCell<Manager> cell = new ListCell<Manager>() {
+					@Override
+					protected void updateItem(Manager item, boolean empty) {
+						super.updateItem(item, empty);
+						if(item != null) {
+							setText(item.getName());
+						} else {
+							setText(null);
+						}
+					}
+				};
+				return cell;
+			}
+		});
 		pane.add(mlist, 21, 1);
 				
 		//create button for manager update
