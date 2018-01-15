@@ -34,6 +34,8 @@ public class MenuTab extends Tab {
 	private MenuTab() {
 		this.setText("Menu");
 		ScrollPane pane = new ScrollPane();
+
+		pane.setPadding(new Insets(10, 10, 10, 10));
 	
 		//Create the panes necessary for this tab
 		
