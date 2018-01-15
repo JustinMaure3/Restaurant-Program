@@ -24,9 +24,9 @@ Stack overflow for helping us with small issues that ended up being a lot bigger
 
 ## ScreenShots
 ![alt text](http://url/to/Screenshot(35).png) 
-![alt text]http://url/to/Screenshot (36).png 
-![alt text]http://url/to/Screenshot (37).png 
-![alt text]http://url/to/Screenshot (38).png 
-![alt text]http://url/to/Screenshot (39).png 
-![alt text]http://url/to/Screenshot (40).png 
-![alt text]http://url/to/Screenshot (41).png 
+![alt text](http://url/to/Screenshot (36).png) 
+![alt text](http://url/to/Screenshot (37).png) 
+![alt text](http://url/to/Screenshot (38).png) 
+![alt text](http://url/to/Screenshot (39).png) 
+![alt text](http://url/to/Screenshot (40).png) 
+![alt text](http://url/to/Screenshot (41).png) 
