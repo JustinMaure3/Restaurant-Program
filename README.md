@@ -23,10 +23,10 @@ Stack overflow for helping us with small issues that ended up being a lot bigger
 
 
 ## ScreenShots
-![alt text](http://url/to/Screenshot(35).png) 
-![alt text](http://url/to/Screenshot (36).png) 
-![alt text](http://url/to/Screenshot (37).png) 
-![alt text](http://url/to/Screenshot (38).png) 
-![alt text](http://url/to/Screenshot (39).png) 
-![alt text](http://url/to/Screenshot (40).png) 
-![alt text](http://url/to/Screenshot (41).png) 
+![alt text](https://github.com/StefanoIaconetti/Restaurant-Program/blob/master/Screenshot%20(35).png) 
+![alt text](https://github.com/StefanoIaconetti/Restaurant-Program/blob/master/Screenshot%20(36).png) 
+![alt text](https://github.com/StefanoIaconetti/Restaurant-Program/blob/master/Screenshot%20(37).png) 
+![alt text](https://github.com/StefanoIaconetti/Restaurant-Program/blob/master/Screenshot%20(38).png) 
+![alt text](https://github.com/StefanoIaconetti/Restaurant-Program/blob/master/Screenshot%20(39).png) 
+![alt text](https://github.com/StefanoIaconetti/Restaurant-Program/blob/master/Screenshot%20(40).png) 
+![alt text](https://github.com/StefanoIaconetti/Restaurant-Program/blob/master/Screenshot%20(41).png) 
