@@ -13,6 +13,7 @@ import Tables.CrewMemberTable;
 import Tables.FoodTable;
 import Tables.ManagerTable;
 import Tables.StoreLocationsTable;
+import javafx.geometry.Insets;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.Tab;
 import javafx.scene.image.ImageView;
@@ -43,47 +44,88 @@ public class MenuTab extends Tab {
 		VBox data = new VBox();		
 		
 		//If statement checking what table is selected
-		if(displayedTable == "food") {
-		
+		if(displayedTable == "food") {	
+
 			//Create an arraylist
 			FoodTable menuItems = new FoodTable();
 			
 			//Populate the arraylist with the database contents
-			ArrayList<FoodDrink> foodDrinkItems = menuItems.getAllFoodDrink();			
+			ArrayList<FoodDrink> foodDrinkItems = menuItems.getAllFoodDrink();
+			
+			//Create an HBox to hold the information about the current food item
+			HBox newItemFood = new HBox();
+			
+			//Create a VBoxes that will act as the columns of the table
+			VBox foodNameColumn = new VBox();
+			foodNameColumn.setSpacing(10.0);
+			VBox ratingColumn = new VBox();
+			ratingColumn.setSpacing(10.0);
+			VBox descriptionColumn = new VBox();
+			descriptionColumn.setSpacing(10.0);
+			VBox pictureColumn = new VBox();
+			pictureColumn.setPadding(new Insets(5, 5, 5, 5));
+			VBox priceColumn = new VBox();
+			priceColumn.setSpacing(10.0);
+			VBox amountSoldColumn = new VBox();
+			amountSoldColumn.setSpacing(10.0);
+			
+			//Create titles for each column
+			Text foodNameTitle = new Text("Name");
+			foodNameColumn.getChildren().addAll(foodNameTitle);
+			
+			Text ratingTitle = new Text("Rating");
+			ratingColumn.getChildren().addAll(ratingTitle);
+			
+			Text descriptionTitle = new Text("Description");
+			descriptionColumn.getChildren().addAll(descriptionTitle);
+			
+			Text pictureTitle = new Text("Picture");
+			pictureColumn.getChildren().addAll(pictureTitle);
+			
+			Text priceTitle = new Text("Price");
+			priceColumn.getChildren().addAll(priceTitle);
+			
+			Text amountSoldTitle = new Text("Amount Sold");
+			amountSoldColumn.getChildren().addAll(amountSoldTitle);
 			
 			//Loop to set the contents of the arraylist to their own panes
 			int i = 0;
 			while(i < foodDrinkItems.size()){
 				
-				//Create an HBox to hold the information about the current food item
-				HBox newItemFood = new HBox();
-				
 				//Create objects to hold the food's information and then add them to the HBox
-				Text name = new Text("  " + foodDrinkItems.get(i).getName() + "  ");
-				Text rating = new Text(foodDrinkItems.get(i).getRating() + "  ");
-				Text description = new Text(foodDrinkItems.get(i).getDescription() + "  ");
-				ImageView picture = new ImageView("Pictures/" + foodDrinkItems.get(i).getPicture());
-				picture.setFitHeight(100);
-				picture.setFitWidth(100);
-				Text price = new Text(foodDrinkItems.get(i).getPrice() + "  ");
-				Text amountSold = new Text("  " + foodDrinkItems.get(i).getAmountSold() + "  ");
+				Text foodName = new Text("  " + foodDrinkItems.get(i).getName() + "  ");
+				foodNameColumn.getChildren().addAll(foodName);
 				
-				//Add all of the info into the hbox
-				newItemFood.getChildren().addAll(picture, name, rating, description, price, amountSold);
+				Text foodRating = new Text(foodDrinkItems.get(i).getRating() + "  ");
+				ratingColumn.getChildren().addAll(foodRating);
 				
-				//Add the HBox to the VBox
-				data.getChildren().add(newItemFood);
+				Text foodDescription = new Text(foodDrinkItems.get(i).getDescription() + "  ");
+				descriptionColumn.getChildren().addAll(foodDescription);
+				
+				ImageView foodPicture = new ImageView("Pictures/" + foodDrinkItems.get(i).getPicture());
+				pictureColumn.getChildren().addAll(foodPicture);
+				foodPicture.setFitHeight(100);
+				foodPicture.setFitWidth(100);
+				
+				Text foodPrice = new Text(foodDrinkItems.get(i).getPrice() + "  ");
+				priceColumn.getChildren().addAll(foodPrice);
+				
+				Text foodAmountSold = new Text("  " + foodDrinkItems.get(i).getAmountSold() + "  ");
+				amountSoldColumn.getChildren().addAll(foodAmountSold);
+				
 				//Increment i
 				i++;
 			}
 			
-		}
-		
-		//Add the menu to the main pane
-		pane.setContent(data);
+			//Add all of the info into the hbox
+			newItemFood.getChildren().addAll(pictureColumn, foodNameColumn, ratingColumn, descriptionColumn, priceColumn, amountSoldColumn);
+			
+			//Add the HBox to the VBox
+			data.getChildren().add(newItemFood);
 		
 		//Set the pane to the scene
 		this.setContent(pane);
+		}
 	}
 	
 	public static MenuTab getInstance() {
