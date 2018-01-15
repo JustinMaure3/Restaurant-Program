@@ -87,7 +87,7 @@ public class AddItemTab extends Tab{
 			try {
 			FoodDrink food = new FoodDrink(
 					name.getText(),
-					rating.getSelectionModel().getSelectedItem().ordinal(),
+					rating.getSelectionModel().getSelectedItem().ordinal() + 1,
 					desc.getText(),
 					getPictureDisplay(picture.getSelectionModel().getSelectedItem().name()),
 					Double.parseDouble(price.getText()),
