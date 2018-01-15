@@ -17,7 +17,16 @@ represent their performance.
 * Tomas Markos - Creating Themes
 
 ## Acknowledgments
+We would like to acknowledge our teachers and students of the Mobile Applications course in St Clair College.
+A special acknowledgement to Cai Filiault  for assisting us with this program.
+Stack overflow for helping us with small issues that ended up being a lot bigger than we thought.
 
 
 ## ScreenShots
-![alt text](http:/Screenshot (35).png) 
+![alt text]http://url/to/Screenshot (35).png 
+![alt text]http://url/to/Screenshot (36).png 
+![alt text]http://url/to/Screenshot (37).png 
+![alt text]http://url/to/Screenshot (38).png 
+![alt text]http://url/to/Screenshot (39).png 
+![alt text]http://url/to/Screenshot (40).png 
+![alt text]http://url/to/Screenshot (41).png 
