@@ -70,7 +70,6 @@ public class Main extends Application {
 			VBox descriptionColumn = new VBox();
 			descriptionColumn.setSpacing(10.0);
 			VBox pictureColumn = new VBox();
-			pictureColumn.setPadding(new Insets(5, 5, 5, 5));
 			VBox priceColumn = new VBox();
 			priceColumn.setSpacing(10.0);
 			VBox amountSoldColumn = new VBox();
@@ -111,8 +110,14 @@ public class Main extends Application {
 				
 				ImageView foodPicture = new ImageView("Pictures/" + foodDrinkItems.get(i).getPicture());
 				pictureColumn.getChildren().addAll(foodPicture);
+<<<<<<< HEAD
 				foodPicture.setFitHeight(30);
 				foodPicture.setFitWidth(30);
+=======
+				foodPicture.setFitHeight(25);
+				foodPicture.setFitWidth(25);
+				foodPicture.;
+>>>>>>> fef94710917f8f9549b3a55d2a0f8971c897a9c4
 				
 				Text foodPrice = new Text(foodDrinkItems.get(i).getPrice() + "  ");
 				priceColumn.getChildren().addAll(foodPrice);

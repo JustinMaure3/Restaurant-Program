@@ -29,14 +29,13 @@ public class MenuTab extends Tab {
 	public static String displayedTable = "food";
 
 	
-	public static MenuTab tab;
-	
-	public static ScrollPane pane;
-	
+	public static MenuTab tab;	
 
 	private MenuTab() {
 		this.setText("Menu");
-		pane = new ScrollPane();
+		ScrollPane pane = new ScrollPane();
+
+		pane.setPadding(new Insets(10, 10, 10, 10));
 	
 		//Create the panes necessary for this tab
 		
