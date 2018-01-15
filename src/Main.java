@@ -112,7 +112,7 @@ public class Main extends Application {
 				pictureColumn.getChildren().addAll(foodPicture);
 				foodPicture.setFitHeight(25);
 				foodPicture.setFitWidth(25);
-				foodPicture.;
+//				foodPicture.;
 				
 				Text foodPrice = new Text(foodDrinkItems.get(i).getPrice() + "  ");
 				priceColumn.getChildren().addAll(foodPrice);
