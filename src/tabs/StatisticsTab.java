@@ -8,8 +8,12 @@ import Tables.FoodTable;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.chart.PieChart;
+import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.Tab;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.HBox;
+import javafx.scene.text.Text;
 
 public class StatisticsTab extends Tab {
 	
@@ -21,7 +25,63 @@ public class StatisticsTab extends Tab {
 	private StatisticsTab() {
 		this.setText("Statistics Tab");
 		pane = new BorderPane();
-		pane.setCenter(generateChart());
+		
+		Text monthText = new Text("Month: ");
+		ComboBox<ENUMS.MonthlyStats> month = new ComboBox<>();
+		month.setItems(FXCollections.observableArrayList(ENUMS.MonthlyStats.values()));
+		HBox months = new HBox();
+		months.getChildren().addAll(monthText, month);
+		pane.setTop(months);
+		
+		Button goBtn = new Button();
+		goBtn.setOnAction(e->{
+			PieChart chart = new PieChart();
+			if(!month.getSelectionModel().isEmpty()) {
+				switch(month.getSelectionModel().getSelectedItem().name()) {
+				case "JANUARY":
+					chart = generateJanChart();
+					break;
+				case "FEBRUARY":
+					chart = generateFebChart();
+					break;
+				case "MARCH":
+					chart = generateMarChart();
+					break;
+				case "APRIL":
+					chart = generateAprChart();
+					break;
+				case "MAY":
+					chart = generateMayChart();
+					break;
+				case "JUNE":
+					chart = generateJunChart();
+					break;
+				case "JULY":
+					chart = generateJulChart();
+					break;
+				case "AUGUST":
+					chart = generateAugChart();
+					break;
+				case "SEPTEMBER":
+					chart = generateSepChart();
+					break;
+				case "OCTOBER":
+					chart = generateOctChart();
+					break;
+				case "NOVEMBER":
+					chart = generateNovChart();
+					break;
+				case "DECEMBER":
+					chart = generateDecChart();
+					break;
+				}
+			} else {
+				chart = generateChart();
+			}
+			pane.setCenter(chart);
+		});
+		pane.setBottom(goBtn);
+		
 		this.setContent(pane);
 	}
 
@@ -50,6 +110,249 @@ public class StatisticsTab extends Tab {
 		return chart;
 	}
 	
+	public static PieChart generateJanChart() {
+		FoodTable table = new FoodTable();
+		
+		PieChart chart = new PieChart();
+		chart.setTitle("January Total Sales of Each Menu Item");
+		chart.setLabelsVisible(true);
+		ArrayList<FoodDrink> foodItems = table.getAllFoodDrink();
+		ArrayList<PieChart.Data> foodItemData = new ArrayList<PieChart.Data>();
+		for(int i = 0; i < foodItems.size(); i++) {
+			if(foodItems.get(i).getMonth() == "JANUARY") {
+				foodItemData.add(new PieChart.Data(foodItems.get(i).getName(), foodItems.get(i).getAmountSold()));
+			}
+		}
+		
+		ObservableList<PieChart.Data> data = FXCollections.observableArrayList(foodItemData);
+		chart.setData(data);
+		
+		return chart;
+	}
+	
+	public static PieChart generateFebChart() {
+		FoodTable table = new FoodTable();
+		
+		PieChart chart = new PieChart();
+		chart.setTitle("February Total Sales of Each Menu Item");
+		chart.setLabelsVisible(true);
+		ArrayList<FoodDrink> foodItems = table.getAllFoodDrink();
+		ArrayList<PieChart.Data> foodItemData = new ArrayList<PieChart.Data>();
+		for(int i = 0; i < foodItems.size(); i++) {
+			if(foodItems.get(i).getMonth() == "FEBRUARY") {
+				foodItemData.add(new PieChart.Data(foodItems.get(i).getName(), foodItems.get(i).getAmountSold()));
+			}
+		}
+		
+		ObservableList<PieChart.Data> data = FXCollections.observableArrayList(foodItemData);
+		chart.setData(data);
+		
+		return chart;
+	}
+
+	public static PieChart generateMarChart() {
+		FoodTable table = new FoodTable();
+		
+		PieChart chart = new PieChart();
+		chart.setTitle("March Total Sales of Each Menu Item");
+		chart.setLabelsVisible(true);
+		ArrayList<FoodDrink> foodItems = table.getAllFoodDrink();
+		ArrayList<PieChart.Data> foodItemData = new ArrayList<PieChart.Data>();
+		for(int i = 0; i < foodItems.size(); i++) {
+			if(foodItems.get(i).getMonth() == "MARCH") {
+				foodItemData.add(new PieChart.Data(foodItems.get(i).getName(), foodItems.get(i).getAmountSold()));
+			}
+		}
+		
+		ObservableList<PieChart.Data> data = FXCollections.observableArrayList(foodItemData);
+		chart.setData(data);
+		
+		return chart;
+	}
+
+	public static PieChart generateAprChart() {
+		FoodTable table = new FoodTable();
+		
+		PieChart chart = new PieChart();
+		chart.setTitle("April Total Sales of Each Menu Item");
+		chart.setLabelsVisible(true);
+		ArrayList<FoodDrink> foodItems = table.getAllFoodDrink();
+		ArrayList<PieChart.Data> foodItemData = new ArrayList<PieChart.Data>();
+		for(int i = 0; i < foodItems.size(); i++) {
+			if(foodItems.get(i).getMonth() == "APRIL") {
+				foodItemData.add(new PieChart.Data(foodItems.get(i).getName(), foodItems.get(i).getAmountSold()));
+			}
+		}
+		
+		ObservableList<PieChart.Data> data = FXCollections.observableArrayList(foodItemData);
+		chart.setData(data);
+		
+		return chart;
+	}
+
+	public static PieChart generateMayChart() {
+		FoodTable table = new FoodTable();
+		
+		PieChart chart = new PieChart();
+		chart.setTitle("May Total Sales of Each Menu Item");
+		chart.setLabelsVisible(true);
+		ArrayList<FoodDrink> foodItems = table.getAllFoodDrink();
+		ArrayList<PieChart.Data> foodItemData = new ArrayList<PieChart.Data>();
+		for(int i = 0; i < foodItems.size(); i++) {
+			if(foodItems.get(i).getMonth() == "MAY") {
+				foodItemData.add(new PieChart.Data(foodItems.get(i).getName(), foodItems.get(i).getAmountSold()));
+			}
+		}
+		
+		ObservableList<PieChart.Data> data = FXCollections.observableArrayList(foodItemData);
+		chart.setData(data);
+		
+		return chart;
+	}
+
+	public static PieChart generateJunChart() {
+		FoodTable table = new FoodTable();
+		
+		PieChart chart = new PieChart();
+		chart.setTitle("June Total Sales of Each Menu Item");
+		chart.setLabelsVisible(true);
+		ArrayList<FoodDrink> foodItems = table.getAllFoodDrink();
+		ArrayList<PieChart.Data> foodItemData = new ArrayList<PieChart.Data>();
+		for(int i = 0; i < foodItems.size(); i++) {
+			if(foodItems.get(i).getMonth() == "JUNE") {
+				foodItemData.add(new PieChart.Data(foodItems.get(i).getName(), foodItems.get(i).getAmountSold()));
+			}
+		}
+		
+		ObservableList<PieChart.Data> data = FXCollections.observableArrayList(foodItemData);
+		chart.setData(data);
+		
+		return chart;
+	}
+	
+	public static PieChart generateJulChart() {
+		FoodTable table = new FoodTable();
+		
+		PieChart chart = new PieChart();
+		chart.setTitle("July Total Sales of Each Menu Item");
+		chart.setLabelsVisible(true);
+		ArrayList<FoodDrink> foodItems = table.getAllFoodDrink();
+		ArrayList<PieChart.Data> foodItemData = new ArrayList<PieChart.Data>();
+		for(int i = 0; i < foodItems.size(); i++) {
+			if(foodItems.get(i).getMonth() == "JULY") {
+				foodItemData.add(new PieChart.Data(foodItems.get(i).getName(), foodItems.get(i).getAmountSold()));
+			}
+		}
+		
+		ObservableList<PieChart.Data> data = FXCollections.observableArrayList(foodItemData);
+		chart.setData(data);
+		
+		return chart;
+	}
+
+	public static PieChart generateAugChart() {
+		FoodTable table = new FoodTable();
+		
+		PieChart chart = new PieChart();
+		chart.setTitle("August Total Sales of Each Menu Item");
+		chart.setLabelsVisible(true);
+		ArrayList<FoodDrink> foodItems = table.getAllFoodDrink();
+		ArrayList<PieChart.Data> foodItemData = new ArrayList<PieChart.Data>();
+		for(int i = 0; i < foodItems.size(); i++) {
+			if(foodItems.get(i).getMonth() == "AUGUST") {
+				foodItemData.add(new PieChart.Data(foodItems.get(i).getName(), foodItems.get(i).getAmountSold()));
+			}
+		}
+		
+		ObservableList<PieChart.Data> data = FXCollections.observableArrayList(foodItemData);
+		chart.setData(data);
+		
+		return chart;
+	}
+
+	public static PieChart generateSepChart() {
+		FoodTable table = new FoodTable();
+		
+		PieChart chart = new PieChart();
+		chart.setTitle("September Total Sales of Each Menu Item");
+		chart.setLabelsVisible(true);
+		ArrayList<FoodDrink> foodItems = table.getAllFoodDrink();
+		ArrayList<PieChart.Data> foodItemData = new ArrayList<PieChart.Data>();
+		for(int i = 0; i < foodItems.size(); i++) {
+			if(foodItems.get(i).getMonth() == "SEPTEMBER") {
+				foodItemData.add(new PieChart.Data(foodItems.get(i).getName(), foodItems.get(i).getAmountSold()));
+			}
+		}
+		
+		ObservableList<PieChart.Data> data = FXCollections.observableArrayList(foodItemData);
+		chart.setData(data);
+		
+		return chart;
+	}
+	
+	public static PieChart generateOctChart() {
+		FoodTable table = new FoodTable();
+		
+		PieChart chart = new PieChart();
+		chart.setTitle("October Total Sales of Each Menu Item");
+		chart.setLabelsVisible(true);
+		ArrayList<FoodDrink> foodItems = table.getAllFoodDrink();
+		ArrayList<PieChart.Data> foodItemData = new ArrayList<PieChart.Data>();
+		for(int i = 0; i < foodItems.size(); i++) {
+			if(foodItems.get(i).getMonth() == "OCTOBER") {
+				foodItemData.add(new PieChart.Data(foodItems.get(i).getName(), foodItems.get(i).getAmountSold()));
+			}
+		}
+		
+		ObservableList<PieChart.Data> data = FXCollections.observableArrayList(foodItemData);
+		chart.setData(data);
+		
+		return chart;
+	}
+
+	public static PieChart generateNovChart() {
+		FoodTable table = new FoodTable();
+		
+		PieChart chart = new PieChart();
+		chart.setTitle("November Total Sales of Each Menu Item");
+		chart.setLabelsVisible(true);
+		ArrayList<FoodDrink> foodItems = table.getAllFoodDrink();
+		ArrayList<PieChart.Data> foodItemData = new ArrayList<PieChart.Data>();
+		for(int i = 0; i < foodItems.size(); i++) {
+			if(foodItems.get(i).getMonth() == "NOVEMBER") {
+				foodItemData.add(new PieChart.Data(foodItems.get(i).getName(), foodItems.get(i).getAmountSold()));
+			}
+		}
+		
+		ObservableList<PieChart.Data> data = FXCollections.observableArrayList(foodItemData);
+		chart.setData(data);
+		
+		return chart;
+	}
+	
+	public static PieChart generateDecChart() {
+		FoodTable table = new FoodTable();
+		
+		PieChart chart = new PieChart();
+		chart.setTitle("December Total Sales of Each Menu Item");
+		chart.setLabelsVisible(true);
+		ArrayList<FoodDrink> foodItems = table.getAllFoodDrink();
+		ArrayList<PieChart.Data> foodItemData = new ArrayList<PieChart.Data>();
+		for(int i = 0; i < foodItems.size(); i++) {
+			if(foodItems.get(i).getMonth() == "DECEMBER") {
+				foodItemData.add(new PieChart.Data(foodItems.get(i).getName(), foodItems.get(i).getAmountSold()));
+			}
+		}
+		
+		ObservableList<PieChart.Data> data = FXCollections.observableArrayList(foodItemData);
+		chart.setData(data);
+		
+		return chart;
+	}
+
+
+
+
 	
 	
 }
