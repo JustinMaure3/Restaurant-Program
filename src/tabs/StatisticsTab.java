@@ -20,20 +20,20 @@ public class StatisticsTab extends Tab {
 	private static StatisticsTab tab;
 	
 	public static BorderPane pane;
-	
+
+	public static ComboBox<ENUMS.MonthlyStats> month = new ComboBox<>();
 	
 	private StatisticsTab() {
 		this.setText("Statistics Tab");
 		pane = new BorderPane();
 		
 		Text monthText = new Text("Month: ");
-		ComboBox<ENUMS.MonthlyStats> month = new ComboBox<>();
 		month.setItems(FXCollections.observableArrayList(ENUMS.MonthlyStats.values()));
 		HBox months = new HBox();
 		months.getChildren().addAll(monthText, month);
 		pane.setTop(months);
 		
-		Button goBtn = new Button();
+		Button goBtn = new Button("Generate Chart");
 		goBtn.setOnAction(e->{
 			PieChart chart = new PieChart();
 			if(!month.getSelectionModel().isEmpty()) {
@@ -119,8 +119,10 @@ public class StatisticsTab extends Tab {
 		ArrayList<FoodDrink> foodItems = table.getAllFoodDrink();
 		ArrayList<PieChart.Data> foodItemData = new ArrayList<PieChart.Data>();
 		for(int i = 0; i < foodItems.size(); i++) {
-			if(foodItems.get(i).getMonth() == "JANUARY") {
+			if(month.getSelectionModel().getSelectedItem().name() == "JANUARY") {
 				foodItemData.add(new PieChart.Data(foodItems.get(i).getName(), foodItems.get(i).getAmountSold()));
+			}else {
+				chart.setTitle(foodItems.get(i).getMonth() + "");
 			}
 		}
 		
@@ -139,7 +141,7 @@ public class StatisticsTab extends Tab {
 		ArrayList<FoodDrink> foodItems = table.getAllFoodDrink();
 		ArrayList<PieChart.Data> foodItemData = new ArrayList<PieChart.Data>();
 		for(int i = 0; i < foodItems.size(); i++) {
-			if(foodItems.get(i).getMonth() == "FEBRUARY") {
+			if(month.getSelectionModel().getSelectedItem().name()  == "FEBRUARY") {
 				foodItemData.add(new PieChart.Data(foodItems.get(i).getName(), foodItems.get(i).getAmountSold()));
 			}
 		}
@@ -159,7 +161,7 @@ public class StatisticsTab extends Tab {
 		ArrayList<FoodDrink> foodItems = table.getAllFoodDrink();
 		ArrayList<PieChart.Data> foodItemData = new ArrayList<PieChart.Data>();
 		for(int i = 0; i < foodItems.size(); i++) {
-			if(foodItems.get(i).getMonth() == "MARCH") {
+			if(month.getSelectionModel().getSelectedItem().name() == "MARCH") {
 				foodItemData.add(new PieChart.Data(foodItems.get(i).getName(), foodItems.get(i).getAmountSold()));
 			}
 		}
@@ -179,7 +181,7 @@ public class StatisticsTab extends Tab {
 		ArrayList<FoodDrink> foodItems = table.getAllFoodDrink();
 		ArrayList<PieChart.Data> foodItemData = new ArrayList<PieChart.Data>();
 		for(int i = 0; i < foodItems.size(); i++) {
-			if(foodItems.get(i).getMonth() == "APRIL") {
+			if(month.getSelectionModel().getSelectedItem().name() == "APRIL") {
 				foodItemData.add(new PieChart.Data(foodItems.get(i).getName(), foodItems.get(i).getAmountSold()));
 			}
 		}
@@ -199,7 +201,7 @@ public class StatisticsTab extends Tab {
 		ArrayList<FoodDrink> foodItems = table.getAllFoodDrink();
 		ArrayList<PieChart.Data> foodItemData = new ArrayList<PieChart.Data>();
 		for(int i = 0; i < foodItems.size(); i++) {
-			if(foodItems.get(i).getMonth() == "MAY") {
+			if(month.getSelectionModel().getSelectedItem().name() == "MAY") {
 				foodItemData.add(new PieChart.Data(foodItems.get(i).getName(), foodItems.get(i).getAmountSold()));
 			}
 		}
@@ -219,7 +221,7 @@ public class StatisticsTab extends Tab {
 		ArrayList<FoodDrink> foodItems = table.getAllFoodDrink();
 		ArrayList<PieChart.Data> foodItemData = new ArrayList<PieChart.Data>();
 		for(int i = 0; i < foodItems.size(); i++) {
-			if(foodItems.get(i).getMonth() == "JUNE") {
+			if(month.getSelectionModel().getSelectedItem().name() == "JUNE") {
 				foodItemData.add(new PieChart.Data(foodItems.get(i).getName(), foodItems.get(i).getAmountSold()));
 			}
 		}
@@ -239,7 +241,7 @@ public class StatisticsTab extends Tab {
 		ArrayList<FoodDrink> foodItems = table.getAllFoodDrink();
 		ArrayList<PieChart.Data> foodItemData = new ArrayList<PieChart.Data>();
 		for(int i = 0; i < foodItems.size(); i++) {
-			if(foodItems.get(i).getMonth() == "JULY") {
+			if(month.getSelectionModel().getSelectedItem().name() == "JULY") {
 				foodItemData.add(new PieChart.Data(foodItems.get(i).getName(), foodItems.get(i).getAmountSold()));
 			}
 		}
@@ -259,7 +261,7 @@ public class StatisticsTab extends Tab {
 		ArrayList<FoodDrink> foodItems = table.getAllFoodDrink();
 		ArrayList<PieChart.Data> foodItemData = new ArrayList<PieChart.Data>();
 		for(int i = 0; i < foodItems.size(); i++) {
-			if(foodItems.get(i).getMonth() == "AUGUST") {
+			if(month.getSelectionModel().getSelectedItem().name() == "AUGUST") {
 				foodItemData.add(new PieChart.Data(foodItems.get(i).getName(), foodItems.get(i).getAmountSold()));
 			}
 		}
@@ -279,7 +281,7 @@ public class StatisticsTab extends Tab {
 		ArrayList<FoodDrink> foodItems = table.getAllFoodDrink();
 		ArrayList<PieChart.Data> foodItemData = new ArrayList<PieChart.Data>();
 		for(int i = 0; i < foodItems.size(); i++) {
-			if(foodItems.get(i).getMonth() == "SEPTEMBER") {
+			if(month.getSelectionModel().getSelectedItem().name() == "SEPTEMBER") {
 				foodItemData.add(new PieChart.Data(foodItems.get(i).getName(), foodItems.get(i).getAmountSold()));
 			}
 		}
@@ -299,7 +301,7 @@ public class StatisticsTab extends Tab {
 		ArrayList<FoodDrink> foodItems = table.getAllFoodDrink();
 		ArrayList<PieChart.Data> foodItemData = new ArrayList<PieChart.Data>();
 		for(int i = 0; i < foodItems.size(); i++) {
-			if(foodItems.get(i).getMonth() == "OCTOBER") {
+			if(month.getSelectionModel().getSelectedItem().name() == "OCTOBER") {
 				foodItemData.add(new PieChart.Data(foodItems.get(i).getName(), foodItems.get(i).getAmountSold()));
 			}
 		}
@@ -319,7 +321,7 @@ public class StatisticsTab extends Tab {
 		ArrayList<FoodDrink> foodItems = table.getAllFoodDrink();
 		ArrayList<PieChart.Data> foodItemData = new ArrayList<PieChart.Data>();
 		for(int i = 0; i < foodItems.size(); i++) {
-			if(foodItems.get(i).getMonth() == "NOVEMBER") {
+			if(month.getSelectionModel().getSelectedItem().name() == "NOVEMBER") {
 				foodItemData.add(new PieChart.Data(foodItems.get(i).getName(), foodItems.get(i).getAmountSold()));
 			}
 		}
@@ -339,7 +341,7 @@ public class StatisticsTab extends Tab {
 		ArrayList<FoodDrink> foodItems = table.getAllFoodDrink();
 		ArrayList<PieChart.Data> foodItemData = new ArrayList<PieChart.Data>();
 		for(int i = 0; i < foodItems.size(); i++) {
-			if(foodItems.get(i).getMonth() == "DECEMBER") {
+			if(month.getSelectionModel().getSelectedItem().name() == "DECEMBER") {
 				foodItemData.add(new PieChart.Data(foodItems.get(i).getName(), foodItems.get(i).getAmountSold()));
 			}
 		}
