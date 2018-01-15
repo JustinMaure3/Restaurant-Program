@@ -7,6 +7,7 @@ import PlaceHolder.FoodDrink;
 import Tables.FoodTable;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.geometry.Pos;
 import javafx.scene.chart.PieChart;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
@@ -31,6 +32,7 @@ public class StatisticsTab extends Tab {
 		month.setItems(FXCollections.observableArrayList(ENUMS.MonthlyStats.values()));
 		HBox months = new HBox();
 		months.getChildren().addAll(monthText, month);
+		months.setAlignment(Pos.CENTER);
 		pane.setTop(months);
 		
 		Button goBtn = new Button("Generate Chart");
@@ -85,6 +87,7 @@ public class StatisticsTab extends Tab {
 			}
 		});
 		pane.setBottom(goBtn);
+		pane.setAlignment(goBtn, Pos.CENTER);
 		
 		this.setContent(pane);
 	}
