@@ -10,6 +10,7 @@ import Tables.FoodTable;
 import Tables.ManagerTable;
 import Tables.StoreLocationsTable;
 import javafx.application.Application;
+import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
@@ -69,7 +70,7 @@ public class Main extends Application {
 			VBox descriptionColumn = new VBox();
 			descriptionColumn.setSpacing(10.0);
 			VBox pictureColumn = new VBox();
-			pictureColumn.setSpacing(10.0);
+			pictureColumn.setPadding(new Insets(5, 5, 5, 5));
 			VBox priceColumn = new VBox();
 			priceColumn.setSpacing(10.0);
 			VBox amountSoldColumn = new VBox();
