@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-
 import Database.Database;
 import PlaceHolder.CrewMember;
 import PlaceHolder.FoodDrink;
@@ -517,37 +516,11 @@ public class Main extends Application {
 		UpdateItemTab updateTab = UpdateItemTab.getInstance();
 		StatisticsTab stab = StatisticsTab.getInstance();
 
-<<<<<<< HEAD
-		MenuItem employees = new MenuItem("Employees");
-
-		MenuItem locations = new MenuItem("Locations");
-
-		display.getItems().addAll(food,employees, locations);
-		//Creating an onClick for the food button
-				food.setOnAction(e->{
-					MenuTab.tab.setContent(MenuTab.newFoodDrink());
-					MenuTab.displayedTable = "food";
-				});
-				
-				
-				employees.setOnAction(e->{
-					MenuTab.tab.setContent(MenuTab.newEmployee());
-					MenuTab.displayedTable = "employee";
-				
-				});		
-				locations.setOnAction(e->{
-					MenuTab.tab.setContent(MenuTab.newLocations());
-					MenuTab.displayedTable = "locations";
-				});
 
 				
 				
 
 				tpane.getTabs().addAll(htab, mtab, addTab, removeTab, updateTab, stab);
-=======
-		
-		tpane.getTabs().addAll(htab, mtab, addTab, removeTab, updateTab, stab);
->>>>>>> 5f6b8773379419783c08acd1f8ea053775c40495
 
 
 
