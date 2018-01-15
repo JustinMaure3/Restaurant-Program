@@ -112,7 +112,6 @@ public class Main extends Application {
 				pictureColumn.getChildren().addAll(foodPicture);
 				foodPicture.setFitHeight(30);
 				foodPicture.setFitWidth(30);
-//				foodPicture.;
 				
 				Text foodPrice = new Text(foodDrinkItems.get(i).getPrice() + "  ");
 				priceColumn.getChildren().addAll(foodPrice);
@@ -452,7 +451,7 @@ public class Main extends Application {
 		});
 	
 		creditsMenu.setOnAction(e->{
-//			mainStage.setScene(new CreditsScene());
+			mainStage.setScene(new CreditsScene());
 		});
 		//Adding menus into the menuBar
 		fileMenu.getItems().addAll(themes,display,creditsMenu, addTable, exit);
