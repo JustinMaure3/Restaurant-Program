@@ -27,6 +27,8 @@ public class RemoveItemTab extends Tab {
 	
 	private static RemoveItemTab tab;
 
+	public static ListView<FoodDrink> list = new ListView<FoodDrink>();
+
 	private RemoveItemTab() {
 		this.setText("Remove");
 		
@@ -45,6 +47,8 @@ public class RemoveItemTab extends Tab {
 			//Create the array that'll give us all foodDrink in our database
 			ArrayList<FoodDrink> foodDrinkItems = fTable.getAllFoodDrink();
 			
+
+				
 			//set the list with all the items in the arraylist
 			list.setItems(FXCollections.observableArrayList(foodDrinkItems));
 			list.setMaxWidth(600);
@@ -76,6 +80,8 @@ public class RemoveItemTab extends Tab {
 				fTable.deleteFoodDrink(foodItem);
 				list.setItems(FXCollections.observableArrayList(fTable.getAllFoodDrink()));
 				StatisticsTab.pane.setCenter(StatisticsTab.generateChart());
+				MenuTab.tab.setContent(MenuTab.newFoodDrink());
+				StatisticsTab.pane.setCenter(StatisticsTab.generateChart());
 			});
 			remove.setMaxWidth(200);
 			pane.setBottom(remove);
@@ -104,6 +110,8 @@ public class RemoveItemTab extends Tab {
 			CrewMemberTable cmTable = new CrewMemberTable();
 			//Create the array that'll give us all crew members in our database
 			ArrayList<CrewMember> cmItems = cmTable.getAllCrewMembers();
+			
+			
 			
 			//set the list with all the items in the arraylist
 			list.setItems(FXCollections.observableArrayList(cmItems));
@@ -136,6 +144,8 @@ public class RemoveItemTab extends Tab {
 				cmTable.deleteCrewMember(crewMember);
 				list.setItems(FXCollections.observableArrayList(cmTable.getAllCrewMembers()));
 				StatisticsTab.pane.setCenter(StatisticsTab.generateChart());
+				MenuTab.tab.setContent(MenuTab.newEmployee());
+				StatisticsTab.pane.setCenter(StatisticsTab.generateChart());
 			});
 			remove.setMaxWidth(200);
 			pane.setBottom(remove);
@@ -158,6 +168,8 @@ public class RemoveItemTab extends Tab {
 		removeM.setOnAction(e->{
 			//Create the layout
 			BorderPane pane = new BorderPane();
+			
+				MenuTab.tab.setContent(MenuTab.newEmployee());
 			//Create a listView that'll hold a bunch of instances of managers
 			ListView<Manager> list = new ListView<Manager>();
 			//Create a manager table
@@ -196,6 +208,8 @@ public class RemoveItemTab extends Tab {
 				mTable.deleteManager(manager);
 				list.setItems(FXCollections.observableArrayList(mTable.getAllManagers()));
 				StatisticsTab.pane.setCenter(StatisticsTab.generateChart());
+				StatisticsTab.pane.setCenter(StatisticsTab.generateChart());
+				MenuTab.tab.setContent(MenuTab.newEmployee());
 			});
 			remove.setMaxWidth(200);
 			pane.setBottom(remove);

@@ -264,6 +264,7 @@ public class UpdateItemTab extends Tab {
 					fTable.updateFoodDrink(foodDrink);
 
 					StatisticsTab.pane.setCenter(StatisticsTab.generateChart());
+					MenuTab.tab.setContent(MenuTab.newFoodDrink());
 				}catch(Exception e1) {
 					FadeTransition fade = new FadeTransition(Duration.millis(2000), fUpdate);
 					fade.setFromValue(0); //starting opacity
@@ -373,6 +374,7 @@ public class UpdateItemTab extends Tab {
 				cmTable.updateCrewMember(crewMember);
 
 				StatisticsTab.pane.setCenter(StatisticsTab.generateChart());
+				MenuTab.tab.setContent(MenuTab.newEmployee());
 				}catch(Exception e1){
 					
 
@@ -487,6 +489,7 @@ public class UpdateItemTab extends Tab {
 				mTable.updateManager(manager);
 
 				StatisticsTab.pane.setCenter(StatisticsTab.generateChart());
+				MenuTab.tab.setContent(MenuTab.newEmployee());
 				}catch(Exception e1) {
 					
 					FadeTransition fade = new FadeTransition(Duration.millis(2000), mUpdate);

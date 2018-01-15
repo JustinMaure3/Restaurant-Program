@@ -101,6 +101,7 @@ public class AddItemTab extends Tab{
 			name.setText("");
 
 			StatisticsTab.pane.setCenter(StatisticsTab.generateChart());
+			MenuTab.tab.setContent(MenuTab.newFoodDrink());
 			}catch(Exception e1){
 				
 				FadeTransition fade = new FadeTransition(Duration.millis(2000), submitButton);
@@ -190,6 +191,7 @@ public class AddItemTab extends Tab{
 					ename.setText("");
 
 					StatisticsTab.pane.setCenter(StatisticsTab.generateChart());
+					MenuTab.tab.setContent(MenuTab.newEmployee());
 				}catch(Exception e1){
 					FadeTransition fade = new FadeTransition(Duration.millis(2000), eSubmit);
 					fade.setFromValue(0); //starting opacity
@@ -278,6 +280,7 @@ public class AddItemTab extends Tab{
 			mname.setText("");
 
 			StatisticsTab.pane.setCenter(StatisticsTab.generateChart());
+			MenuTab.tab.setContent(MenuTab.newEmployee());
 			}catch(Exception e1){
 				
 				FadeTransition fade = new FadeTransition(Duration.millis(2000), mSubmit);

@@ -178,32 +178,23 @@ public class Main extends Application {
 		display.getItems().addAll(food,employees, locations);
 		//Creating an onClick for the food button
 				food.setOnAction(e->{
-					MenuTab.displayedTable = "Food";
-					MenuTab.check = MenuTab.newFoodDrink();
-
-
-					tpane.getTabs().addAll(htab, mtab, addTab, removeTab, updateTab, stab);
+					MenuTab.tab.setContent(MenuTab.newFoodDrink());
+					MenuTab.displayedTable = "food";
 				});
 				
 				
 				employees.setOnAction(e->{
-					MenuTab.newEmployee();
-					MenuTab.displayedTable = "Employee";
-					MenuTab.check = MenuTab.newEmployee();
-
-
-					tpane.getTabs().addAll(htab, mtab, addTab, removeTab, updateTab, stab);
+					MenuTab.tab.setContent(MenuTab.newEmployee());
+					MenuTab.displayedTable = "employee";
 				
 				});		
-				
 				locations.setOnAction(e->{
-					MenuTab.newLocations();
-					MenuTab.displayedTable = "Locations";
-					MenuTab.check = MenuTab.newLocations();
-					tpane.getTabs().addAll(htab, mtab, addTab, removeTab, updateTab, stab);
-					
+					MenuTab.tab.setContent(MenuTab.newLocations());
+					MenuTab.displayedTable = "locations";
 				});
 
+				
+				
 
 				tpane.getTabs().addAll(htab, mtab, addTab, removeTab, updateTab, stab);
 
