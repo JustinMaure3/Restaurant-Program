@@ -37,17 +37,25 @@ public class HomeTab extends Tab {
 		Text restName = new Text("Dinner Diner");
 		
 		
-		Text popName = new Text("There seems to be no top food at the moment. Why not enter one using the add item tab?");//Here would grab the most popular food item name
-		Text empName = new Text("There seems to be no employee of the month. Why not enter one using the add item tab?");
+		Text popName = new Text();
+		Text empName = new Text();
+		try {
+			 popName = new Text(topFoodItem.getName() + " is the best selling item this year!");//Here would grab the most popular food item name
+			 empName = new Text(topCrewMember.getName() + " is the top employee of this year!");
+		}catch(Exception e1) {
+			 popName = new Text("There seems to be no top food at the moment. Why not enter one using the add item tab?");//Here would grab the most popular food item name
+			 empName = new Text("There seems to be no employee of the month. Why not enter one using the add item tab?");
+			
+		}
 		
-		if((topCrewMember.getName() != null) && (topFoodItem.getName() != null)) {
-		 popName = new Text(topFoodItem.getName() + " is the best selling item this year!");//Here would grab the most popular food item name
-		 empName = new Text(topCrewMember.getName() + " is the top employee of this year!");
+		try {
+			  empName = new Text(topCrewMember.getName() + " is the top employee of this year!");
+		}catch(Exception e1) {
+			 popName = new Text("There seems to be no top food at the moment. Why not enter one using the add item tab?");//Here would grab the most popular food item name
 		}
 		
 		//ImageViews
 		ImageView foodImage;
-		 popName = new Text("There seems to be no top food please enter one");
 		 foodImage = new ImageView("Pictures/star.png");
 		//If its empty then we now have a default value preventing crashes
 		if(topFoodItem.getName() != null ) {

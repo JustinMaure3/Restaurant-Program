@@ -123,10 +123,7 @@ public class Main extends Application {
 				pictureColumn.getChildren().addAll(foodPicture);
 				foodPicture.setFitHeight(30);
 				foodPicture.setFitWidth(30);
-<<<<<<< HEAD
 				pictureColumn.setPadding(new Insets(0, 0, 0, 15));
-=======
->>>>>>> c617865d52581e94a164726e78e65dc2c357bce5
 				
 				Text foodPrice = new Text(foodDrinkItems.get(i).getPrice() + "  ");
 				priceColumn.getChildren().addAll(foodPrice);
@@ -161,6 +158,7 @@ public class Main extends Application {
 			//Create a VBoxes that will act as the columns of the table
 			VBox nameColumn = new VBox();
 			nameColumn.setSpacing(10.0);
+			nameColumn.setPadding(new Insets(0, 0, 0, 15));
 			VBox wageColumn = new VBox();
 			wageColumn.setSpacing(10.0);
 			VBox uniformColumn = new VBox();
@@ -245,6 +243,7 @@ public class Main extends Application {
 			//Create a VBoxes that will act as the columns of the table
 			VBox managerNameColumn = new VBox();
 			managerNameColumn.setSpacing(10.0);
+			managerNameColumn.setPadding(new Insets(0, 0, 0, 15));
 			VBox managerWageColumn = new VBox();
 			managerWageColumn.setSpacing(10.0);
 			VBox managerUniformColumn = new VBox();
@@ -336,6 +335,7 @@ public class Main extends Application {
 			//Create a VBoxes that will act as the columns of the table
 			VBox locationColumn = new VBox();
 			locationColumn.setSpacing(10.0);
+			locationColumn.setPadding(new Insets(0, 0, 0, 15));
 			VBox santScoreColumn = new VBox();
 			santScoreColumn.setSpacing(10.0);
 			VBox regionalManColumn = new VBox();
