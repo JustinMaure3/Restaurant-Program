@@ -28,6 +28,7 @@ public class StatisticsTab extends Tab {
 		this.setText("Statistics Tab");
 		pane = new BorderPane();
 		
+		//Create the user input for what month they would like to display
 		Text monthText = new Text("Month: ");
 		month.setItems(FXCollections.observableArrayList(ENUMS.MonthlyStats.values()));
 		HBox months = new HBox();
@@ -35,6 +36,7 @@ public class StatisticsTab extends Tab {
 		months.setAlignment(Pos.CENTER);
 		pane.setTop(months);
 		
+		//Create a button to generate a chart based on the selected model
 		Button goBtn = new Button("Generate Chart");
 		goBtn.setOnAction(e->{
 			PieChart chart = new PieChart();
@@ -80,6 +82,7 @@ public class StatisticsTab extends Tab {
 			} else {
 				chart = generateChart();
 			}
+			//if there is nothing in the chart then dont show the chart
 			if(chart == null) {
 				pane.setCenter(new Text("Sorry there are no food entries for " + month.getSelectionModel().getSelectedItem().name()));
 			}else {
@@ -99,6 +102,7 @@ public class StatisticsTab extends Tab {
 		return tab;
 	}
 	
+	//Generate a chart that displays everything
 	public static PieChart generateChart() {
 		FoodTable table = new FoodTable();
 		
@@ -117,6 +121,7 @@ public class StatisticsTab extends Tab {
 		return chart;
 	}
 	
+	//Generate a chart for january stats
 	public static PieChart generateJanChart() {
 		FoodTable table = new FoodTable();
 		

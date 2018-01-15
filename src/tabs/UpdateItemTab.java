@@ -13,8 +13,6 @@ import Tables.CrewMemberTable;
 import Tables.FoodTable;
 import Tables.ManagerTable;
 import javafx.animation.FadeTransition;
-import javafx.animation.StrokeTransition;
-import javafx.animation.Timeline;
 import javafx.collections.FXCollections;
 import javafx.geometry.Insets;
 import javafx.scene.control.Button;
@@ -32,6 +30,7 @@ public class UpdateItemTab extends Tab {
 	
 	private static UpdateItemTab tab;
 	
+	//Create the listviews we will be needing later to display our tables
 	public ListView<FoodDrink> list = new ListView<>();
 	public ListView<CrewMember> elist = new ListView<>();
 	public ListView<Manager> mlist = new ListView<>();
@@ -54,6 +53,7 @@ public class UpdateItemTab extends Tab {
 		list.setItems(FXCollections.observableArrayList(foodDrinkItems));
 		list.setMaxWidth(300);
 		list.setMaxHeight(300);
+		//Change the text of the listview to show the name of each item instead of placeholder
 		list.setCellFactory(new Callback<ListView<FoodDrink>, ListCell<FoodDrink>>(){
 			@Override
 			public ListCell<FoodDrink> call(ListView<FoodDrink> param) {
@@ -97,6 +97,7 @@ public class UpdateItemTab extends Tab {
 		elist.setItems(FXCollections.observableArrayList(cmItems));
 		elist.setMaxWidth(300);
 		elist.setMaxHeight(300);
+		//Change the text of the listview to show the name of each employee instead of placeholder
 		elist.setCellFactory(new Callback<ListView<CrewMember>, ListCell<CrewMember>>(){
 			@Override
 			public ListCell<CrewMember> call(ListView<CrewMember> param) {
@@ -139,6 +140,7 @@ public class UpdateItemTab extends Tab {
 		mlist.setItems(FXCollections.observableArrayList(mItems));
 		mlist.setMaxWidth(300);
 		mlist.setMaxHeight(300);
+		//Change the text of the listview to show the name of each manager instead of placeholder
 		mlist.setCellFactory(new Callback<ListView<Manager>, ListCell<Manager>>(){
 			@Override
 			public ListCell<Manager> call(ListView<Manager> param) {
@@ -262,12 +264,12 @@ public class UpdateItemTab extends Tab {
 				
 					fTable.updateFoodDrink(foodDrink);
 
+					//update the other tabs
 					RemoveItemTab.refresh();
 					list.setItems(FXCollections.observableArrayList(fTable.getAllFoodDrink()));
 					this.setContent(pane);
 					StatisticsTab.pane.setCenter(StatisticsTab.generateChart());
 					MenuTab.tab.setContent(MenuTab.newFoodDrink());
-
 					HomeTab.tab.setContent(HomeTab.homeRefresh());
 				}catch(Exception e1) {
 					FadeTransition fade = new FadeTransition(Duration.millis(2000), fUpdate);
@@ -377,6 +379,7 @@ public class UpdateItemTab extends Tab {
 				
 				cmTable.updateCrewMember(crewMember);
 
+				//update the other tabs
 				RemoveItemTab.refresh();
 				elist.setItems(FXCollections.observableArrayList(cmTable.getAllCrewMembers()));
 				this.setContent(pane);
@@ -496,6 +499,7 @@ public class UpdateItemTab extends Tab {
 				
 				mTable.updateManager(manager);
 
+				//update the other tabs
 				RemoveItemTab.refresh();
 				mlist.setItems(FXCollections.observableArrayList(mTable.getAllManagers()));
 				this.setContent(pane);
@@ -542,6 +546,7 @@ public class UpdateItemTab extends Tab {
 		this.setContent(gpane);
 	}
 	
+	//Method to refresh all the listviews on updateTab
 	public static void refresh() {
 		FoodTable fTable = new FoodTable();
 		UpdateItemTab.tab.list.setItems(FXCollections.observableArrayList(fTable.getAllFoodDrink()));

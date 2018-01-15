@@ -83,6 +83,7 @@ public class AddItemTab extends Tab{
 			//Create an instance of the food table
 			FoodTable fTable = new FoodTable();
 			
+			//Try to create a food entry
 			try {
 			FoodDrink food = new FoodDrink(
 					name.getText(),
@@ -95,11 +96,13 @@ public class AddItemTab extends Tab{
 					);
 			fTable.createFoodDrink(food);
 			
+			//reset the text of all textfields
 			amountSold.setText("");
 			price.setText("");
 			desc.setText("");
 			name.setText("");
 
+			//Update all other tabs so they use the new item
 			RemoveItemTab.refresh();
 			UpdateItemTab.refresh();
 			StatisticsTab.pane.setCenter(StatisticsTab.generateChart());
@@ -176,7 +179,7 @@ public class AddItemTab extends Tab{
 			//Create an instance of the CrewMember table
 			CrewMemberTable cmTable = new CrewMemberTable();
 			
-			
+				//Try to create another employee
 				try {
 					CrewMember crewMember = new CrewMember(
 							ename.getText(),
@@ -188,16 +191,17 @@ public class AddItemTab extends Tab{
 							);
 					cmTable.createCrewMember(crewMember);
 					
+					//reset all the textfields
 					goldStar.setText("");
 					punchIn.setText("");
 					wage.setText("");
 					ename.setText("");
 
+					//Update the other tabs to use teh new employee
 					RemoveItemTab.refresh();
 					UpdateItemTab.refresh();
 					StatisticsTab.pane.setCenter(StatisticsTab.generateChart());
 					MenuTab.tab.setContent(MenuTab.newEmployee());
-
 					HomeTab.tab.setContent(HomeTab.homeRefresh());
 				}catch(Exception e1){
 					FadeTransition fade = new FadeTransition(Duration.millis(2000), eSubmit);
@@ -270,6 +274,7 @@ public class AddItemTab extends Tab{
 			//Create an instance of the Manager table
 			ManagerTable mTable = new ManagerTable();
 				
+			//Try to create a new manager
 			try {
 			Manager manager = new Manager(
 					mname.getText(),
@@ -281,16 +286,17 @@ public class AddItemTab extends Tab{
 					);
 			mTable.createManager(manager);
 			
+			//Reset the text
 			managerSafeCode.setText("");
 			managerID.setText("");
 			mWage.setText("");
 			mname.setText("");
 
+			//Refresh the other tabs to use the new manager
 			RemoveItemTab.refresh();
 			UpdateItemTab.refresh();
 			StatisticsTab.pane.setCenter(StatisticsTab.generateChart());
 			MenuTab.tab.setContent(MenuTab.newEmployee());
-
 			HomeTab.tab.setContent(HomeTab.homeRefresh());
 			}catch(Exception e1){
 				
@@ -317,6 +323,7 @@ public class AddItemTab extends Tab{
 		});
 		pane.add(mSubmit, 21, 6);
 		
+		//set up the pages content
 		pane.setPadding(new Insets(10, 10, 10, 10));
 		pane.setVgap(10);
 		pane.setHgap(10);
