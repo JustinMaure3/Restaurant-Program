@@ -15,7 +15,7 @@ public class Credits extends BorderPane {
 		Text text5 = new Text("docs.oracle.com");
 		Text text6 = new Text("discordapp.com");
 		Text text7 = new Text("Cai Filiault");
-		Text text8 = new Text("");
+		Text text8 = new Text("https://stackoverflow.com/questions/41070454/how-can-i-change-the-text-on-a-listview-that-is-holding-an-object-of-type-accoun");
 		Text text9 = new Text("");
 		Text text10 = new Text("");
 		Text text11 = new Text("");

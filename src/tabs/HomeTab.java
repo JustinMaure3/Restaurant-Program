@@ -58,20 +58,22 @@ public class HomeTab extends Tab {
 		
 		
 		
-		try {
+//		try {
+		if(topFoodItem.getName() != null) {
 			 popName = new Text(topFoodItem.getName() + " is the best selling item this year!");//Here would grab the most popular food item name
-			 empName = new Text(topCrewMember.getName() + " is the top employee of this year!");
-		}catch(Exception e1) {
+				
+		}else {
 			 popName = new Text("There seems to be no top food at the moment. Why not enter one using the add item tab?");//Here would grab the most popular food item name
+			
+		}
+		
+		if(topCrewMember.getName() != null) {
+			empName = new Text(topCrewMember.getName() + " is the top employee of this year!");
+			
+		}else {
 			 empName = new Text("There seems to be no employee of the month. Why not enter one using the add item tab?");
-		}
 		
-		try {
-			  empName = new Text(topCrewMember.getName() + " is the top employee of this year!");
-		}catch(Exception e1) {
-			 popName = new Text("There seems to be no top food at the moment. Why not enter one using the add item tab?");//Here would grab the most popular food item name
-		}
-		
+		} 	
 		//ImageViews
 		ImageView foodImage;
 		 foodImage = new ImageView("Pictures/star.png");
