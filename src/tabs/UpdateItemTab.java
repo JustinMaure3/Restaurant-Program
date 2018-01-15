@@ -76,7 +76,8 @@ public class UpdateItemTab extends Tab {
 		fUpdate.setOnAction(e->{
 			if(!list.getSelectionModel().isEmpty()) {
 				FoodDrink foodDrink = list.getSelectionModel().getSelectedItem();
-				getHiddenFood(pane, foodDrink);
+				getHiddenFood(pane, foodDrink, list);
+				
 			}
 		});
 		pane.add(fUpdate, 1, 2);
@@ -120,7 +121,7 @@ public class UpdateItemTab extends Tab {
 		eUpdate.setOnAction(e->{
 			if(!elist.getSelectionModel().isEmpty()) {
 				CrewMember crewMember = elist.getSelectionModel().getSelectedItem();
-				getHiddenEmployees(pane, crewMember);
+				getHiddenEmployees(pane, crewMember, elist);
 			}
 		});
 		pane.add(eUpdate, 11, 2);
@@ -164,7 +165,7 @@ public class UpdateItemTab extends Tab {
 		mUpdate.setOnAction(e->{
 			if(!mlist.getSelectionModel().isEmpty()) {
 				Manager manager = mlist.getSelectionModel().getSelectedItem();
-				getHiddenManagers(pane, manager);
+				getHiddenManagers(pane, manager, mlist);
 			}
 		});
 		pane.add(mUpdate, 21, 2);
@@ -183,7 +184,7 @@ public class UpdateItemTab extends Tab {
 		return tab;
 	}
 	
-	public void getHiddenFood(GridPane pane, FoodDrink foodDrink) {
+	public void getHiddenFood(GridPane pane, FoodDrink foodDrink, ListView list) {
 		GridPane gpane = new GridPane();
 		
 		//create food title
@@ -263,6 +264,8 @@ public class UpdateItemTab extends Tab {
 				
 					fTable.updateFoodDrink(foodDrink);
 
+					list.setItems(FXCollections.observableArrayList(fTable.getAllFoodDrink()));
+					this.setContent(pane);
 					StatisticsTab.pane.setCenter(StatisticsTab.generateChart());
 				}catch(Exception e1) {
 					FadeTransition fade = new FadeTransition(Duration.millis(2000), fUpdate);
@@ -300,7 +303,7 @@ public class UpdateItemTab extends Tab {
 		this.setContent(gpane);
 	}
 	
-	public void getHiddenEmployees(GridPane pane, CrewMember crewMember) {
+	public void getHiddenEmployees(GridPane pane, CrewMember crewMember, ListView elist) {
 		GridPane gpane = new GridPane();
 		
 		//create employee title
@@ -372,6 +375,8 @@ public class UpdateItemTab extends Tab {
 				
 				cmTable.updateCrewMember(crewMember);
 
+				elist.setItems(FXCollections.observableArrayList(cmTable.getAllCrewMembers()));
+				this.setContent(pane);
 				StatisticsTab.pane.setCenter(StatisticsTab.generateChart());
 				}catch(Exception e1){
 					
@@ -414,7 +419,7 @@ public class UpdateItemTab extends Tab {
 		this.setContent(gpane);
 	}
 	
-	public void getHiddenManagers(GridPane pane, Manager manager) {
+	public void getHiddenManagers(GridPane pane, Manager manager, ListView mlist) {
 		GridPane gpane = new GridPane();
 		
 		//create manager title
@@ -486,6 +491,8 @@ public class UpdateItemTab extends Tab {
 				
 				mTable.updateManager(manager);
 
+				mlist.setItems(FXCollections.observableArrayList(mTable.getAllManagers()));
+				this.setContent(pane);
 				StatisticsTab.pane.setCenter(StatisticsTab.generateChart());
 				}catch(Exception e1) {
 					
@@ -525,6 +532,10 @@ public class UpdateItemTab extends Tab {
 		gpane.setVgap(10);
 		gpane.setHgap(10);
 		this.setContent(gpane);
+	}
+	
+	public static void refresh() {
+		
 	}
 		
 }
