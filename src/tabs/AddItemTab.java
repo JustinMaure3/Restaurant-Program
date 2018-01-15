@@ -100,6 +100,8 @@ public class AddItemTab extends Tab{
 			desc.setText("");
 			name.setText("");
 
+			RemoveItemTab.refresh();
+			UpdateItemTab.refresh();
 			StatisticsTab.pane.setCenter(StatisticsTab.generateChart());
 			}catch(Exception e1){
 				
@@ -189,6 +191,8 @@ public class AddItemTab extends Tab{
 					wage.setText("");
 					ename.setText("");
 
+					RemoveItemTab.refresh();
+					UpdateItemTab.refresh();
 					StatisticsTab.pane.setCenter(StatisticsTab.generateChart());
 				}catch(Exception e1){
 					FadeTransition fade = new FadeTransition(Duration.millis(2000), eSubmit);
@@ -277,6 +281,8 @@ public class AddItemTab extends Tab{
 			mWage.setText("");
 			mname.setText("");
 
+			RemoveItemTab.refresh();
+			UpdateItemTab.refresh();
 			StatisticsTab.pane.setCenter(StatisticsTab.generateChart());
 			}catch(Exception e1){
 				

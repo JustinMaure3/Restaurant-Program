@@ -26,6 +26,10 @@ import javafx.util.Callback;
 public class RemoveItemTab extends Tab {
 	
 	private static RemoveItemTab tab;
+	
+	public ListView<FoodDrink> list = new ListView<FoodDrink>();
+	public ListView<CrewMember> elist = new ListView<CrewMember>();
+	public ListView<Manager> mlist = new ListView<Manager>();
 
 	private RemoveItemTab() {
 		this.setText("Remove");
@@ -33,13 +37,12 @@ public class RemoveItemTab extends Tab {
 		GridPane gpane = new GridPane();
 		
 		
+		
 		//Create a button to launch to remove food/Drink form
 		Button removeF = new Button("Remove Food/Drink");
 		removeF.setOnAction(e->{
 			//Create the layout
 			BorderPane pane = new BorderPane();
-			//Create a listView that'll hold a bunch of instances of food and drink
-			ListView<FoodDrink> list = new ListView<FoodDrink>();
 			//Create a food table
 			FoodTable fTable = new FoodTable();
 			//Create the array that'll give us all foodDrink in our database
@@ -75,6 +78,8 @@ public class RemoveItemTab extends Tab {
 				FoodDrink foodItem = list.getSelectionModel().getSelectedItem();
 				fTable.deleteFoodDrink(foodItem);
 				list.setItems(FXCollections.observableArrayList(fTable.getAllFoodDrink()));
+				UpdateItemTab.refresh();
+				RemoveItemTab.refresh();
 				StatisticsTab.pane.setCenter(StatisticsTab.generateChart());
 			});
 			remove.setMaxWidth(200);
@@ -98,18 +103,16 @@ public class RemoveItemTab extends Tab {
 		removeE.setOnAction(e->{
 			//Create the layout
 			BorderPane pane = new BorderPane();
-			//Create a listView that'll hold a bunch of instances of crewMember
-			ListView<CrewMember> list = new ListView<CrewMember>();
 			//Create a crew member table
 			CrewMemberTable cmTable = new CrewMemberTable();
 			//Create the array that'll give us all crew members in our database
 			ArrayList<CrewMember> cmItems = cmTable.getAllCrewMembers();
 			
 			//set the list with all the items in the arraylist
-			list.setItems(FXCollections.observableArrayList(cmItems));
-			list.setMaxWidth(600);
-			list.setMaxHeight(600);
-			list.setCellFactory(new Callback<ListView<CrewMember>, ListCell<CrewMember>>(){
+			elist.setItems(FXCollections.observableArrayList(cmItems));
+			elist.setMaxWidth(600);
+			elist.setMaxHeight(600);
+			elist.setCellFactory(new Callback<ListView<CrewMember>, ListCell<CrewMember>>(){
 				@Override
 				public ListCell<CrewMember> call(ListView<CrewMember> param) {
 					ListCell<CrewMember> cell = new ListCell<CrewMember>() {
@@ -126,15 +129,17 @@ public class RemoveItemTab extends Tab {
 					return cell;
 				}
 			});
-			pane.setCenter(list);
+			pane.setCenter(elist);
 			
 			
 			//Create the remove button
 			Button remove = new Button("Remove");
 			remove.setOnAction(e1->{
-				CrewMember crewMember = list.getSelectionModel().getSelectedItem();
+				CrewMember crewMember = elist.getSelectionModel().getSelectedItem();
 				cmTable.deleteCrewMember(crewMember);
-				list.setItems(FXCollections.observableArrayList(cmTable.getAllCrewMembers()));
+				elist.setItems(FXCollections.observableArrayList(cmTable.getAllCrewMembers()));
+				UpdateItemTab.refresh();
+				RemoveItemTab.refresh();
 				StatisticsTab.pane.setCenter(StatisticsTab.generateChart());
 			});
 			remove.setMaxWidth(200);
@@ -158,18 +163,16 @@ public class RemoveItemTab extends Tab {
 		removeM.setOnAction(e->{
 			//Create the layout
 			BorderPane pane = new BorderPane();
-			//Create a listView that'll hold a bunch of instances of managers
-			ListView<Manager> list = new ListView<Manager>();
 			//Create a manager table
 			ManagerTable mTable = new ManagerTable();
 			//Create the array that'll give us all managers in our database
 			ArrayList<Manager> mItems = mTable.getAllManagers();
 					
 			//set the list with all the items in the arraylist and display it
-			list.setItems(FXCollections.observableArrayList(mItems));
-			list.setMaxWidth(600);
-			list.setMaxHeight(600);
-			list.setCellFactory(new Callback<ListView<Manager>, ListCell<Manager>>(){
+			mlist.setItems(FXCollections.observableArrayList(mItems));
+			mlist.setMaxWidth(600);
+			mlist.setMaxHeight(600);
+			mlist.setCellFactory(new Callback<ListView<Manager>, ListCell<Manager>>(){
 				@Override
 				public ListCell<Manager> call(ListView<Manager> param) {
 					ListCell<Manager> cell = new ListCell<Manager>() {
@@ -186,15 +189,17 @@ public class RemoveItemTab extends Tab {
 					return cell;
 				}
 			});
-			pane.setCenter(list);
+			pane.setCenter(mlist);
 					
 					
 			//Create the remove button
 			Button remove = new Button("Remove");
 			remove.setOnAction(e1->{
-				Manager manager = list.getSelectionModel().getSelectedItem();
+				Manager manager = mlist.getSelectionModel().getSelectedItem();
 				mTable.deleteManager(manager);
-				list.setItems(FXCollections.observableArrayList(mTable.getAllManagers()));
+				mlist.setItems(FXCollections.observableArrayList(mTable.getAllManagers()));
+				UpdateItemTab.refresh();
+				RemoveItemTab.refresh();
 				StatisticsTab.pane.setCenter(StatisticsTab.generateChart());
 			});
 			remove.setMaxWidth(200);
@@ -228,5 +233,14 @@ public class RemoveItemTab extends Tab {
 			tab = new RemoveItemTab();
 		}
 		return tab;
+	}
+	
+	public static void refresh() {
+		FoodTable fTable = new FoodTable();
+		RemoveItemTab.tab.list.setItems(FXCollections.observableArrayList(fTable.getAllFoodDrink()));
+		CrewMemberTable cmTable = new CrewMemberTable();
+		RemoveItemTab.tab.elist.setItems(FXCollections.observableArrayList(cmTable.getAllCrewMembers()));
+		ManagerTable mTable = new ManagerTable();
+		RemoveItemTab.tab.mlist.setItems(FXCollections.observableArrayList(mTable.getAllManagers()));
 	}
 }

@@ -32,6 +32,10 @@ public class UpdateItemTab extends Tab {
 	
 	private static UpdateItemTab tab;
 	
+	public ListView<FoodDrink> list = new ListView<>();
+	public ListView<CrewMember> elist = new ListView<>();
+	public ListView<Manager> mlist = new ListView<>();
+	
 	private UpdateItemTab() {
 		this.setText("Update");
 		//Create basic layout
@@ -41,8 +45,6 @@ public class UpdateItemTab extends Tab {
 		Text foodDrinkText = new Text("Food/Drink");
 		pane.add(foodDrinkText, 1, 0);
 		
-		//Create a listVuew that'll hold a bunch of instances of food and drink
-		ListView<FoodDrink> list = new ListView<FoodDrink>();
 		//Create a food table
 		FoodTable fTable = new FoodTable();
 		//Create the array that'll give us all foodDrink in our database
@@ -86,8 +88,6 @@ public class UpdateItemTab extends Tab {
 		Text employeeText = new Text("Employee");
 		pane.add(employeeText, 11, 0);
 		
-		//Create a listView that'll hold a bunch of instances of crew members
-		ListView<CrewMember> elist = new ListView<CrewMember>();
 		//Create a crew member table
 		CrewMemberTable cmTable = new CrewMemberTable();
 		//Create the array that'll give us all crew members in our database
@@ -130,8 +130,6 @@ public class UpdateItemTab extends Tab {
 		Text managerText = new Text("Manager");
 		pane.add(managerText, 21, 0);
 				
-		//Create a listView that'll hold a bunch of instances of manager
-		ListView<Manager> mlist = new ListView<Manager>();
 		//Create a manager table
 		ManagerTable mTable = new ManagerTable();
 		//Create the array that'll give us all managers in our database
@@ -264,6 +262,7 @@ public class UpdateItemTab extends Tab {
 				
 					fTable.updateFoodDrink(foodDrink);
 
+					RemoveItemTab.refresh();
 					list.setItems(FXCollections.observableArrayList(fTable.getAllFoodDrink()));
 					this.setContent(pane);
 					StatisticsTab.pane.setCenter(StatisticsTab.generateChart());
@@ -375,6 +374,7 @@ public class UpdateItemTab extends Tab {
 				
 				cmTable.updateCrewMember(crewMember);
 
+				RemoveItemTab.refresh();
 				elist.setItems(FXCollections.observableArrayList(cmTable.getAllCrewMembers()));
 				this.setContent(pane);
 				StatisticsTab.pane.setCenter(StatisticsTab.generateChart());
@@ -491,6 +491,7 @@ public class UpdateItemTab extends Tab {
 				
 				mTable.updateManager(manager);
 
+				RemoveItemTab.refresh();
 				mlist.setItems(FXCollections.observableArrayList(mTable.getAllManagers()));
 				this.setContent(pane);
 				StatisticsTab.pane.setCenter(StatisticsTab.generateChart());
@@ -535,7 +536,12 @@ public class UpdateItemTab extends Tab {
 	}
 	
 	public static void refresh() {
-		
+		FoodTable fTable = new FoodTable();
+		UpdateItemTab.tab.list.setItems(FXCollections.observableArrayList(fTable.getAllFoodDrink()));
+		CrewMemberTable cmTable = new CrewMemberTable();
+		UpdateItemTab.tab.elist.setItems(FXCollections.observableArrayList(cmTable.getAllCrewMembers()));
+		ManagerTable mTable = new ManagerTable();
+		UpdateItemTab.tab.mlist.setItems(FXCollections.observableArrayList(mTable.getAllManagers()));
 	}
-		
+	
 }
