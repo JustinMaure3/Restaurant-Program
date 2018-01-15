@@ -20,20 +20,20 @@ public class StatisticsTab extends Tab {
 	private static StatisticsTab tab;
 	
 	public static BorderPane pane;
-	
+
+	public static ComboBox<ENUMS.MonthlyStats> month = new ComboBox<>();
 	
 	private StatisticsTab() {
 		this.setText("Statistics Tab");
 		pane = new BorderPane();
 		
 		Text monthText = new Text("Month: ");
-		ComboBox<ENUMS.MonthlyStats> month = new ComboBox<>();
 		month.setItems(FXCollections.observableArrayList(ENUMS.MonthlyStats.values()));
 		HBox months = new HBox();
 		months.getChildren().addAll(monthText, month);
 		pane.setTop(months);
 		
-		Button goBtn = new Button("Go");
+		Button goBtn = new Button("Generate Chart");
 		goBtn.setOnAction(e->{
 			PieChart chart = new PieChart();
 			if(!month.getSelectionModel().isEmpty()) {
@@ -125,7 +125,7 @@ public class StatisticsTab extends Tab {
 			ArrayList<PieChart.Data> foodItemData = new ArrayList<PieChart.Data>();
 			for(int i = 0; i < foodItems.size(); i++) {
 				foodItemData.add(new PieChart.Data(foodItems.get(i).getName(), foodItems.get(i).getAmountSold()));
-			}
+			} 
 			
 			ObservableList<PieChart.Data> data = FXCollections.observableArrayList(foodItemData);
 			chart.setData(data);
