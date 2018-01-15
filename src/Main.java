@@ -110,8 +110,8 @@ public class Main extends Application {
 				
 				ImageView foodPicture = new ImageView("Pictures/" + foodDrinkItems.get(i).getPicture());
 				pictureColumn.getChildren().addAll(foodPicture);
-				foodPicture.setFitHeight(25);
-				foodPicture.setFitWidth(25);
+				foodPicture.setFitHeight(30);
+				foodPicture.setFitWidth(30);
 //				foodPicture.;
 				
 				Text foodPrice = new Text(foodDrinkItems.get(i).getPrice() + "  ");
@@ -451,6 +451,9 @@ public class Main extends Application {
 				
 		});
 	
+		creditsMenu.setOnAction(e->{
+//			mainStage.setScene(new CreditsScene());
+		});
 		//Adding menus into the menuBar
 		fileMenu.getItems().addAll(themes,display,creditsMenu, addTable, exit);
 		menu.getMenus().addAll(fileMenu);

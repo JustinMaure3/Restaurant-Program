@@ -11,6 +11,7 @@ import PlaceHolder.Manager;
 import Tables.CrewMemberTable;
 import Tables.FoodTable;
 import Tables.ManagerTable;
+import javafx.animation.FadeTransition;
 import javafx.collections.FXCollections;
 import javafx.geometry.Insets;
 import javafx.scene.control.Button;
@@ -19,6 +20,7 @@ import javafx.scene.control.Tab;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
 import javafx.scene.text.Text;
+import javafx.util.Duration;
 
 public class AddItemTab extends Tab{
 	
@@ -93,6 +95,14 @@ public class AddItemTab extends Tab{
 					);
 			fTable.createFoodDrink(food);
 			}catch(Exception e1){
+				
+				FadeTransition fade = new FadeTransition(Duration.millis(2000), submitButton);
+				fade.setFromValue(0); //starting opacity
+				fade.setToValue(1); //ending opacity (for 1 cycle)
+				fade.setAutoReverse(true); //if the fade should play backwards
+				fade.play();
+				
+				
 				amountSold.setPromptText("Please enter a valid value");
 				amountSold.setText("");
 				
@@ -155,31 +165,7 @@ public class AddItemTab extends Tab{
 			//Create an instance of the CrewMember table
 			CrewMemberTable cmTable = new CrewMemberTable();
 			
-			boolean checking = false;
 			
-			
-			
-			
-			try {
-				Double.parseDouble(wage.getText());
-			}catch(Exception e1) {
-				checking = true;
-			}
-				
-				try {
-					Integer.parseInt(punchIn.getText());
-				}catch(Exception e1) {
-					
-					checking = true;
-				}
-				
-				try {
-					Integer.parseInt(goldStar.getText());
-				}catch(Exception e1) {
-					
-					checking = true;
-				
-			}
 				try {
 					CrewMember crewMember = new CrewMember(
 							ename.getText(),
@@ -191,6 +177,11 @@ public class AddItemTab extends Tab{
 							);
 					cmTable.createCrewMember(crewMember);
 				}catch(Exception e1){
+					FadeTransition fade = new FadeTransition(Duration.millis(2000), eSubmit);
+					fade.setFromValue(0); //starting opacity
+					fade.setToValue(1); //ending opacity (for 1 cycle)
+					fade.setAutoReverse(true); //if the fade should play backwards
+					fade.play();
 					
 					goldStar.setPromptText("Please enter a valid value");
 					goldStar.setText("");
@@ -268,6 +259,14 @@ public class AddItemTab extends Tab{
 			mTable.createManager(manager);
 					
 			}catch(Exception e1){
+				
+				FadeTransition fade = new FadeTransition(Duration.millis(2000), mSubmit);
+				fade.setFromValue(0); //starting opacity
+				fade.setToValue(1); //ending opacity (for 1 cycle)
+				fade.setAutoReverse(true); //if the fade should play backwards
+				fade.play();
+				
+				
 				managerSafeCode.setPromptText("Please enter a valid value");
 				managerSafeCode.setText("");
 				

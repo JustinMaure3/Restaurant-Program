@@ -12,6 +12,9 @@ import PlaceHolder.Manager;
 import Tables.CrewMemberTable;
 import Tables.FoodTable;
 import Tables.ManagerTable;
+import javafx.animation.FadeTransition;
+import javafx.animation.StrokeTransition;
+import javafx.animation.Timeline;
 import javafx.collections.FXCollections;
 import javafx.geometry.Insets;
 import javafx.scene.control.Button;
@@ -21,6 +24,7 @@ import javafx.scene.control.Tab;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
 import javafx.scene.text.Text;
+import javafx.util.Duration;
 
 public class UpdateItemTab extends Tab {
 	
@@ -206,6 +210,12 @@ public class UpdateItemTab extends Tab {
 				
 					fTable.updateFoodDrink(foodDrink);
 				}catch(Exception e1) {
+					FadeTransition fade = new FadeTransition(Duration.millis(2000), fUpdate);
+					fade.setFromValue(0); //starting opacity
+					fade.setToValue(1); //ending opacity (for 1 cycle)
+					fade.setAutoReverse(true); //if the fade should play backwards
+					fade.play();
+					
 					foodName.setPromptText("Please enter a valid value");
 					foodName.setText("");
 					
@@ -307,6 +317,15 @@ public class UpdateItemTab extends Tab {
 				
 				cmTable.updateCrewMember(crewMember);
 				}catch(Exception e1){
+					
+
+					FadeTransition fade = new FadeTransition(Duration.millis(2000), eUpdate);
+					fade.setFromValue(0); //starting opacity
+					fade.setToValue(1); //ending opacity (for 1 cycle)
+					fade.setAutoReverse(true); //if the fade should play backwards
+					fade.play();
+					
+					
 					eName.setPromptText("Please enter a valid value");
 					eName.setText("");
 					
@@ -398,7 +417,8 @@ public class UpdateItemTab extends Tab {
 			if(!mName.getText().isEmpty()) {
 				//Create an instance of the Manager table
 				ManagerTable mTable = new ManagerTable();
-							
+					
+				try {
 				//Update the manager
 				manager.setName(mName.getText());
 				manager.setWage(Double.parseDouble(wage.getText()));
@@ -408,6 +428,27 @@ public class UpdateItemTab extends Tab {
 				manager.setManagerSafeCode(Integer.parseInt(managerSC.getText()));
 				
 				mTable.updateManager(manager);
+				}catch(Exception e1) {
+					
+					FadeTransition fade = new FadeTransition(Duration.millis(2000), mUpdate);
+					fade.setFromValue(0); //starting opacity
+					fade.setToValue(1); //ending opacity (for 1 cycle)
+					fade.setAutoReverse(true); //if the fade should play backwards
+					fade.play();
+					
+					mName.setPromptText("Please enter a valid value");
+					mName.setText("");
+					
+					wage.setPromptText("Please enter a valid value");
+					wage.setText("");
+					
+					managerID.setPromptText("Please enter a valid value");
+					managerID.setText("");
+					
+					managerSC.setPromptText("Please enter a valid value");
+					managerSC.setText("");
+					
+				}
 			}
 		});
 		gpane.add(mUpdate, 1, 7);

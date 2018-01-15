@@ -1,10 +1,8 @@
 package tabs;
 
-import java.util.ArrayList;
 
+import DAO.FoodDrinkDAO;
 import PlaceHolder.FoodDrink;
-import Tables.CrewMemberTable;
-import Tables.FoodTable;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.chart.PieChart;
@@ -33,23 +31,25 @@ public class StatisticsTab extends Tab {
 	}
 	
 	public static PieChart generateChart() {
-		FoodTable menuItems = new FoodTable();
-		ArrayList<FoodDrink> foodDrinkItems = menuItems.getAllFoodDrink();	
-	
-		int allFood = menuItems.getItemCount("Pizza");
-		PieChart chart = new PieChart();
-		chart.setLabelsVisible(true);
-		
-		ObservableList<PieChart.Data> data;
-					
-		 data = FXCollections.observableArrayList(new PieChart.Data("Pizza", allFood));
-		
-		
-		chart.setData(data);
-		return chart;
+//		FoodDrink table = new FoodDrink();
+//	
+//		int pennies = table.getItemCount();
+//		
+//		
+//		PieChart chart = new PieChart();
+//		chart.setTitle("All Coins Found");
+//		chart.setLabelsVisible(true);
+//		ObservableList<PieChart.Data> data = 
+//				FXCollections.observableArrayList(new PieChart.Data("Penny: " + pennies, pennies),
+//						new PieChart.Data("Nickel: " + nickel , nickel),
+//						new PieChart.Data("Dime: " + dime , dime),
+//						new PieChart.Data("Quarter: " + quarter , quarter),
+//						new PieChart.Data("Loonie: " + loonie , loonie),
+//						new PieChart.Data("Toonie: " + toonie , toonie));
+//		chart.setData(data);
+		return null;
 	}
 	
 	
 	
 }
-
