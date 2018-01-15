@@ -254,7 +254,7 @@ public class UpdateItemTab extends Tab {
 				try {
 				//Update a food item with all the new records
 				foodDrink.setName(foodName.getText());
-				foodDrink.setRating(rating.getSelectionModel().getSelectedItem().ordinal());
+				foodDrink.setRating(rating.getSelectionModel().getSelectedItem().ordinal()  + 1);
 				foodDrink.setDescription(desc.getText());
 				foodDrink.setPicture(AddItemTab.getPictureDisplay(picture.getSelectionModel().getSelectedItem().name()));
 				foodDrink.setPrice(Double.parseDouble(price.getText()));
