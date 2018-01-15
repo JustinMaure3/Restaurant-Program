@@ -111,8 +111,8 @@ public class Main extends Application {
 				
 				ImageView foodPicture = new ImageView("Pictures/" + foodDrinkItems.get(i).getPicture());
 				pictureColumn.getChildren().addAll(foodPicture);
-				foodPicture.setFitHeight(25);
-				foodPicture.setFitWidth(25);
+				foodPicture.setFitHeight(30);
+				foodPicture.setFitWidth(30);
 				
 				Text foodPrice = new Text(foodDrinkItems.get(i).getPrice() + "  ");
 				priceColumn.getChildren().addAll(foodPrice);
