@@ -10,7 +10,11 @@ import Database.Database;
 import PlaceHolder.CrewMember;
 import PlaceHolder.Employee;
 import PlaceHolder.FoodDrink;
-
+/**
+ * Crewmemeber table with all of its methods
+ * @author Stefano,Max,Tomas,Justin
+ *
+ */
 public class CrewMemberTable {
 	//Creating an instance of the database
 		Database db = Database.getInstance();
@@ -72,7 +76,7 @@ public class CrewMemberTable {
 		
 		
 		//Creating a method to grab the employee of the month
-			public CrewMember getCrewMemberOfMonthk(int crewMemberGoldStar) {
+			public CrewMember getCrewMemberOfMonth(int crewMemberGoldStar) {
 				String query = "SELECT * FROM " + Const.TABLE_CREWMEMBER  + " ORDER BY " + Const.CREWMEMBER_COLUMN_CREWMEMBERGOLDSTAR + " DESC ";
 				CrewMember crewMember = new CrewMember();
 				try {
@@ -88,7 +92,19 @@ public class CrewMemberTable {
 	}
 		//Creating method to update an instance of the crewMember class in the database table
 		public void updateCrewMember(CrewMember crewMember) {
-			
+			String query = "UPDATE " + Const.TABLE_CREWMEMBER + " SET " + 
+					Const.CREWMEMBER_COLUMN_NAME + " = '" + crewMember.getName() + "', " +
+					Const.CREWMEMBER_COLUMN_WAGE + " = '" + crewMember.getWage() + "', " +
+					Const.CREWMEMBER_COLUMN_UNIFORM + " = '" + crewMember.getUniform() + "', " +
+					Const.CREWMEMBER_COLUMN_POSITION + " = '" + crewMember.getPosition() + "', " +
+					Const.CREWMEMBER_COLUMN_CREWMEMBERPUNCHIN + " = '" + crewMember.getCrewMemberPunchIn() + "', " +
+					Const.CREWMEMBER_COLUMN_CREWMEMBERGOLDSTAR + " = '" + crewMember.getCrewMemberGoldStar() + "' WHERE " +
+					Const.CREWMEMBER_COLUMN_ID + " = '" + crewMember.getID() + "'";
+			try {
+				db.getConnection().createStatement().execute(query);
+			}catch(SQLException e) {
+				e.printStackTrace();
+			}
 			
 		}
 

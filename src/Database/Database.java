@@ -6,7 +6,11 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-
+/**
+ * This is used to create tables and make a connection
+ * @author Stefano,Max,Tomas,Justin
+ *
+ */
 public class Database {
 
 	//Create an instance variable
@@ -69,6 +73,7 @@ public class Database {
 			try {
 				Class.forName("com.mysql.jdbc.Driver");
 				connection = DriverManager.getConnection("jdbc:mysql://php.scweb.ca/" + Const.DB_NAME +"?useSSL=false", Const.DB_USER, Const.DB_PASS);
+
 				System.out.println("Connection Sucessfully Created");
 			} catch (Exception e) {
 				e.printStackTrace();

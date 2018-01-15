@@ -8,7 +8,11 @@ import DAO.FoodDrinkDAO;
 import Database.Const;
 import Database.Database;
 import PlaceHolder.FoodDrink;
-
+/**
+ * FoodDraink table with all of its methods
+ * @author Stefano,Max,Tomas,Justin
+ *
+ */
 public class FoodTable implements FoodDrinkDAO {
 
 	//Creating an instance of the database
@@ -93,13 +97,14 @@ public class FoodTable implements FoodDrinkDAO {
 	@Override
 	public void updateFoodDrink(FoodDrink foodDrink) {
 		String query = "UPDATE " + Const.TABLE_FOOD_DRINK + " SET " + 
-				Const.FOOD_DRINK_COLUMN_RATING + " = " + foodDrink.getRating() + ", " +
-				Const.FOOD_DRINK_COLUMN_DESCRIPTION + " = " + foodDrink.getDescription() + ", " +
-				Const.FOOD_DRINK_COLUMN_PICTURE + " = " + foodDrink.getPicture() + ", " +
-				Const.FOOD_DRINK_COLUMN_PRICE + " = " + foodDrink.getPrice() + ", " +
-				Const.FOOD_DRINK_COLUMN_AMOUNT_SOLD + " = " + foodDrink.getAmountSold() + ", " +
-				Const.FOOD_DRINK_COLUMN_MONTH + " = " + foodDrink.getMonth() + " WHERE " +
-				Const.FOOD_DRINK_COLUMN_NAME + " = " + foodDrink.getName();
+				Const.FOOD_DRINK_COLUMN_NAME + " = '" + foodDrink.getName() + "', " +
+				Const.FOOD_DRINK_COLUMN_RATING + " = '" + foodDrink.getRating() + "', " +
+				Const.FOOD_DRINK_COLUMN_DESCRIPTION + " = '" + foodDrink.getDescription() + "', " +
+				Const.FOOD_DRINK_COLUMN_PICTURE + " = '" + foodDrink.getPicture() + "', " +
+				Const.FOOD_DRINK_COLUMN_PRICE + " = '" + foodDrink.getPrice() + "', " +
+				Const.FOOD_DRINK_COLUMN_AMOUNT_SOLD + " = '" + foodDrink.getAmountSold() + "', " +
+				Const.FOOD_DRINK_COLUMN_MONTH + " = '" + foodDrink.getMonth() + "' WHERE " +
+				Const.FOOD_DRINK_COLUMN_ID + " = '" + foodDrink.getID() + "'";
 		try {
 			db.getConnection().createStatement().execute(query);
 		}catch(SQLException e) {
@@ -142,4 +147,55 @@ public class FoodTable implements FoodDrinkDAO {
 		}
 		
 	}
+	
+	public int getItemCount(String name) {
+		String query = "SELECT * FROM " + Const.TABLE_FOOD_DRINK + " WHERE "
+						+ Const.CREWMEMBER_COLUMN_ID + " = '" + name + "'";
+		ArrayList<FoodDrink> items = new ArrayList<FoodDrink>();
+		try {
+			Statement getItems = db.getConnection().createStatement();
+			ResultSet data = getItems.executeQuery(query);
+			while(data.next()) {
+				//Build each item and add it to the ArrayList
+				items.add(new FoodDrink(data.getInt(Const.FOOD_DRINK_COLUMN_ID),
+						   data.getString(Const.FOOD_DRINK_COLUMN_NAME),
+						   data.getInt(Const.FOOD_DRINK_COLUMN_RATING),
+						   data.getString(Const.FOOD_DRINK_COLUMN_DESCRIPTION),
+						   data.getString(Const.FOOD_DRINK_COLUMN_PICTURE),
+						   data.getDouble(Const.FOOD_DRINK_COLUMN_PRICE),
+						   data.getDouble(Const.FOOD_DRINK_COLUMN_AMOUNT_SOLD),
+						   data.getString(Const.FOOD_DRINK_COLUMN_MONTH)));
+			}
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}
+		return items.size();
+	}
+	
+	public ArrayList<FoodDrink> getAllFoodDrinkFrom(String month) {
+		String query = "SELECT * FROM " + Const.TABLE_FOOD_DRINK + " WHERE " +
+				Const.FOOD_DRINK_COLUMN_MONTH + " = '" + month + "'";
+		ArrayList<FoodDrink> foodDrinks = new ArrayList<FoodDrink>();
+		try {
+			//Use the singleton an grab its connection to create a statement
+			Statement getItems = db.getConnection().createStatement();
+			ResultSet data = getItems.executeQuery(query);
+			//This while loop will run once for each item in the result set
+			while(data.next()) {
+				//Build each item and add it to the ArrayList
+				foodDrinks.add(new FoodDrink(data.getInt(Const.FOOD_DRINK_COLUMN_ID),
+								   data.getString(Const.FOOD_DRINK_COLUMN_NAME),
+								   data.getInt(Const.FOOD_DRINK_COLUMN_RATING),
+								   data.getString(Const.FOOD_DRINK_COLUMN_DESCRIPTION),
+								   data.getString(Const.FOOD_DRINK_COLUMN_PICTURE),
+								   data.getDouble(Const.FOOD_DRINK_COLUMN_PRICE),
+								   data.getDouble(Const.FOOD_DRINK_COLUMN_AMOUNT_SOLD),
+								   data.getString(Const.FOOD_DRINK_COLUMN_MONTH)));
+			}
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}
+		return foodDrinks;
+	}
 }
+

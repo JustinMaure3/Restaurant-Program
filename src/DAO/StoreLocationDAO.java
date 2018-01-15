@@ -5,13 +5,24 @@ import PlaceHolder.StoreLocations;
 
 public interface StoreLocationDAO {
 	//Everything we want to do with the table
+	/**
+	 * This grabs all the StoreLocations items
+	 */
 	public ArrayList<StoreLocations> getAllStoreLocations();
-	//Get 1
+	/**
+	 * This gets one StoreLocations item
+	 */
 	public StoreLocations getStoreLocation(int itemID);
-	//Update
+	/**
+	 * This updates StoreLocations item
+	 */
 	public void updateStoreLocation(StoreLocations storeLocations);
-	//Delete
+	/**
+	 * This deletes StoreLocations item
+	 */
 	public void deleteStoreLocation(StoreLocations storeLocations);;
-	//Create
+	/**
+	 * This creates StoreLocations 
+	 */
 	public void createStoreLocation(StoreLocations storeLocations);
 }

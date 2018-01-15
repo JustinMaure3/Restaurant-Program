@@ -7,7 +7,11 @@ import java.util.ArrayList;
 import Database.Const;
 import Database.Database;
 import PlaceHolder.StoreLocations;
-
+/**
+ * Store locations table with all of its methods
+ * @author Stefano,Max,Tomas,Justin
+ *
+ */
 public class StoreLocationsTable {
 	//Creating an instance of the database
 	Database db = Database.getInstance();
@@ -87,8 +91,8 @@ public class StoreLocationsTable {
 				   Const.STORELOCATIONS_COLUMN_REGIONALMAN + "," +
 				   Const.STORELOCATIONS_COLUMN_CUSTREVIEW + "," +
 				   Const.STORELOCATIONS_COLUMN_SANTSCORE + ") values ('"+
-				   storeLocations.getLocation() + "','" + storeLocations.getCustReview() + "','" +
-				   storeLocations.getRegionalMan() + "','" + storeLocations.getSantScore() + "')";
+				   storeLocations.getLocation() + "','" + storeLocations.getRegionalMan()+ "','" +
+				   storeLocations.getSantScore() + "','" +  storeLocations.getCustReview() + "')";
 		try {
 			db.getConnection().createStatement().execute(query);
 		}catch(SQLException e) {

@@ -1,5 +1,9 @@
 package PlaceHolder;
-
+/**
+ * Creates Manager
+ * @author Stefano,Max,Tomas,Justin
+ *
+ */
 public class Manager extends Employee {
 	//Adding private ints for managerID and their safe code
 	protected int managerID;
@@ -21,7 +25,7 @@ public class Manager extends Employee {
 		this.managerSafeCode = managerSafeCode;
 	}
 	//Manager constructor without ID
-	public Manager(String name, double wage, String uniform, String position) {
+	public Manager(String name, double wage, String uniform, String position, int managerID, int managerSafeCode) {
 		this.name = name;
 		this.wage = wage;
 		this.uniform = uniform;
