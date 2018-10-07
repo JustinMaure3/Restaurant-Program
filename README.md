@@ -5,6 +5,8 @@ It contains graphs that will display the most popular foods of any given month.
 The software can also keep track of employees of the year. Managers can give their employees gold stars in the program to 
 represent their performance.
 
+This code is free to use as long as we are credited.
+
 ## Built With
 * Eclipse - IDE used to program the software
 * XAMPP - Used for hosting the database
